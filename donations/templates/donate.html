@@ -1,0 +1,264 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div id="page">
+
+    <div class="content-container row">
+        <div class="col s12 l7" style="padding-left: 5%;padding-right: 5%; padding-bottom: 3%">
+            <form method="post" action="{{ donate_url }}" id="donation_form">
+                {% csrf_token %}
+                <h5 class="center-align donation-title">It Takes a Village to Restore Prosperity, Peace & Power to The Black Community!</h5>
+                <h6 class="donation-subtitle center-align">Unleash the Power of The Village by donating  $25, $50, $100, $500 or whatever you are inspired to invest in the community!</h6>
+
+                <div class="row">
+                    <div class="input-field col s6">
+                        {{ donation_form.first_name }}
+                        <label>{{ donation_form.first_name.label }}<b class="required">*</b></label>
+                    </div>
+                    <div class="input-field col s6">
+                        {{ donation_form.last_name }}
+                        <label>{{ donation_form.last_name.label }}<b class="required">*</b></label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        {{ donation_form.donor_email }}
+                        <label>{{ donation_form.donor_email.label }}<b class="required">*</b></label>
+                    </div>
+                </div>
+            <div class="row">
+                <div class="col s12">
+                    <h7 class="label-title">Donation Level<b class="required">*</b></h7>
+                    <p>
+                        <label>
+                          <input class="with-gap" name="donation_level" type="radio" value="25">
+                          <span>Village Member - $25</span>
+                        </label>
+                    </p>
+                      <p>
+                        <label>
+                          <input class="with-gap" name="donation_level" type="radio" value="50">
+                          <span>Village Patron - $50</span>
+                        </label>
+                      </p>
+                      <p>
+                        <label>
+                          <input class="with-gap" name="donation_level" type="radio" value="100">
+                          <span>Village Supporter - $100</span>
+                        </label>
+                      </p>
+                      <p>
+                        <label>
+                          <input class="with-gap" name="donation_level" type="radio" value="500">
+                          <span>Village Leader - $500</span>
+                        </label>
+                      </p>
+                      <p>
+                        <label>
+                          <input class="with-gap" name="donation_level" type="radio" value="1000">
+                          <span>Village Ambassador - $1000</span>
+                        </label>
+                      </p>
+                    <p class="">
+                        <label class="valign-wrapper">
+                            <input type="radio" class="with-gap other" name="donation_level" value="other">
+                            <span>
+                                Other
+                                <div class="input-field hidden other-input">
+                                    <input id="other-donation" type="text">
+                                    <label for="other-donation">Enter A Custom Amount</label>
+                                </div>
+                            </span>
+                        </label>
+                    </p>
+                    
+                </div>
+            </div>
+            <p id="custom-amount"></p>
+            <div class="row">
+                <div class="col s12">
+                    <h7 class="label-title">Please Make My Payment<b class="required">*</b></h7>
+                    <p>
+                        <label>
+                          <input class="with-gap" name="recurring" type="radio" value="no">
+                          <span>A One-Time Payment</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                          <input class="with-gap" name="recurring" type="radio" value="yes">
+                          <span>A Monthly Donation</span>
+                        </label>
+                    </p>
+                </div>
+            </div>
+            <div class="donate-buttons center-align col s12 m8 offset-m2">
+                <a class="btn waves-effect valign-wrapper cc-button">
+                    <i class="fas fa-credit-card"></i> Credit Card Donation
+                </a>
+                <br>
+                <a class="btn waves-effect pp-button ">
+                    <i class="fab fa-cc-paypal"></i> Donate with Paypal
+                </a>
+                <br>
+                <a class="btn waves-effect venmo-button valign-wrapper" target="_blank" href="https://venmo.com/?txn=pay&audience=public&recipients=@Empower-TheVillage&amount=50&note=Thank%20you%20for%20supporting%20Empower%20The%20Village!">
+                    <img src="{% static 'img/venmo-icon.svg' %}" style="width: 30px;margin-bottom:-8px; padding-top:7px"> Donate with Venmo
+                </a>
+            </div>
+            </form>
+        </div>
+        <div class="col s12 l5 center-align" style="border-left: dotted 1px rgba(182, 182, 182, 0.694); padding-left: 3%; padding-right: 3%; height:100%">
+            <h5 class="donation-title">Empower The Village Needs Your Support!</h5>
+            <h7 style="padding-top: 20px;">Our mission is to develop, guide and implement breakthrough, scalable strategies that <b>empower Black people, businesses and community organizations to realize their full potential.</b></h7>
+            <iframe style="margin-top: 40px; margin-bottom:40px" width=100% height="315" src="https://www.youtube.com/embed/7ypFvkUOtwo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <h7>YOUR DONATIONS SUPPORT OUR <p style="margin:0"><a href="https://empowerthevillage.org/pillars" target="_blank">STRATEGIC COMMUNITY INITIATIVES</a><p></h7>
+        </div>
+</div>
+<script>
+    $(".cc-button").click(function(e){
+        $('#donation_form').submit();
+        window.open('https://www.paypal.com/donate?hosted_button_id=YSB29RNTB3CKG')
+    });
+    $(".pp-button").click(function(e){
+        $('#donation_form').submit();
+        window.open('https://www.paypal.com/donate?hosted_button_id=YSB29RNTB3CKG')
+    });
+    $(".venmo-button").click(function(e){
+        $('#donation_form').submit();
+    });
+    $(":radio[value=25]").change(function() {
+        var venmoLink = $(".venmo-button").attr('href', 'https://venmo.com/?txn=pay&audience=friends&recipients=Empower-TheVillage&amount=25&note=Thank%20You%20For%20Supporting%20The%20Village!');
+        $('#other-donation').val('');
+    });
+    $(":radio[value=50]").change(function() {
+        var venmoLink = $(".venmo-button").attr('href', 'https://venmo.com/?txn=pay&audience=friends&recipients=Empower-TheVillage&amount=50&note=Thank%20You%20For%20Supporting%20The%20Village!');
+        $('#other-donation').val('');
+    });
+    $(":radio[value=100]").change(function() {
+        var venmoLink = $(".venmo-button").attr('href', 'https://venmo.com/?txn=pay&audience=friends&recipients=Empower-TheVillage&amount=100&note=Thank%20You%20For%20Supporting%20The%20Village!');
+        $('#other-donation').val('');
+    });
+    $(":radio[value=500]").change(function() {
+        var venmoLink = $(".venmo-button").attr('href', 'https://venmo.com/?txn=pay&audience=friends&recipients=Empower-TheVillage&amount=500&note=Thank%20You%20For%20Supporting%20The%20Village!');
+        $('#other-donation').val('');
+    });
+    $(":radio[value=1000]").change(function() {
+        var venmoLink = $(".venmo-button").attr('href', 'https://venmo.com/?txn=pay&audience=friends&recipients=Empower-TheVillage&amount=1000&note=Thank%20You%20For%20Supporting%20The%20Village!');
+        $('.other-input').addClass('hidden');
+        $('#other-donation').val('');
+    });
+    $(".other").change(function() {
+        $('.other-input').removeClass('hidden');
+    });
+    $('#other-donation').keyup(function(){
+        var value = $(this).val();
+        $(".venmo-button").attr('href', 'https://venmo.com/?txn=pay&audience=friends&recipients=Empower-TheVillage&amount='+ value +'&note=Thank%20You%20For%20Supporting%20The%20Village!');
+    
+    });
+</script>
+<style>
+    .hidden {
+        display: none;
+    }
+    
+    #page {
+        background-image: url("https://empowerthevillage.s3.amazonaws.com/static/img/VBP+collage.png");
+      background-size: 100%;
+      background-repeat: repeat;
+    }
+    h7 {
+        font-size: 18px
+    }
+    .content-container {
+    padding-top: 5%;
+    background-color: rgba(255, 255, 255, 0.954);
+    margin-left: 3%;
+    margin-right: 3%;
+    }
+    .required {
+        color: red
+    }
+    .label-title {
+        font-size: 16px
+    }
+    .donate-buttons {
+        padding-bottom: 60px
+    }
+    .donate-buttons a {
+        width: 100%;
+        margin:5px;
+        font-size: 16px;
+        letter-spacing: 1.5px;
+        font-weight:400;
+        height: 50px;
+        padding-top:4px;
+        border-radius: 40px;
+    }
+    .donate-buttons a i {
+        font-size: 24px;
+    }
+    .donation-title {
+        font-family: oskar-inline;
+        font-size: 52px;
+    }
+    @media only screen and (min-width:0px){
+        .donation-title {
+            font-family: oskar-inline;
+            font-size: 32px;
+        }
+        .donation-subtitle {
+            font-size: 16px;
+            font-weight: 300;
+            line-height: 20px
+        }
+    }
+    @media only screen and (min-width:601px){
+        .donation-title {
+            font-family: oskar-inline;
+            font-size: 42px;
+        }
+    }
+    @media only screen and (min-width:993px){
+        .donation-title {
+            font-family: oskar-inline;
+            font-size: 48px;
+        }
+        .donation-subtitle {
+            font-size: 20px;
+            font-weight: 300;
+            line-height: 24px
+        }
+    }
+    @media only screen and (min-width:1400px){
+        .donation-title {
+            font-family: oskar-inline;
+            font-size: 56px;
+        }
+        .donation-subtitle {
+            font-size: 20px;
+            font-weight: 300;
+            line-height: 24px
+        }
+    }
+    .cc-button {
+        background-color: rgb(55, 54, 54)
+    }
+    .cc-button:hover {
+        background-color:rgb(101, 101, 101)
+    }
+    .pp-button {
+        background-color: #3b7bbf
+    }
+    .pp-button:hover {
+        background-color:#6799ce
+    }
+    .venmo-button {
+        background-color: #dfdfdf;
+        color:rgb(55, 54, 54)
+    }
+    .venmo-button:hover {
+        background-color:#606060
+    }
+</style>
+{% endblock %}

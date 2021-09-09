@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Empower The Village
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    
+    <div class="row center" style="margin-top: 40px; margin-bottom:40px">
+        <iframe class="z-depth-2" width="660" height="415" src="https://www.youtube.com/embed/6HW2E2Fipvk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        
+    </div>
+    <div class="row">
+        <div class="col s8 card" style="padding-top:0px;padding-left:25px;padding-right:25px;padding-bottom:15px">
+            <h4 style="transform: scale(1,0.95); letter-spacing: 2px; font-size:26px; line-height:30px">Empower The Village Announces Ayo Sanderson Wilson As Full Time CEO & President</h4>
+            <div class="divider" style="margin-bottom:10px"></div>
+            <h6>Ayo Sanderson Wilson is Empowering The Village</h6>
+            <p><i> - Corporate, Non-Profit and Community Leader to Serve as Full-Time CEO & President of 501(c)(3) Dedicated to Empowering Black People, Businesses and Community Organizations </i></p>
+            <p><b style="font-weight:500">Morristown, N.J., July 2, 2021 -- </b> The time for simply “admiring” problems, discussing root causes, and being satisfied with modest, incremental change for Black Americans has passed, according to <a href="">Ayo Sanderson Wilson.</a></p>
+            <p>That’s why she is making Empower The Village (ETV) a full-time commitment. Sanderson Wilson recently transitioned from ETV board chair to serve as the Chief Executive Officer and President of this data-driven 501(c)(3) organization she founded in 2018 to strategically restore prosperity, peace and power to the Black community by strategically partnering with “Village” leaders and allies to empower Black people, businesses, and community organizations to realize their full potential. </p>
+            <a class="btn btn-large waves-effect waves-light press-release-btn" href="">Read The Entire Press Release</a>
+        </div>
+        <div class="col s4 center">
+            <img class="z-depth-3" src="{% static 'img/ayo.jpeg' %}" style="margin-top:10px">
+            <p>AYO SANDERSON WILSON, FOUNDER, CEO & PRESIDENT</p>
+        </div>
+    </div>
+</div>
+
+<div class="icon-bar">
+    <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+    <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+    <a href="#" class="google"><i class="fa fa-google"></i></a>
+    <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+    <a href="#" class="youtube"><i class="fa fa-youtube"></i></a>
+  </div>
+
+  <style>
+      p {
+          font-weight: 200;
+          letter-spacing: 1px;
+          transform: scale(1, 0.92);
+      }
+      .press-release-btn {
+          background-color: rgb(135, 182, 166);
+      }
+      .press-release-btn:hover {
+          background-color: rgb(111, 151, 138);
+          color: rgb(224, 224, 224);
+      }
+ </style>
+{% endblock %}
