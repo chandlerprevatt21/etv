@@ -32,9 +32,9 @@
         </div>
         <div class="divider" style="width:70%; margin-left:15%"></div>
         <div>
-            <div class="carousel-instructions center-align col" style="margin-top:30px; width:80%; margin-left:10%">
+            <div class="carousel-instructions center-align col" style="margin-top:30px; width:80%; margin-left:10%;">
                 <p class=""><i class="material-icons" style="color: rgb(235, 217, 21); transform: rotate(-20deg); font-size:36px; margin-bottom:-10px">tips_and_updates</i><b style="color:rgb(157, 59, 59); font-weight:500">Power Tip:</b> Click and drag below to browse available Village Black Pages!</p>
-                <p>When you land on a state, click the VIEW button above the cover and watch your interactive booklet appear!</p>
+                <p id="land-on-top">When you land on a state, click the VIEW button above the cover and watch your interactive booklet appear!</p>
             </div>
             <div class="carousel" id="carousel-sm">
                 
@@ -46,7 +46,26 @@
                     <a class="btn waves-effect white-text view-btn">View</a>
                 </div>
             </div>
+            <p class="center-align" id="land-on-bottom">When you land on a state, click the VIEW button above the cover and watch your interactive booklet appear!</p>
         </div>
+        <style>
+            @media only screen and (max-width: 600px){
+                #land-on-top {
+                    display: none
+                }
+                #land-on-bottom{
+                    display: block
+                }
+            }
+            @media only screen and (min-width: 601px){
+                #land-on-top {
+                    display: block
+                }
+                #land-on-bottom{
+                    display: none
+                }
+            }
+        </style>
         
         <div class="divider" style="width:70%; margin-left:15%"></div>
         <div style="text-align: justify; width: 100%;">
@@ -73,16 +92,30 @@
             <div class='vbp-text'>
                 <p class="center-align map-helper-text" style="font-weight:400;">Click on your state to view its Village Black Pages!</p>
             </div>
-            <div id="map"></div>
-            <div id="legend-container" >
-                <img src="{% static 'img/legendStar.png' %}" class="legendStar">
-                <br>
-                <img src="{% static 'img/legendStar2.png' %}" class="legendStar2">
-                <br>
-                <img src="{% static 'img/legendStar3.png' %}" class="legendStar3">
-                <br>
-                <div class="valign-wrapper published-key" ><img src="{% static 'img/mapstard.png' %}" class="legendStar4"><p><b> &nbsp = Published</b></p></div>
+            <div class="row valign-wrapper">
+                <div id="map" class="col s12 m11" style="padding-right:0">
+                    <div id="legend-container-mobile">
+                        <img src="{% static 'img/legendStar2.png' %}" class="legendStar">
+                        <img src="{% static 'img/legendStar3.png' %}" class="legendStar2">
+                        <img src="{% static 'img/legendStar.png' %}" class="legendStar3"> 
+                    </div>
+                    <div class="valign-wrapper published-key" ><img src="{% static 'img/mapstard.png' %}" class="legendStar4"><p><b> &nbsp = Published</b></p></div>
+                </div>
+                <div class="col s1" style="padding:0">
+                    <div id="legend-container">
+                        <img src="{% static 'img/legendStar2.png' %}" class="legendStar">
+                        <br>
+                        <img src="{% static 'img/legendStar3.png' %}" class="legendStar2">
+                        <br>
+                        <img src="{% static 'img/legendStar.png' %}" class="legendStar3">
+                        <br>
+                    </div>
+                </div>
+                
             </div>
+            <div class="valign-wrapper published-key-large" ><img src="{% static 'img/mapstard.png' %}" class="legendStar4"><p><b> &nbsp = Published</b></p></div>
+            
+            
             <style>
                 #legend-container img {
                     cursor: pointer;
@@ -93,8 +126,7 @@
                     cursor: text !important
                 }
                 .published-key{
-                    margin-left: 72%; 
-                    margin-top: -20px;
+                    margin-left: 70%; 
                 }
                 @media only screen and (max-width:500px){
                     #legend-container .legendStar {
@@ -106,114 +138,127 @@
                 #legend-container .legendStar3 {
                     display: none;
                 }
+                #legend-container-mobile {
+                    margin-left: 57%;
+                    margin-top: 260px;
+                    margin-bottom: -310px;
+                }
+                #legend-container-mobile .legendStar {
+                    width: 17%;
+                    }
+                    #legend-container-mobile .legendStar2 {
+                    width: 17%
+                }
+                #legend-container-mobile .legendStar3 {
+                    width: 17%
+                }
                 .legendStar4 {
                     position: relative;
                     width: 15%
                 }
                 .published-key{
-                    margin-left: 50%; 
-                    margin-top: -120px;
+                    margin-left: 50%;
+                    margin-top: 290px;
+                    margin-bottom: -330px
+                }
+                .published-key-large {
+                    display:none
                 }
                 }
                 @media only screen and (min-width:501px){
+                    .published-key {
+                        display:none
+                    }
+                    .published-key-large {
+                        margin-left:52%;
+                        margin-top: -120px;
+                    }
+                    #legend-container-mobile .legendStar {
+                    display:none
+                    }
+                    #legend-container-mobile .legendStar2 {
+                    display: none
+                    }
+                    #legend-container-mobile .legendStar3 {
+                        display: none
+                    }
+                    #legend-container {
+                        margin-left: -20px;
+                        margin-top: -20px
+                    }
                     #legend-container .legendStar {
                     position: relative; 
-                    margin-top: -55%; 
-                    margin-left: 95%;
-                    width: 5%;
+                    margin-left:0;
+                    width: 65%;
+                    padding-right: 25%
                     }
                     
                     #legend-container .legendStar2 {
                         position: relative; 
-                        margin-top: -50%; 
-                        margin-left: 95%;
-                        width: 5%
+                        margin-top: 0; 
+                        margin-left: 0;
+                        width: 65%;
+                        padding-right: 25%
                     }
                     #legend-container .legendStar3 {
                         position: relative; 
-                        margin-top: -45%; 
-                        margin-left: 95%;
-                        width: 5%
+                        margin-top: 0; 
+                        margin-left: 0;
+                        width: 65%;
+                        padding-right: 25%;
+                        margin-bottom: 80px
                     }
                 }
-                @media only screen and (min-width: 800px){
-                    #legend-container .legendStar {
-                    position: relative; 
-                    margin-top: -370px; 
-                    margin-left: 87%;
-                    width: 4%
-                    }
-                    #legend-container .legendStar2 {
-                        position: relative; 
-                        margin-top: -330px; 
-                        margin-left: 87%;
-                        width: 4%
-                    }
-                    #legend-container .legendStar3 {
-                        position: relative; 
-                        margin-top: -290px; 
-                        margin-left: 87%;
-                        width: 4%
-                    }
-                }
+              
                 @media only screen and (min-width: 801px){
+                    #legend-container {
+                        margin-left: -80px;
+                        margin-top: -20px
+                    }
                     #legend-container .legendStar {
                     position: relative; 
-                    margin-top: -370px; 
-                    margin-left: 85%;
-                    width: 4%
+                    margin-left:0;
+                    width: 50%;
+                    padding-right: 25%
                     }
+                    
                     #legend-container .legendStar2 {
                         position: relative; 
-                        margin-top: -330px; 
-                        margin-left: 85%;
-                        width: 4%
+                        margin-top: 0; 
+                        margin-left: 0;
+                        width: 50%;
+                        padding-right: 25%
                     }
                     #legend-container .legendStar3 {
                         position: relative; 
-                        margin-top: -290px; 
-                        margin-left: 85%;
-                        width: 4%
+                        margin-top: 0; 
+                        margin-left: 0;
+                        width: 50%;
+                        padding-right: 25%;
+                        margin-bottom: 80px
                     }
+                    .legendStar4 {
+                    position: relative;
+                    width: 10%
+                }
                 }
                 @media only screen and (min-width: 992px){
-                    #legend-container .legendStar {
-                    position: relative; 
-                    margin-top: -450px; 
-                    margin-left: 92%;
-                    width: 3%
-                    }
-                    #legend-container .legendStar2 {
-                        position: relative; 
-                        margin-top: -410px; 
-                        margin-left: 92%;
-                        width: 3%
-                    }
-                    #legend-container .legendStar3 {
-                        position: relative; 
-                        margin-top: -370px; 
-                        margin-left: 92%;
-                        width: 3%
-                    }
+                    
                 }
-                @media only screen and (min-width: 1199px){
-                    #legend-container .legendStar {
-                    position: relative; 
-                    margin-top: -480px; 
-                    margin-left: 80%;
-                    width: 3%
+                @media only screen and (min-width: 1200px){
+                    #legend-container {
+                        margin-left: -140px;
+                        width: 150%
                     }
-                    #legend-container .legendStar2 {
-                        position: relative; 
-                        margin-top: -430px; 
-                        margin-left: 80%;
-                        width: 3%
-                    }
-                    #legend-container .legendStar3 {
-                        position: relative; 
-                        margin-top: -380px; 
-                        margin-left: 80%;
-                        width: 3%
+                    .legendStar4 {
+                    position: relative;
+                    width: 5%
+                }
+                }
+                @media only screen and (min-width: 1350px){
+                    #legend-container {
+                        margin-left: -210%;
+                        width: 110%
                     }
                 }
                 
@@ -231,42 +276,43 @@
 <style>
    
 </style>
-
+<div class="z-depth-3" style="height:500px;">
+    <iframe width="80%" style="margin-left: 10%" height="500" src="https://www.youtube.com/embed/5bMNJbW0AvI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
+</div>
     <div class="sponsor-info center-align z-depth-3">
         <div class="sponsor-info-container" style="margin:0;width:100%; margin-left: 0%">
         <h6>Interested in advertising your business?</h6>
-        <a href="{{ contact_url }}" class="btn-contact waves-effect">Click Here to Contact Us!</a>
-        <p style="margin-top: -1%">All Black-owned businesses can appear in the Village Black Pages for <b>free!</b> If you would like a larger spotlight on your Black-owned business, ETV offers half and full page ads in our Village Black Pages!</p>
-        <p style="margin-bottom:0"><b><u>Current Advertising Rates</u></b></p>
-        <p style="margin:0; font-size: 14px">*For Black-Owned Businesses with revenue less than $1M*</p>
-        <div class="row price-row center-align">
-            <div class="col s5 card center-align" style="margin-left:5%">
-                <p style="padding-top: 1vw">Quarterly</p>
-                <ul class="quarterly-list">
-                    <li>Half Page - $250</li>
-                    <li>Full Page - $500</li>
-                </ul>
-            </div>
-            <div class="col s1"></div>
-            <div class="col s5 card">
-                <p style="padding-top: 1vw">Annual</p>
-                <ul class="annual-list">
-                    <li>Half Page - $750</li>
-                    <li>Full Page - $1500</li>
-                </ul>
-            </div>
+        <a href="{{ contact_url }}" class="col s12 m6 btn-contact waves-effect">Click Here to Contact Us!</a>
+        <p style="margin-top: -1%">All Black-owned businesses can appear in the Village Black Pages for <b>FREE!</b></p>
+        <p style="margin-top: -0; color: white;">If you would like a larger spotlight on your Black-owned business, ETV offers half and full page ads in our Village Black Pages!</p>
+        <p style="margin-bottom:0"><b><u>Advertising Rates</u></b></p>
+        <p style="margin:0;">*For Black-Owned Businesses with revenue less than $1M*</p>
+  
+            <div class="price-row center-align">
+                <div class="card row center-align">
+                    <div class="col s6">
+                    <p style="padding-top: 1vw; font-size:24px">Quarterly</p>
+                    <ul class="quarterly-list">
+                        <li>Half Page - $250</li>
+                        <li>Full Page - $500</li>
+                    </ul>
+                    </div>
+                    <div class="col s6">
+                        <p style="padding-top: 1vw; font-size: 24px">Annual</p>
+                        <ul class="annual-list">
+                            <li>Half Page - $750</li>
+                            <li>Full Page - $1500</li>
+                        </ul>
+                    </div>
+                </div>
         </div>
         
     </div>
     
     </div>
-    <ul>
-    <li class="divider" style="margin-top:0px; margin-bottom: 0px; width:80%; margin-left: 10%"></li>
-    </ul>
-    <div class="container" style="height:8%">
-        <iframe style="max-height:100%" width="100%" height="565" src="https://www.youtube.com/embed/5bMNJbW0AvI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        
-    </div>
+    
+    
         
     <style>
 
@@ -294,11 +340,12 @@
             transition: none;
             border-radius: 0px;
             line-height: 20px;
-            width: 90%;
+            width: 50%;
             height: 47px;
             padding: 20px;
             padding-top: 15px;
-            margin-bottom: 20px;
+            margin-bottom: 50px;
+            margin-top: 40px
 }
 .btn-nominate:after {
   content: '';
@@ -332,12 +379,69 @@
         .price-row .card {
             background-color:rgb(40, 40, 40);
          
-            padding: 2vw;
+            padding: 20px;
         }
         .card p {
             margin:0;
             text-transform: uppercase;
             text-decoration: underline;
+        }
+        @media only screen and (max-width: 600px) {
+            .price-row .card {
+        }
+        .btn-contact {
+            width: 100%;
+        }
+        .sponsor-info h6 {
+            font-size: 52px
+        }
+        }
+        @media only screen and (min-width: 601px) {
+            .price-row .card {
+            width: 60%; margin-left: 20%
+        }
+            .btn-contact {
+                width: 55%;
+                font-size: 18px
+            }
+            .quarterly-list li {
+            color: white;
+            font-size: 18px;
+            font-weight: 200;
+        }
+        .sponsor-info h6 {
+            font-size: 62px
+        }
+        .annual-list li {
+            color: white;
+            font-size: 18px;
+            font-weight: 200;
+        }
+        .sponsor-info p {
+            font-size: 22px
+        }
+        }
+        @media only screen and (min-width: 993px) {
+            .price-row .card {
+            width: 50%; margin-left: 25%
+        }
+            .btn-contact {
+                width: 45%;
+                font-size: 22px
+            }
+            .quarterly-list li {
+            color: white;
+            font-size: 22px;
+            font-weight: 200;
+        }
+        .annual-list li {
+            color: white;
+            font-size: 22px;
+            font-weight: 200;
+        }
+        .sponsor-info p {
+            font-size: 22px
+        }
         }
     </style>
 </div>
@@ -852,14 +956,15 @@
       color: rgb(157, 59, 59);
   }
  .map-container {
-     padding:0
+     padding:0;
+     padding-bottom: 60px
  }
  #map {
      width: 100%
  }
  @media only screen and (max-width: 500px) {
     .jvectormap-container {
-     max-height: 350px
+     max-height: 400px
  }
 
  .jvectormap-container svg {
@@ -884,9 +989,6 @@
       height: 400px;
   }
  
-  #legend-container{
-    margin-right: 0%
-  }
   .jvectormap-marker {
     width: 40px;
     transform: translateX(479px) translateY(480px);
@@ -902,10 +1004,6 @@
       width: 100%;
       height: 400px;
   }
-  #legend-container{
-    margin-right: 0%;
-    margin-top: 5%
-  }
   
 }
 @media only screen and (min-width: 992px) {
@@ -916,10 +1014,6 @@
  .jvectormap-container svg {
       width: 100%;
       height: 600px;
-  }
-  #legend-container{
-    margin-right: 0%;
-    margin-top: 0%
   }
 }
 

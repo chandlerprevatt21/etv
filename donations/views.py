@@ -22,7 +22,7 @@ def donate(request):
             user.donor = True
             user.save()
         obj.save()
-        sweetify.success(request, 'Thank You For Supporting Empower The Village!', button='OK', timer="3000")
+        sweetify.success(request, 'Thank You For Supporting Empower The Village!', text="You're now eligible to play Power Bingo and participate in the Every Friday Challenge!", button='OK', showCloseButton=True,)
         return redirect('/donation/')
     context = {
         'title': 'Donate | ETV',

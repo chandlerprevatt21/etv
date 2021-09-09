@@ -20,10 +20,13 @@
     <div class="vbp-text col s12 m7">
         <p style="margin-bottom:0; padding-bottom:10px"><b>ETV’s Black Friday Challenges</b> enable <i>recirculation</i> of dollars in the Black community and <i>increased</i> financial investment in the community by all consumers!</p> 
                         
-        <p style="margin-bottom:0; margin-top:10px;">Corporations, organizations, and other groups can sponsor a challenge with customizable prizes! <a href="{{ contact_url }}">Click Here To Sponsor a Group Challenge!</a></p>
+        <p style="margin-bottom:0; margin-top:10px;">Corporations, organizations, and other groups can sponsor a challenge with customizable prizes!</p>
+        <p><a href="{{ contact_url }}">Click Here To Sponsor a Group Challenge!</a></p>
                         
         <p style="margin-bottom:0; margin-top:10px"><b>The Real Winners are the businesses supported and communities that prosper as a result of the BF Challenge!</b></p>
-        
+        <div class="center-align" style="padding-top: 10px; padding-bottom: 5px">
+            <a class="btn btn-large" href="{{ register_url }}" style="margin-top: 10px; background-color:rgb(28, 29, 28)">Create an Account to Get Started!</a>
+        </div>
         <ul class="collapsible z-depth-0" style="border:none;">
         <li>
             <div class="collapsible-header" style="padding:0.75rem">
@@ -317,7 +320,12 @@
         .ways-to-play-title {
             font-size: 60px;
         }
-        table
+        .ways-to-play-tabs li a{
+            font-size: 22px !important
+        }
+        .ways-to-play-tabs {
+            max-width: 100%
+        }
     }
 </style>
 {% endblock %}

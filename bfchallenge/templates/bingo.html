@@ -15,7 +15,7 @@
         </div>
         <div class="directions">
             <p><b style="font-size: 24px;">Welcome to Empower The Village Power Bingo!</b></p>
-            <p style="margin-bottom:0">Use the interactive bingo board below to complete challenges and help ETV Make Every Friday, Black Friday! When you click on a box on your bingo board, you will be prompted to enter your proof of completion for the corresponding challenge. When you press submit, your participation will be recorded automatically!</p>
+            <p style="margin-bottom:0">Use the interactive Power Bingo Board below to complete challenges and help ETV Make Every Friday, Black Friday! When you click on a box on your bingo board, you will be prompted to enter your proof of completion for the corresponding challenge. When you press submit, your participation will be recorded automatically!</p>
                 <br>
             <p style="margin:0">Power Bingo Challenge winners will be notified via email at the end of the challenge period.</p>
             {% if request.user.is_authenticated %}
@@ -24,7 +24,7 @@
             {% endif %}
             <p><b style="font-size: 24px">Ways to Win</b></p>
             <div class="row">
-                        <div class="col s6">
+                        <div class="col s12 m6">
                             <ul class="bf-sublist">
                                 <li><b><u style="font-size: 20px">Team Play</u></b></li>
                                 <li style="font-size: 14px; color: rgb(169, 29, 29); padding-bottom: 15px">Register for Sponsored Challenges Only</li>
@@ -33,13 +33,13 @@
                                 <li>The first team to have four teammates win in any direction wins 2nd place!</li>
                             </ul>
                         </div>
-                        <div class="col s6">
+                        <div class="col s12 m6">
                             <ul class="bf-sublist">
                                 <li><b><u style="font-size: 20px">Individual Play</u></b></li>
                                 <li style="font-size: 14px; color: rgb(169, 29, 29);padding-bottom: 15px">Suggested Registration Donation - $25 or more</li>
                                 <li>Be the first person to get Bingo in two directions</li>
                                     <li>(12 bingo combinations!)</li>
-                                <a class="btn btn-large waves-effect waves-light donate-btn-bingo" href="{{ donate_url }}" id="donate-btn-bingo">DONATE</a>
+                                <a class="btn btn-large waves-effect waves-light donate-btn-bingo" href="{{ donate_url }}" id="donate-btn-bingo">DONATE TO PLAY</a>
                             </ul>
                         </div>
                         
