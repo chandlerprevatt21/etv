@@ -29,7 +29,7 @@ class MyUserManager(BaseUserManager):
         )
         user.set_password(password)
         user.staff = staff
-        user.is_active = is_active
+        user.is_active = user.active
         user.admin = admin
         user.save(using=self._db)
         return user

@@ -41,6 +41,18 @@ MAILCHIMP_API_KEY = env('MAILCHIMP_API_KEY')
 AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
 
+EMAIL_HOST = env('EMAIL_HOST')
+EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+DEFAULT_FROM_EMAIL = 'Empower The Village <admin@empowerthevillage.org>'
+ADMINS = (
+    ('Empower The Village', 'admin@empowerthevillage.org'),
+)
+
+MANAGERS = ADMINS
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
