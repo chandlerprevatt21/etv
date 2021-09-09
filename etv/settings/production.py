@@ -10,25 +10,52 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
+import environ
 import psycopg2
 from pathlib import Path
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
+
+env = environ.Env(
+    DEBUG=(bool, False)
+)
 DATABASES = { 'default': dj_database_url.config() }
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = env('SECRET_KEY')
 
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = env('SOCIAL_AUTH_GOOGLE_OAUTH2_KEY')
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = env('SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET')
+SOCIAL_AUTH_FACEBOOK_KEY = env('SOCIAL_AUTH_FACEBOOK_KEY')
+SOCIAL_AUTH_FACEBOOK_SECRET = env('SOCIAL_AUTH_FACEBOOK_SECRET')
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
+MAILCHIMP_API_KEY = env('MAILCHIMP_API_KEY')
+
+AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
+
+EMAIL_HOST = env('EMAIL_HOST')
+EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+DEFAULT_FROM_EMAIL = 'Empower The Village <admin@empowerthevillage.org>'
+ADMINS = (
+    ('Empower The Village', 'admin@empowerthevillage.org'),
+)
+
+MANAGERS = ADMINS
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 
 ALLOWED_HOSTS = ['etv.villageblackpages.org', 'www.etv.villageblackpages.org', 'etvlive.herokuapp.com']
@@ -44,7 +71,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'accounts',
-    'analytical',
     'bfchallenge',
     'content',
     'donations',
@@ -126,10 +152,10 @@ WSGI_APPLICATION = 'etv.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2', 
-        'NAME': 'd6rke66bbqm8qe',                     
-        'USER': 'sshwgjxdhxyvhg',
-        'PASSWORD': 'd11fffd735e4783b24a8dc7e7e4e2ba76e883954ef24653bd2e62705bb1ce8ab',
-        'HOST': 'ec2-18-209-153-180.compute-1.amazonaws.com',
+        'NAME': 'd1ttpvr346c994',                     
+        'USER': 'pwzmkrllbfxbqg',
+        'PASSWORD': '48ad1968c36fe63810a897061cb66a4d3976d01a167292a299def43feaf57b05',
+        'HOST': 'ec2-18-215-44-132.compute-1.amazonaws.com',
         'PORT': '5432',                     
     }
 }
@@ -191,7 +217,6 @@ MEDIA_URL = '//%s.s3.amazonaws.com/media/' % AWS_STORAGE_BUCKET_NAME
 MEDIA_ROOT = MEDIA_URL
 STATIC_URL = S3_URL + 'static/'
 ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'
-
 import datetime
 
 two_months = datetime.timedelta(days=61)
@@ -205,6 +230,7 @@ AWS_HEADERS = {
 }
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-SESSION_COOKIE_SECURE = False
-CSRF_COOKIE_SECURE = False
-SECURE_SSL_REDIRECT = False
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT = True
