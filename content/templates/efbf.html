@@ -112,12 +112,32 @@
         <p><b>Village Empowerment Network</b>™ provides the business expertise Black entrepreneurs need to thrive. Black business owners can receive one-on-one strategy, planning, and technical counseling from experts to grow revenue, access funding, manage employees and expenses, protect assets, and expand their network. ETV will offer an online, on-demand training platform designed to ensure entrepreneurs can get the information they need at their own pace.</p>
     </div>
 </div>
+<script>
+    $(document).ready(function(){
+        Swal.fire({
+            html: '<h3 class="join-tv-title">Join The Village!</h3><p>Create a free account today!</p><a href="{{ register_url }}" class="btn green darken-2" style="margin-bottom: 20px">REGISTER</a>',
+            showCancelButton: false,
+            showCloseButton: true,
+            showConfirmButton: false,
+        })     
+    })
+</script>
 <style>
     @media only screen and (max-width:992px){
         .coming-soon-group {
             margin-bottom: -40%
         }
     }
-    
+    .join-tv-title {
+        font-family: oskar-inline;
+
+    }
+    .select-wrapper {
+        display: none !important;
+    }
+    .swal2-close:focus{
+      box-shadow: none !important;
+      background-color: transparent !important;
+  }
 </style>
 {% endblock%}

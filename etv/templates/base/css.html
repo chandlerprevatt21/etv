@@ -115,7 +115,7 @@
     overflow: hidden;
     border-radius:0;
     transform:scale(1,0.9);
-    background-color:rgb(75, 138, 88)
+    background-color:#17c158
   }
   .donate-btn-sidenav:after {
     content: '';
@@ -332,10 +332,15 @@
         }
     }
     @media only screen and (max-width: 600px) {
-        #donate-btn-navbar {
-            display: none;
-        }
+        .donate-btn-navbar {
+            width: 80px !important;
+            margin-right: 0;
+            padding: 0;
+            font-size: 14px !important;
+            height: 35px !important;
+            padding-top: 10px
     }
+  }
     #sidenav-menu-trigger {
         color: rgb(75, 75, 75); 
         margin-left: 20px; 

@@ -94,15 +94,15 @@
                 </div>
             </div>
             <div class="donate-buttons center-align col s12 m8 offset-m2">
-                <a class="btn waves-effect valign-wrapper cc-button">
+                <a class="btn waves-effect valign-wrapper cc-button disabled">
                     <i class="fas fa-credit-card"></i> Credit Card Donation
                 </a>
                 <br>
-                <a class="btn waves-effect pp-button ">
+                <a class="btn waves-effect pp-button disabled">
                     <i class="fab fa-cc-paypal"></i> Donate with Paypal
                 </a>
                 <br>
-                <a class="btn waves-effect venmo-button valign-wrapper" target="_blank" href="https://venmo.com/?txn=pay&audience=public&recipients=@Empower-TheVillage&amount=50&note=Thank%20you%20for%20supporting%20Empower%20The%20Village!">
+                <a class="btn waves-effect venmo-button valign-wrapper disabled" target="_blank" href="https://venmo.com/?txn=pay&audience=public&recipients=@Empower-TheVillage&amount=50&note=Thank%20you%20for%20supporting%20Empower%20The%20Village!">
                     <img src="{% static 'img/venmo-icon.svg' %}" style="width: 30px;margin-bottom:-8px; padding-top:7px"> Donate with Venmo
                 </a>
             </div>
@@ -116,6 +116,16 @@
         </div>
 </div>
 <script>
+    $('input[name="recurring"').change(function () {
+       
+        
+        if ($('input[name="recurring"]').val() != '' && $('input[name="donation_level"]').val() != '' && $('#id_donor_email').val() != '' && $('#id_last_name').val() != '' && $('#id_first_name').val() != '') {
+            $('.cc-button').removeClass('disabled');
+            $('.pp-button').removeClass('disabled');
+            $('.venmo-button').removeClass('disabled');
+        }
+       
+    });
     $(".cc-button").click(function(e){
         $('#donation_form').submit();
         window.open('https://www.paypal.com/donate?hosted_button_id=YSB29RNTB3CKG')
@@ -158,14 +168,17 @@
     });
 </script>
 <style>
+    .select-wrapper {
+        display: none !important;
+    }
     .hidden {
         display: none;
     }
     
     #page {
         background-image: url("https://empowerthevillage.s3.amazonaws.com/static/img/VBP+collage.png");
-      background-size: 100%;
-      background-repeat: repeat;
+        background-size: 100%;
+        background-repeat: repeat;
     }
     h7 {
         font-size: 18px
