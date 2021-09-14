@@ -24,12 +24,13 @@ from accounts.admin import admin_site
 from .views import home_page
 from accounts.views import LoginView, RegisterView, GuestRegisterView
 from vbp.views import home
-from content.views import efbf, contact, mailchimp_signup
+from content.views import efbf, efbf_subscribed, contact, mailchimp_signup
 
 urlpatterns = [
     path('contact/', contact, name='contact' ),
     path('myadmin/etvadmin209423/', admin_site.urls, name='myadmin'),
     path('', efbf, name='home'),
+    path('make-every-friday-black-friday/', efbf_subscribed, name='home-subscribed'),
     path('accounts/', RedirectView.as_view(url='/account')),
     path('account/', include(("accounts.urls", "accounts"), namespace='account')),
     path('accounts/', include("accounts.passwords.urls")),
