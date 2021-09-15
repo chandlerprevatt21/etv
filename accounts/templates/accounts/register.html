@@ -40,7 +40,6 @@
           <a class="btn google-btn" href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.path }}" style="margin-bottom:15px;" id="google-btn">
             <img src="{% static 'img/google-icon.png' %}" height=18px style="margin-bottom:-6px">&nbsp Continue with Google
           </a>
-          <a class="btn facebook-btn" href="{% url 'social:begin' 'facebook' %}?next={{ request.path }}" id="facebook-btn"><i class="fab fa-facebook" style="font-size:18; padding:0"></i>&nbsp Continue with Facebook</a>
           <div class="separator" style="margin-top:25px">- OR -</div>
     <p class='' style="color:grey">Already a member of the village?</p>
     <a href='{% url "login" %}' class="btn login-btn2">Login</a>
