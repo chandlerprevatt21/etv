@@ -94,13 +94,9 @@
             </div>
             <div class="row valign-wrapper">
                 <div id="map" class="col s12 m11" style="padding-right:0">
-                    <div id="legend-container-mobile">
-                        <img src="{% static 'img/legendStar2.png' %}" class="legendStar2">
-                        <img src="{% static 'img/legendStar3.png' %}" class="legendStar3">
-                        <img src="{% static 'img/legendStar.png' %}" class="legendStar"> 
-                    </div>
-                    <div class="valign-wrapper published-key" ><img src="{% static 'img/mapstard.png' %}" class="legendStar4"><p><b> &nbsp = Published</b></p></div>
+                    
                 </div>
+                
                 <div class="col s1" style="padding:0">
                     <div id="legend-container">
                         <img src="{% static 'img/legendStar2.png' %}" class="legendStar2">
@@ -113,6 +109,12 @@
                 </div>
                 
             </div>
+            <div id="legend-container-mobile">
+                <img src="{% static 'img/legendStar2.png' %}" class="legendStar2">
+                <img src="{% static 'img/legendStar3.png' %}" class="legendStar3">
+                <img src="{% static 'img/legendStar.png' %}" class="legendStar"> 
+            </div>
+            <div class="valign-wrapper published-key" ><img src="{% static 'img/mapstard.png' %}" class="legendStar4"><p><b> &nbsp = Published</b></p></div>
             <div class="valign-wrapper published-key-large" ><img src="{% static 'img/mapstard.png' %}" class="legendStar4"><p><b> &nbsp = Published</b></p></div>
             
             
@@ -128,7 +130,28 @@
                 .published-key{
                     margin-left: 70%; 
                 }
+                .legendStar:hover {
+                    cursor: pointer
+                }
+                .legendStar2:hover {
+                    cursor: pointer
+                }
+                .legendStar3:hover {
+                    cursor: pointer
+                }
+                .swal-nominate {
+                    font-size: 18px;
+                    margin:0;
+                    padding: 10px 5px;
+                    height: auto
+                }
+                .swal2-popup .select-wrapper {
+                    display: none;
+                }
                 @media only screen and (max-width:500px){
+                    .swal-nominate {
+                        font-size: 16px;
+                    }
                     #legend-container .legendStar {
                     display: none
                     }
@@ -139,9 +162,9 @@
                     display: none;
                 }
                 #legend-container-mobile {
-                    margin-left: 57%;
-                    margin-top: 260px;
-                    margin-bottom: -310px;
+                    margin-left: 50%;
+                    margin-top: -100px;
+                    margin-bottom: 0px;
                 }
                 #legend-container-mobile .legendStar {
                     width: 17%;
@@ -157,9 +180,9 @@
                     width: 15%
                 }
                 .published-key{
-                    margin-left: 50%;
-                    margin-top: 290px;
-                    margin-bottom: -330px
+                    margin-left: 45%;
+                    margin-top: -10px;
+                    margin-bottom: 0
                 }
                 .published-key-large {
                     display:none
@@ -270,7 +293,49 @@
 </div>
     <div class="z-depth-4 row vbp-booklet-container" style="margin:0; background: white" id="vbp-row">
         <div class="col s12" id="book">
+            <div class="center-align preloader" style="padding: 30px; display:none" >
+                <div class="preloader-wrapper big active">
+                    <div class="spinner-layer spinner-blue">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div><div class="gap-patch">
+                        <div class="circle"></div>
+                    </div><div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                    </div>
             
+                    <div class="spinner-layer spinner-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div><div class="gap-patch">
+                        <div class="circle"></div>
+                    </div><div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                    </div>
+            
+                    <div class="spinner-layer spinner-yellow">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div><div class="gap-patch">
+                        <div class="circle"></div>
+                    </div><div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                    </div>
+            
+                    <div class="spinner-layer spinner-green">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div><div class="gap-patch">
+                        <div class="circle"></div>
+                    </div><div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -356,12 +421,7 @@
 	-moz-transition: all 0.3s;
 	transition: all 0.3s;
 }
-.btn-nominate:hover {
-	box-shadow: 0 4px #3f912f;
-	top: 2px;
-  background: #29ac38;
-  filter: brightness(1)
-}
+ 
         .sponsor-info {
             background-color: rgb(23, 23, 23);
             padding: 30px
@@ -536,7 +596,7 @@
 
 <style>
     .btn-nominate:focus {
-        background-color: rgb(182, 95, 95) !important
+        background-color: rgb(196, 66, 66) !important
     }
     @media only screen and (min-width: 601px){
         #nomination-form .input-field input{
@@ -1142,6 +1202,7 @@
       font-size:16px;
       padding-bottom:0px
   }
+  
   {% for vbp_book in covers_qs %}
   #cover-page[value~='US-{{ vbp_book.state }}']{
       background-image: url('https://empowerthevillage.s3.amazonaws.com/media/{{ vbp_book.state }}-cover.png');
@@ -1278,7 +1339,7 @@
             if (phaseOne.indexOf(code) != -1) {
                 Swal.fire({
                     title:'Village Black Pages: '+regionName+' Coming Soon!',
-                    html: '<a class="btn btn-nominate waves-effect" style="font-size:18px" href="{{ nomination_url }}">NOMINATE YOUR FAVORITE BLACK-OWNED BUSINESS TODAY!<a></button>',
+                    html: '<a class="btn btn-nominate swal-nominate waves-effect" href="{{ nomination_url }}">NOMINATE YOUR FAVORITE BLACK-OWNED BUSINESS TODAY!<a>',
                     showComfirmButton: false,
                     showCancelButton: false,
                     showCloseButton: false,
@@ -1293,8 +1354,14 @@
                     data: data,
                     state: state,
                     url: '/village-black-pages/get-state',
+                    beforeSend: function(){
+                        $('.preloader').show();
+                        $('#flipbook-mobile-container').hide();
+                        $('#flipbook-container').hide();
+                    },
                     method: "GET",
                     success: function(data) {
+                        $('.preloader').hide();
                         $('#book').html(data);
                         $('#mobile-book').html(data);
                         $('#cover-page').attr('value', state);
@@ -1322,8 +1389,14 @@
                     data: data,
                     state: state,
                     url: '/village-black-pages/get-state',
+                    beforeSend: function(){
+                        $('.preloader').show();
+                        $('#flipbook-mobile-container').hide();
+                        $('#flipbook-container').hide();
+                    },
                     method: "GET",
                     success: function(data) {
+                        $('.preloader').hide();
                         $('#book').html(data);
                         $('#mobile-book').html(data);
                         $('#cover-page').attr('value', 'US-NJ');
@@ -1348,8 +1421,14 @@
                     data: data,
                     state: state,
                     url: '/village-black-pages/get-state',
+                    beforeSend: function(){
+                        $('.preloader').show();
+                        $('#flipbook-mobile-container').hide();
+                        $('#flipbook-container').hide();
+                    },
                     method: "GET",
                     success: function(data) {
+                        $('.preloader').hide();
                         $('#book').html(data);
                         $('#mobile-book').html(data);
                         $('#cover-page').attr('value', 'US-CT');
@@ -1373,8 +1452,14 @@
                     data: data,
                     state: state,
                     url: '/village-black-pages/get-state',
+                    beforeSend: function(){
+                        $('.preloader').show();
+                        $('#flipbook-mobile-container').hide();
+                        $('#flipbook-container').hide();
+                    },
                     method: "GET",
                     success: function(data) {
+                        $('.preloader').hide();
                         $('#book').html(data);
                         $('#mobile-book').html(data);
                         $('#cover-page').attr('value', 'US-NY');
@@ -1398,8 +1483,14 @@
                     data: data,
                     state: state,
                     url: '/village-black-pages/get-state',
+                    beforeSend: function(){
+                        $('.preloader').show();
+                        $('#flipbook-mobile-container').hide();
+                        $('#flipbook-container').hide();
+                    },
                     method: "GET",
                     success: function(data) {
+                        $('.preloader').hide();
                         $('#book').html(data);
                         $('#mobile-book').html(data);
                         $('#cover-page').attr('value', 'US-OH');
@@ -1423,8 +1514,14 @@
                     data: data,
                     state: state,
                     url: '/village-black-pages/get-state',
+                    beforeSend: function(){
+                        $('.preloader').show();
+                        $('#flipbook-mobile-container').hide();
+                        $('#flipbook-container').hide();
+                    },
                     method: "GET",
                     success: function(data) {
+                        $('.preloader').hide();
                         $('#book').html(data);
                         $('#mobile-book').html(data);
                         $('#cover-page').attr('value', 'US-PA');
@@ -1448,8 +1545,14 @@
                     data: data,
                     state: state,
                     url: '/village-black-pages/get-state',
+                    beforeSend: function(){
+                        $('.preloader').show();
+                        $('#flipbook-mobile-container').hide();
+                        $('#flipbook-container').hide();
+                    },
                     method: "GET",
                     success: function(data) {
+                        $('.preloader').hide();
                         $('#book').html(data);
                         $('#mobile-book').html(data);
                         $('#cover-page').attr('value', 'US-VA');
@@ -1473,8 +1576,14 @@
                     data: data,
                     state: state,
                     url: '/village-black-pages/get-state',
+                    beforeSend: function(){
+                        $('.preloader').show();
+                        $('#flipbook-mobile-container').hide();
+                        $('#flipbook-container').hide();
+                    },
                     method: "GET",
                     success: function(data) {
+                        $('.preloader').hide();
                         $('#book').html(data);
                         $('#mobile-book').html(data);
                         $('#cover-page').attr('value', 'US-MA');
@@ -1504,8 +1613,14 @@
                     data: data,
                     state: state,
                     url: '/village-black-pages/get-state',
+                    beforeSend: function(){
+                        $('.preloader').show();
+                        $('#flipbook-mobile-container').hide();
+                        $('#flipbook-container').hide();
+                    },
                     method: "GET",
                     success: function(data) {
+                        $('.preloader').hide();
                         $('#book').html(data);
                         $('#mobile-book').html(data);
                         $('#cover-page').attr('value', 'US-DC');
@@ -1530,8 +1645,14 @@
                     data: data,
                     state: state,
                     url: '/village-black-pages/get-state',
+                    beforeSend: function(){
+                        $('.preloader').show();
+                        $('#flipbook-mobile-container').hide();
+                        $('#flipbook-container').hide();
+                    },
                     method: "GET",
                     success: function(data) {
+                        $('.preloader').hide();
                         $('#book').html(data);
                         $('#mobile-book').html(data);
                         $('#cover-page').attr('value', 'US-DE');
@@ -1555,8 +1676,14 @@
                     data: data,
                     state: state,
                     url: '/village-black-pages/get-state',
+                    beforeSend: function(){
+                        $('.preloader').show();
+                        $('#flipbook-mobile-container').hide();
+                        $('#flipbook-container').hide();
+                    },
                     method: "GET",
                     success: function(data) {
+                        $('.preloader').hide();
                         $('#book').html(data);
                         $('#mobile-book').html(data);
                         $('#cover-page').attr('value', 'US-MD');
@@ -1587,8 +1714,14 @@
                     data: data,
                     state: state,
                     url: '/village-black-pages/get-state',
+                    beforeSend: function(){
+                        $('.preloader').show();
+                        $('#flipbook-mobile-container').hide();
+                        $('#flipbook-container').hide();
+                    },
                     method: "GET",
                     success: function(data) {
+                        $('.preloader').hide();
                         $('#book').html(data);
                         $('#mobile-book').html(data);
                         $('#cover-page').attr('value', carouselState);
