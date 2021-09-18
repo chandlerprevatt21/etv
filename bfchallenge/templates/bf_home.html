@@ -25,7 +25,7 @@
                         
         <p style="margin-bottom:0; margin-top:10px"><b>The Real Winners are the businesses supported and communities that prosper as a result of the BF Challenge!</b></p>
         <div class="center-align" style="padding-top: 10px; padding-bottom: 5px">
-            <a class="btn btn-large" href="{{ register_url }}" style="margin-top: 10px; background-color:rgb(28, 29, 28)">Create an Account to Get Started!</a>
+            <a class="btn btn-large create-account-btn" href="{{ register_url }}" style="margin-top: 10px; background-color:rgb(28, 29, 28);">Create an Account to Get Started!</a>
         </div>
         <ul class="collapsible z-depth-0" style="border:none;">
         <li>
@@ -191,6 +191,14 @@
     </div>
 </div>
     <style>
+        @media only screen and (max-width: 420px){
+            .create-account-btn {
+                padding-left: 10px;
+                padding-right: 10px;
+                font-size: 14px
+            }
+        }
+        
         .background {
             height: 350px
             }
