@@ -2423,8 +2423,14 @@
             state: state,
             data: data,
             url: url,
-            method: 'GET',
+            beforeSend: function(){
+                $('.preloader').show();
+                $('#flipbook-mobile-container').hide();
+                $('#flipbook-container').hide();
+            },
+            method: "GET",
             success: function(data) {
+                $('.preloader').hide();
                 $('#book').html(data);
                 $('#mobile-book').html(data);
                 $('#cover-page').attr('value', state);
@@ -3641,8 +3647,14 @@
                 state: state,
                 data: data,
                 url: url,
-                method: 'GET',
-                success: function(data) {
+                beforeSend: function(){
+                        $('.preloader').show();
+                        $('#flipbook-mobile-container').hide();
+                        $('#flipbook-container').hide();
+                    },
+                    method: "GET",
+                    success: function(data) {
+                        $('.preloader').hide();
                     $('#book').html(data);
                     $('#mobile-book').html(data);
                     $('#cover-page').attr('value', state);
