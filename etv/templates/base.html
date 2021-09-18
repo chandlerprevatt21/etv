@@ -77,7 +77,7 @@
                     <div class="navbar-slash"> | </div>
                     <a class="main-nav-link valign-wrapper ul-effect {% if request.path == register_url %}active{% endif %}" href="{{ register_url }}" style="">Register</a>
                     <div class="navbar-slash"> | </div>
-                    <a class="main-nav-link valign-wrapper ul-effect {% if request.path == register_url %}active{% endif %}" href="{{ register_url }}" style="">Join The Village</a>
+                    <a class="main-nav-link valign-wrapper ul-effect" style="cursor: pointer" id="join-village-topnav">Join The Village</a>
                     {% endif %}
                   
                   <a class="btn btn-large waves-effect waves-light donate-btn-navbar" href="{{ donate_url }}" id="donate-btn-navbar">DONATE</a>
@@ -258,6 +258,47 @@
         }) 
       
       </script>
-      
+      <script>
+        $('#join-village-topnav').click(function(){
+            Swal.fire({
+                html: '<h3 class="join-tv-title">Join The Village!</h3><p>Enter your email address to join the ETV mailing list.</p><form method="POST" action="/mailchimp-signup/" id="mailchimp-nav-form">{% csrf_token %}<div class="input-field"><input required id="mailchimp-email-nav" name="email" type="email"><label for="mailchimp-email-nav">Email</label></div><button type="submit" class="btn light-green darken-3 waves-effect" id="efbf-mailchimp">Add Me To The List!</button></form>',
+                showCancelButton: false,
+                showCloseButton: true,
+                showConfirmButton: false,
+            })     
+        })
+        $('#mailchimp-nav-form').submit(event, function(){
+            event.preventDefault();
+            var email = $('#mailchimp-email-nav').val()
+            var token = '{{csrf_token}}'
+            var form = $('#mailchimp-nav-form')
+            $.ajax({
+                data: form.serialize(),
+                dataType: 'json',
+                url: '/mailchimp-signup/',
+                method: "POST",
+                success: function(data) {
+                    Swal.fire({
+                    title:'Welcome to the Village!',
+                    html: '',
+                    showComfirmButton: false,
+                    showCancelButton: false,
+                    showCloseButton: false,
+                    text:"You've been added to our mailing list",
+                    })
+                },
+                error: function(){
+                    Swal.fire({
+                    title:"You're on the list!",
+                    html: '',
+                    showComfirmButton: false,
+                    showCancelButton: false,
+                    showCloseButton: false,
+                    text:"You're on our mailing list, thank you for keeping up with ETV!",
+                    })
+                }
+            })
+        }) 
+    </script>
     {% endblock %}
 </html>
