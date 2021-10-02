@@ -6,6 +6,9 @@
 {% url 'bfchallenge:nomination' as nomination_url %}
 
 <div id="flipbook-fullsize-container">
+    <div class="row">
+    {{ filtered_qs }}
+    </div>
     <div class="" id="vbp-flipbook">
         <div class="row offset-s1" style="padding: 10%; padding-top:5%;padding-bottom:0">
             <form id="filter-form">
@@ -2441,6 +2444,9 @@
                 $('#vbp-flipbook-mobile').attr('value', state);
                 $('#filter-form-state').attr('value', state);
                 $('#filter-form-state-mobile').attr('value', state);
+            },
+            error: function(error) {
+                Swal.fire('Coming Soon!', 'There are no Black-owned businesses that match your search combination. Try a broader search!', 'warning')
             }
         })
         $([document.documentElement, document.body]).animate({
@@ -2559,6 +2565,11 @@
 </script>
 {% endblock %}
 <style>
+    input {
+        font-family: poppins !important;
+        font-weight: 200 !important;
+        letter-spacing: 1px !important;
+    }
     @media only screen and (min-width:0px) {
         .table-of-contents-item {
             font-size:6px; 
@@ -3657,15 +3668,18 @@
                     method: "GET",
                     success: function(data) {
                         $('.preloader').hide();
-                    $('#book').html(data);
-                    $('#mobile-book').html(data);
-                    $('#cover-page').attr('value', state);
-                    $('#cover-page-mobile').attr('value', state);
-                    $('#vbp-flipbook').attr('value', state);
-                    $('#vbp-flipbook-mobile').attr('value', state);
-                    $('#filter-form-state').attr('value', state);
-                    $('#filter-form-state-mobile').attr('value', state);
-                }
+                        $('#book').html(data);
+                        $('#mobile-book').html(data);
+                        $('#cover-page').attr('value', state);
+                        $('#cover-page-mobile').attr('value', state);
+                        $('#vbp-flipbook').attr('value', state);
+                        $('#vbp-flipbook-mobile').attr('value', state);
+                        $('#filter-form-state').attr('value', state);
+                        $('#filter-form-state-mobile').attr('value', state);
+                    },
+                    error: function(error) {
+                        Swal.fire('Coming Soon!', 'There are no Black-owned businesses that match your search combination. Try a broader search!', 'warning')
+                    }
             })
             $([document.documentElement, document.body]).animate({
             scrollTop: $("#book").offset().top
