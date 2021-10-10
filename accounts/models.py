@@ -14,6 +14,15 @@ from django.core.mail import send_mail
 from django.template.loader import get_template
 from django.urls import reverse
 from django.utils import timezone
+from django.core.mail import send_mail
+from mailchimp_marketing import Client
+from mailchimp_marketing.api_client import ApiClientError
+
+mailchimp = Client()
+mailchimp.set_config({
+    "api_key": settings.MAILCHIMP_API_KEY,
+    "server": "us7"
+})
 
 CHALLENGE_CHOICES = (
     ('bingo', 'Power Bingo'),
@@ -42,6 +51,7 @@ class MyUserManager(BaseUserManager):
         user.staff = True
         user.admin = True
         user.save(using=self._db)
+        
         return user
 
     def create_superuser(self, username, password, email):

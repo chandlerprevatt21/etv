@@ -6,11 +6,11 @@
 
 <div class="parallax-container z-depth-3 box-shadow valign-wrapper">
     
-    <div class="container z-depth-4 center-align parallax-banner" style="background:rgba(255, 255, 255, 0.906); border: rgb(43, 43, 43) 3px solid; width: 70%; margin-top: 2%">
-        <img src='{% static "img/bf_challenge_logo.png" %}' style="width:90%; padding: 20px">
+    <div class="container z-depth-4 center-align parallax-banner" style="background:rgba(255, 255, 255, 0.906); border: rgb(43, 43, 43) 3px solid; width: 60%; margin-top: 2%">
+        <img src='{% static "img/bf_challenge_logo.png" %}' style="width:95%; padding: 10px">
     </div>
     <div class="parallax">
-        <img src='{% static "img/vbp_collage.png" %}' style="height:200%;">
+        <img src='{% static "img/bf-challenge-final.png" %}' style="height: 250%;">
     </div>
 
 </div>
@@ -104,34 +104,12 @@
     <p><b class="ways-to-play-title">Ways to Play</b></p>
 </div>
 <ul class="tabs tabs-fixed-width ways-to-play-tabs">
-    <li class="tab" width=25%><a id="bingo-mover" style="color:rgb(67, 160, 27); cursor: pointer; font-weight: 500">- POWER BINGO -</a></li>
-    <li class="tab" width=25%><a id="rss-mover" style="color:rgb(67, 160, 27); cursor: pointer; font-weight: 500">- READY, SET, SHOP! -</a></li>
-    <li class="tab" width=25%><a id="nomination-mover"style="color:rgb(67, 160, 27); cursor: pointer; font-weight: 500">- NOMINATION CHALLENGE -</a></li>
-    <li class="tab" width=25%><a id="stl-mover"style="color:rgb(67, 160, 27); cursor: pointer; font-weight: 500">- SPREAD THE LOVE CHALLENGE -</a></li>
+    <li class="tab" width=25%><a id="bingo-mover" style="color:rgb(67, 160, 27); cursor: pointer; font-weight: 500">- READY, SET, SHOP! -</a></li>
+    <li class="tab" width=25%><a id="rss-mover" style="color:rgb(67, 160, 27); cursor: pointer; font-weight: 500; margin-left: -20px">- NOMINATION CHALLENGE -</a></li>
+    <li class="tab" width=25%><a id="nomination-mover"style="color:rgb(67, 160, 27); cursor: pointer; font-weight: 500">- POWER BINGO -</a></li>
+    <!--
+    <li class="tab" width=25%><a id="stl-mover"style="color:rgb(67, 160, 27); cursor: pointer; font-weight: 500">- SPREAD THE LOVE CHALLENGE -</a></li>-->
 </ul>
-<div class="row background valign-wrapper" id="bingo-row" style="margin-bottom:0;padding:0; background-image: url('{% static 'img/bingo.jpg' %}'); background-repeat: repeat; background-size:75%">
-    <div class="col s10 offset-s1 m8 offset-m2 center-align instruction-box" style="padding: 20px;background-color: rgba(255, 255, 255, 0.884); border: solid 3px rgba(38, 38, 38, 0.927)">
-        <a href="{{ bingo_url }}" class="game-title" style="color: rgb(9, 106, 9)">ETV Power Bingo Challenge&nbsp;<span class="material-icons" style="font-size: 14px;">
-            open_in_new
-            </span></a>
-        <p style="margin:0; font-weight: 500;">Ways to Win</p>
-        <div class="row">
-            <div class="center-align" style="max-height: 200px; overflow:scroll">
-                <ul class="bf-sublist">
-                    <li><b><u>Team Play</u></b></li>
-                    <li>The first team to blackout the board by filling in every space wins!</li>
-                    <li><b>- OR -</b></li>
-                    <li>The first team to have four teammates win in any direction wins 2nd place!</li>
-                </ul>
-                <ul class="bf-sublist">
-                    <li><b><u>Individual Play</u></b></li>
-                    <li>Be the first person to get Bingo in two directions (12 bingo combinations!)</li>
-                    <li class="challenge-period-text">(30-day individual challenge period starts on the 15th of each month!)</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
 <div class="row background valign-wrapper" id="rss-row" style="margin-bottom:0;background-image: url('{% static 'img/bags_cropped.png' %}'); background-repeat: repeat; background-size:50%">
     <div class="col s10 offset-s1 m8 offset-m2 center-align instruction-box" style="padding: 20px;background-color: rgba(255, 255, 255, 0.884); border: solid 3px rgba(38, 38, 38, 0.927)">
         <a href="{{ readyss_url }}" style="color: rgb(194, 45, 22)">Ready, Set, Shop! Challenge&nbsp;<span class="material-icons" style="font-size: 14px;">
@@ -139,7 +117,7 @@
             </span></a>
         <p style="margin:0; font-weight: 500;">Ways to Win</p>
         <div class="row">
-            <div class="" style="max-height: 190px; overflow:scroll">
+            <div class="">
                 <ul class="bf-sublist" style="padding-left: 5%; padding-right: 5%">
                     <li><b><u>Show Me The Money - Team Play</u></b></li>
                     <li>Team/player with the highest dollar amount spent at Black-owned businesses within the challenge period wins!</li>
@@ -158,12 +136,12 @@
     </div>
 </div>
 <div class="row background valign-wrapper" id="nomination-row" style="margin-bottom:0;background-image:url('{% static 'img/nomination_challenge.jpg' %}'); background-repeat: repeat; background-size:40%">
-    <div class="col s10 offset-s1 m8 offset-m2 center-align instruction-box" style="padding-top:50px; padding-bottom: 40px;background-color: rgba(255, 255, 255, 0.884); border: solid 3px rgba(38, 38, 38, 0.927)">
+    <div class="col s10 offset-s1 m8 offset-m2 center-align instruction-box" style="padding-top:40px; padding-bottom: 40px;background-color: rgba(255, 255, 255, 0.884); border: solid 3px rgba(38, 38, 38, 0.927)">
         <a href="{{ nomination_url }}" style="color: rgb(9, 106, 9)">VBP™ Nomination Challenge&nbsp;<span class="material-icons" style="font-size: 14px;">
             open_in_new
             </span></a>
         <p style="margin:0; font-weight: 500;" >Ways to Win</p>
-        <div class="row" style="max-height: 170px; overflow:scroll">
+        <div class="row">
             <ul class="col bf-sublist" style="margin-left: 5%; margin-right: 5%">
                 <li>Team/player to identify and submit the most, new Black-owned businesses for free listing in ETV’s Village Black Pages wins!</li>
                 <li class="challenge-period-text">(30-day individual challenge period starts on the 15th of each month!)</li>
@@ -173,6 +151,30 @@
         </div>
     </div>
 </div>
+<div class="row background valign-wrapper" id="bingo-row" style="margin-bottom:0;padding:0; background-image: url('{% static 'img/bingo.jpg' %}'); background-repeat: repeat; background-size:75%">
+    <div class="col s10 offset-s1 m8 offset-m2 center-align instruction-box" style="padding: 20px;background-color: rgba(255, 255, 255, 0.884); border: solid 3px rgba(38, 38, 38, 0.927)">
+        <a href="{{ bingo_url }}" class="game-title" style="color: rgb(194, 45, 22)">ETV Power Bingo Challenge&nbsp;<span class="material-icons" style="font-size: 14px;">
+            open_in_new
+            </span></a>
+        <p style="margin:0; font-weight: 500;">Ways to Win</p>
+        <div class="row">
+            <div class="center-align">
+                <ul class="bf-sublist">
+                    <li><b><u>Team Play</u></b></li>
+                    <li>The first team to blackout the board by filling in every space wins!</li>
+                    <li><b>- OR -</b></li>
+                    <li>The first team to have four teammates win in any direction wins 2nd place!</li>
+                </ul>
+                <ul class="bf-sublist">
+                    <li><b><u>Individual Play</u></b></li>
+                    <li>Be the first person to get Bingo in two directions (12 bingo combinations!)</li>
+                    <li class="challenge-period-text">(30-day individual challenge period starts on the 15th of each month!)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--
 <div class="row background valign-wrapper" id="stl-row" style="margin-bottom:0;background-image:url('{% static 'img/hashtag.jpg' %}'); background-repeat: repeat; background-size:25%">
     <div class="col s10 offset-s1 m8 offset-m2 center-align instruction-box" style="padding-top:70px; padding-bottom: 40px;background-color: rgba(255, 255, 255, 0.884); border: solid 3px rgba(38, 38, 38, 0.927)">
         <a href="{{ stl_url }}" style="color: rgb(194, 45, 22)">Spread The Love Challenge&nbsp;<span class="material-icons" style="font-size: 14px;">
@@ -187,6 +189,7 @@
         </div>
     </div>
 </div>
+-->
     <style>
         .background {
             height: 350px
@@ -197,23 +200,49 @@
         
         @media only screen and (max-width:600px){
             .bf-sublist li {
-            font-size: 14px;
+            font-size: 12px;
             font-weight: 400;
         }
+            #bingo-row .instruction-box {
+                height: 320px
+            }
+            #rss-row .instruction-box {
+                height: 330px
+            }
             .instruction-box a {
                 font-size: 17px;
                 font-weight: 500;
                 cursor:pointer
             }
             .instruction-box p {
-                font-size: 16px !important
+                font-size: 14px !important
             }
             .challenge-period-text {
-                font-size: 12px !important;
+                font-size: 10px !important;
                 color: rgb(92, 92, 92)
             }
         }
         @media only screen and (min-width:601px){
+            #bingo-row {
+                height: 400px
+            }
+            #bingo-row .instruction-box {
+                height: 350px;
+                width: 90%;
+                margin-left: 5%;
+            }
+            #rss-row {
+                height: 400px
+            }
+            #rss-row .instruction-box {
+                height: 350px;
+                width: 90%;
+                margin-left: 5%;
+            }
+            #nomination-row .instruction-box {
+                width: 90%;
+                margin-left: 5%;
+            }
             .bf-sublist li {
             font-size: 16px;
             font-weight: 400;
@@ -224,15 +253,31 @@
                 cursor:pointer
             }
             .instruction-box p {
-                font-size: 16px
+                font-size: 18px
             }
             .challenge-period-text {
-                font-size: 14px !important;
+                font-size: 12px !important;
                 color: rgb(92, 92, 92)
             }
         
         }
         @media only screen and (min-width:992px){
+            #bingo-row .instruction-box {
+                width: 80%;
+                margin-left: 10%;
+            }
+            #nomination-row .instruction-box {
+                width: 80%;
+                margin-left: 10%;
+            }
+            #rss-row {
+                height: 420px
+            }
+            #rss-row .instruction-box {
+                height: 370px;
+                width: 80%;
+                margin-left: 10%;
+            }
             .bf-sublist li {
             font-size: 18px;
             font-weight: 400;

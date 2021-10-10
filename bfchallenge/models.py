@@ -201,6 +201,10 @@ class user_bingo_form(models.Model):
     def __str__(self):
         return str(self.id)
 
+    class Meta:
+        verbose_name = 'User Bingo Form'
+        verbose_name_plural = 'User Bingo Forms'
+
 class readysetshop_transaction(models.Model):
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     amount           = models.DecimalField(decimal_places=2, max_digits=7)

@@ -14,6 +14,7 @@ def donate(request):
         print(donation_form)
         obj = donation_submission()
         obj.first_name = donation_form['first_name']
+        obj.last_name = donation_form['last_name']
         obj.donation_level = donation_form['donation_level']
         obj.email  = donation_form['donor_email']
         obj.recurring = donation_form['recurring']

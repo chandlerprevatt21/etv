@@ -3,6 +3,9 @@ from .models import *
 from django.utils.translation import ngettext
 from django.contrib import messages
 from accounts.admin import admin_site
+import csv
+from django.http import HttpResponse
+from django.core.exceptions import PermissionDenied
 import geocoder
 
 class VBPBook(admin.ModelAdmin):
@@ -46,7 +49,8 @@ class VBPAdmin(admin.ModelAdmin):
             'fields': ('nominator_name', 'nominator_email')
         }),
     )
-
+    
+    
     def make_active(self, request, queryset):
         updated = queryset.update(approved=True)
         self.message_user(request, ngettext(
@@ -66,7 +70,7 @@ class VBPAdmin(admin.ModelAdmin):
     make_inactive.short_description = "Mark selected submissions as not approved"
 
 class VBPStateAdmin(admin.ModelAdmin):
-    list_display = ['business_name', 'approved', 'city', 'county']
+    list_display = ['business_name', 'approved', 'city', 'county', 'created']
     list_filter = ['approved', 'online_only', 'category', 'subcategory']
     search_fields = ['business_name', 'city', 'category', 'subcategory']
     ordering = ['business_name']
@@ -85,6 +89,22 @@ class VBPStateAdmin(admin.ModelAdmin):
             'fields': ('nominator_name', 'nominator_email', 'nominator_owner', 'nominator_recommended')
         }),
     )
+    def download_csv(self, request, queryset):
+        opts = queryset.model._meta
+        model = queryset.model
+        response = HttpResponse(mimetype='text/csv')
+        # force download.
+        response['Content-Disposition'] = 'attachment;filename=export.csv'
+        # the csv writer
+        writer = csv.writer(response)
+        field_names = [field.name for field in opts.fields]
+        # Write a first row with header information
+        writer.writerow(field_names)
+        # Write data rows
+        for obj in queryset:
+            writer.writerow([getattr(obj, field) for field in field_names])
+        return response
+    download_csv.short_description = "Download selected as csv"
 
     def make_active(self, request, queryset):
         updated = queryset.update(approved=True)

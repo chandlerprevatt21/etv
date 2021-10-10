@@ -14,10 +14,21 @@ import environ
 import psycopg2
 from pathlib import Path
 import dj_database_url
+import braintree
+
 db_from_env = dj_database_url.config(conn_max_age=500)
 
 env = environ.Env(
     DEBUG=(bool, False)
+)
+
+gateway = braintree.BraintreeGateway(
+    braintree.Configuration(
+        braintree.Environment.Sandbox,
+        merchant_id="993qmd9ws9fhww7q",
+        public_key="5nw5w27twxsfb3cw",
+        private_key="e4aadd56b0c15194c5b79a8fa0054cac"
+    )
 )
 DATABASES = { 'default': dj_database_url.config() }
 
@@ -41,15 +52,16 @@ MAILCHIMP_API_KEY = env('MAILCHIMP_API_KEY')
 AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = env('EMAIL_HOST')
 EMAIL_HOST_USER = env('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
-DEFAULT_FROM_EMAIL = 'Empower The Village <admin@empowerthevillage.org>'
+DEFAULT_FROM_EMAIL = 'Empower The Village <chandlerprevatt@utexas.edu>'
 ADMINS = (
-    ('Empower The Village', 'admin@empowerthevillage.org'),
+    ('Empower The Village', 'chandlerprevatt@utexas.edu'),
 )
 
 MANAGERS = ADMINS
@@ -58,7 +70,7 @@ MANAGERS = ADMINS
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['127.0.0.1', '127.0.0.1:8000', 'localhost', 'etv.villageblackpages.org', 'www.etv.villageblackpages.org', 'etvlive.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1', '127.0.0.1:8000', 'localhost', 'etv.villageblackpages.org', 'www.etv.villageblackpages.org', 'etvlive.herokuapp.com', 'empowerthevillage.org', 'www.empowerthevillage.org', 'etv.empowerthevillage.org']
 
 
 # Application definition
@@ -73,8 +85,13 @@ INSTALLED_APPS = [
     'accounts',
     'bfchallenge',
     'content',
+    'carts',
     'donations',
     'etv',
+    'education',
+    'health',
+    'policy',
+    'prosperity',
     'phone_field',
     'vbp',
     'social_django',

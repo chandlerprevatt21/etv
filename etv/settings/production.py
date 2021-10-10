@@ -58,7 +58,7 @@ MANAGERS = ADMINS
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['etv.villageblackpages.org', 'www.etv.villageblackpages.org', 'etvlive.herokuapp.com']
+ALLOWED_HOSTS = ['etv.villageblackpages.org', 'www.etv.villageblackpages.org', 'etvlive.herokuapp.com', 'empowerthevillage.org', 'www.empowerthevillage.org', 'etv.empowerthevillage.org']
 
 
 # Application definition
@@ -75,6 +75,10 @@ INSTALLED_APPS = [
     'content',
     'donations',
     'etv',
+    'education',
+    'health',
+    'policy',
+    'prosperity',
     'phone_field',
     'vbp',
     'social_django',

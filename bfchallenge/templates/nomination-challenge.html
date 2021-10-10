@@ -4,11 +4,11 @@
 {% block content %}
 
 <div id="page">
-
+  <div class="backpage">
     <div class="row center-align" style="margin-top:0px">
-      <div class="col s10 l8 offset-s1 offset-l2 login-card" style="background-color:#fdfdfdf1;padding-top:110px; padding-bottom:40px; padding-left: 30px; padding-right: 30px">
+      <div class="col s10 offset-s1 login-card">
         <h6 id="vbp-nomination-form-title">Village Black Pages™ Nomination Form</h6>
-          <h7 style="color:rgb(165, 55, 55); font-size: 18px">Nomination Challenge Rules: Player to identify and submit the most, new Black-owned businesses for free listing in ETV’s Village Black Pages wins!
+          <h7 class="bf-instructions" style="color:rgb(165, 55, 55)">Nomination Challenge Rules: Player to identify and submit the most, new Black-owned businesses for free listing in ETV’s Village Black Pages wins!
             <p style="font-weight:200; font-size:14px; color:rgb(92, 92, 92); margin-top:0">*Nominated businesses must operate within our 25-state* footprint or online and be submitted through ETV’s portal. Ownership status will be validated by ETV.</p>
           </h7>
           <form method="POST" style="padding-left:10%; padding-right:10%;" id="nomination-form">
@@ -19,27 +19,30 @@
               <label>{{ nomination_form.business_name.label }}<b>*</b></label>
             </div>
             <div class="row" style='margin-bottom:0'>
-              <div class="input-field col s8">
+              <div class="input-field col s12 m8">
                 {{ nomination_form.website }}
                 <label>{{ nomination_form.website.label }}</label>
               </div>
-              <div class="input-field col s4">
+              <div class="input-field col s12 m4">
                 {{ nomination_form.phone }}
                 <label>{{ nomination_form.phone.label }}</label>
               </div>
             </div>
             <div class="row">
-              <div class="input-field col s4" style="margin-left:-7">
+              <div class="input-field col s12 m4" style="margin-left:-7">
                 <i class="fab fa-instagram prefix" ></i>
                 {{ nomination_form.instagram }}
+                <label>@Instagram</label>
               </div>
-              <div class="input-field col s4">
+              <div class="input-field col s12 m4">
                 <i class="fab fa-facebook prefix"></i>
                 {{ nomination_form.facebook }}
+                <label>@Facebook</label>
               </div>
-              <div class="input-field col s4">
+              <div class="input-field col s12 m4">
                 <i class="fab fa-twitter prefix"></i>
                 {{ nomination_form.twitter }}
+                <label>@Twitter</label>
               </div>
             </div>
             <div class="input-field">
@@ -120,9 +123,56 @@
         
       </div>
     </div>
+    </div>
   </div>
   
   <style>
+    @media only screen and (min-width: 663px){
+      .login-card {
+        
+        padding-top:20px !important; 
+        padding-bottom:40px !important; 
+        padding-left: 30px !important; 
+        padding-right: 30px !important;
+      }
+      .backpage {
+        width: 95% !important;
+        margin-left: 2.5%
+      }
+      .bf-subtitle {
+        font-size: 38px !important
+      }
+      .bf-instructions {
+      }
+    }
+    @media only screen and (min-width: 992px){
+      .login-card {
+        padding-top:50px !important; 
+      }
+      .bf-subtitle {
+        font-size: 42px !important
+      }
+      .bf-instructions {
+        font-size: 18px !important
+      }
+      #page {
+        background-size: 120% !important
+      }
+    }
+    .bf-subtitle{
+  font-family: oskar-inline;
+  font-size: 28px;
+}
+.login-card {
+  background-color:#fdfdfdf1;
+}
+.backpage {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.555);
+}
+.bf-instructions {
+  font-size: 16px
+}
     [type="radio"]:checked+span:after, [type="radio"].with-gap:checked+span:before, [type="radio"].with-gap:checked+span:after {
     border: 2px solid rgb(67, 135, 33);
 }
@@ -170,8 +220,8 @@
       padding-top: 10px
     }
     #page {
-      background-image: url("https://empowerthevillage.s3.amazonaws.com/static/img/VBP+collage.png");
-      background-size: 100%;
+      background-image: url("{% static 'img/bf-challenge-cropped.png' %}");
+      background-size: 160%;
       background-repeat: repeat;
     }
     .submit-btn {

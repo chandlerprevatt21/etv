@@ -5,6 +5,16 @@ from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from django.urls import reverse
 from django.utils.safestring import mark_safe
 from django.contrib.auth.forms import UserCreationForm
+from django.core.mail import send_mail
+from django.conf import settings
+from mailchimp_marketing import Client
+from mailchimp_marketing.api_client import ApiClientError
+
+mailchimp = Client()
+mailchimp.set_config({
+    "api_key": settings.MAILCHIMP_API_KEY,
+    "server": "us7"
+})
 
 User = get_user_model()
 
@@ -102,6 +112,15 @@ class UserAdminCreationForm(forms.ModelForm):
         user.set_password(self.cleaned_data["password1"])
         if commit:
             user.save()
+        member_info = {
+            'email_address': user.email,
+            'status': 'subscribed'
+        }
+        try:
+            response = mailchimp.lists.add_list_member('bfb104d810', member_info)
+            print("response: {}".format(response))
+        except ApiClientError as error:
+            print("An exception occurred: {}".format(error.text))
         return user
 
 

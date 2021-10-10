@@ -7,10 +7,10 @@
 <div class="parallax-container box-shadow valign-wrapper">
     
     <div class="container z-depth-4 center-align parallax-banner" style="background:rgba(255, 255, 255, 0.906); border: rgb(43, 43, 43) 3px solid;">
-        <img src="{% static 'img/vbp_new.png' %}" width="70%" style="margin:0; padding: 0">
+        <img src="{% static 'img/vbp_new.png' %}" width="90%" style="margin:0; padding: 0">
     </div>
     <div class="parallax" style="opacity: 1;">
-        <img src='{% static "img/VBP_collage_2.png" %}' height=200%>
+        <img src='{% static "img/vbp-collage.png" %}' height=200%>
     </div>
 
 </div>
@@ -23,7 +23,7 @@
                 </div>
                 <div class="vbp-text col s12 m8 l9" style="padding: 2% 0; padding-bottom: 0">
         
-                    <p><b>Village Black Pages™</b> (VBP) is the critical resource Americans can rely on to locate Black-owned businesses to support when responding to our charge to <b>Make Every Friday, Black Friday™!</b>
+                    <p><b>Village Black Pages™</b> (VBP) is the critical resource Americans can rely on to locate Black-owned businesses to support when responding to our charge to <b>Make Every Friday, Black Friday™!</b> All Black-owned businesses are listed for <b style="color: rgb(15, 155, 15)">FREE</b> in the Village Black Pages™!
                     <p>Our goal is to elevate the overall prosperity of the Black community by building wealth and creating jobs. </p>
                     <button class="btn btn-nominate waves-effect">NOMINATE YOUR FAVORITE BLACK-OWNED BUSINESS TODAY!</button>
                 </div>
@@ -78,7 +78,7 @@
             <div class="vbp-text">
                 <p class="center-align" style="margin-bottom:0"><b>90+% of Black Americans (~43M+) live, work</b></p>
                 <p class="center-align" style="margin-top:0"><b>and own businesses in only 25 States*</b></p>
-                <p class="center-align" style="margin-left: 5%; margin-right: 5%">ETV’s Phase One Agenda executes on a 25-State* Strategic Action Action Plan to achieve racial equity and social justice for Black America in partnership with The Village - individuals, corporations, community, government and nonprofit entities.
+                <p class="center-align" style="margin-left: 5%; margin-right: 5%">ETV’s Phase One Agenda executes on a 25-State* Strategic Action Plan to achieve racial equity and social justice for Black America in partnership with The Village - individuals, corporations, community, government and nonprofit entities.
 
             </p>
             </div>
@@ -94,13 +94,9 @@
             </div>
             <div class="row valign-wrapper">
                 <div id="map" class="col s12 m11" style="padding-right:0">
-                    <div id="legend-container-mobile">
-                        <img src="{% static 'img/legendStar2.png' %}" class="legendStar2">
-                        <img src="{% static 'img/legendStar3.png' %}" class="legendStar3">
-                        <img src="{% static 'img/legendStar.png' %}" class="legendStar"> 
-                    </div>
-                    <div class="valign-wrapper published-key" ><img src="{% static 'img/mapstard.png' %}" class="legendStar4"><p><b> &nbsp = Published</b></p></div>
+                    
                 </div>
+                
                 <div class="col s1" style="padding:0">
                     <div id="legend-container">
                         <img src="{% static 'img/legendStar2.png' %}" class="legendStar2">
@@ -113,6 +109,12 @@
                 </div>
                 
             </div>
+            <div id="legend-container-mobile">
+                <img src="{% static 'img/legendStar2.png' %}" class="legendStar2">
+                <img src="{% static 'img/legendStar3.png' %}" class="legendStar3">
+                <img src="{% static 'img/legendStar.png' %}" class="legendStar"> 
+            </div>
+            <div class="valign-wrapper published-key" ><img src="{% static 'img/mapstard.png' %}" class="legendStar4"><p><b> &nbsp = Published</b></p></div>
             <div class="valign-wrapper published-key-large" ><img src="{% static 'img/mapstard.png' %}" class="legendStar4"><p><b> &nbsp = Published</b></p></div>
             
             
@@ -128,7 +130,28 @@
                 .published-key{
                     margin-left: 70%; 
                 }
+                .legendStar:hover {
+                    cursor: pointer
+                }
+                .legendStar2:hover {
+                    cursor: pointer
+                }
+                .legendStar3:hover {
+                    cursor: pointer
+                }
+                .swal-nominate {
+                    font-size: 18px;
+                    margin:0;
+                    padding: 10px 5px;
+                    height: auto
+                }
+                .swal2-popup .select-wrapper {
+                    display: none;
+                }
                 @media only screen and (max-width:500px){
+                    .swal-nominate {
+                        font-size: 16px;
+                    }
                     #legend-container .legendStar {
                     display: none
                     }
@@ -139,9 +162,9 @@
                     display: none;
                 }
                 #legend-container-mobile {
-                    margin-left: 57%;
-                    margin-top: 260px;
-                    margin-bottom: -310px;
+                    margin-left: 50%;
+                    margin-top: -100px;
+                    margin-bottom: 0px;
                 }
                 #legend-container-mobile .legendStar {
                     width: 17%;
@@ -157,9 +180,9 @@
                     width: 15%
                 }
                 .published-key{
-                    margin-left: 50%;
-                    margin-top: 290px;
-                    margin-bottom: -330px
+                    margin-left: 45%;
+                    margin-top: -10px;
+                    margin-bottom: 0
                 }
                 .published-key-large {
                     display:none
@@ -270,7 +293,49 @@
 </div>
     <div class="z-depth-4 row vbp-booklet-container" style="margin:0; background: white" id="vbp-row">
         <div class="col s12" id="book">
+            <div class="center-align preloader" style="padding: 30px; display:none" >
+                <div class="preloader-wrapper big active">
+                    <div class="spinner-layer spinner-blue">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div><div class="gap-patch">
+                        <div class="circle"></div>
+                    </div><div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                    </div>
             
+                    <div class="spinner-layer spinner-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div><div class="gap-patch">
+                        <div class="circle"></div>
+                    </div><div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                    </div>
+            
+                    <div class="spinner-layer spinner-yellow">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div><div class="gap-patch">
+                        <div class="circle"></div>
+                    </div><div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                    </div>
+            
+                    <div class="spinner-layer spinner-green">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div><div class="gap-patch">
+                        <div class="circle"></div>
+                    </div><div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -285,7 +350,7 @@
         <div class="sponsor-info-container" style="margin:0;width:100%; margin-left: 0%">
         <h6>Interested in advertising your business?</h6>
         <a href="{{ contact_url }}" class="col s12 m6 btn-contact waves-effect">Click Here to Contact Us!</a>
-        <p style="margin-top: -1%">All Black-owned businesses can appear in the Village Black Pages for <b>FREE!</b></p>
+        <p id="free-line" style="margin-top: -1%; font-size: 32px">All Black-owned businesses are listed in the Village Black Pages for <b style="font-weight: 600; color: rgb(20, 155, 20)">FREE!</b></p>
         <p style="margin-top: -0; color: white;">If you would like a larger spotlight on your Black-owned business, ETV offers half and full page ads in our Village Black Pages!</p>
         <p style="margin-bottom:0"><b><u>Advertising Rates</u></b></p>
         <p style="margin:0;">*For Black-Owned Businesses with revenue less than $1M*</p>
@@ -312,11 +377,16 @@
     </div>
     
     </div>
+    <script>
+        $('.carousel').carousel({
+            indicators: true, numVisible: 10,
     
-    
+      });
         
+    </script>
+    
     <style>
-
+        
         .btn-contact {
             border: none;
             margin-left: 0;
@@ -356,12 +426,7 @@
 	-moz-transition: all 0.3s;
 	transition: all 0.3s;
 }
-.btn-nominate:hover {
-	box-shadow: 0 4px #3f912f;
-	top: 2px;
-  background: #29ac38;
-  filter: brightness(1)
-}
+ 
         .sponsor-info {
             background-color: rgb(23, 23, 23);
             padding: 30px
@@ -486,7 +551,6 @@
                         {{ nomination_form.twitter }}
                     </div>
                 </div>
-
                 <div class="input-field">
                     {{ nomination_form.category }}
                     <label>Category</label>
@@ -528,15 +592,556 @@
         </form>
     </div>
 </div>
-
-
-{% endblock %}
-
-{% block style %}
-
+<script>
+    $(document).ready(function(){
+        $('.simple-marquee-container').SimpleMarquee({velocity: 0.05});
+        $('.collapsible').collapsible();
+        $('.parallax').parallax();
+        $('.dropdown-trigger').dropdown({hover: true, constrainWidth: false, coverTrigger: false, container:'.dropdown-container'});
+        $('.sidenav').sidenav();
+        $('select').formSelect();
+        $('.carousel').carousel({indicators: true, numVisible: 10,});
+        $('.tooltipped').tooltip({'margin':'0', 'transitionMovement': '0',});
+        $('.phone_us').mask('(000) 000-0000');
+        $('.money').mask('000,000.00', {reverse: true});
+        $('#other-donation').mask('000,000', {reverse: true});
+        $('.datepicker').datepicker();
+        $('.ways-to-play-tabs').tabs();
+      });
+      
+    </script>
+<script>
+    $('.btn-nominate').click(function(){
+        $([document.documentElement, document.body]).animate({
+                scrollTop: $("#vbp-nomination-form").offset().top
+                }, 500);
+    })
+    $('svg').resize(function(event){
+        event.preventDefault();
+      })
+</script>
+<script src="{% static 'js/raphael.js' %}"></script>
+<script src="{% static 'js/jquery.usmap.js' %}"></script>
+<script src="{% static 'js/jquery-jvectormap-2.0.5.min.js' %}"></script>
+<script src="{% static 'js/jquery-jvectormap-us-aea.js' %}"></script>
+<script>
+    
+    $(function(){
+    map = new jvm.Map({
+        map: 'us_aea',
+        container: $('#map'),
+        height: '700px',
+        width: '900px',
+        markerStyle: {
+            initial: {
+                image: 'https://empowerthevillage.s3.amazonaws.com/static/img/mapstarc.png',
+                "z-index": '2',
+                }
+            },
+        markers: [
+            {latLng: [40.1583, -74.6257], name: 'NJ'},
+            {latLng: [41.6032, -72.6877], name: 'CT'},
+            {latLng: [43.2128, -75.3060], name: 'NY'},
+            {latLng: [40.4173, -82.8071], name: 'OH'},
+            {latLng: [40.9033, -77.5955], name: 'PA'},
+            {latLng: [37.5316, -78.5469], name: 'VA'},
+            {latLng: [42.5072, -71.4824], name: 'MA'},
+        ],
+        zoomOnScroll: false,
+        regionLabelStyle: {
+          initial: {
+            fill: 'black',
+            'font-family': 'Poppins',
+          },
+          hover: {
+            fill: 'grey'
+          },
+        },
+        backgroundColor: 'white',
+        labels: {
+          regions: {
+            render: function(code){
+              var doNotShow = ['US-RI', 'US-DC', 'US-DE', 'US-MD'];
+    
+              if (doNotShow.indexOf(code) === -1) {
+                return code.split('-')[1];
+              }
+            },
+            offsets: function(code){
+              return {
+                'CA': [-10, 10],
+                'ID': [0, 40],
+                'OK': [25, 0],
+                'LA': [-20, 0],
+                'FL': [45, 0],
+                'KY': [10, 5],
+                'VA': [15, 5],
+                'MI': [30, 30],
+                'AK': [50, -25],
+                'HI': [25, 50]
+              }[code.split('-')[1]];
+            }
+          }
+        },
+        regionStyle: {
+            initial: {
+                fill: '#cccccc',
+            },
+            hover: {
+                "fill-opacity": 0.9,
+            }
+        },
+        regionLabelStyle: {
+            "z-index": '3'
+        },
+        series: {
+            regions: [{
+                scale: {
+                    'published': '#19b529',
+                    'soon': '#199456',
+                },
+                attribute: 'fill',
+                values: {
+                    'US-TX': 'soon',
+                    'US-FL': 'soon',
+                    'US-NY': 'published',
+                    'US-GA': 'soon',
+                    'US-CA': 'soon',
+                    'US-NC': 'soon',
+                    'US-IL': 'soon',
+                    'US-MD': 'published',
+                    'US-VA': 'published',
+                    'US-PA': 'published',
+                    'US-OH': 'published',
+                    'US-LA': 'soon',
+                    'US-MI': 'soon',
+                    'US-NJ': 'published',
+                    'US-SC': 'soon',
+                    'US-AL': 'soon',
+                    'US-TN': 'soon',
+                    'US-MS': 'soon',
+                    'US-MO': 'soon',
+                    'US-IN': 'soon',
+                    'US-MA': 'published',
+                    'US-AR': 'soon',
+                    'US-CT': 'published',
+                    'US-DC': 'published',
+                    'US-DE': 'published',
+                },
+                
+            }],
+        },
+        onRegionClick: function(event, code) {
+            var regionName = map.getRegionName(code);
+            var publishedStates = ["US-CT", "US-DC", "US-DE", "US-MD", "US-NY", "US-OH", "US-PA", "US-VA", "US-NJ", "US-MA"];
+            var phaseOne = ['US-TX', 'US-FL', 'US-GA', 'US-CA', 'US-NC', 'US-IL', 'US-LA', 'US-MI', 'US-SC', 'US-AL', 'US-TN', 'US-MS', 'US-MO', 'US-IN', 'US-AR']
+            if (phaseOne.indexOf(code) != -1) {
+                Swal.fire({
+                    title:'Village Black Pages: '+regionName+' Coming Soon!',
+                    html: '<a class="btn btn-nominate swal-nominate waves-effect" href="{{ nomination_url }}">NOMINATE YOUR FAVORITE BLACK-OWNED BUSINESS TODAY!<a>',
+                    showComfirmButton: false,
+                    showCancelButton: false,
+                    showCloseButton: false,
+                    text:'Village Black Pages: '+regionName+' Coming Soon!',
+                });
+            } else if (publishedStates.indexOf(code) != -1) {
+                var data = {
+                    'state': code,
+                }
+                var state = code
+                $.ajax({
+                    data: data,
+                    state: state,
+                    url: '/village-black-pages/get-state',
+                    beforeSend: function(){
+                        $('.preloader').show();
+                        $('#flipbook-mobile-container').hide();
+                        $('#flipbook-container').hide();
+                    },
+                    method: "GET",
+                    success: function(data) {
+                        $('.preloader').hide();
+                        $('#book').html(data);
+                        $('#mobile-book').html(data);
+                        $('#cover-page').attr('value', state);
+                        $('#cover-page-mobile').attr('value', state);
+                        $('#vbp-flipbook').attr('value', state);
+                        $('#vbp-flipbook-mobile').attr('value', state);
+                        $('#filter-form-state').attr('value', state);
+                        $('#filter-form-state-mobile').attr('value', state);
+                        ;
+                    }
+                })
+                $([document.documentElement, document.body]).animate({
+                scrollTop: $("#book").offset().top
+                }, 500);
+                
+            }
+        },
+        onMarkerClick: function(event, code) {
+            if (code == 0) {
+                var data = {
+                    'state': 'US-NJ',
+                }
+                var state = data
+                $.ajax({
+                    data: data,
+                    state: state,
+                    url: '/village-black-pages/get-state',
+                    beforeSend: function(){
+                        $('.preloader').show();
+                        $('#flipbook-mobile-container').hide();
+                        $('#flipbook-container').hide();
+                    },
+                    method: "GET",
+                    success: function(data) {
+                        $('.preloader').hide();
+                        $('#book').html(data);
+                        $('#mobile-book').html(data);
+                        $('#cover-page').attr('value', 'US-NJ');
+                        $('#cover-page-mobile').attr('value', 'US-NJ');
+                        $('#vbp-flipbook').attr('value', 'US-NJ');
+                        $('#vbp-flipbook-mobile').attr('value', 'US-NJ');
+                        $('#filter-form-state').attr('value', 'US-NJ');
+                        $('#filter-form-state-mobile').attr('value', 'US-NJ');
+                        ;
+                        
+                    }
+                })
+                $([document.documentElement, document.body]).animate({
+                scrollTop: $("#book").offset().top
+                }, 500);
+            } else if (code == 1) {
+                var data = {
+                    'state': 'US-CT',
+                }
+                var state = data
+                $.ajax({
+                    data: data,
+                    state: state,
+                    url: '/village-black-pages/get-state',
+                    beforeSend: function(){
+                        $('.preloader').show();
+                        $('#flipbook-mobile-container').hide();
+                        $('#flipbook-container').hide();
+                    },
+                    method: "GET",
+                    success: function(data) {
+                        $('.preloader').hide();
+                        $('#book').html(data);
+                        $('#mobile-book').html(data);
+                        $('#cover-page').attr('value', 'US-CT');
+                        $('#cover-page-mobile').attr('value', 'US-CT');
+                        $('#vbp-flipbook').attr('value', 'US-CT');
+                        $('#vbp-flipbook-mobile').attr('value', 'US-CT');
+                        $('#filter-form-state').attr('value', 'US-CT');
+                        $('#filter-form-state-mobile').attr('value', 'US-CT');
+                        
+                    }
+                })
+                $([document.documentElement, document.body]).animate({
+                scrollTop: $("#book").offset().top
+                }, 500);
+            } else if (code == 2) {
+                var data = {
+                    'state': 'US-NY',
+                }
+                var state = data
+                $.ajax({
+                    data: data,
+                    state: state,
+                    url: '/village-black-pages/get-state',
+                    beforeSend: function(){
+                        $('.preloader').show();
+                        $('#flipbook-mobile-container').hide();
+                        $('#flipbook-container').hide();
+                    },
+                    method: "GET",
+                    success: function(data) {
+                        $('.preloader').hide();
+                        $('#book').html(data);
+                        $('#mobile-book').html(data);
+                        $('#cover-page').attr('value', 'US-NY');
+                        $('#cover-page-mobile').attr('value', 'US-NY');
+                        $('#vbp-flipbook').attr('value', 'US-NY');
+                        $('#vbp-flipbook-mobile').attr('value', 'US-NY');
+                        $('#filter-form-state').attr('value', 'US-NY');
+                        $('#filter-form-state-mobile').attr('value', 'US-NY');
+                        
+                    }
+                })
+                $([document.documentElement, document.body]).animate({
+                scrollTop: $("#book").offset().top
+                }, 500);
+            } else if (code == 3) {
+                var data = {
+                    'state': 'US-OH',
+                }
+                var state = data
+                $.ajax({
+                    data: data,
+                    state: state,
+                    url: '/village-black-pages/get-state',
+                    beforeSend: function(){
+                        $('.preloader').show();
+                        $('#flipbook-mobile-container').hide();
+                        $('#flipbook-container').hide();
+                    },
+                    method: "GET",
+                    success: function(data) {
+                        $('.preloader').hide();
+                        $('#book').html(data);
+                        $('#mobile-book').html(data);
+                        $('#cover-page').attr('value', 'US-OH');
+                        $('#cover-page-mobile').attr('value', 'US-OH');
+                        $('#vbp-flipbook').attr('value', 'US-OH');
+                        $('#vbp-flipbook-mobile').attr('value', 'US-OH');
+                        $('#filter-form-state').attr('value', 'US-OH');
+                        $('#filter-form-state-mobile').attr('value', 'US-OH');
+                        
+                    }
+                })
+                $([document.documentElement, document.body]).animate({
+                scrollTop: $("#book").offset().top
+                }, 500);
+            } else if (code == 4) {
+                var data = {
+                    'state': 'US-PA',
+                }
+                var state = data
+                $.ajax({
+                    data: data,
+                    state: state,
+                    url: '/village-black-pages/get-state',
+                    beforeSend: function(){
+                        $('.preloader').show();
+                        $('#flipbook-mobile-container').hide();
+                        $('#flipbook-container').hide();
+                    },
+                    method: "GET",
+                    success: function(data) {
+                        $('.preloader').hide();
+                        $('#book').html(data);
+                        $('#mobile-book').html(data);
+                        $('#cover-page').attr('value', 'US-PA');
+                        $('#cover-page-mobile').attr('value', 'US-PA');
+                        $('#vbp-flipbook').attr('value', 'US-PA');
+                        $('#vbp-flipbook-mobile').attr('value', 'US-PA');
+                        $('#filter-form-state').attr('value', 'US-PA');
+                        $('#filter-form-state-mobile').attr('value', 'US-PA');
+                        
+                    }
+                })
+                $([document.documentElement, document.body]).animate({
+                scrollTop: $("#book").offset().top
+                }, 500);
+            } else if (code == 5) {
+                var data = {
+                    'state': 'US-VA',
+                }
+                var state = data
+                $.ajax({
+                    data: data,
+                    state: state,
+                    url: '/village-black-pages/get-state',
+                    beforeSend: function(){
+                        $('.preloader').show();
+                        $('#flipbook-mobile-container').hide();
+                        $('#flipbook-container').hide();
+                    },
+                    method: "GET",
+                    success: function(data) {
+                        $('.preloader').hide();
+                        $('#book').html(data);
+                        $('#mobile-book').html(data);
+                        $('#cover-page').attr('value', 'US-VA');
+                        $('#cover-page-mobile').attr('value', 'US-VA');
+                        $('#vbp-flipbook').attr('value', 'US-VA');
+                        $('#vbp-flipbook-mobile').attr('value', 'US-VA');
+                        $('#filter-form-state').attr('value', 'US-VA');
+                        $('#filter-form-state-mobile').attr('value', 'US-VA');
+                        
+                    }
+                })
+                $([document.documentElement, document.body]).animate({
+                scrollTop: $("#book").offset().top
+                }, 500);
+            } else if (code == 6) {
+                var data = {
+                    'state': 'US-MA',
+                }
+                var state = data
+                $.ajax({
+                    data: data,
+                    state: state,
+                    url: '/village-black-pages/get-state',
+                    beforeSend: function(){
+                        $('.preloader').show();
+                        $('#flipbook-mobile-container').hide();
+                        $('#flipbook-container').hide();
+                    },
+                    method: "GET",
+                    success: function(data) {
+                        $('.preloader').hide();
+                        $('#book').html(data);
+                        $('#mobile-book').html(data);
+                        $('#cover-page').attr('value', 'US-MA');
+                        $('#cover-page-mobile').attr('value', 'US-MA');
+                        $('#vbp-flipbook').attr('value', 'US-MA');
+                        $('#vbp-flipbook-mobile').attr('value', 'US-MA');
+                        $('#filter-form-state').attr('value', 'US-MA');
+                        $('#filter-form-state-mobile').attr('value', 'US-MA');
+                    }
+                })
+                $([document.documentElement, document.body]).animate({
+                scrollTop: $("#book").offset().top
+                }, 500);
+            }
+        }
+      });
+    });
+</script>
+    <script>
+    
+        $(".legendStar").on('click', function(){
+            var data = {
+                    'state': 'US-DC',
+                }
+                var state = data
+                $.ajax({
+                    data: data,
+                    state: state,
+                    url: '/village-black-pages/get-state',
+                    beforeSend: function(){
+                        $('.preloader').show();
+                        $('#flipbook-mobile-container').hide();
+                        $('#flipbook-container').hide();
+                    },
+                    method: "GET",
+                    success: function(data) {
+                        $('.preloader').hide();
+                        $('#book').html(data);
+                        $('#mobile-book').html(data);
+                        $('#cover-page').attr('value', 'US-DC');
+                        $('#cover-page-mobile').attr('value', 'US-DC');
+                        $('#vbp-flipbook').attr('value', 'US-DC');
+                        $('#vbp-flipbook-mobile').attr('value', 'US-DC');
+                        $('#filter-form-state').attr('value', 'US-DC');
+                        $('#filter-form-state-mobile').attr('value', 'US-DC');
+                        
+                    }
+                })
+                $([document.documentElement, document.body]).animate({
+                scrollTop: $("#book").offset().top
+                }, 500);
+        });
+        $('.legendStar2').on('click', function(){
+            var data = {
+                    'state': 'US-DE',
+                }
+                var state = data
+                $.ajax({
+                    data: data,
+                    state: state,
+                    url: '/village-black-pages/get-state',
+                    beforeSend: function(){
+                        $('.preloader').show();
+                        $('#flipbook-mobile-container').hide();
+                        $('#flipbook-container').hide();
+                    },
+                    method: "GET",
+                    success: function(data) {
+                        $('.preloader').hide();
+                        $('#book').html(data);
+                        $('#mobile-book').html(data);
+                        $('#cover-page').attr('value', 'US-DE');
+                        $('#cover-page-mobile').attr('value', 'US-DE');
+                        $('#vbp-flipbook').attr('value', 'US-DE');
+                        $('#vbp-flipbook-mobile').attr('value', 'US-DE');
+                        $('#filter-form-state').attr('value', 'US-DE');
+                        $('#filter-form-state-mobile').attr('value', 'US-DE');
+                    }
+                })
+                $([document.documentElement, document.body]).animate({
+                scrollTop: $("#book").offset().top
+                }, 500);
+        });
+        $('.legendStar3').on('click', function(){
+            var data = {
+                    'state': 'US-MD',
+                }
+                var state = data
+                $.ajax({
+                    data: data,
+                    state: state,
+                    url: '/village-black-pages/get-state',
+                    beforeSend: function(){
+                        $('.preloader').show();
+                        $('#flipbook-mobile-container').hide();
+                        $('#flipbook-container').hide();
+                    },
+                    method: "GET",
+                    success: function(data) {
+                        $('.preloader').hide();
+                        $('#book').html(data);
+                        $('#mobile-book').html(data);
+                        $('#cover-page').attr('value', 'US-MD');
+                        $('#cover-page-mobile').attr('value', 'US-MD');
+                        $('#vbp-flipbook').attr('value', 'US-MD');
+                        $('#vbp-flipbook-mobile').attr('value', 'US-MD');
+                        $('#filter-form-state').attr('value', 'US-MD');
+                        $('#filter-form-state-mobile').attr('value', 'US-MD');
+                        
+                    }
+                })
+                $([document.documentElement, document.body]).animate({
+                scrollTop: $("#book").offset().top
+                }, 500);
+        });
+        
+    </script>
+    
+    <script>
+        $(function() {
+            $(".view-btn").click(function() {
+                var carouselState = $(".carousel-item.active").attr("name");
+                var data = {
+                    'state': carouselState,
+                }
+                var state = data
+                $.ajax({
+                    data: data,
+                    state: state,
+                    url: '/village-black-pages/get-state',
+                    beforeSend: function(){
+                        $('.preloader').show();
+                        $('#flipbook-mobile-container').hide();
+                        $('#flipbook-container').hide();
+                    },
+                    method: "GET",
+                    success: function(data) {
+                        $('.preloader').hide();
+                        $('#book').html(data);
+                        $('#mobile-book').html(data);
+                        $('#cover-page').attr('value', carouselState);
+                        $('#cover-page-mobile').attr('value', carouselState);
+                        $('#filter-submit').attr('id', 'filter-submit-state'+ carouselState +'');
+                        $('#vbp-flipbook').attr('value', carouselState);
+                        $('#vbp-flipbook-mobile').attr('value', carouselState);
+                        $('#filter-form-state').attr('value', carouselState);
+                        $('#filter-form-state-mobile').attr('value', carouselState);
+                    }
+                })
+                $([document.documentElement, document.body]).animate({
+                scrollTop: $("#book").offset().top
+                }, 500);
+                
+            })
+        }); 
+    </script>
 <style>
     .btn-nominate:focus {
-        background-color: rgb(182, 95, 95) !important
+        background-color: rgb(196, 66, 66) !important
     }
     @media only screen and (min-width: 601px){
         #nomination-form .input-field input{
@@ -1142,6 +1747,7 @@
       font-size:16px;
       padding-bottom:0px
   }
+  
   {% for vbp_book in covers_qs %}
   #cover-page[value~='US-{{ vbp_book.state }}']{
       background-image: url('https://empowerthevillage.s3.amazonaws.com/media/{{ vbp_book.state }}-cover.png');
@@ -1154,457 +1760,11 @@
   {% endfor %}
 </style>
 {% endblock %}
+
+{% block style %}
+
+
+{% endblock %}
 {% block js %}
-<script>
-    $('.btn-nominate').click(function(){
-        $([document.documentElement, document.body]).animate({
-                scrollTop: $("#vbp-nomination-form").offset().top
-                }, 500);
-    })
-    $('svg').resize(function(event){
-        event.preventDefault();
-      })
-</script>
-<script>
-    $(function(){
-    map = new jvm.Map({
-        map: 'us_aea',
-        container: $('#map'),
-        height: '700px',
-        width: '900px',
-        markerStyle: {
-            initial: {
-                image: 'https://empowerthevillage.s3.amazonaws.com/static/img/mapstarc.png',
-                "z-index": '2',
-                }
-            },
-        markers: [
-            {latLng: [40.1583, -74.6257], name: 'NJ'},
-            {latLng: [41.6032, -72.6877], name: 'CT'},
-            {latLng: [43.2128, -75.3060], name: 'NY'},
-            {latLng: [40.4173, -82.8071], name: 'OH'},
-            {latLng: [40.9033, -77.5955], name: 'PA'},
-            {latLng: [37.5316, -78.5469], name: 'VA'},
-            {latLng: [42.5072, -71.4824], name: 'MA'},
-        ],
-        zoomOnScroll: false,
-        regionLabelStyle: {
-          initial: {
-            fill: 'black',
-            'font-family': 'Poppins',
-          },
-          hover: {
-            fill: 'grey'
-          },
-        },
-        backgroundColor: 'white',
-        labels: {
-          regions: {
-            render: function(code){
-              var doNotShow = ['US-RI', 'US-DC', 'US-DE', 'US-MD'];
-    
-              if (doNotShow.indexOf(code) === -1) {
-                return code.split('-')[1];
-              }
-            },
-            offsets: function(code){
-              return {
-                'CA': [-10, 10],
-                'ID': [0, 40],
-                'OK': [25, 0],
-                'LA': [-20, 0],
-                'FL': [45, 0],
-                'KY': [10, 5],
-                'VA': [15, 5],
-                'MI': [30, 30],
-                'AK': [50, -25],
-                'HI': [25, 50]
-              }[code.split('-')[1]];
-            }
-          }
-        },
-        regionStyle: {
-            initial: {
-                fill: '#cccccc',
-            },
-            hover: {
-                "fill-opacity": 0.9,
-            }
-        },
-        regionLabelStyle: {
-            "z-index": '3'
-        },
-        series: {
-            regions: [{
-                scale: {
-                    'published': '#19b529',
-                    'soon': '#199456',
-                },
-                attribute: 'fill',
-                values: {
-                    'US-TX': 'soon',
-                    'US-FL': 'soon',
-                    'US-NY': 'published',
-                    'US-GA': 'soon',
-                    'US-CA': 'soon',
-                    'US-NC': 'soon',
-                    'US-IL': 'soon',
-                    'US-MD': 'published',
-                    'US-VA': 'published',
-                    'US-PA': 'published',
-                    'US-OH': 'published',
-                    'US-LA': 'soon',
-                    'US-MI': 'soon',
-                    'US-NJ': 'published',
-                    'US-SC': 'soon',
-                    'US-AL': 'soon',
-                    'US-TN': 'soon',
-                    'US-MS': 'soon',
-                    'US-MO': 'soon',
-                    'US-IN': 'soon',
-                    'US-MA': 'published',
-                    'US-AR': 'soon',
-                    'US-CT': 'published',
-                    'US-DC': 'published',
-                    'US-DE': 'published',
-                },
-                
-            }],
-        },
-        onRegionClick: function(event, code) {
-            var regionName = map.getRegionName(code);
-            var publishedStates = ["US-CT", "US-DC", "US-DE", "US-MD", "US-NY", "US-OH", "US-PA", "US-VA", "US-NJ", "US-MA"];
-            var phaseOne = ['US-TX', 'US-FL', 'US-GA', 'US-CA', 'US-NC', 'US-IL', 'US-LA', 'US-MI', 'US-SC', 'US-AL', 'US-TN', 'US-MS', 'US-MO', 'US-IN', 'US-AR']
-            if (phaseOne.indexOf(code) != -1) {
-                Swal.fire({
-                    title:'Village Black Pages: '+regionName+' Coming Soon!',
-                    html: '<a class="btn btn-nominate waves-effect" style="font-size:18px" href="{{ nomination_url }}">NOMINATE YOUR FAVORITE BLACK-OWNED BUSINESS TODAY!<a></button>',
-                    showComfirmButton: false,
-                    showCancelButton: false,
-                    showCloseButton: false,
-                    text:'Village Black Pages: '+regionName+' Coming Soon!',
-                });
-            } else if (publishedStates.indexOf(code) != -1) {
-                var data = {
-                    'state': code,
-                }
-                var state = code
-                $.ajax({
-                    data: data,
-                    state: state,
-                    url: '/village-black-pages/get-state',
-                    method: "GET",
-                    success: function(data) {
-                        $('#book').html(data);
-                        $('#mobile-book').html(data);
-                        $('#cover-page').attr('value', state);
-                        $('#cover-page-mobile').attr('value', state);
-                        $('#vbp-flipbook').attr('value', state);
-                        $('#vbp-flipbook-mobile').attr('value', state);
-                        $('#filter-form-state').attr('value', state);
-                        $('#filter-form-state-mobile').attr('value', state);
-                        ;
-                    }
-                })
-                $([document.documentElement, document.body]).animate({
-                scrollTop: $("#book").offset().top
-                }, 500);
-                
-            }
-        },
-        onMarkerClick: function(event, code) {
-            if (code == 0) {
-                var data = {
-                    'state': 'US-NJ',
-                }
-                var state = data
-                $.ajax({
-                    data: data,
-                    state: state,
-                    url: '/village-black-pages/get-state',
-                    method: "GET",
-                    success: function(data) {
-                        $('#book').html(data);
-                        $('#mobile-book').html(data);
-                        $('#cover-page').attr('value', 'US-NJ');
-                        $('#cover-page-mobile').attr('value', 'US-NJ');
-                        $('#vbp-flipbook').attr('value', 'US-NJ');
-                        $('#vbp-flipbook-mobile').attr('value', 'US-NJ');
-                        $('#filter-form-state').attr('value', 'US-NJ');
-                        $('#filter-form-state-mobile').attr('value', 'US-NJ');
-                        ;
-                        
-                    }
-                })
-                $([document.documentElement, document.body]).animate({
-                scrollTop: $("#book").offset().top
-                }, 500);
-            } else if (code == 1) {
-                var data = {
-                    'state': 'US-CT',
-                }
-                var state = data
-                $.ajax({
-                    data: data,
-                    state: state,
-                    url: '/village-black-pages/get-state',
-                    method: "GET",
-                    success: function(data) {
-                        $('#book').html(data);
-                        $('#mobile-book').html(data);
-                        $('#cover-page').attr('value', 'US-CT');
-                        $('#cover-page-mobile').attr('value', 'US-CT');
-                        $('#vbp-flipbook').attr('value', 'US-CT');
-                        $('#vbp-flipbook-mobile').attr('value', 'US-CT');
-                        $('#filter-form-state').attr('value', 'US-CT');
-                        $('#filter-form-state-mobile').attr('value', 'US-CT');
-                        
-                    }
-                })
-                $([document.documentElement, document.body]).animate({
-                scrollTop: $("#book").offset().top
-                }, 500);
-            } else if (code == 2) {
-                var data = {
-                    'state': 'US-NY',
-                }
-                var state = data
-                $.ajax({
-                    data: data,
-                    state: state,
-                    url: '/village-black-pages/get-state',
-                    method: "GET",
-                    success: function(data) {
-                        $('#book').html(data);
-                        $('#mobile-book').html(data);
-                        $('#cover-page').attr('value', 'US-NY');
-                        $('#cover-page-mobile').attr('value', 'US-NY');
-                        $('#vbp-flipbook').attr('value', 'US-NY');
-                        $('#vbp-flipbook-mobile').attr('value', 'US-NY');
-                        $('#filter-form-state').attr('value', 'US-NY');
-                        $('#filter-form-state-mobile').attr('value', 'US-NY');
-                        
-                    }
-                })
-                $([document.documentElement, document.body]).animate({
-                scrollTop: $("#book").offset().top
-                }, 500);
-            } else if (code == 3) {
-                var data = {
-                    'state': 'US-OH',
-                }
-                var state = data
-                $.ajax({
-                    data: data,
-                    state: state,
-                    url: '/village-black-pages/get-state',
-                    method: "GET",
-                    success: function(data) {
-                        $('#book').html(data);
-                        $('#mobile-book').html(data);
-                        $('#cover-page').attr('value', 'US-OH');
-                        $('#cover-page-mobile').attr('value', 'US-OH');
-                        $('#vbp-flipbook').attr('value', 'US-OH');
-                        $('#vbp-flipbook-mobile').attr('value', 'US-OH');
-                        $('#filter-form-state').attr('value', 'US-OH');
-                        $('#filter-form-state-mobile').attr('value', 'US-OH');
-                        
-                    }
-                })
-                $([document.documentElement, document.body]).animate({
-                scrollTop: $("#book").offset().top
-                }, 500);
-            } else if (code == 4) {
-                var data = {
-                    'state': 'US-PA',
-                }
-                var state = data
-                $.ajax({
-                    data: data,
-                    state: state,
-                    url: '/village-black-pages/get-state',
-                    method: "GET",
-                    success: function(data) {
-                        $('#book').html(data);
-                        $('#mobile-book').html(data);
-                        $('#cover-page').attr('value', 'US-PA');
-                        $('#cover-page-mobile').attr('value', 'US-PA');
-                        $('#vbp-flipbook').attr('value', 'US-PA');
-                        $('#vbp-flipbook-mobile').attr('value', 'US-PA');
-                        $('#filter-form-state').attr('value', 'US-PA');
-                        $('#filter-form-state-mobile').attr('value', 'US-PA');
-                        
-                    }
-                })
-                $([document.documentElement, document.body]).animate({
-                scrollTop: $("#book").offset().top
-                }, 500);
-            } else if (code == 5) {
-                var data = {
-                    'state': 'US-VA',
-                }
-                var state = data
-                $.ajax({
-                    data: data,
-                    state: state,
-                    url: '/village-black-pages/get-state',
-                    method: "GET",
-                    success: function(data) {
-                        $('#book').html(data);
-                        $('#mobile-book').html(data);
-                        $('#cover-page').attr('value', 'US-VA');
-                        $('#cover-page-mobile').attr('value', 'US-VA');
-                        $('#vbp-flipbook').attr('value', 'US-VA');
-                        $('#vbp-flipbook-mobile').attr('value', 'US-VA');
-                        $('#filter-form-state').attr('value', 'US-VA');
-                        $('#filter-form-state-mobile').attr('value', 'US-VA');
-                        
-                    }
-                })
-                $([document.documentElement, document.body]).animate({
-                scrollTop: $("#book").offset().top
-                }, 500);
-            } else if (code == 6) {
-                var data = {
-                    'state': 'US-MA',
-                }
-                var state = data
-                $.ajax({
-                    data: data,
-                    state: state,
-                    url: '/village-black-pages/get-state',
-                    method: "GET",
-                    success: function(data) {
-                        $('#book').html(data);
-                        $('#mobile-book').html(data);
-                        $('#cover-page').attr('value', 'US-MA');
-                        $('#cover-page-mobile').attr('value', 'US-MA');
-                        $('#vbp-flipbook').attr('value', 'US-MA');
-                        $('#vbp-flipbook-mobile').attr('value', 'US-MA');
-                        $('#filter-form-state').attr('value', 'US-MA');
-                        $('#filter-form-state-mobile').attr('value', 'US-MA');
-                    }
-                })
-                $([document.documentElement, document.body]).animate({
-                scrollTop: $("#book").offset().top
-                }, 500);
-            }
-        }
-      });
-    });
-    </script>
-    <script>
-    
-        $(".legendStar").on('click', function(){
-            var data = {
-                    'state': 'US-DC',
-                }
-                var state = data
-                $.ajax({
-                    data: data,
-                    state: state,
-                    url: '/village-black-pages/get-state',
-                    method: "GET",
-                    success: function(data) {
-                        $('#book').html(data);
-                        $('#mobile-book').html(data);
-                        $('#cover-page').attr('value', 'US-DC');
-                        $('#cover-page-mobile').attr('value', 'US-DC');
-                        $('#vbp-flipbook').attr('value', 'US-DC');
-                        $('#vbp-flipbook-mobile').attr('value', 'US-DC');
-                        $('#filter-form-state').attr('value', 'US-DC');
-                        $('#filter-form-state-mobile').attr('value', 'US-DC');
-                        
-                    }
-                })
-                $([document.documentElement, document.body]).animate({
-                scrollTop: $("#book").offset().top
-                }, 500);
-        });
-        $('.legendStar2').on('click', function(){
-            var data = {
-                    'state': 'US-DE',
-                }
-                var state = data
-                $.ajax({
-                    data: data,
-                    state: state,
-                    url: '/village-black-pages/get-state',
-                    method: "GET",
-                    success: function(data) {
-                        $('#book').html(data);
-                        $('#mobile-book').html(data);
-                        $('#cover-page').attr('value', 'US-DE');
-                        $('#cover-page-mobile').attr('value', 'US-DE');
-                        $('#vbp-flipbook').attr('value', 'US-DE');
-                        $('#vbp-flipbook-mobile').attr('value', 'US-DE');
-                        $('#filter-form-state').attr('value', 'US-DE');
-                        $('#filter-form-state-mobile').attr('value', 'US-DE');
-                    }
-                })
-                $([document.documentElement, document.body]).animate({
-                scrollTop: $("#book").offset().top
-                }, 500);
-        });
-        $('.legendStar3').on('click', function(){
-            var data = {
-                    'state': 'US-MD',
-                }
-                var state = data
-                $.ajax({
-                    data: data,
-                    state: state,
-                    url: '/village-black-pages/get-state',
-                    method: "GET",
-                    success: function(data) {
-                        $('#book').html(data);
-                        $('#mobile-book').html(data);
-                        $('#cover-page').attr('value', 'US-MD');
-                        $('#cover-page-mobile').attr('value', 'US-MD');
-                        $('#vbp-flipbook').attr('value', 'US-MD');
-                        $('#vbp-flipbook-mobile').attr('value', 'US-MD');
-                        $('#filter-form-state').attr('value', 'US-MD');
-                        $('#filter-form-state-mobile').attr('value', 'US-MD');
-                        
-                    }
-                })
-                $([document.documentElement, document.body]).animate({
-                scrollTop: $("#book").offset().top
-                }, 500);
-        });
-        
-    </script>
-    
-    <script>
-        $(function() {
-            $(".view-btn").click(function() {
-                var carouselState = $(".carousel-item.active").attr("name");
-                var data = {
-                    'state': carouselState,
-                }
-                var state = data
-                $.ajax({
-                    data: data,
-                    state: state,
-                    url: '/village-black-pages/get-state',
-                    method: "GET",
-                    success: function(data) {
-                        $('#book').html(data);
-                        $('#mobile-book').html(data);
-                        $('#cover-page').attr('value', carouselState);
-                        $('#cover-page-mobile').attr('value', carouselState);
-                        $('#filter-submit').attr('id', 'filter-submit-state'+ carouselState +'');
-                        $('#vbp-flipbook').attr('value', carouselState);
-                        $('#vbp-flipbook-mobile').attr('value', carouselState);
-                        $('#filter-form-state').attr('value', carouselState);
-                        $('#filter-form-state-mobile').attr('value', carouselState);
-                    }
-                })
-                $([document.documentElement, document.body]).animate({
-                scrollTop: $("#book").offset().top
-                }, 500);
-                
-            })
-        }); 
-    </script>
+
 {% endblock %}

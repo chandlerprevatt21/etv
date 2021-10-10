@@ -5,7 +5,14 @@
 <div id="page">
 
     <div class="content-container row">
+        <div class="col s12 l5 center-align" style="border-right: dotted 1px rgba(182, 182, 182, 0.694); padding-left: 3%; padding-right: 3%; height:100%">
+            <h5 class="donation-title">Empower The Village Needs Your Support!</h5>
+            <h7 style="padding-top: 20px;">Our mission is to develop, guide and implement breakthrough, scalable strategies that <b>empower Black people, businesses and community organizations to realize their full potential.</b></h7>
+            <iframe style="margin-top: 40px; margin-bottom:40px" width=100% height="315" src="https://www.youtube.com/embed/7ypFvkUOtwo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            
+        </div>
         <div class="col s12 l7" style="padding-left: 5%;padding-right: 5%; padding-bottom: 3%">
+            
             <form method="post" action="{{ donate_url }}" id="donation_form">
                 {% csrf_token %}
                 <h5 class="center-align donation-title">It Takes a Village to Restore Prosperity, Peace & Power to The Black Community!</h5>
@@ -27,94 +34,82 @@
                         <label>{{ donation_form.donor_email.label }}<b class="required">*</b></label>
                     </div>
                 </div>
-            <div class="row">
-                <div class="col s12">
-                    <h7 class="label-title">Donation Level<b class="required">*</b></h7>
-                    <p>
-                        <label>
-                          <input class="with-gap" name="donation_level" type="radio" value="25" required>
-                          <span>Village Member - $25</span>
-                        </label>
-                    </p>
-                      <p>
-                        <label>
-                          <input class="with-gap" name="donation_level" type="radio" value="50">
-                          <span>Village Patron - $50</span>
-                        </label>
-                      </p>
-                      <p>
-                        <label>
-                          <input class="with-gap" name="donation_level" type="radio" value="100">
-                          <span>Village Supporter - $100</span>
-                        </label>
-                      </p>
-                      <p>
-                        <label>
-                          <input class="with-gap" name="donation_level" type="radio" value="500">
-                          <span>Village Leader - $500</span>
-                        </label>
-                      </p>
-                      <p>
-                        <label>
-                          <input class="with-gap" name="donation_level" type="radio" value="1000">
-                          <span>Village Ambassador - $1000</span>
-                        </label>
-                      </p>
-                    <p class="">
-                        <label class="valign-wrapper">
-                            <input type="radio" class="with-gap other" name="donation_level" value="other">
-                            <span>
-                                Other
-                                <div class="input-field hidden other-input">
-                                    <input id="other-donation" type="text">
-                                    <label for="other-donation">Enter A Custom Amount</label>
-                                </div>
-                            </span>
-                        </label>
-                    </p>
-                    
+                <div class="row" style="margin-bottom:0; padding-bottom: 0">
+                    <div class="col s12">
+                        <h7 class="label-title">Donation Level<b class="required">*</b></h7>
+                            <div class="row">
+                                <p>
+                                    <label>
+                                    <input class="with-gap" name="donation_level" type="radio" value="25" required>
+                                    <span>Village Member - $25</span>
+                                    </label>
+                                </p>
+                                <p>
+                                    <label>
+                                    <input class="with-gap" name="donation_level" type="radio" value="50">
+                                    <span>Village Patron - $50</span>
+                                    </label>
+                                </p>
+                                <p>
+                                    <label>
+                                    <input class="with-gap" name="donation_level" type="radio" value="100">
+                                    <span>Village Supporter - $100</span>
+                                    </label>
+                                </p>
+                                <p>
+                                    <label>
+                                    <input class="with-gap" name="donation_level" type="radio" value="500">
+                                    <span>Village Leader - $500</span>
+                                    </label>
+                                </p>
+                                <p class="">
+                                    <label>
+                                    <input class="with-gap" name="donation_level" type="radio" value="1000">
+                                    <span>Village Ambassador - $1000</span>
+                                    </label>
+                                </p>
+                                <p id="custom-amount"></p>
+                            </div>
+                    </div>  
                 </div>
-            </div>
-            <p id="custom-amount"></p>
-            <div class="row">
-                <div class="col s12">
-                    <h7 class="label-title">Please Make My Payment<b class="required">*</b></h7>
-                    <p>
-                        <label>
-                          <input class="with-gap" name="recurring" type="radio" value="no" required>
-                          <span>A One-Time Payment</span>
-                        </label>
-                    </p>
-                    <p>
-                        <label>
-                          <input class="with-gap" name="recurring" type="radio" value="yes">
-                          <span>A Monthly Donation</span>
-                        </label>
-                    </p>
+            
+                <div class="row">
+                    <div class="col s12">
+                        <h7 class="label-title">Please Make My Payment<b class="required">*</b></h7>
+                        <p>
+                            <label>
+                            <input class="with-gap" name="recurring" type="radio" value="no" required>
+                            <span>A One-Time Payment</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                            <input class="with-gap" name="recurring" type="radio" value="yes">
+                            <span>A Monthly Donation</span>
+                            </label>
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <div class="donate-buttons center-align col s12 m8 offset-m2">
-                <a class="btn waves-effect valign-wrapper cc-button disabled">
-                    <i class="fas fa-credit-card"></i> Credit Card Donation
-                </a>
-                <br>
-                <a class="btn waves-effect pp-button disabled">
-                    <i class="fab fa-cc-paypal"></i> Donate with Paypal
-                </a>
-                <br>
-                <a class="btn waves-effect venmo-button valign-wrapper disabled" target="_blank" href="https://venmo.com/?txn=pay&audience=public&recipients=@Empower-TheVillage&amount=50&note=Thank%20you%20for%20supporting%20Empower%20The%20Village!">
-                    <img src="{% static 'img/venmo-icon.svg' %}" style="width: 30px;margin-bottom:-8px; padding-top:7px"> Donate with Venmo
-                </a>
-            </div>
+           
+                <div class="donate-buttons center-align col s12 m8 offset-m2">
+                    <a class="btn waves-effect valign-wrapper cc-button disabled">
+                        <i class="fas fa-credit-card"></i> Credit Card Donation
+                    </a>
+                    <br>
+                    <a class="btn waves-effect pp-button disabled">
+                        <i class="fab fa-cc-paypal"></i> Donate with Paypal
+                    </a>
+                    <br>
+                    <a class="btn waves-effect venmo-button valign-wrapper disabled" target="_blank" href="https://venmo.com/?txn=pay&audience=public&recipients=@Empower-TheVillage&amount=50&note=Thank%20you%20for%20supporting%20Empower%20The%20Village!">
+                        <img src="{% static 'img/venmo-icon.svg' %}" style="width: 30px;margin-bottom:-8px; padding-top:7px"> Donate with Venmo
+                    </a>
+                </div>
             </form>
         </div>
-        <div class="col s12 l5 center-align" style="border-left: dotted 1px rgba(182, 182, 182, 0.694); padding-left: 3%; padding-right: 3%; height:100%">
-            <h5 class="donation-title">Empower The Village Needs Your Support!</h5>
-            <h7 style="padding-top: 20px;">Our mission is to develop, guide and implement breakthrough, scalable strategies that <b>empower Black people, businesses and community organizations to realize their full potential.</b></h7>
-            <iframe style="margin-top: 40px; margin-bottom:40px" width=100% height="315" src="https://www.youtube.com/embed/7ypFvkUOtwo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <h7>YOUR DONATIONS SUPPORT OUR <p style="margin:0"><a href="https://empowerthevillage.org/pillars" target="_blank">STRATEGIC COMMUNITY INITIATIVES</a><p></h7>
-        </div>
+    </div> 
+    
 </div>
+
 <script>
     $('input[name="recurring"').change(function () {
        
@@ -274,4 +269,220 @@
         background-color:#606060
     }
 </style>
+<style>
+    body {
+  background-color: #fff;
+  padding: 15px;
+}
+
+.toast {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 9999;
+}
+
+.bootstrap-basic {
+  background: white;
+}
+
+/* Braintree Hosted Fields styling classes*/
+.braintree-hosted-fields-focused {
+  color: #495057;
+  background-color: #fff;
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.braintree-hosted-fields-focused.is-invalid {
+  border-color: #dc3545;
+  box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+</style>
+<script>
+    var form = $('#checkout-form');
+
+braintree.client.create({
+  authorization: 'sandbox_g42y39zw_348pk9cgf3bgyw2b'
+}, function(err, clientInstance) {
+  if (err) {
+    console.error(err);
+    return;
+  }
+
+  braintree.hostedFields.create({
+    client: clientInstance,
+    styles: {
+      input: {
+        // change input styles to match
+        // bootstrap styles
+        'font-size': '1rem',
+        color: '#495057'
+      }
+    },
+    fields: {
+      cardholderName: {
+        selector: '#cc-name',
+        placeholder: 'Name as it appears on your card'
+      },
+      number: {
+        selector: '#cc-number',
+        placeholder: '4111 1111 1111 1111'
+      },
+      cvv: {
+        selector: '#cc-cvv',
+        placeholder: '123'
+      },
+      expirationDate: {
+        selector: '#cc-expiration',
+        placeholder: 'MM / YY'
+      }
+    }
+  }, function(err, hostedFieldsInstance) {
+    if (err) {
+      console.error(err);
+      return;
+    }
+    function createInputChangeEventListener(element) {
+      return function () {
+        validateInput(element);
+      }
+    }
+
+    function setValidityClasses(element, validity) {
+      if (validity) {
+        element.removeClass('is-invalid');
+        element.addClass('is-valid');  
+      } else {
+        element.addClass('is-invalid');
+        element.removeClass('is-valid');  
+      }    
+    }
+    
+    function validateInput(element) {
+      // very basic validation, if the
+      // fields are empty, mark them
+      // as invalid, if not, mark them
+      // as valid
+
+      if (!element.val().trim()) {
+        setValidityClasses(element, false);
+
+        return false;
+      }
+
+      setValidityClasses(element, true);
+
+      return true;
+    }
+    
+    function validateEmail () {
+      var baseValidity = validateInput(email);
+      
+      if (!baseValidity) {  
+        return false;
+      }
+
+      if (email.val().indexOf('@') === -1) {
+        setValidityClasses(email, false);
+        return false;
+      }
+      
+      setValidityClasses(email, true);
+      return true;
+    }
+
+    var ccName = $('#cc-name');
+    var email = $('#email');
+
+    ccName.on('change', function () {
+      validateInput(ccName);
+    });
+    email.on('change', validateEmail);
+
+
+            hostedFieldsInstance.on('validityChange', function(event) {
+      var field = event.fields[event.emittedBy];
+
+      // Remove any previously applied error or warning classes
+      $(field.container).removeClass('is-valid');
+      $(field.container).removeClass('is-invalid');
+
+      if (field.isValid) {
+        $(field.container).addClass('is-valid');
+      } else if (field.isPotentiallyValid) {
+        // skip adding classes if the field is
+        // not valid, but is potentially valid
+      } else {
+        $(field.container).addClass('is-invalid');
+      }
+    });
+
+    hostedFieldsInstance.on('cardTypeChange', function(event) {
+      var cardBrand = $('#card-brand');
+      var cvvLabel = $('[for="cc-cvv"]');
+
+      if (event.cards.length === 1) {
+        var card = event.cards[0];
+
+        // change pay button to specify the type of card
+        // being used
+        cardBrand.text(card.niceType);
+        // update the security code label
+        cvvLabel.text(card.code.name);
+      } else {
+        // reset to defaults
+        cardBrand.text('Card');
+        cvvLabel.text('CVV');
+      }
+    });
+
+    form.submit(function(event) {
+      event.preventDefault();
+
+      var formIsInvalid = false;
+      var state = hostedFieldsInstance.getState();
+
+      // perform validations on the non-Hosted Fields
+      // inputs
+      if (!validateEmail()) {
+        formIsInvalid = true;
+      }
+
+      // Loop through the Hosted Fields and check
+      // for validity, apply the is-invalid class
+      // to the field container if invalid
+      Object.keys(state.fields).forEach(function(field) {
+        if (!state.fields[field].isValid) {
+          $(state.fields[field].container).addClass('is-invalid');
+          formIsInvalid = true;
+        }
+      });
+
+      if (formIsInvalid) {
+        // skip tokenization request if any fields are invalid
+        return;
+      }
+
+      hostedFieldsInstance.tokenize(function(err, payload) {
+        if (err) {
+          console.error(err);
+          return;
+        }
+
+        // This is where you would submit payload.nonce to your server
+        $('.toast').toast('show');
+
+        // you can either send the form values with the payment
+        // method nonce via an ajax request to your server,
+        // or add the payment method nonce to a hidden inpiut
+        // on your form and submit the form programatically
+        // $('#payment-method-nonce').val(payload.nonce);
+        // form.submit()
+      });
+    });
+  });
+});
+</script>
 {% endblock %}

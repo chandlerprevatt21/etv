@@ -1,0 +1,689 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+<div class="parallax-container z-depth-3 box-shadow valign-wrapper">
+    
+    <div class="container z-depth-4 center-align parallax-banner">
+        <img src='{% static "img/prosperity.png" %}' style="width:95%; padding: 3% 2%">
+    </div>
+    <div class="parallax">
+        <img src='{% static "img/vbp-collage.png" %}' style="height: 180% !important">
+    </div>
+
+</div>
+    <div class="row" style="background-color: rgba(255, 255, 255, 0.781);">
+        <ul class="tabs tabs-fixed-width pillar-nav z-depth-2">
+            <li class="tab subnav-link"><a href="{{ efbf_url }}" class="subnav-link">Make Every Friday, Black Friday!™</a></li>
+            <li class="tab subnav-link"><a href="{{ vbp_url }}" class="subnav-link" style="margin-left: -40px">Village Black Pages™</a></li>
+            <li class="tab subnav-link"><a href="{{ bf_home_url }}" class="subnav-link">Black Friday Challenge™</a></li>
+        </ul>
+        <style>
+            @media only screen and (max-width: 662px){
+                .pillar-nav {
+                display: none !important
+            }
+            }
+            @media only screen and (min-width:663px){
+                .subnav-link {
+                    font-size: 16px !important;
+                    font-weight: 500 !important;
+                }
+                .pillar-nav {
+                    display: none;
+                }
+            }
+            @media only screen and (min-width:992px){
+                .subnav-link {
+                    font-size: 20px !important;
+                    font-weight: 500 !important;
+                }
+                .pillar-nav {
+                    display:-webkit-flex !important
+                }
+            }
+            .subnav-link {
+                font-size: 14px;
+                font-weight: 500 !important
+            }
+            
+        </style>
+        <div class="col m5 l4 xl3 success-eq-top">
+            <img class="left" src="{% static 'img/success_equation_2.gif' %}" width=100%>
+        </div>
+        <div class="pillar-body">
+            <div class="row center-align">
+                <div class="col s12 m12 l8 xl9">
+                    <p class="dyk" style="color: rgb(162, 21, 21); margin:0; padding:0; margin-top: -10px">State Of The Village : <a style="color:rgba(38, 38, 38, 0.947); font-family: oskar">Did You Know...?</a></p>
+                    <div class="divider"></div>
+                    <div class="row" style="margin-bottom: 0; padding-top: 20px;">
+                        
+                        <div class="col s12 m6">
+                            <div class="row dyk-row">
+                                <img class="col s4 m12 unemployment" src="{% static 'img/unemployment_ss.png'%} ">
+                                <p class="col s8 m12 unemployment-text">The unemployment rate for Black Americans has been ~2X the rate for White Americans</p>
+                            </div>
+                        </div>
+                        <div class="col s12 m6">
+                            <div class="row dyk-row">
+                                <img class="col s3 m12 circulate" src="{% static 'img/6hours.png'%}">
+                                <p class="col s9 m12 circulate-text">A dollar earned by members of the Black community circulates within the Black community for only 6 hours</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    
+                    <div class="row" style="margin-bottom: 0">
+                        <div class="col s12">
+                            <div class="row dyk-row valign-wrapper">
+                                <img class="tenx-house" src="{% static 'img/10x_house_only.png'%}">
+                                <blockquote class="tenx-text" style="border-left: 2px dotted #3e852c;">
+                                    <p>The net worth of White Americans is ~10X greater than that of Black Americans.</p>
+                                    <p>Black home ownership is at its lowest level since the 1960s.</p>
+                                    <p>Ownership of real estate, particularly owning your primary residence, is a key factor in determining net worth.</p>
+                                </blockquote>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+            <div class="divider" style="margin-bottom: 20px"></div>
+            <div class="row" style="width: 90%; margin-left:5%">
+                <ul class="col s12 m6 collapsible popout pillar-collapsible goals-collapsible">
+                    <li class="goals-li">
+                        <div class="collapsible-header valign-wrapper pillar-header goals-header">
+                            <div class="collapsible-body-image" style="background: url('{% static 'img/ep-goals.jpg' %}'); background-size: 147%">
+                            </div>
+                            <div class="pillar-title">ETV Goals</div>
+                            <div>
+                                <i class="material-icons" style="color: rgb(255, 255, 255); font-size: 36px">keyboard_arrow_down</i>
+                            </div>
+                        </div>
+                        <div class="collapsible-body collapsible-body-pillar">
+                            <ul>
+                                <li class="pillar-h5">
+                                    <table>
+                                        <tr class="pillar-tr">
+                                            <td class="pillar-target-td">
+                                                <i class="material-icons pillar-target">track_changes</i> 
+                                            </td>
+                                            <td class="pillar-h5">
+                                                Increase Black Prosperity & Generational Wealth
+                                            </td>
+                                        </tr>
+                                        <tr class="pillar-tr">
+                                            <td class="pillar-target-td">
+                                                <i class="material-icons pillar-target">track_changes</i> 
+                                            </td>
+                                            <td class="pillar-h5">
+                                                Strengthen & Grow Black Businesses
+                                            </td>
+                                        </tr>
+                                        <tr class="pillar-tr">
+                                            <td class="pillar-target-td">
+                                                <i class="material-icons pillar-target">track_changes</i> 
+                                            </td>
+                                            <td class="pillar-h5">
+                                                Create Jobs to reduce unemployment & under-employment for Black Americans
+                                            </td>
+                                        </tr>
+                                        <tr class="pillar-tr">
+                                            <td class="pillar-target-td">
+                                                <i class="material-icons pillar-target">track_changes</i> 
+                                            </td>
+                                            <td class="pillar-h5">
+                                                Up-skilling our workers for the future of work
+                                            </td>
+                                            
+                                        </tr>
+                                    </table>
+                                    
+                                </li>
+                            </ul>
+                            
+                        </div>
+                    </li>
+                </ul> 
+                <ul class="col s12 m6 collapsible popout pillar-collapsible" style="margin-bottom: 2%;">
+                    
+                    <li class="solutions-li">
+                        <div class="collapsible-header valign-wrapper pillar-header solutions-header">
+                            <div class="collapsible-body-image" style="background: url('{% static 'img/solutions.jpg' %}'); background-size: 140%; background-position-x: -30px">
+                            </div>
+                            <div class="pillar-title">ETV Solutions</div>
+                            <div>
+                                <i class="material-icons" style="color: white; font-size: 36px">keyboard_arrow_down</i>
+                            </div>
+                        </div>
+                        <div class="collapsible-body collapsible-body-pillar">
+                            <table>
+                                <tr class="pillar-tr">
+                                    <td class="pillar-target-td">
+                                        <i class="material-icons pillar-target">check</i> 
+                                    </td>
+                                    <td class="pillar-h5">
+                                        <b><a href="{{ efbf_url }}">Make Every Friday, Black Friday!™ - </a></b>Awareness & Empowerment
+                                    </td>
+                                </tr>
+                                <tr class="pillar-tr">
+                                    <td class="pillar-target-td">
+                                        <i class="material-icons pillar-target">check</i> 
+                                    </td>
+                                    <td class="pillar-h5">
+                                        <b><a href="{{ voting_url }}">Village Black Pages™ - </a></b>Locate & Support Black-Owned Businesses 
+                                    </td>
+                                </tr>
+                                <tr class="pillar-tr">
+                                    <td class="pillar-target-td">
+                                        <i class="material-icons pillar-target">check</i> 
+                                    </td>
+                                    <td class="pillar-h5">
+                                        <b><a href="{{ voting_url }}">Black Friday Challenge™ - </a></b>Fun, Interactive Challenges
+                                    </td>
+                                </tr>
+                                <tr class="pillar-tr">
+                                    <td class="pillar-target-td">
+                                        <i class="material-icons pillar-target">check</i> 
+                                    </td>
+                                    <td class="pillar-h5">
+                                        <b><a href="{{ efbf_url }}">Village@Work™ - </a></b>Workforce Development, Apprenticeship & Internship Program
+                                    </td>
+                                </tr>
+                                <tr class="pillar-tr">
+                                    <td class="pillar-target-td">
+                                        <i class="material-icons pillar-target">check</i> 
+                                    </td>
+                                    <td class="pillar-h5">
+                                        <b><a href="{{ voting_url }}">Village Empowerment Network™ - </a></b>Online, On-Demand Training Platform for Entrepreneurs & One-On-One Strategy, Planning & Technical Counseling
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </li>
+                </ul> 
+            </div>
+            <div class="divider" style="margin: 0; padding:0"></div>
+            <div class="row" style="margin-bottom: 0; padding-left: 5%; padding-right: 5%;">
+                        
+                <div class="col s12 m3">
+                    <div class="row dyk-row">
+                        <img class="col s3 m12 one2trillion" src="{% static 'img/12trillion.png'%}">
+                        <p class="col s9 m12 one2trillion-text">The U.S. Black community's buying power is ~$1.2 trillion!</p>
+                    </div>
+                </div>
+                <div class="col s12 m3">
+                    <div class="row dyk-row">
+                        <img class="col s3 m12 two6million" src="{% static 'img/26million.png'%} ">
+                        <p class="col s9 m12 two6million-text">There are 2.6+ million Black businesses in the U.S!</p>
+                    </div>
+                </div>
+                
+                <div class="col s12 m3">
+                    <div class="row dyk-row">
+                        <img class="col s3 m12 million-jobs" src="{% static 'img/million-jobs.png'%}">
+                        <p class="col s9 m12 million-jobs-text">Existing Black-owned businesses have created over 1 million jobs!</p>
+                    </div>
+                </div>
+                <div class="col s12 m3">
+                    <div class="row dyk-row">
+                        <img class="col s3 m12 women-ofb" src="{% static 'img/women_ofb.png'%}">
+                        <p class="col s9 m12 women-ofb-text">Black women are starting businesses at a faster rate than any other group!</p>
+                    </div>
+                </div>
+            </div>
+            
+</div>
+</div>
+<style>
+    
+    .divider {
+        margin: 0;
+    }
+    
+    p {
+        font-weight: 400;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        text-align: center;
+    }
+    
+    .facts-ul li {
+        padding-bottom: 15px;
+        font-weight: 300;
+    }
+    .pillar-nav {
+        background-color: rgba(0, 0, 0, 0.728);
+    }
+    .pillar-nav li a {
+        color: rgb(255, 255, 255) !important;
+    }
+    .dyk {
+        font-family: oskar-inline;
+        color:rgba(60, 60, 60, 0.947);
+        text-transform: uppercase;
+    }
+    
+    .goals-header {
+        background: rgb(191,23,23);
+        background: linear-gradient(90deg, rgba(191,23,23,0.8365721288515406) 0%, rgba(156,96,30,0.738532913165266) 49%, rgba(0, 0, 0, 0.399) 100%); 
+    }
+    .solutions-header {
+        background: rgb(191,23,23);
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0.603) 0%, rgba(137, 143, 65, 0.739) 49%, rgba(44, 129, 15, 0.739) 100%); 
+    }
+    @media only screen and (min-width: 0px) {
+        
+        .one2trillion {
+            
+        }
+        .one2trillion-text {
+            padding: 0 !important;
+            margin: 0 !important;
+            font-size: 16px;
+            text-align: left
+        }
+        .two6million {
+        }
+        .two6million-text {
+            padding: 0 !important;
+            margin: 0 !important;
+            font-size: 16px;
+            text-align: left
+        }
+        .million-jobs {
+        }
+        .million-jobs-text {
+            padding: 0 !important;
+            margin: 0 !important;
+            font-size: 16px;
+            text-align: left
+        }
+        .women-ofb {
+        }
+        .women-ofb-text {
+            padding: 0 !important;
+            margin: 0 !important;
+            font-size: 16px;
+            text-align: left
+        }
+        .dyk {
+            font-size: 38px;
+            letter-spacing: 2px;
+            margin-top: 10px !important
+        }
+        .power-collapse {
+        width: 100%;
+        
+    }
+    .unemployment {
+    }
+    .unemployment-text {
+        font-size: 12px;
+        line-height: 24px;
+        padding: 0;
+        padding-top: 2% !important;
+        margin: 0;
+        text-align: left;
+    }
+    .circulate-text {
+        font-size: 12px;
+        line-height: 24px;
+        padding: 0;
+        padding-top: 2% !important;
+        margin: 0;
+        text-align: left;
+    }
+    .dyk-row {
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+    .tenx-house {
+        width: 25%;
+        padding-left: 3%;
+        padding-right: 0;
+        padding-top: 2%
+    }
+    .tenx-text p {
+        margin: 0;
+        padding: 0;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-right: 3%;
+        font-size: 12px;
+        text-align: left;
+    }
+    .goals li {
+        width: 100%;
+    }
+    .power-collapse li {
+        
+    }
+    .power-collapse li div{
+        font-size: 14px;
+        padding: 2% 5%
+    }
+        blockquote {
+            font-size: 16px;
+            font-weight: 300;
+            margin-top: 30px !important;
+            margin-top: 30px !important;
+        }
+        .statistic-title {
+            font-family: oskar-inline;
+            font-size: 28px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-transform: scale(1, 0.9);
+            text-align: center;
+            background-color: rgba(154, 22, 22, 0.947);
+            padding: 15px 5px;
+            color: white
+        }
+        .collapsible li {
+            margin: 0 !important;
+        }
+        .degree-attainment-small {
+            display: block;
+            padding: 0% 5%;
+        }
+        .degree-attainment {
+            display: none;
+            padding: 0% 5%;
+        }
+        blockquote {
+            width: 90%;
+            margin-left: 5%;
+            margin-top: 7%;
+        }
+    }
+    @media only screen and (min-width: 420px) {
+        .statistic-title {
+            font-size: 32px;
+            padding: 15px 10px;
+        }
+        .tenx-text p {
+        margin: 0;
+        padding: 0;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-right: 3%;
+        font-size: 14px;
+        text-align: left;
+    }
+    .unemployment-text {
+        font-size: 16px;
+        padding: 0;
+        margin: 0;
+    }
+    .circulate-text {
+        font-size: 16px;
+        padding: 0;
+        margin: 0;
+    }
+    }
+    @media only screen and (min-width: 601px) {
+
+        .two6million {
+            width: 100% !important;
+            padding-top: 19% !important;
+        }
+        .two6million-text {
+            padding: 0;
+            padding-top: 2% !important;
+            margin: 0;
+            font-size: 14px;
+            text-align: center;
+        }
+        .one2trillion {
+            width: 85% !important;
+            margin-left: 7.5% !important;
+            padding-top: 7.2% !important
+        }
+        .one2trillion-text {
+            padding: 0;
+            margin: 0;
+            padding-top: 2% !important;
+            font-size: 14px;
+            text-align: center;
+        }
+        .million-jobs {
+            width: 80% !important;
+            margin-left: 10% !important;
+            padding-top: 11% !important
+        }
+        .million-jobs-text {
+            padding: 0;
+            margin: 0;
+            padding-top: 2% !important;
+            font-size: 14px;
+            text-align: center;
+        }
+        .women-ofb {
+            width: 75% !important;
+            margin-left: 12.5% !important;
+            padding-top: 5% !important;
+        }
+        .women-ofb-text {
+            padding: 0;
+            margin: 0;
+            padding-top: 2% !important;
+            font-size: 14px;
+            text-align: center;
+        }
+        .goals-li {
+        width: 90% !important;
+        margin-left: 5% !important;
+    }
+    .solutions-li {
+        width: 90% !important;
+        margin-left: 5% !important;
+    }
+    .dyk {
+        font-size: 42px;
+        margin-top: 0 !important
+    }
+    .unemployment {
+        width: 80% !important;
+        margin-left: 10% !important;
+    }
+    .circulate {
+        width: 68% !important;
+        margin-left: 16% !important;
+    }
+    .unemployment-text {
+        font-size: 16px;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+    .circulate-text {
+        font-size: 16px;
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+    .dyk-row {
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+    .tenx-house {
+        width: 25%;
+        padding-left: 1%;
+        padding-right: 0;
+        padding-top: 5%
+    }
+    .tenx-text p {
+        margin: 0;
+        padding: 0;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-right: 3%;
+        font-size: 16px;
+    }
+        
+        .power-collapse {
+        width: 100%;
+        
+    }
+    .power-collapse li {
+        
+    }
+    .power-collapse li div{
+        font-size: 16px;
+        padding: 2% 10%
+    }
+        blockquote {
+            font-size: 20px;
+            margin-top: 5% !important;
+            margin-bottom: 5% !important;
+        }
+        .statistic-title {
+            font-size: 38px;
+            width: 50% !important;
+            margin-left: 25%;
+            margin-top: 5%;
+            margin-bottom: 5%;
+        }
+        
+      
+    }
+    @media only screen and (min-width: 993px) {
+
+        .two6million-text {
+            padding: 0;
+            padding-top: 5% !important;
+            margin: 0;
+            font-size: 18px;
+            text-align: center;
+        }
+        .one2trillion-text {
+            padding: 0;
+            padding-top: 5% !important;
+            margin: 0;
+            font-size: 18px;
+            text-align: center;
+        }
+        .million-jobs-text {
+            padding: 0;
+            padding-top: 5% !important;
+            margin: 0;
+            font-size: 18px;
+            text-align: center;
+        }
+        .women-ofb-text {
+            padding: 0;
+            padding-top: 5% !important;
+            margin: 0;
+            font-size: 18px;
+            text-align: center;
+        }
+        blockquote {
+            font-size: 22px;
+        }
+        .pillar-body {
+            padding-left: 1% !important;
+            padding-right: 1% !important;
+        }
+        .power-collapse {
+        width: 90%;
+        margin-left: 5%
+        
+    }
+    .dyk {
+        font-size: 58px
+    }
+    .power-collapse li {
+        
+    }
+    .power-collapse li div{
+        font-size: 18px;
+        padding: 2% 5%
+    }
+    .unemployment {
+        width: 70% !important;
+        margin-left: 16% !important;
+    }
+    .circulate {
+        width: 58% !important;
+        margin-left: 26% !important;
+    }
+        
+    }
+    @media only screen and (min-width: 1201px) {
+        .unemployment {
+        width: 45% !important;
+        margin-left: 27.5% !important;
+    }
+    .circulate {
+        width: 38% !important;
+        margin-left: 31% !important;
+    }
+    .unemployment-text {
+        font-size: 18px;
+        padding: 0;
+        margin: 0;
+        line-height: 30px
+    }
+    .circulate-text {
+        font-size: 18px;
+        padding: 0;
+        margin: 0;
+        line-height: 30px
+    }
+    .dyk-row {
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+    .dyk {
+        padding-bottom: 20px
+    }
+    .tenx-house {
+        width: 20%;
+        padding-left: 3%;
+        padding-right: 0;
+        padding-top: 2%
+    }
+    .tenx-text p {
+        margin: 0;
+        padding: 0;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-right: 3%;
+        font-size: 22px;
+      
+    }
+}
+@media only screen and (min-width: 1400px) {
+    .dyk-row {
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+    .dyk {
+        padding-bottom: 20px
+    }
+    .tenx-house {
+        width: 20%;
+        padding-left: 3%;
+        padding-right: 0;
+        padding-top: 2%
+    }
+    .tenx-text p {
+        margin: 0;
+        padding: 0;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-right: 3%;
+        font-size: 24px;
+        font-weight: 300
+      
+    }
+}
+</style>
+{% endblock %}

@@ -1,0 +1,220 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ title }}{% endblock %}
+{% block content %}
+<div class="parallax-container z-depth-3 box-shadow valign-wrapper">
+    
+    <div class="container z-depth-4 center-align parallax-banner">
+        <img src='{% static "img/education_employment.png" %}' style="width:95%; padding: 5%">
+    </div>
+    <div class="parallax">
+        <img src='{% static "img/ed_collage_big.png" %}'>
+    </div>
+
+</div>
+<div style="background: url('{% static 'img/ed_collage_big.png' %}'); background-size: 180%; height: 100%">
+    <div class="row" style="height: 100%; background-color: rgba(255, 255, 255, 0.781); width:100%">
+        <div class="col s12 l10 offset-l1 pillar-body" style="padding: 5% !important">
+            <h5 class="phase-one-title z-depth-2">ETV Education & Employment Initiatives</h5>
+                <div class="col s12">
+                    <div class="row vaw-row">
+                        <div class="col l4 ee-image">
+                            <img class="z-depth-2" src="{% static 'img/villageatwork.png' %}" style="width: 100%;">
+                        </div>
+                        <div class="col s12 l8">
+                            <img src="{% static 'img/villageatwork_logo.png' %}" style="width: 60%; padding-top: 20px;">
+                            <h6 class="pillar-h5"><b>Village@Work™:</b> This workforce development program is focused on creating and funding jobs within Black-owned businesses that need additional personnel to enhance their success. It creates a win-win for our business owners and job/career seekers.</h6>
+                        </div>
+                    </div>
+                    <div class="row strivers-row">
+                        <div class="col l4 ee-image">
+                            <img class="z-depth-2" src="{% static 'img/schoolgirl.png' %}" style="width: 100%;">
+                        </div>
+                        <div class="col s12 l8">
+                            <img src="{% static 'img/strivers_logo.png' %}" style="width: 60%; padding-top: 20px;">
+                            <h6 class="pillar-h5"><b>Village Strivers™:</b> This ETV program will provide academic enrichment, homework help, coaching and tutoring, college and test prep resources for youth and job training, internships, and apprenticeships for adults and youth (virtually or in-person).</h6>
+                            <blockquote>
+                                The program will be implemented in partnership with Village volunteers and paid teachers of color who serve as role models as well as mentors. ETV will fund individual and group sessions with enrichment providers and independent tutors, emphasizing math, science and writing skills.</li>
+        
+                            </blockquote>
+                        </div>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="row valign-wrapper" style="margin-bottom:0">
+                        <div class="col m4 ninetyfive-graphic">
+                            <img src="{% static 'img/95percent.png' %}" width=100%>
+                        </div>
+                        <div class="col s12 m8">
+                            <blockquote style="border-left: 4px solid #c6704b;">
+                                95% of Black-owned businesses are nonemployer businesses (i.e. sole proprietorships where there is only a single individual, the owner, running the firm) 
+                            </blockquote>
+                        </div>
+                    </div>
+                        <div class="row center-align">
+                            <img class="growth-graphic" src="{% static 'img/101percent.png' %}">
+                            <p class="helper-text" style="margin:0">Average increase in annual revenue growth for businesses transitioning from 0 to 1+ employees</p>
+                        </div>
+                        <div class="row valign-wrapper">
+                            <blockquote style="border-left: 4px solid #f4c0a4;">
+                                As businesses transition from non-employer to employer, their revenue grows rapidly in the year prior to and the year of transition to employer status
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .divider {
+        margin: 5%;
+    }
+    
+    p {
+        font-weight: 400;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        text-align: center;
+    }
+    .facts-ul li {
+        padding-bottom: 15px;
+        font-weight: 300;
+    }
+    .strivers-row {
+        padding-top: 5%
+    }
+    @media only screen and (min-width: 0px) {
+        .pillar-h5 {
+            font-size: 16px;
+            line-height: 32x;
+            
+        }
+        .ee-image {
+            display: none;
+        }
+        .ninetyfive-graphic {
+            display: none
+        }
+        .growth-graphic {
+            width: 70%
+        }
+        blockquote {
+            font-size: 14px;
+            font-weight: 300;
+            margin-top: 20px !important;
+        }
+        .unemployment-seesaw img {
+            width: 100%;
+            padding-top: 40px;
+        }
+        .education-seesaw img {
+            padding-top: 20px;
+            width: 105%;
+        }
+        .statistic-title {
+            font-family: poppins;
+            font-weight: 600;
+            font-size: 16px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-transform: scale(1, 0.9);
+            text-align: center;
+            background-color: rgba(154, 22, 22, 0.947);
+            padding: 15px 5px;
+            color: white
+        }
+        .collapsible li {
+            margin: 0 !important;
+        }
+        .degree-attainment-small {
+            display: block;
+            padding: 0% 5%;
+        }
+        .degree-attainment {
+            display: none;
+            padding: 0% 5%;
+        }
+        blockquote {
+            width: 90%;
+            margin-left: 5%;
+            margin-top: 7%;
+        }
+    }
+    @media only screen and (min-width: 420px) {
+        .statistic-title {
+            font-size: 20px;
+            padding: 15px 10px;
+        }
+        .growth-graphic {
+            width: 60%
+        }
+    }
+    @media only screen and (min-width: 601px) {
+        .pillar-h5 {
+            font-size: 20px;
+            line-height: 40x;
+            
+        }
+        .growth-graphic {
+            width: 50%
+        }
+        .ninetyfive-graphic {
+            display: block
+        }
+        blockquote {
+            font-size: 18px;
+        }
+        .statistic-title-large {
+            font-family: poppins;
+            width: 80%;
+            margin-left: 10%;
+            font-weight: 600;
+            font-size: 24px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-transform: scale(1, 0.9);
+            text-align: center;
+            background-color: rgba(207, 25, 25, 0.865);
+            padding: 15px 5px;
+            color: white
+        }
+    }
+    @media only screen and (min-width: 993px) {
+        blockquote {
+            font-size: 18px;
+        }
+        .ee-image {
+            display: block;
+            height: 150px;
+            margin-top: 30px;
+            padding-right: 2%
+        }
+        .pillar-h5 {
+            font-size: 20px;
+            line-height: 42x;
+            
+        }
+        .growth-graphic {
+            width: 30%
+        }
+    }
+    @media only screen and (min-width: 1201px) {
+        blockquote {
+            font-size: 22px;
+        }
+        .ee-image {
+            display: block;
+            height: 150px;
+            margin-top: 30px;
+            padding-right: 2%
+        }
+        .pillar-h5 {
+            font-size: 24px;
+            line-height: 42px;
+            
+        }
+    }
+</style>
+{% endblock %}

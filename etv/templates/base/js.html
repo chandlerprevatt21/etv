@@ -18,6 +18,7 @@
 <script src="{% static 'js/turn.html4.js' %}"></script>
 <script src="{% static 'js/turn.js' %}"></script>
 <script src="{% static 'js/zoom.js' %}"></script>
+<script src="{% static 'js/marquee.js' %}"></script>
 
 <!-- Sweet Alert 2 -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -34,29 +35,31 @@
 <!-- Validate -->
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
 
+<script src="https://js.braintreegateway.com/web/3.82.0/js/client.min.js"></script>
 <script>
-    $(document).ready(function(){
-        $('.collapsible').collapsible();
-        $('.parallax').parallax();
-        $('.dropdown-trigger').dropdown({hover: true, constrainWidth: false, coverTrigger: false, container:'.dropdown-container'});
-        $('.sidenav').sidenav();
-        $('.modal').modal();
-        $('select').formSelect();
-        $('.carousel').carousel({indicators: true, numVisible: 7,});;
-        $('.tooltipped').tooltip({'margin':'0', 'transitionMovement': '0',});
-        $('.phone_us').mask('(000) 000-0000');
-        $('.money').mask('000,000.00', {reverse: true});
-        $('#other-donation').mask('000,000', {reverse: true});
-        $('.datepicker').datepicker();
-        $('.ways-to-play-tabs').tabs();
-      });
-      
-    </script>
-    <script>
-      $(window).resize(function(event) {
-        event.preventDefault();
-      })
-      $('.carousel-item').resize(function(event){
-        event.preventDefault();
-      })
-    </script>
+  $(document).ready(function(){
+      $('.simple-marquee-container').SimpleMarquee({velocity: 0.05});
+      $('.collapsible').collapsible();
+      $('.parallax').parallax();
+      $('select').formSelect();
+      $('.dropdown-trigger').dropdown({hover: true, constrainWidth: false, coverTrigger: false, container:'.dropdown-container'});
+      $('.sidenav').sidenav();
+      $('.carousel').carousel({indicators: true, numVisible: 10,});
+      $('.tooltipped').tooltip({'margin':'0', 'transitionMovement': '0',});
+      $('.phone_us').mask('(000) 000-0000');
+      $('.money').mask('000,000.00', {reverse: true});
+      $('#other-donation').mask('000,000', {reverse: true});
+      $('.datepicker').datepicker();
+      $('.ways-to-play-tabs').tabs();
+    });
+    
+  </script>
+  <script>
+    $(window).resize(function(event) {
+      event.preventDefault();
+    })
+    $('.carousel-item').resize(function(event){
+      event.preventDefault();
+    })
+    
+  </script>

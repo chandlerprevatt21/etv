@@ -1,13 +1,16 @@
 {% load static %}
 {% regroup obj by get_category_display as category_list %}
+{% regroup obj by category as category_list_raw %}
 {% regroup obj|dictsort:'city' by city as city_list %}
 {% regroup obj by county as county_list %}
 {% regroup obj by subcategory as subcategory_list %}
 {% url 'bfchallenge:nomination' as nomination_url %}
-
+<input type="hidden" value="{{ cars_page }}" id="cars-pageno-hidden">
+<div id="beauty-pageno-hidden" style="display:none" value='{{ beauty_page }}'></div>
+<div id="books-pageno-hidden" style="display:none" value='{{ books_page }}'></div>
 <div id="flipbook-fullsize-container">
     <div class="" id="vbp-flipbook">
-        <div class="row offset-s1" style="padding: 10%; padding-top:5%;padding-bottom:0">
+        <div class="row offset-s1" style="padding: 10%; padding-top:5%;padding-bottom:0; margin-bottom:0">
             <form id="filter-form">
                 <input type="hidden" id="filter-form-state">
                 <div class="row">
@@ -28,7 +31,13 @@
             </form>
         </div>
     </div>
-        
+    <div class="row center-align" style="margin-top:0; padding-top:0">
+              
+        <a class="contents-page" style="cursor: pointer">VIEW TABLE OF CONTENTS</a> | Jump To Page: <input type="text" id="page-jump" style="width: 100px; margin-right: 10px">
+        <div class="btn btn-large" id="go-btn" style="background-color: rgb(55, 55, 55)">GO</div>
+
+    </div>
+       
         <div class="row valign-wrapper">
             <div class="col s1" style="margin-left: 2%">
             <i class="material-icons flipbook-arrows" id="prev">arrow_back_ios</i>
@@ -67,23 +76,314 @@
                                 </div>
                             </div>
                             <div class="" style="background: url({% static 'img/vbp welcome page.png' %});background-size: 105%"></div>
-                            <div class="" style="background-color: 181818;">
+                            <div class="p4" style="background-color: 181818;">
+                                <script>
+                                    $('.beauty-page').click(function(){
+                                        pageNumber = $('#beauty-pageno').attr('value')
+                                        oTurn2.turn("page", pageNumber)
+                                    });
+                                    $('.books-page').click(function(){
+                                        pageNumber = $('#books-pageno').attr('value')
+                                        oTurn2.turn("page", pageNumber)
+                                    });
+                                    $('.cars-page').click(function(){
+                                        pageNumber = $('#cars-pageno').attr('value')
+                                        oTurn2.turn("page", pageNumber)
+                                    });
+                                    $('.child-page').click(function(){
+                                        pageNumber = $('#child-pageno').attr('value')
+                                        oTurn2.turn("page", pageNumber)
+                                    });
+                                    $('.cleaning-page').click(function(){
+                                        pageNumber = $('#cleaning-pageno').attr('value')
+                                        oTurn2.turn("page", pageNumber)
+                                    });
+                                    $('.clothing-page').click(function(){
+                                        pageNumber = $('#clothing-pageno').attr('value')
+                                        oTurn2.turn("page", pageNumber)
+                                    });
+                                    $('.construction-page').click(function(){
+                                        pageNumber = $('#construction-pageno').attr('value')
+                                        oTurn2.turn("page", pageNumber)
+                                    });
+                                    $('.education-page').click(function(){
+                                        pageNumber = $('#education-pageno').attr('value')
+                                        oTurn2.turn("page", pageNumber)
+                                    });
+                                    $('.eldercare-page').click(function(){
+                                        pageNumber = $('#eldercare-pageno').attr('value')
+                                        oTurn2.turn("page", pageNumber)
+                                    });
+                                    $('.electronics-page').click(function(){
+                                        pageNumber = $('#electronics-pageno').attr('value')
+                                        oTurn2.turn("page", pageNumber)
+                                    });
+                                    $('.entertainment-page').click(function(){
+                                        pageNumber = $('#entertainment-pageno').attr('value')
+                                        oTurn2.turn("page", pageNumber)
+                                    });
+                                    $('.farming-page').click(function(){
+                                        pageNumber = $('#farming-pageno').attr('value')
+                                        oTurn2.turn("page", pageNumber)
+                                    });
+                                    $('.florists-page').click(function(){
+                                        pageNumber = $('#florists-pageno').attr('value')
+                                        oTurn2.turn("page", pageNumber)
+                                    });
+                                    $('.grocery-page').click(function(){
+                                        pageNumber = $('#grocery-pageno').attr('value')
+                                        oTurn2.turn("page", pageNumber)
+                                    });
+                                    $('.health-page').click(function(){
+                                        pageNumber = $('#health-pageno').attr('value')
+                                        oTurn2.turn("page", pageNumber)
+                                    });
+                                    $('.home-page').click(function(){
+                                        pageNumber = $('#home-pageno').attr('value')
+                                        oTurn2.turn("page", pageNumber)
+                                    });
+                                    $('.hotels-page').click(function(){
+                                        pageNumber = $('#hotels-pageno').attr('value')
+                                        oTurn2.turn("page", pageNumber)
+                                    });
+                                    $('.jewelry-page').click(function(){
+                                        pageNumber = $('#jewelry-pageno').attr('value')
+                                        oTurn2.turn("page", pageNumber)
+                                    });
+                                    $('.legal-page').click(function(){
+                                        pageNumber = $('#legal-pageno').attr('value')
+                                        oTurn2.turn("page", pageNumber)
+                                    });
+                                    $('.lifestyle-page').click(function(){
+                                        pageNumber = $('#lifestyle-pageno').attr('value')
+                                        oTurn2.turn("page", pageNumber)
+                                    });
+                                    $('.marketing-page').click(function(){
+                                        pageNumber = $('#marketing-pageno').attr('value')
+                                        oTurn2.turn("page", pageNumber)
+                                    });
+                                    $('.medical-page').click(function(){
+                                        pageNumber = $('#medical-pageno').attr('value')
+                                        oTurn2.turn("page", pageNumber)
+                                    });
+                                    $('.packaging-page').click(function(){
+                                        pageNumber = $('#packaging-pageno').attr('value')
+                                        oTurn2.turn("page", pageNumber)
+                                    });
+                                    $('.pets-page').click(function(){
+                                        pageNumber = $('#pets-pageno').attr('value')
+                                        oTurn2.turn("page", pageNumber)
+                                    });
+                                    $('.photography-page').click(function(){
+                                        pageNumber = $('#photography-pageno').attr('value')
+                                        oTurn2.turn("page", pageNumber)
+                                    });
+                                    $('.professional-page').click(function(){
+                                        pageNumber = $('#professional-pageno').attr('value')
+                                        oTurn2.turn("page", pageNumber)
+                                    });
+                                    $('.realestate-page').click(function(){
+                                        pageNumber = $('#realestate-pageno').attr('value')
+                                        oTurn2.turn("page", pageNumber)
+                                    });
+                                    $('.recreation-page').click(function(){
+                                        pageNumber = $('#recreation-pageno').attr('value')
+                                        oTurn2.turn("page", pageNumber)
+                                    });
+                                    $('.restaurants-page').click(function(){
+                                        pageNumber = $('#restaurants-pageno').attr('value')
+                                        oTurn2.turn("page", pageNumber)
+                                    });
+                                    $('.security-page').click(function(){
+                                        pageNumber = $('#security-pageno').attr('value')
+                                        oTurn2.turn("page", pageNumber)
+                                    });
+                                    $('.transportation-page').click(function(){
+                                        pageNumber = $('#transportation-pageno').attr('value')
+                                        oTurn2.turn("page", pageNumber)
+                                    });
+                                    $('.visual-page').click(function(){
+                                        pageNumber = $('#visual-pageno').attr('value')
+                                        oTurn2.turn("page", pageNumber)
+                                    });
+                                    $('.other-page').click(function(){
+                                        pageNumber = $('#other-pageno').attr('value')
+                                        oTurn2.turn("page", pageNumber)
+                                    });
+                                </script>
                                 <div class="col 11" style="padding:5%; color: white">
                                     <h6 style="font-family: 'Barlow Condensed'; font-size: 2vw; margin-bottom:10px">TABLE OF CONTENTS</h6>
                                     <div style="border-top:dotted white 0.1px; padding-bottom: 1vw"></div>
-                                    <div style="column-count: 2; column-gap: 5%">
+                                    <div class="row">
+                                    <table class="col s6 table-of-contents tc-1">
+                                        <tr>
+                                            <td class="beauty-page" value="{{ beauty_page }}">Beauty & Personal Grooming</td>
+                                            <td class="beauty-page page-no" id="beauty-pageno" value="{{ beauty_page }}">{{ beauty_page }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="books-page">Books & Publishing</td>
+                                            <td class="books-page page-no" id="books-pageno" value="{{ books_page }}">{{ books_page }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="cars-page">Cars & Automotive</td>
+                                            <td class="cars-page page-no" id="cars-pageno" value="{{ cars_page }}">{{ cars_page }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="child-page">Childcare | Children's Services & Products</td>
+                                            <td class="child-page page-no" id="child-pageno" value="{{ child_page }}">{{ child_page }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="cleaning-page">Cleaning</td>
+                                            <td class="cleaning-page page-no" id="cleaning-pageno" value="{{ cleaning_page }}">{{ cleaning_page }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="clothing-page">Clothing & Fashion</td>
+                                            <td class="clothing-page page-no" id="clothing-pageno" value="{{ clothing_page }}">{{ clothing_page }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="construction-page">Construction & Trades</td>
+                                            <td class="construction-page page-no" id="construction-pageno" value="{{ construction_page }}">{{ construction_page }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="education-page">Education</td>
+                                            <td class="education-page page-no" id="education-pageno" value="{{ education_page }}">{{ education_page }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="eldercare-page">Eldercare</td>
+                                            <td class="eldercare-page page-no" id="eldercare-pageno" value="{{ eldercare_page }}">{{ eldercare_page }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="electronics-page">Electronics & Technology</td>
+                                            <td class="electronics-page page-no" id="electronics-pageno" value="{{ electronics_page }}">{{ electronics_page }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="entertainment-page">Entertainment</td>
+                                            <td class="entertainment-page page-no" id="entertainment-pageno" value="{{ entertainment_page }}">{{ entertainment_page }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="farming-page">Farming & Agriculture</td>
+                                            <td  class="farming-page page-no" id="farming-pageno" value="{{ farming_page }}">{{ farming_page }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="florists-page">Florists</td>
+                                            <td  class="florists-page page-no" id="florsits-pageno" value="{{ florists_page }}">{{ florists_page }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="grocery-page">Grocery & Food Services</td>
+                                            <td class="grocery-page page-no" id="grocery-pageno" value="{{ grocery_page }}">{{ grocery_page }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="health-page">Health & Wellness</td>
+                                            <td class="health-page page-no" id="health-pageno" value="{{ health_page }}">{{ health_page }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="home-page">Home & Garden</td>
+                                            <td class="home-page page-no" id="home-pageno" value="{{ home_page }}">{{ home_page }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="hotels-page">Hotels & Hospitality | Travel</td>
+                                            <td class="hotels-page page-no" id="hotels-pageno" value="{{ hotels_page }}">{{ hotels_page }}</td>
+                                        </tr>
                                         
-                                        {% for category in category_list %}
-                                        <p class="table-of-contents-item">
-                                        - {{ category.grouper }}</p>
+                                    </table>
+                                    <table class="table-of-contents tc-2 col s6">
+                                        <tr>
+                                            <td class="jewelry-page">Jewelry & Accessories</td>
+                                            <td class="jewelry-page page-no" id="jewelry-pageno" value="{{ jewelry_page }}">{{ jewelry_page }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="legal-page">Legal & Financial Services</td>
+                                            <td class="legal-page page-no" id="legal-pageno" value="{{ legal_page }}">{{ legal_page }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="lifestyle-page">Lifestyle</td>
+                                            <td class="lifestyle-page page-no" id="lifestyle-pageno" value="{{ lifestyle_page }}">{{ lifestyle_page }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="marketing-page">Marketing & Advertising</td>
+                                            <td class="marketing-page page-no" id="marketing-pageno" value="{{ marketing_page }}">{{ marketing_page }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="medical-page">Medical Services</td>
+                                            <td class="medical-page page-no" id="medical-pageno" value="{{ medical_page }}">{{ medical_page }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="packaging-page">Packaging | Delivery | Shipping</td>
+                                            <td class="packaging-page page-no" id="packaging-pageno" value="{{ packaging_page }}">{{ packaging_page }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="pets-page">Pets & Animal Care</td>
+                                            <td class="pets-page page-no" id="pets-pageno" value="{{ pets_page }}">{{ pets_page }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="photography-page">Photography & Video</td>
+                                            <td class="photography-page page-no" id="photography-pageno" value="{{ photography_page }}">{{ photography_page }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="professional-page">Professional Services</td>
+                                            <td class="professional-page page-no" id="professional-pageno" value="{{ professional_page }}">{{ professional_page }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="realestate-page">Real Estate</td>
+                                            <td class="realestate-page page-no" id="realestate-pageno" value="{{ realestate_page }}">{{ realestate_page }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="recreation-page">Recreation & Sports</td>
+                                            <td class="recreation-page page-no" id="recreation-pageno" value="{{ recreation_page }}">{{ recreation_page }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="restaurants-page">Restaurants & Bars | Event Spaces</td>
+                                            <td class="restaurants-page page-no" id="restaurants-pageno" value="{{ restaurants_page }}">{{ restaurants_page }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="security-page">Security Services</td>
+                                            <td class="security-page page-no" id="security-pageno" value="{{ security_page }}">{{ security_page }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="transportation-page">Transportation & Trucking</td>
+                                            <td class="transportation-page page-no" id="transportation-pageno" value="{{ transportation_page }}">{{ transportation_page }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="visual-page">Visual & Performing Arts | Culture</td>
+                                            <td class="visual-page page-no" id="visual-pageno" value="{{ visual_page }}">{{ visual_page }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="other-page">Other</td>
+                                            <td class="other-page page-no" id="other-pageno" value="{{ other_page }}">{{ other_page }}</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                    <style>
                                         
-                                        {% endfor %}
+                                        .table-of-contents {
+                                            color: white;
+                                        }
+                                        .table-of-contents tr td{
+                                            color: white;
+                                            font-size: 16px;
+                                        }
+                                        .tc-1 tr td {
+                                            padding-left: 30px
+                                        }
+                                        .tc-1 tr .page-no {
+                                            padding-right: 30px;
+                                            padding-left: 0px !important
+                                        }
+                                        .tc-2 tr td {
+                                            padding-right: 30px;
+                                        }
+                                        .table-of-contents tr td:hover{
+                                            cursor: pointer
+                                        }
+                                        .page-no {
+                                            text-align: right
+                                        }
                                         
-                                    </div>
+                                    </style>
                                     
                                 </div>
                             </div>
-                            <div class="beauty" style="background: url({% static 'img/beauty.png' %});background-size: 105%"></div>
+                            <div class="beauty beauty-cover" id="beauty-image" page-number=5 style="background: url({% static 'img/beauty.png' %});background-size: 105%"></div>
                             {% for response in paginator_beauty %}
                                 <div class="beauty-section beauty">
                                     <div class="data-table">
@@ -125,7 +425,7 @@
                                     </div>
                                 </div>
                             {% endfor %}
-                            <div class="books" style="background: url({% static 'img/books.png' %});background-size: 105%"></div>
+                            <div class="books books-cover" id="books-large" style="background: url({% static 'img/books.png' %});background-size: 105%"></div>
                             {% for response in paginator_books %}
                                 <div class="books-section books">
                                     <div class="data-table">
@@ -819,39 +1119,7 @@
                                     </div>
                                 </div>
                             {% endfor %}
-                            <div class="other" style="background: url('https://empowerthevillage.s3.amazonaws.com/static/img/other.png');background-size: 105%"></div>
-                            {% for response in paginator_other %}
-                                <div class="other-section other">
-                                    <div class="data-table">
-                                    <table class="highlight">
-                                        <tbody>
-                                            {% for vbp in response %}
-                                            <tr>
-                                                <td style="max-width: 35%; font-weight:500">{% if vbp.website %}
-                                                    <a href="{{ vbp.website }}" target="_blank" style="font-weight: 500;">{{ vbp }}</a>
-                                                    {% else %}
-                                                            <a style="color:rgb(55, 55, 55); font-weight:400">{{ vbp }}</a>
-                                                            {% endif %}
-                                                </td>
-                                                <td>{{ vbp.city }}</td>
-                                                {% if vbp.phone is not None %}<td style="text-align:right;min-width: 6vw">{{ vbp.phone }}</td>
-                                                {% else %}<td style="text-align:right;min-width: 6vw"></td>
-                                                {% endif %}
-                                                
-                                            </tr>
-                                            {% endfor %}
-                                        </tbody>
-                                    </table>
-                                    {% if response.object_list|length > 10 %}
-                                        {% else %}
-                                        <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
-                                            <p style="color:white; ">There's always room for more!</p>
-                                            <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
-                                        </div>
-                                        {% endif %}
-                                    </div>
-                                </div>
-                            {% endfor %}
+                            
                             <div class="packaging" style="background: url({% static 'img/packaging.png' %});background-size: 105%"></div>
                             {% for response in paginator_packaging %}
                                 <div class="packaging-section packaging">
@@ -1182,6 +1450,39 @@
                                     </div>
                                 </div>
                             {% endfor %}
+                            <div class="other" style="background: url('https://empowerthevillage.s3.amazonaws.com/static/img/other.png');background-size: 105%"></div>
+                            {% for response in paginator_other %}
+                                <div class="other-section other">
+                                    <div class="data-table">
+                                    <table class="highlight">
+                                        <tbody>
+                                            {% for vbp in response %}
+                                            <tr>
+                                                <td style="max-width: 35%; font-weight:500">{% if vbp.website %}
+                                                    <a href="{{ vbp.website }}" target="_blank" style="font-weight: 500;">{{ vbp }}</a>
+                                                    {% else %}
+                                                            <a style="color:rgb(55, 55, 55); font-weight:400">{{ vbp }}</a>
+                                                            {% endif %}
+                                                </td>
+                                                <td>{{ vbp.city }}</td>
+                                                {% if vbp.phone is not None %}<td style="text-align:right;min-width: 6vw">{{ vbp.phone }}</td>
+                                                {% else %}<td style="text-align:right;min-width: 6vw"></td>
+                                                {% endif %}
+                                                
+                                            </tr>
+                                            {% endfor %}
+                                        </tbody>
+                                    </table>
+                                    {% if response.object_list|length > 10 %}
+                                        {% else %}
+                                        <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                            <p style="color:white; ">There's always room for more!</p>
+                                            <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            {% endfor %}
                             <div class="hard" style="background: url({% static 'img/vbp final page.png' %});background-size: 500px 650px"></div>
                         
                     
@@ -1205,7 +1506,7 @@
     <div class="row offset-s1" style="padding: 10%; padding-top:5%;padding-bottom:0">
         <form id="filter-form-mobile">
             <input type="hidden" id="filter-form-state-mobile">
-            <div class="row">
+            <div class="row" style="margin-bottom: 0">
                 <div class="col s3 input-field">
                     {{ filter.form.category }}
                     <label>Category</label>
@@ -1220,8 +1521,14 @@
                 </div>
                 <button class="col s3 light-green darken-2 btn" id="filter-submit-mobile" style="margin-top: 20px">FILTER</button>
             </div>
-    </form>
+        </form>
     
+    </div>
+    <div class="row center-align" style="margin-top:0; padding-top:0">
+              
+        <a class="contents-page" style="cursor: pointer">VIEW TABLE OF CONTENTS</a> | Jump To Page: <input type="text" id="page-jump" style="width: 100px; margin-right: 10px">
+        <div class="btn btn-large" id="go-btn" style="background-color: rgb(55, 55, 55)">GO</div>
+
     </div>
     
     <div class="row valign-wrapper">
@@ -1263,18 +1570,309 @@
                         </div>
                         <div class="" style="background: url({% static 'img/vbp welcome page.png' %});background-size: 105%"></div>
                         <div class="" style="background-color: #181818;">
-                            <div class="col 11" style="padding:30px; color: white">
+                            <script>
+                                $('.beauty-page').click(function(){
+                                    pageNumber = $('#beauty-pageno').attr('value')
+                                    oTurn2.turn("page", pageNumber)
+                                });
+                                $('.books-page').click(function(){
+                                    pageNumber = $('#books-pageno').attr('value')
+                                    oTurn2.turn("page", pageNumber)
+                                });
+                                $('.cars-page').click(function(){
+                                    pageNumber = $('#cars-pageno').attr('value')
+                                    oTurn2.turn("page", pageNumber)
+                                });
+                                $('.child-page').click(function(){
+                                    pageNumber = $('#child-pageno').attr('value')
+                                    oTurn2.turn("page", pageNumber)
+                                });
+                                $('.cleaning-page').click(function(){
+                                    pageNumber = $('#cleaning-pageno').attr('value')
+                                    oTurn2.turn("page", pageNumber)
+                                });
+                                $('.clothing-page').click(function(){
+                                    pageNumber = $('#clothing-pageno').attr('value')
+                                    oTurn2.turn("page", pageNumber)
+                                });
+                                $('.construction-page').click(function(){
+                                    pageNumber = $('#construction-pageno').attr('value')
+                                    oTurn2.turn("page", pageNumber)
+                                });
+                                $('.education-page').click(function(){
+                                    pageNumber = $('#education-pageno').attr('value')
+                                    oTurn2.turn("page", pageNumber)
+                                });
+                                $('.eldercare-page').click(function(){
+                                    pageNumber = $('#eldercare-pageno').attr('value')
+                                    oTurn2.turn("page", pageNumber)
+                                });
+                                $('.electronics-page').click(function(){
+                                    pageNumber = $('#electronics-pageno').attr('value')
+                                    oTurn2.turn("page", pageNumber)
+                                });
+                                $('.entertainment-page').click(function(){
+                                    pageNumber = $('#entertainment-pageno').attr('value')
+                                    oTurn2.turn("page", pageNumber)
+                                });
+                                $('.farming-page').click(function(){
+                                    pageNumber = $('#farming-pageno').attr('value')
+                                    oTurn2.turn("page", pageNumber)
+                                });
+                                $('.florists-page').click(function(){
+                                    pageNumber = $('#florists-pageno').attr('value')
+                                    oTurn2.turn("page", pageNumber)
+                                });
+                                $('.grocery-page').click(function(){
+                                    pageNumber = $('#grocery-pageno').attr('value')
+                                    oTurn2.turn("page", pageNumber)
+                                });
+                                $('.health-page').click(function(){
+                                    pageNumber = $('#health-pageno').attr('value')
+                                    oTurn2.turn("page", pageNumber)
+                                });
+                                $('.home-page').click(function(){
+                                    pageNumber = $('#home-pageno').attr('value')
+                                    oTurn2.turn("page", pageNumber)
+                                });
+                                $('.hotels-page').click(function(){
+                                    pageNumber = $('#hotels-pageno').attr('value')
+                                    oTurn2.turn("page", pageNumber)
+                                });
+                                $('.jewelry-page').click(function(){
+                                    pageNumber = $('#jewelry-pageno').attr('value')
+                                    oTurn2.turn("page", pageNumber)
+                                });
+                                $('.legal-page').click(function(){
+                                    pageNumber = $('#legal-pageno').attr('value')
+                                    oTurn2.turn("page", pageNumber)
+                                });
+                                $('.lifestyle-page').click(function(){
+                                    pageNumber = $('#lifestyle-pageno').attr('value')
+                                    oTurn2.turn("page", pageNumber)
+                                });
+                                $('.marketing-page').click(function(){
+                                    pageNumber = $('#marketing-pageno').attr('value')
+                                    oTurn2.turn("page", pageNumber)
+                                });
+                                $('.medical-page').click(function(){
+                                    pageNumber = $('#medical-pageno').attr('value')
+                                    oTurn2.turn("page", pageNumber)
+                                });
+                                $('.packaging-page').click(function(){
+                                    pageNumber = $('#packaging-pageno').attr('value')
+                                    oTurn2.turn("page", pageNumber)
+                                });
+                                $('.pets-page').click(function(){
+                                    pageNumber = $('#pets-pageno').attr('value')
+                                    oTurn2.turn("page", pageNumber)
+                                });
+                                $('.photography-page').click(function(){
+                                    pageNumber = $('#photography-pageno').attr('value')
+                                    oTurn2.turn("page", pageNumber)
+                                });
+                                $('.professional-page').click(function(){
+                                    pageNumber = $('#professional-pageno').attr('value')
+                                    oTurn2.turn("page", pageNumber)
+                                });
+                                $('.realestate-page').click(function(){
+                                    pageNumber = $('#realestate-pageno').attr('value')
+                                    oTurn2.turn("page", pageNumber)
+                                });
+                                $('.recreation-page').click(function(){
+                                    pageNumber = $('#recreation-pageno').attr('value')
+                                    oTurn2.turn("page", pageNumber)
+                                });
+                                $('.restaurants-page').click(function(){
+                                    pageNumber = $('#restaurants-pageno').attr('value')
+                                    oTurn2.turn("page", pageNumber)
+                                });
+                                $('.security-page').click(function(){
+                                    pageNumber = $('#security-pageno').attr('value')
+                                    oTurn2.turn("page", pageNumber)
+                                });
+                                $('.transportation-page').click(function(){
+                                    pageNumber = $('#transportation-pageno').attr('value')
+                                    oTurn2.turn("page", pageNumber)
+                                });
+                                $('.visual-page').click(function(){
+                                    pageNumber = $('#visual-pageno').attr('value')
+                                    oTurn2.turn("page", pageNumber)
+                                });
+                                $('.other-page').click(function(){
+                                    pageNumber = $('#other-pageno').attr('value')
+                                    oTurn2.turn("page", pageNumber)
+                                });
+                            </script>
+                            <div class="col 11" style="padding:5%; color: white">
                                 <h6 style="font-family: 'Barlow Condensed'; font-size: 2vw; margin-bottom:10px">TABLE OF CONTENTS</h6>
                                 <div style="border-top:dotted white 0.1px; padding-bottom: 1vw"></div>
-                                <div style="column-count: 2; column-gap: 5%">
+                                <div class="row">
+                                <table class="col s6 table-of-contents tc-1">
+                                    <tr>
+                                        <td class="beauty-page" value="{{ beauty_page }}">Beauty & Personal Grooming</td>
+                                        <td class="beauty-page page-no" id="beauty-pageno" value="{{ beauty_page }}">{{ beauty_page }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="books-page">Books & Publishing</td>
+                                        <td class="books-page page-no" id="books-pageno" value="{{ books_page }}">{{ books_page }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cars-page">Cars & Automotive</td>
+                                        <td class="cars-page page-no" id="cars-pageno" value="{{ cars_page }}">{{ cars_page }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="child-page">Childcare | Children's Services & Products</td>
+                                        <td class="child-page page-no" id="child-pageno" value="{{ child_page }}">{{ child_page }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="cleaning-page">Cleaning</td>
+                                        <td class="cleaning-page page-no" id="cleaning-pageno" value="{{ cleaning_page }}">{{ cleaning_page }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="clothing-page">Clothing & Fashion</td>
+                                        <td class="clothing-page page-no" id="clothing-pageno" value="{{ clothing_page }}">{{ clothing_page }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="construction-page">Construction & Trades</td>
+                                        <td class="construction-page page-no" id="construction-pageno" value="{{ construction_page }}">{{ construction_page }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="education-page">Education</td>
+                                        <td class="education-page page-no" id="education-pageno" value="{{ education_page }}">{{ education_page }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="eldercare-page">Eldercare</td>
+                                        <td class="eldercare-page page-no" id="eldercare-pageno" value="{{ eldercare_page }}">{{ eldercare_page }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="electronics-page">Electronics & Technology</td>
+                                        <td class="electronics-page page-no" id="electronics-pageno" value="{{ electronics_page }}">{{ electronics_page }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="entertainment-page">Entertainment</td>
+                                        <td class="entertainment-page page-no" id="entertainment-pageno" value="{{ entertainment_page }}">{{ entertainment_page }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="farming-page">Farming & Agriculture</td>
+                                        <td  class="farming-page page-no" id="farming-pageno" value="{{ farming_page }}">{{ farming_page }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="florists-page">Florists</td>
+                                        <td  class="florists-page page-no" id="florsits-pageno" value="{{ florists_page }}">{{ florists_page }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="grocery-page">Grocery & Food Services</td>
+                                        <td class="grocery-page page-no" id="grocery-pageno" value="{{ grocery_page }}">{{ grocery_page }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="health-page">Health & Wellness</td>
+                                        <td class="health-page page-no" id="health-pageno" value="{{ health_page }}">{{ health_page }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="home-page">Home & Garden</td>
+                                        <td class="home-page page-no" id="home-pageno" value="{{ home_page }}">{{ home_page }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="hotels-page">Hotels & Hospitality | Travel</td>
+                                        <td class="hotels-page page-no" id="hotels-pageno" value="{{ hotels_page }}">{{ hotels_page }}</td>
+                                    </tr>
                                     
-                                    {% for category in category_list %}
-                                    <p class="table-of-contents-item">
-                                    - {{ category.grouper }}</p>
+                                </table>
+                                <table class="table-of-contents tc-2 col s6">
+                                    <tr>
+                                        <td class="jewelry-page">Jewelry & Accessories</td>
+                                        <td class="jewelry-page page-no" id="jewelry-pageno" value="{{ jewelry_page }}">{{ jewelry_page }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="legal-page">Legal & Financial Services</td>
+                                        <td class="legal-page page-no" id="legal-pageno" value="{{ legal_page }}">{{ legal_page }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="lifestyle-page">Lifestyle</td>
+                                        <td class="lifestyle-page page-no" id="lifestyle-pageno" value="{{ lifestyle_page }}">{{ lifestyle_page }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="marketing-page">Marketing & Advertising</td>
+                                        <td class="marketing-page page-no" id="marketing-pageno" value="{{ marketing_page }}">{{ marketing_page }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="medical-page">Medical Services</td>
+                                        <td class="medical-page page-no" id="medical-pageno" value="{{ medical_page }}">{{ medical_page }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="packaging-page">Packaging | Delivery | Shipping</td>
+                                        <td class="packaging-page page-no" id="packaging-pageno" value="{{ packaging_page }}">{{ packaging_page }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="pets-page">Pets & Animal Care</td>
+                                        <td class="pets-page page-no" id="pets-pageno" value="{{ pets_page }}">{{ pets_page }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="photography-page">Photography & Video</td>
+                                        <td class="photography-page page-no" id="photography-pageno" value="{{ photography_page }}">{{ photography_page }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="professional-page">Professional Services</td>
+                                        <td class="professional-page page-no" id="professional-pageno" value="{{ professional_page }}">{{ professional_page }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="realestate-page">Real Estate</td>
+                                        <td class="realestate-page page-no" id="realestate-pageno" value="{{ realestate_page }}">{{ realestate_page }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="recreation-page">Recreation & Sports</td>
+                                        <td class="recreation-page page-no" id="recreation-pageno" value="{{ recreation_page }}">{{ recreation_page }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="restaurants-page">Restaurants & Bars | Event Spaces</td>
+                                        <td class="restaurants-page page-no" id="restaurants-pageno" value="{{ restaurants_page }}">{{ restaurants_page }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="security-page">Security Services</td>
+                                        <td class="security-page page-no" id="security-pageno" value="{{ security_page }}">{{ security_page }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="transportation-page">Transportation & Trucking</td>
+                                        <td class="transportation-page page-no" id="transportation-pageno" value="{{ transportation_page }}">{{ transportation_page }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="visual-page">Visual & Performing Arts | Culture</td>
+                                        <td class="visual-page page-no" id="visual-pageno" value="{{ visual_page }}">{{ visual_page }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="other-page">Other</td>
+                                        <td class="other-page page-no" id="other-pageno" value="{{ other_page }}">{{ other_page }}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                                <style>
                                     
-                                    {% endfor %}
+                                    .table-of-contents {
+                                        color: white;
+                                    }
+                                    .table-of-contents tr td{
+                                        color: white;
+                                        font-size: 16px;
+                                    }
+                                    .tc-1 tr td {
+                                        padding-left: 30px
+                                    }
+                                    .tc-1 tr .page-no {
+                                        padding-right: 30px;
+                                        padding-left: 0px !important
+                                    }
+                                    .tc-2 tr td {
+                                        padding-right: 30px;
+                                    }
+                                    .table-of-contents tr td:hover{
+                                        cursor: pointer
+                                    }
+                                    .page-no {
+                                        text-align: right
+                                    }
                                     
-                                </div>
+                                </style>
                                 
                             </div>
                         </div>
@@ -1320,7 +1918,7 @@
                                 </div>
                             </div>
                         {% endfor %}
-                        <div class="books books-cover" style="background: url({% static 'img/books.png' %});background-size: 105%"></div>
+                        <div class="books books-cover" id="books-cover" style="background: url({% static 'img/books.png' %});background-size: 105%"></div>
                         {% for response in paginator_books %}
                             <div class="books-section books books-single">
                                 <div class="data-table">
@@ -2391,7 +2989,7 @@
     
 </div>
 </div>
-{% block js %}
+
 <script>
     $('#filter-submit').click(function(event){
         event.preventDefault()
@@ -2506,10 +3104,21 @@
                     $('#prev').hide();
                 }
             });
+            $('#go-btn').click(function(){
+                pageNumber = $('#page-jump').val()
+                oTurn2.turn("page", pageNumber)
+            });
+            $('.contents-page').click(function(){
+                pageNumber = 4
+                oTurn2.turn("page", pageNumber)
+            });
+        $('.table-of-contents').ready(function(){
+            
+        })
+            
 
         
 </script>
-
 <script>
     var elem = document.getElementById("flipbook");
     function openFullscreen() {
@@ -2541,6 +3150,7 @@
         });
 
 </script>
+
 <script>
     $(document).ready(function(){
     $('select').formSelect('dropdownOptions', {
@@ -2548,7 +3158,6 @@
     });
   });
 </script>
-{% endblock %}
 <style>
     @media only screen and (min-width:0px) {
         .table-of-contents-item {

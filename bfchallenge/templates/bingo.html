@@ -5,7 +5,7 @@
 
 <div class="parallax-container z-depth-1" style="height:220px">
     <div class="parallax" style="opacity: 1;">
-        <img src='{% static "img/vbp_collage.png" %}' style="width:100%">
+        <img src='{% static "img/bf-challenge-cropped.png" %}' style="width:100%">
     </div>
 </div>
 <div style="background-color:rgb(255, 255, 255); height: 50%">
@@ -980,7 +980,7 @@
 {% else %}
 <div id='page'>
     <div class="row center-align" style="margin-top:0px">
-        <div class="col s10 l8 offset-s1 offset-l2 login-card" style="background-color:#fdfdfdf1;padding-top:110px; padding-bottom:40px; padding-left: 30px; padding-right: 30px">
+        <div class="col s10 l8 offset-s1 offset-l2 login-card">
           <h6 id="vbp-nomination-form-title">Contact Us to Register for Power Bingo!</h6>
              <form method="POST" style="padding-left:10%; padding-right:10%;" id="nomination-form">
               {% csrf_token %}
@@ -1156,6 +1156,9 @@
             margin:0;
         }
     }
+    .login-card {
+  background-color:#fdfdfdf1;
+}
     body {
         width: 100% !important;
     }
@@ -1383,7 +1386,7 @@
       padding-top: 10px
     }
     #page {
-      background-image: url("https://empowerthevillage.s3.amazonaws.com/static/img/VBP+collage.png");
+      background-image: url("{% static 'img/bf-challenge-cropped.png' %}");
       background-size: 100%;
       background-repeat: repeat;
     }

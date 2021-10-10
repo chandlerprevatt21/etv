@@ -35,8 +35,8 @@
                 </div>
             </div>
             <div class="input-field">
-              {{ rss_form.industry }}
-              <label>Category<b>*</b></label>
+              {{ rss_form.category }}
+              <label>{{ rss_form.category.label }}<b>*</b></label>
             </div>
             <div class="file-field input-field">
                 <div class="btn">
@@ -346,6 +346,9 @@
   }
   </style>
   <script>
+    $(document).ready(function(){
+    $('select').formSelect();
+  });
     $(document).ready(function(){
     $('input.autocomplete').autocomplete({
       data: {

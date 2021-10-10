@@ -24,6 +24,8 @@
 <!-- FAS -->
 <script src="https://kit.fontawesome.com/ff7f01c7a6.js" crossorigin="anonymous"></script>
 
+<link rel="stylesheet" href="{% static 'css/marquee.css' %}">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 <style>
   html {
         scroll-behavior: smooth;
@@ -59,6 +61,10 @@
     transform:scale(1,0.9);
     
   }
+  .nav-tab {
+                  font-size: 16px !important; 
+                  font-weight: 500
+                }
   #navbar .donate-btn-navbar {
     height:65px;
     line-height:12px;
@@ -101,7 +107,6 @@
   .donate-btn-sidenav {
     border: solid 1px rgb(172, 172, 172);
     cursor: pointer;
-    padding: 15px 40px;
     display: inline-block;
     margin: 12.3px 10px;
     text-transform: uppercase;
@@ -239,23 +244,32 @@
 	transition: transform 0.4s, opacity 0.2s;
 }
 
-  #nav-dropdown li {
-    width:400px;
-    
+.dd-base {
+  width: 20%;
+}
+  .dd-base li {
+    width:100%;
+    border-top:solid 0.1px rgb(220, 220, 220, 0.673);
   }
-  #nav-dropdown li a {
+  .dd-base li a {
+    text-transform: uppercase;
+  }
+  .dropdown-content li a {
     font-size: 14px;    
     height: 50px;
     line-height: 25px;
-    color:rgb(83, 152, 116)
-    
+    color:rgb(52, 52, 52);
   }
-  #nav-dropdown {
+  .dropdown-content {
     background-color:rgba(255, 255, 255, 0.99)
   }
   .nav-content{
     background-color: rgba(247, 247, 247, 0.947);
     z-index: 1;
+  }
+  .nav-tab {
+    font-size: 16px !important; 
+    font-weight: 500
   }
   .tabs .tab a:focus, .tabs .tab a:focus.active {
     background-color: transparent;
@@ -278,6 +292,9 @@
     transform:scale(1);
     box-shadow: 0px 0px 8px 2px #2d2d2d;
 }
+  blockquote {
+    border-left: 4px solid #ce1e24;
+  }
   /* */
     .brand-logo img{
       padding-top: 10px
@@ -300,18 +317,14 @@
         line-height: 120px;
        
     }
-    #menu-box {
-        width:100px;
-        height:100%;
-        background-color:rgba(129, 129, 129, 0.438)
-    }
+    
     @media only screen and (max-width: 1600px) {
         .welcome-back {
             display: none;
         }
     }
-    @media only screen and (max-width: 1400px) {
-        .icon-wrap {
+    @media only screen and (max-width: 1540px) {
+        .icon-wrap-top {
             display: none;
         }
         .main-nav-link {
@@ -320,13 +333,38 @@
         .navbar-slash {
             display: none;
         }
+        #icon-wrap .nav-socialmedia {
+          box-shadow: 0 0 0 2px rgb(213, 213, 213);
+          -webkit-transition: color 0.3s;
+          -moz-transition: color 0.3s;
+          transition: color 0.3s;
+          display: inline-block;
+          font-size: 0px;
+          cursor: pointer;
+          margin: 37px 3px;
+          width: 42px;
+          height: 42px;
+          border-radius: 50%;
+          text-align: center;
+          position: relative;
+          z-index: 1;
+          height: 42px;
+          line-height: 85px;
+          background:rgb(92, 92, 92)
+          }
+        #icon-wrap .nav-socialmedia .nav-socialmedia-icon {
+          line-height: 33px;
+          font-size: 28px;
+        }
+        .nav-socialmedia:after {
+        }
     }
-    @media only screen and (min-width: 1400px) {
+    @media only screen and (min-width: 1540px) {
         #sidenav-menu-trigger {
             display: none;
         }
     }
-    @media only screen and (max-width: 1030px) {
+    @media only screen and (max-width: 1225px) {
         .nav-content {
             display: none;
         }
@@ -339,6 +377,11 @@
             font-size: 14px !important;
             height: 35px !important;
             padding-top: 10px
+    }
+  }
+  @media only screen and (max-width: 680px) {
+    #icon-wrap {
+      display: none
     }
   }
     #sidenav-menu-trigger {
@@ -398,7 +441,7 @@
        color: grey;
    }
     #side-nav {
-        width: 23rem;
+        width: 25rem;
         background-color:rgb(243, 243, 243)
     }
     #side-nav li a {
@@ -894,13 +937,111 @@
 .footer-icon-row a i {
   font-size: 32px
 }
-
+.mailchimp-title {
+  padding-top:0;
+  padding-bottom: 0;
+  padding-left: 1%;
+  padding-right: 5%;
+  margin:0;
+  letter-spacing: 1.5px;
+  font-weight: 400
+}
 @media only screen and (min-width:0px){
+  .phase-one-title {
+    font-family: oskar;
+    color: rgb(187, 36, 36);
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 3%;
+    margin-top: 0;
+    padding: 2% 3%;
+  }
+  
+  .pillar-h5 {
+    font-size: 18px;
+    line-height: 24px;
+    text-align: left;
+    padding-top: 10px;
+    font-weight: 300;
+    color: black;
+    font-family: Poppins;
+
+  }
+  .pillar-h6 {
+    font-size: 16px;
+    line-height: 22px;
+    text-align: left;
+    letter-spacing: 1.5px;
+  }
+  .pillar-body {
+    padding:0 !important;
+    background-color: rgba(255, 255, 255, 0.735)
+  }
+  .pillar-title {
+    font-family: oskar-inline;
+    text-transform: uppercase;
+    font-size: 32px;
+    color: white;
+    letter-spacing: 1px;
+  }
+  .pillar-collapsible {
+    padding:0 !important; 
+    width: 97%; 
+    margin:0%;
+    background-color: transparent;
+  }
+  .pillar-header {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+  }
+  .collapsible-body-image {
+    height:70; 
+    width: 120; 
+    margin-right: 5%;
+  }
+  .collapsible-body-pillar {
+    padding-left: 2% !important;
+    padding-right: 2% !important;
+    padding-bottom: 15px !important;
+    background-color: transparent
+  }
+  .pillar-target {
+    color: rgb(109, 181, 109);
+    font-size: 22px;
+    vertical-align: top;
+  }
+  .pillar-target-td {
+    vertical-align: top;
+    border: none
+  }
+  .pillar-tr {
+    border: none;
+  }
   .efbf-video {
     height: 400px
   }
   .parallax-container {
-    height: 50vw
+    height: 200px
+  }
+  .parallax-banner {
+    background-color:rgba(240, 240, 240, 0.927);
+    border: rgb(43, 43, 43) 3px solid; 
+    width: 95%; 
+  }
+  .parallax img {
+    max-width: 220%;
+  }
+  .mailchimp-title {
+    font-size: 16px;
+    line-height: 24px;
+    text-align: left;
+  }
+  #mailchimp-email-label {
+    font-size: 12px;
+  }
+  .other-links {
+    font-size: 14px
   }
   .sponsor-info-container p {
             color: white;
@@ -1105,10 +1246,18 @@
     .tax-disclaimer {
       font-size: 12px;
       padding-left: 5%;
-      padding-right: 5%
+      padding-right: 5%;
+      letter-spacing: 2px;
+      line-height: 16px;
+      margin: 0;
+      padding: 5px;
     }
     .copyright-text {
-      font-size: 16px
+      font-size: 16px;
+      letter-spacing: 2px;
+      padding-bottom: 5px;
+      margin: 0;
+      line-height: 20px;
     }
     .vbp-text p {
       font-size:18px;
@@ -1185,15 +1334,58 @@
   .vbp-booklet-container {
     display: none;
   }
-  
 }
 @media only screen and (min-width:601px){
+  .phase-one-title {
+    font-size: 48px;
+  }
+  .pillar-collapsible {
+    padding:0; 
+    width: 100%;
+    margin-left: 0%;
+  }
+  .collapsible-body-pillar {
+    padding-left: 5% !important;
+    padding-right: 5% !important;
+    padding-bottom: 15px !important;
+    background-color: white
+  }
+  .pillar-h5 {
+    font-size: 22px;
+    line-height: 32px;
+    
+  }
+  .pillar-title {
+    font-size: 36px
+  }
+  .pillar-body {
+    height: 100%; 
+    padding:2% 2% !important; 
+    background-color: rgba(255, 255, 255, 0.863)
+  }
   .efbf-video {
     height: 400px
   }
-  .parallax-container {
-    height: 35vw
+  .parallax-banner {
+    background-color:rgba(240, 240, 240, 0.927);
+    border: rgb(43, 43, 43) 3px solid; 
+    width: 80%; 
   }
+  .parallax-container {
+    height: 300px
+  }
+  .parallax img {
+    max-width: 190%;
+  }
+  .mailchimp-title {
+    font-size: 18px;
+    line-height: 24px;
+    text-align: left;
+  }
+  .other-links {
+    font-size: 14px
+  }
+  
   #vbp-nomination-form-title {
     font-family: oskar-inline, sans-serif;
     font-weight: 400;
@@ -1269,6 +1461,24 @@
   }
 }
 @media only screen and (min-width:993px) {
+  .phase-one-title {
+    font-size: 56px;
+    
+  }
+  .pillar-collapsible {
+    padding:0; 
+    width: 100%; 
+    margin-left: 0%;
+  }
+  .pillar-title {
+    font-size: 56px;
+    letter-spacing: 2px;
+  }
+  .collapsible-body-image {
+    height:84; 
+    width: 280px; 
+    margin-right: 7%;
+  }
   .strategy-title {
   font-family: oskar-inline; 
   font-weight:400; 
@@ -1276,8 +1486,18 @@
   transform: scale(1,0.93);
   letter-spacing: 0px;
 }
-.parallax-container {
-    height: 25vw
+.mailchimp-title {
+    font-size: 20px;
+    line-height: 28px;
+    text-align: left;
+  }
+  .parallax-container {
+    height: 360px
+  }
+  .parallax-banner {
+    background-color:rgba(240, 240, 240, 0.927);
+    border: rgb(43, 43, 43) 3px solid; 
+    width: 60%; 
   }
 #vbp-nomination-form-title {
     font-family: oskar-inline, sans-serif;
@@ -1357,6 +1577,18 @@
   transform: scale(1,0.93);
   letter-spacing: 0px;
 }
+.parallax-banner {
+    background-color:rgba(240, 240, 240, 0.927);
+    border: rgb(43, 43, 43) 3px solid; 
+    width: 45%;
+  }
+  .parallax-container {
+    height: 380px
+  }
+  .parallax img {
+    max-width: 180%
+  }
+
   .carousel-instructions p {
   text-align: center;
   color: rgb(89, 89, 89);
@@ -1399,8 +1631,30 @@
   
 }
 @media only screen and (min-width:1200px) {
+  
+  .pillar-collapsible {
+    padding:0; 
+    width: 80%; 
+    margin-left:10%;
+  }
+  .collapsible-body-image {
+    height:84; 
+    width: 130; 
+    margin-right: 7%;
+  }
   .vbp-text p {
       font-size:28px
+  }
+  .parallax-banner {
+    background-color:rgba(240, 240, 240, 0.927);
+    border: rgb(43, 43, 43) 3px solid; 
+    width: 40%;
+    margin-top: 2%
+  }
+  .parallax-container {
+    height: 480px;
+  }
+  .parallax img {
   }
   .btn-nominate {
     font-size: 28px;
@@ -1420,12 +1674,6 @@
     font-weight: 400;
     font-style: normal;
     padding-top: 0%
-}
-.parallax-banner {
-  background-color:rgba(240, 240, 240, 0.927);
-}
-.parallax-banner img {
-  padding: 25px
 }
 .page-content {
   background-color: white;
