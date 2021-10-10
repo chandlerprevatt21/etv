@@ -112,55 +112,6 @@
         <p><b>Village Empowerment Network</b>™ provides the business expertise Black entrepreneurs need to thrive. Black business owners can receive one-on-one strategy, planning, and technical counseling from experts to grow revenue, access funding, manage employees and expenses, protect assets, and expand their network. ETV will offer an online, on-demand training platform designed to ensure entrepreneurs can get the information they need at their own pace.</p>
     </div>
 </div>
-<<<<<<< HEAD
-
-=======
-{% if request.user.is_authenticated %}
-{% else %}
-<script>
-    $(document).ready(function(){
-        Swal.fire({
-            html: '<h3 class="join-tv-title">Join The Village!</h3><p>Enter your email address to join the ETV mailing list.</p><form method="POST" action="/mailchimp-signup/" id="mailchimp-efbf-form">{% csrf_token %}<div class="input-field"><input required id="mailchimp-email-efbf" name="email" type="email"><label for="mailchimp-email-efbf">Email</label></div><button type="submit" class="btn light-green darken-3 waves-effect" id="efbf-mailchimp">Add Me To The List!</button></form>',
-            showCancelButton: false,
-            showCloseButton: true,
-            showConfirmButton: false,
-        })     
-    })
-    $('#mailchimp-efbf-form').submit(event, function(){
-        event.preventDefault();
-        var email = $('#mailchimp-email-efbf').val()
-        var token = '{{csrf_token}}'
-        var form = $('#mailchimp-efbf-form')
-        $.ajax({
-            data: form.serialize(),
-            dataType: 'json',
-            url: '/mailchimp-signup/',
-            method: "POST",
-            success: function(data) {
-                Swal.fire({
-                title:'Welcome to the Village!',
-                html: '',
-                showComfirmButton: false,
-                showCancelButton: false,
-                showCloseButton: false,
-                text:"You've been added to our mailing list",
-                })
-            },
-            error: function(){
-                Swal.fire({
-                title:"You're on the list!",
-                html: '',
-                showComfirmButton: false,
-                showCancelButton: false,
-                showCloseButton: false,
-                text:"You're on our mailing list, thank you for keeping up with ETV!",
-                })
-            }
-        })
-    }) 
-</script>
-{% endif %}
->>>>>>> b41a84aa205282bd595dfdfada2c59467878662f
 <style>
     @media only screen and (max-width:992px){
         .coming-soon-group {
