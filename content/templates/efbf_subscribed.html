@@ -5,11 +5,11 @@
 
 <div class="parallax-container box-shadow valign-wrapper">
     
-    <div class="container z-depth-4 center-align parallax-banner" style="width: 65%; padding: 2%;">
+    <div class="container z-depth-4 center-align parallax-banner" style="background:rgba(255, 255, 255, 0.906); border: rgb(43, 43, 43) 3px solid">
         <img src="{% static 'img/EFBF_new2.png' %}" width="100%">
     </div>
     <div class="parallax" style="opacity: 1;">
-        <img src='{% static "img/vbp_collage.png" %}'>
+        <img src='{% static "img/vbp_collage.png" %}' height=200%>
     </div>
 
 </div>
@@ -33,12 +33,12 @@
             <div class="col s12 l8 xl9" style="padding-left:2%; padding-right:2%">
                 <ul class="collapsible z-depth-0" style="border:none">
                 <li class="center-align efbf_text1">
-                    <div class="collapsible-header header1">
+                    <div class="collapsible-header">
                         <p class="">
                             <b>Make Every Friday, Black Friday</b>™: 
                             Our movement and multi-platform awareness & empowerment initiative – Make Every Friday, Black Friday!™ – encourages all Americans interested in racial equity to take action to close the wealth gap between Black Americans and other Americans.
                                 
-                            <i class="learn-more" style="margin-top:2vw; width:100%; font-weight:300">Click Here To Learn More!</i>
+                            <i class="learn-more" style="margin-top:2vw; width:100%; font-weight:300">Click to learn more!</i>
                         </p> 
                          
                     </div>
@@ -64,7 +64,7 @@
                 <li class="center-align efbf_text1">
                     <div class="collapsible-header" style="border-bottom:none">
                         <p><b>ETV’s <a href="{{ bf_home_url }}">Black Friday (BF) Challenge™</a></b> is a fun way to measure your impact while supporting our ETV mission to empower Black-owned Businesses!
-                        <i class="learn-more" style="margin-top:2vw; width:100%; font-weight:300;">Click Here To Learn More!</i></p>
+                        <i class="learn-more" style="margin-top:2vw; width:100%; font-weight:300;">Click to learn more!</i></p>
                     </div>
                     <div class="collapsible-body efbf_text2" style="border-top: 1px solid #ddd;border-bottom:none">
                         <p>Corporations and organizations can partner with ETV to accelerate its movement through the Black Friday Challenge and achieve their corporate diversity, equity, and inclusion goals!</p>
@@ -112,62 +112,23 @@
         <p><b>Village Empowerment Network</b>™ provides the business expertise Black entrepreneurs need to thrive. Black business owners can receive one-on-one strategy, planning, and technical counseling from experts to grow revenue, access funding, manage employees and expenses, protect assets, and expand their network. ETV will offer an online, on-demand training platform designed to ensure entrepreneurs can get the information they need at their own pace.</p>
     </div>
 </div>
-<<<<<<< HEAD
 
-=======
-{% if request.user.is_authenticated %}
-{% else %}
-<script>
-    $(document).ready(function(){
-        Swal.fire({
-            html: '<h3 class="join-tv-title">Join The Village!</h3><p>Enter your email address to join the ETV mailing list.</p><form method="POST" action="/mailchimp-signup/" id="mailchimp-efbf-form">{% csrf_token %}<div class="input-field"><input required id="mailchimp-email-efbf" name="email" type="email"><label for="mailchimp-email-efbf">Email</label></div><button type="submit" class="btn light-green darken-3 waves-effect" id="efbf-mailchimp">Add Me To The List!</button></form>',
-            showCancelButton: false,
-            showCloseButton: true,
-            showConfirmButton: false,
-        })     
-    })
-    $('#mailchimp-efbf-form').submit(event, function(){
-        event.preventDefault();
-        var email = $('#mailchimp-email-efbf').val()
-        var token = '{{csrf_token}}'
-        var form = $('#mailchimp-efbf-form')
-        $.ajax({
-            data: form.serialize(),
-            dataType: 'json',
-            url: '/mailchimp-signup/',
-            method: "POST",
-            success: function(data) {
-                Swal.fire({
-                title:'Welcome to the Village!',
-                html: '',
-                showComfirmButton: false,
-                showCancelButton: false,
-                showCloseButton: false,
-                text:"You've been added to our mailing list",
-                })
-            },
-            error: function(){
-                Swal.fire({
-                title:"You're on the list!",
-                html: '',
-                showComfirmButton: false,
-                showCancelButton: false,
-                showCloseButton: false,
-                text:"You're on our mailing list, thank you for keeping up with ETV!",
-                })
-            }
-        })
-    }) 
-</script>
-{% endif %}
->>>>>>> b41a84aa205282bd595dfdfada2c59467878662f
 <style>
     @media only screen and (max-width:992px){
         .coming-soon-group {
             margin-bottom: -40%
         }
     }
-    
-    
+    .join-tv-title {
+        font-family: oskar-inline;
+
+    }
+    .select-wrapper {
+        display: none !important;
+    }
+    .swal2-close:focus{
+      box-shadow: none !important;
+      background-color: transparent !important;
+  }
 </style>
 {% endblock%}

@@ -24,7 +24,7 @@ from accounts.admin import admin_site
 from .views import *
 from accounts.views import LoginView, RegisterView, GuestRegisterView
 from vbp.views import home
-from content.views import efbf, contact, mailchimp_signup
+from content.views import efbf, efbf_subscribed, contact, mailchimp_signup
 
 from vbp.models import *
 

@@ -2529,7 +2529,10 @@
                 $('#vbp-flipbook-mobile').attr('value', state);
                 $('#filter-form-state').attr('value', state);
                 $('#filter-form-state-mobile').attr('value', state);
-            }
+            },
+            error: function(error) {
+                        Swal.fire('Coming Soon!', 'There are no Black-owned businesses that match your search combination. Try a broader search!', 'warning')
+                    }
         })
         $([document.documentElement, document.body]).animate({
         scrollTop: $("#book").offset().top
@@ -2647,6 +2650,11 @@
 </script>
 {% endblock %}
 <style>
+    input {
+        font-family: poppins !important;
+        font-weight: 200 !important;
+        letter-spacing: 1px !important;
+    }
     @media only screen and (max-width:1050px) {
         .table-of-contents-item {
             font-size:1.1vh; 
@@ -3704,7 +3712,10 @@
                     $('#vbp-flipbook-mobile').attr('value', state);
                     $('#filter-form-state').attr('value', state);
                     $('#filter-form-state-mobile').attr('value', state);
-                }
+                },
+                error: function(error) {
+                        Swal.fire('Coming Soon!', 'There are no Black-owned businesses that match your search combination. Try a broader search!', 'warning')
+                    }
             })
             $([document.documentElement, document.body]).animate({
             scrollTop: $("#book").offset().top

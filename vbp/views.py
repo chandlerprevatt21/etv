@@ -124,7 +124,7 @@ def get_counties_md(request):
 
 def ct_list(request):
     data = request.GET
-    f = StateFilter(data, queryset=vbp_ct.objects.all())
+    f = StateFilter(data, queryset=vbp_ct.objects.order_by('city', 'business_name'))
     filtered_qs = f.qs
     beauty = filtered_qs.filter(category='beauty').order_by('city', 'business_name')
     books = filtered_qs.filter(category='books').order_by('city', 'business_name')
@@ -161,7 +161,7 @@ def ct_list(request):
     visual = filtered_qs.filter(category='visual').order_by('city', 'business_name')
 
     paginator_beauty = Paginator(beauty, 22)
-    beauty_page = 5
+    beauty_page = 6
     paginator_books = Paginator(books, 22)
     books_page = beauty_page + paginator_beauty.num_pages + 1
     paginator_cars = Paginator(cars, 22)
@@ -306,8 +306,8 @@ def ct_list(request):
             'paginator_security': paginator_security,
             'paginator_transportation': paginator_transportation,
             'paginator_visual': paginator_visual,
-            }
-            )
+            })
+        
 
 def ny_list(request):
     data = request.GET
@@ -348,7 +348,7 @@ def ny_list(request):
     visual = filtered_qs.filter(category='visual').order_by('city', 'business_name')
 
     paginator_beauty = Paginator(beauty, 22)
-    beauty_page = 5
+    beauty_page = 6
     paginator_books = Paginator(books, 22)
     books_page = beauty_page + paginator_beauty.num_pages + 1
     paginator_cars = Paginator(cars, 22)
@@ -498,7 +498,7 @@ def ny_list(request):
 
 def nj_list(request):
     data = request.GET
-    f = StateFilter(data, queryset=vbp_nj.objects.all())
+    f = StateFilter(data, queryset=vbp_nj.objects.order_by('city', 'business_name'))
     filtered_qs = f.qs
     beauty = filtered_qs.filter(category='beauty').order_by('city', 'business_name')
     books = filtered_qs.filter(category='books').order_by('city', 'business_name')
@@ -535,7 +535,7 @@ def nj_list(request):
     visual = filtered_qs.filter(category='visual').order_by('city', 'business_name')
 
     paginator_beauty = Paginator(beauty, 22)
-    beauty_page = 5
+    beauty_page = 6
     paginator_books = Paginator(books, 22)
     books_page = beauty_page + paginator_beauty.num_pages + 1
     paginator_cars = Paginator(cars, 22)
@@ -684,7 +684,7 @@ def nj_list(request):
 
 def ma_list(request):
     data = request.GET
-    f = StateFilter(data, queryset=vbp_ma.objects.all())
+    f = StateFilter(data, queryset=vbp_ma.objects.order_by('city', 'business_name'))
     filtered_qs = f.qs
     beauty = filtered_qs.filter(category='beauty').order_by('city', 'business_name')
     books = filtered_qs.filter(category='books').order_by('city', 'business_name')
@@ -721,7 +721,7 @@ def ma_list(request):
     visual = filtered_qs.filter(category='visual').order_by('city', 'business_name')
 
     paginator_beauty = Paginator(beauty, 22)
-    beauty_page = 5
+    beauty_page = 6
     paginator_books = Paginator(books, 22)
     books_page = beauty_page + paginator_beauty.num_pages + 1
     paginator_cars = Paginator(cars, 22)
@@ -870,7 +870,7 @@ def ma_list(request):
 
 def va_list(request):
     data = request.GET
-    f = StateFilter(data, queryset=vbp_va.objects.all())
+    f = StateFilter(data, queryset=vbp_va.objects.order_by('city', 'business_name'))
     filtered_qs = f.qs
     beauty = filtered_qs.filter(category='beauty').order_by('city', 'business_name')
     books = filtered_qs.filter(category='books').order_by('city', 'business_name')
@@ -907,7 +907,7 @@ def va_list(request):
     visual = filtered_qs.filter(category='visual').order_by('city', 'business_name')
 
     paginator_beauty = Paginator(beauty, 22)
-    beauty_page = 5
+    beauty_page = 6
     paginator_books = Paginator(books, 22)
     books_page = beauty_page + paginator_beauty.num_pages + 1
     paginator_cars = Paginator(cars, 22)
@@ -1056,7 +1056,7 @@ def va_list(request):
 
 def pa_list(request):
     data = request.GET
-    f = StateFilter(data, queryset=vbp_pa.objects.all())
+    f = StateFilter(data, queryset=vbp_pa.objects.order_by('city', 'business_name'))
     filtered_qs = f.qs
     beauty = filtered_qs.filter(category='beauty').order_by('city', 'business_name')
     books = filtered_qs.filter(category='books').order_by('city', 'business_name')
@@ -1093,7 +1093,7 @@ def pa_list(request):
     visual = filtered_qs.filter(category='visual').order_by('city', 'business_name')
 
     paginator_beauty = Paginator(beauty, 22)
-    beauty_page = 5
+    beauty_page = 6
     paginator_books = Paginator(books, 22)
     books_page = beauty_page + paginator_beauty.num_pages + 1
     paginator_cars = Paginator(cars, 22)
@@ -1200,7 +1200,7 @@ def pa_list(request):
             'other_page': other_page,
             'filter': f,
             'filtered_qs': filtered_qs,
-                'unfiltered_qs': unfiltered_qs,
+            'unfiltered_qs': unfiltered_qs,
             'obj': obj,
             'beauty': beauty,
             'paginator': paginator,
@@ -1242,7 +1242,7 @@ def pa_list(request):
 
 def oh_list(request):
     data = request.GET
-    f = StateFilter(data, queryset=vbp_oh.objects.all())
+    f = StateFilter(data, queryset=vbp_oh.objects.order_by('city', 'business_name'))
     filtered_qs = f.qs
     beauty = filtered_qs.filter(category='beauty').order_by('city', 'business_name')
     books = filtered_qs.filter(category='books').order_by('city', 'business_name')
@@ -1279,7 +1279,7 @@ def oh_list(request):
     visual = filtered_qs.filter(category='visual').order_by('city', 'business_name')
 
     paginator_beauty = Paginator(beauty, 22)
-    beauty_page = 5
+    beauty_page = 6
     paginator_books = Paginator(books, 22)
     books_page = beauty_page + paginator_beauty.num_pages + 1
     paginator_cars = Paginator(cars, 22)
@@ -1428,7 +1428,7 @@ def oh_list(request):
 
 def md_list(request):
     data = request.GET
-    f = StateFilter(data, queryset=vbp_md.objects.all())
+    f = StateFilter(data, queryset=vbp_md.objects.order_by('city', 'business_name'))
     filtered_qs = f.qs
     beauty = filtered_qs.filter(category='beauty').order_by('city', 'business_name')
     books = filtered_qs.filter(category='books').order_by('city', 'business_name')
@@ -1465,7 +1465,7 @@ def md_list(request):
     visual = filtered_qs.filter(category='visual').order_by('city', 'business_name')
 
     paginator_beauty = Paginator(beauty, 22)
-    beauty_page = 5
+    beauty_page = 6
     paginator_books = Paginator(books, 22)
     books_page = beauty_page + paginator_beauty.num_pages + 1
     paginator_cars = Paginator(cars, 22)
@@ -1614,7 +1614,7 @@ def md_list(request):
 
 def dc_list(request):
     data = request.GET
-    f = StateFilter(data, queryset=vbp_dc.objects.all())
+    f = StateFilter(data, queryset=vbp_dc.objects.order_by('city', 'business_name'))
     filtered_qs = f.qs
     beauty = filtered_qs.filter(category='beauty').order_by('city', 'business_name')
     books = filtered_qs.filter(category='books').order_by('city', 'business_name')
@@ -1651,7 +1651,7 @@ def dc_list(request):
     visual = filtered_qs.filter(category='visual').order_by('city', 'business_name')
 
     paginator_beauty = Paginator(beauty, 22)
-    beauty_page = 5
+    beauty_page = 6
     paginator_books = Paginator(books, 22)
     books_page = beauty_page + paginator_beauty.num_pages + 1
     paginator_cars = Paginator(cars, 22)
@@ -1800,7 +1800,7 @@ def dc_list(request):
 
 def de_list(request):
     data = request.GET
-    f = StateFilter(data, queryset=vbp_de.objects.all())
+    f = StateFilter(data, queryset=vbp_de.objects.order_by('city', 'business_name'))
     filtered_qs = f.qs
     beauty = filtered_qs.filter(category='beauty').order_by('city', 'business_name')
     books = filtered_qs.filter(category='books').order_by('city', 'business_name')
@@ -1837,7 +1837,7 @@ def de_list(request):
     visual = filtered_qs.filter(category='visual').order_by('city', 'business_name')
 
     paginator_beauty = Paginator(beauty, 22)
-    beauty_page = 5
+    beauty_page = 6
     paginator_books = Paginator(books, 22)
     books_page = beauty_page + paginator_beauty.num_pages + 1
     paginator_cars = Paginator(cars, 22)
@@ -2136,9 +2136,9 @@ def getStateListings(request):
     state = request.GET['state']
     if state == 'US-AL':
         covers_qs = vbp_book.objects.all()
-        state_qs = list(vbp_al.objects.all().order_by('category', 'city', 'business_name')),
-        beauty = list(vbp_al.objects.filter(category='beauty'))
-        books = list(vbp_al.objects.filter(category='books'))
+        state_qs = list(vbp_al.objects.all().order_by('city', 'business_name')),
+        beauty = list(vbp_al.objects.filter(category='beauty').order_by('city', 'business_name'))
+        books = list(vbp_al.objects.filter(category='books').order_by('city', 'business_name'))
         cars = list(vbp_al.objects.filter(category='cars'))
         child = list(vbp_al.objects.filter(category='child'))
         cleaning = list(vbp_al.objects.filter(category='cleaning'))
@@ -2253,8 +2253,8 @@ def getStateListings(request):
     if state == 'US-AZ':
         covers_qs = vbp_book.objects.all()
         state_qs = list(vbp_az.objects.all().order_by('category', 'city', 'business_name')),
-        beauty = list(vbp_az.objects.filter(category='beauty'))
-        books = list(vbp_az.objects.filter(category='books'))
+        beauty = list(vbp_az.objects.filter(category='beauty').order_by('city', 'business_name'))
+        books = list(vbp_az.objects.filter(category='books').order_by('city', 'business_name'))
         cars = list(vbp_az.objects.filter(category='cars'))
         child = list(vbp_az.objects.filter(category='child'))
         cleaning = list(vbp_az.objects.filter(category='cleaning'))
@@ -2369,8 +2369,8 @@ def getStateListings(request):
     if state == 'US-AR':
         covers_qs = vbp_book.objects.all()
         state_qs = list(vbp_ar.objects.all().order_by('category', 'city', 'business_name')),
-        beauty = list(vbp_ar.objects.filter(category='beauty'))
-        books = list(vbp_ar.objects.filter(category='books'))
+        beauty = list(vbp_ar.objects.filter(category='beauty').order_by('city', 'business_name'))
+        books = list(vbp_ar.objects.filter(category='books').order_by('city', 'business_name'))
         cars = list(vbp_ar.objects.filter(category='cars'))
         child = list(vbp_ar.objects.filter(category='child'))
         cleaning = list(vbp_ar.objects.filter(category='cleaning'))
@@ -2485,8 +2485,8 @@ def getStateListings(request):
     if state == 'US-CA':
         covers_qs = vbp_book.objects.all()
         state_qs = list(vbp_ca.objects.all().order_by('category', 'city', 'business_name')),
-        beauty = list(vbp_ca.objects.filter(category='beauty'))
-        books = list(vbp_ca.objects.filter(category='books'))
+        beauty = list(vbp_ca.objects.filter(category='beauty').order_by('city', 'business_name'))
+        books = list(vbp_ca.objects.filter(category='books').order_by('city', 'business_name'))
         cars = list(vbp_ca.objects.filter(category='cars'))
         child = list(vbp_ca.objects.filter(category='child'))
         cleaning = list(vbp_ca.objects.filter(category='cleaning'))
@@ -2601,8 +2601,8 @@ def getStateListings(request):
     if state == 'US-CO':
         covers_qs = vbp_book.objects.all()
         state_qs = list(vbp_co.objects.all().order_by('category', 'city', 'business_name')),
-        beauty = list(vbp_co.objects.filter(category='beauty'))
-        books = list(vbp_co.objects.filter(category='books'))
+        beauty = list(vbp_co.objects.filter(category='beauty').order_by('city', 'business_name'))
+        books = list(vbp_co.objects.filter(category='books').order_by('city', 'business_name'))
         cars = list(vbp_co.objects.filter(category='cars'))
         child = list(vbp_co.objects.filter(category='child'))
         cleaning = list(vbp_co.objects.filter(category='cleaning'))
@@ -2752,7 +2752,7 @@ def getStateListings(request):
         visual = list(vbp_ct.objects.filter(category='visual').order_by('city', 'business_name'))
 
         paginator_beauty = Paginator(beauty, 22)
-        beauty_page = 5
+        beauty_page = 6
         paginator_books = Paginator(books, 22)
         books_page = beauty_page + paginator_beauty.num_pages + 1
         paginator_cars = Paginator(cars, 22)
@@ -2969,7 +2969,7 @@ def getStateListings(request):
         visual = list(vbp_de.objects.filter(category='visual').order_by('city', 'business_name'))
 
         paginator_beauty = Paginator(beauty, 22)
-        beauty_page = 5
+        beauty_page = 6
         paginator_books = Paginator(books, 22)
         books_page = beauty_page + paginator_beauty.num_pages + 1
         paginator_cars = Paginator(cars, 22)
@@ -3153,7 +3153,7 @@ def getStateListings(request):
         visual = list(vbp_dc.objects.filter(category='visual').order_by('city', 'business_name'))
 
         paginator_beauty = Paginator(beauty, 22)
-        beauty_page = 5
+        beauty_page = 6
         paginator_books = Paginator(books, 22)
         books_page = beauty_page + paginator_beauty.num_pages + 1
         paginator_cars = Paginator(cars, 22)
@@ -3502,7 +3502,7 @@ def getStateListings(request):
         visual = list(vbp_md.objects.filter(category='visual').order_by('city', 'business_name'))
 
         paginator_beauty = Paginator(beauty, 22)
-        beauty_page = 5
+        beauty_page = 6
         paginator_books = Paginator(books, 22)
         books_page = beauty_page + paginator_beauty.num_pages + 1
         paginator_cars = Paginator(cars, 22)
@@ -3686,7 +3686,7 @@ def getStateListings(request):
         visual = list(vbp_ma.objects.filter(category='visual').order_by('city', 'business_name'))
 
         paginator_beauty = Paginator(beauty, 22)
-        beauty_page = 5
+        beauty_page = 6
         paginator_books = Paginator(books, 22)
         books_page = beauty_page + paginator_beauty.num_pages + 1
         paginator_cars = Paginator(cars, 22)
@@ -3990,7 +3990,7 @@ def getStateListings(request):
         visual = list(vbp_nj.objects.filter(category='visual').order_by('city', 'business_name'))
 
         paginator_beauty = Paginator(beauty, 22)
-        beauty_page = 5
+        beauty_page = 6
         paginator_books = Paginator(books, 22)
         books_page = beauty_page + paginator_beauty.num_pages + 1
         paginator_cars = Paginator(cars, 22)
@@ -4189,7 +4189,7 @@ def getStateListings(request):
         visual = list(vbp_ny.objects.filter(category='visual').order_by('city', 'business_name'))
 
         paginator_beauty = Paginator(beauty, 22)
-        beauty_page = 5
+        beauty_page = 6
         paginator_books = Paginator(books, 22)
         books_page = beauty_page + paginator_beauty.num_pages + 1
         paginator_cars = Paginator(cars, 22)
@@ -4403,7 +4403,7 @@ def getStateListings(request):
         visual = list(vbp_oh.objects.filter(category='visual').order_by('city', 'business_name'))
 
         paginator_beauty = Paginator(beauty, 22)
-        beauty_page = 5
+        beauty_page = 6
         paginator_books = Paginator(books, 22)
         books_page = beauty_page + paginator_beauty.num_pages + 1
         paginator_cars = Paginator(cars, 22)
@@ -4617,7 +4617,7 @@ def getStateListings(request):
         visual = list(vbp_pa.objects.filter(category='visual').order_by('city', 'business_name'))
 
         paginator_beauty = Paginator(beauty, 22)
-        beauty_page = 5
+        beauty_page = 6
         paginator_books = Paginator(books, 22)
         books_page = beauty_page + paginator_beauty.num_pages + 1
         paginator_cars = Paginator(cars, 22)
@@ -4906,7 +4906,7 @@ def getStateListings(request):
         visual = list(vbp_va.objects.filter(category='visual').order_by('city', 'business_name'))
 
         paginator_beauty = Paginator(beauty, 22)
-        beauty_page = 5
+        beauty_page = 6
         paginator_books = Paginator(books, 22)
         books_page = beauty_page + paginator_beauty.num_pages + 1
         paginator_cars = Paginator(cars, 22)

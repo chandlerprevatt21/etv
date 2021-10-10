@@ -9,6 +9,9 @@
 <div id="beauty-pageno-hidden" style="display:none" value='{{ beauty_page }}'></div>
 <div id="books-pageno-hidden" style="display:none" value='{{ books_page }}'></div>
 <div id="flipbook-fullsize-container">
+    <div class="row">
+    {{ filtered_qs }}
+    </div>
     <div class="" id="vbp-flipbook">
         <div class="row offset-s1" style="padding: 10%; padding-top:5%;padding-bottom:0; margin-bottom:0">
             <form id="filter-form">
@@ -75,8 +78,9 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="" style="background: url({% static 'img/vbp_efbf_page.png' %}); background-size: 102%"></div>
                             <div class="" style="background: url({% static 'img/vbp welcome page.png' %});background-size: 105%"></div>
-                            <div class="p4" style="background-color: 181818;">
+                            <div class="" style="background-color: #181818;">
                                 <script>
                                     $('.beauty-page').click(function(){
                                         pageNumber = $('#beauty-pageno').attr('value')
@@ -383,7 +387,7 @@
                                     
                                 </div>
                             </div>
-                            <div class="beauty beauty-cover" id="beauty-image" page-number=5 style="background: url({% static 'img/beauty.png' %});background-size: 105%"></div>
+                            <div class="beauty beauty-cover" id="beauty-image" style="background: url({% static 'img/beauty.png' %});background-size: 105%"></div>
                             {% for response in paginator_beauty %}
                                 <div class="beauty-section beauty">
                                     <div class="data-table">
@@ -1568,146 +1572,147 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="" style="background: url({% static 'img/vbp_efbf_page.png' %}); background-size: 102%"></div>
                         <div class="" style="background: url({% static 'img/vbp welcome page.png' %});background-size: 105%"></div>
                         <div class="" style="background-color: #181818;">
                             <script>
                                 $('.beauty-page').click(function(){
                                     pageNumber = $('#beauty-pageno').attr('value')
-                                    oTurn2.turn("page", pageNumber)
+                                    oTurn.turn("page", pageNumber)
                                 });
                                 $('.books-page').click(function(){
                                     pageNumber = $('#books-pageno').attr('value')
-                                    oTurn2.turn("page", pageNumber)
+                                    oTurn.turn("page", pageNumber)
                                 });
                                 $('.cars-page').click(function(){
                                     pageNumber = $('#cars-pageno').attr('value')
-                                    oTurn2.turn("page", pageNumber)
+                                    oTurn.turn("page", pageNumber)
                                 });
                                 $('.child-page').click(function(){
                                     pageNumber = $('#child-pageno').attr('value')
-                                    oTurn2.turn("page", pageNumber)
+                                    oTurn.turn("page", pageNumber)
                                 });
                                 $('.cleaning-page').click(function(){
                                     pageNumber = $('#cleaning-pageno').attr('value')
-                                    oTurn2.turn("page", pageNumber)
+                                    oTurn.turn("page", pageNumber)
                                 });
                                 $('.clothing-page').click(function(){
                                     pageNumber = $('#clothing-pageno').attr('value')
-                                    oTurn2.turn("page", pageNumber)
+                                    oTurn.turn("page", pageNumber)
                                 });
                                 $('.construction-page').click(function(){
                                     pageNumber = $('#construction-pageno').attr('value')
-                                    oTurn2.turn("page", pageNumber)
+                                    oTurn.turn("page", pageNumber)
                                 });
                                 $('.education-page').click(function(){
                                     pageNumber = $('#education-pageno').attr('value')
-                                    oTurn2.turn("page", pageNumber)
+                                    oTurn.turn("page", pageNumber)
                                 });
                                 $('.eldercare-page').click(function(){
                                     pageNumber = $('#eldercare-pageno').attr('value')
-                                    oTurn2.turn("page", pageNumber)
+                                    oTurn.turn("page", pageNumber)
                                 });
                                 $('.electronics-page').click(function(){
                                     pageNumber = $('#electronics-pageno').attr('value')
-                                    oTurn2.turn("page", pageNumber)
+                                    oTurn.turn("page", pageNumber)
                                 });
                                 $('.entertainment-page').click(function(){
                                     pageNumber = $('#entertainment-pageno').attr('value')
-                                    oTurn2.turn("page", pageNumber)
+                                    oTurn.turn("page", pageNumber)
                                 });
                                 $('.farming-page').click(function(){
                                     pageNumber = $('#farming-pageno').attr('value')
-                                    oTurn2.turn("page", pageNumber)
+                                    oTurn.turn("page", pageNumber)
                                 });
                                 $('.florists-page').click(function(){
                                     pageNumber = $('#florists-pageno').attr('value')
-                                    oTurn2.turn("page", pageNumber)
+                                    oTurn.turn("page", pageNumber)
                                 });
                                 $('.grocery-page').click(function(){
                                     pageNumber = $('#grocery-pageno').attr('value')
-                                    oTurn2.turn("page", pageNumber)
+                                    oTurn.turn("page", pageNumber)
                                 });
                                 $('.health-page').click(function(){
                                     pageNumber = $('#health-pageno').attr('value')
-                                    oTurn2.turn("page", pageNumber)
+                                    oTurn.turn("page", pageNumber)
                                 });
                                 $('.home-page').click(function(){
                                     pageNumber = $('#home-pageno').attr('value')
-                                    oTurn2.turn("page", pageNumber)
+                                    oTurn.turn("page", pageNumber)
                                 });
                                 $('.hotels-page').click(function(){
                                     pageNumber = $('#hotels-pageno').attr('value')
-                                    oTurn2.turn("page", pageNumber)
+                                    oTurn.turn("page", pageNumber)
                                 });
                                 $('.jewelry-page').click(function(){
                                     pageNumber = $('#jewelry-pageno').attr('value')
-                                    oTurn2.turn("page", pageNumber)
+                                    oTurn.turn("page", pageNumber)
                                 });
                                 $('.legal-page').click(function(){
                                     pageNumber = $('#legal-pageno').attr('value')
-                                    oTurn2.turn("page", pageNumber)
+                                    oTurn.turn("page", pageNumber)
                                 });
                                 $('.lifestyle-page').click(function(){
                                     pageNumber = $('#lifestyle-pageno').attr('value')
-                                    oTurn2.turn("page", pageNumber)
+                                    oTurn.turn("page", pageNumber)
                                 });
                                 $('.marketing-page').click(function(){
                                     pageNumber = $('#marketing-pageno').attr('value')
-                                    oTurn2.turn("page", pageNumber)
+                                    oTurn.turn("page", pageNumber)
                                 });
                                 $('.medical-page').click(function(){
                                     pageNumber = $('#medical-pageno').attr('value')
-                                    oTurn2.turn("page", pageNumber)
+                                    oTurn.turn("page", pageNumber)
                                 });
                                 $('.packaging-page').click(function(){
                                     pageNumber = $('#packaging-pageno').attr('value')
-                                    oTurn2.turn("page", pageNumber)
+                                    oTurn.turn("page", pageNumber)
                                 });
                                 $('.pets-page').click(function(){
                                     pageNumber = $('#pets-pageno').attr('value')
-                                    oTurn2.turn("page", pageNumber)
+                                    oTurn.turn("page", pageNumber)
                                 });
                                 $('.photography-page').click(function(){
                                     pageNumber = $('#photography-pageno').attr('value')
-                                    oTurn2.turn("page", pageNumber)
+                                    oTurn.turn("page", pageNumber)
                                 });
                                 $('.professional-page').click(function(){
                                     pageNumber = $('#professional-pageno').attr('value')
-                                    oTurn2.turn("page", pageNumber)
+                                    oTurn.turn("page", pageNumber)
                                 });
                                 $('.realestate-page').click(function(){
                                     pageNumber = $('#realestate-pageno').attr('value')
-                                    oTurn2.turn("page", pageNumber)
+                                    oTurn.turn("page", pageNumber)
                                 });
                                 $('.recreation-page').click(function(){
                                     pageNumber = $('#recreation-pageno').attr('value')
-                                    oTurn2.turn("page", pageNumber)
+                                    oTurn.turn("page", pageNumber)
                                 });
                                 $('.restaurants-page').click(function(){
                                     pageNumber = $('#restaurants-pageno').attr('value')
-                                    oTurn2.turn("page", pageNumber)
+                                    oTurn.turn("page", pageNumber)
                                 });
                                 $('.security-page').click(function(){
                                     pageNumber = $('#security-pageno').attr('value')
-                                    oTurn2.turn("page", pageNumber)
+                                    oTurn.turn("page", pageNumber)
                                 });
                                 $('.transportation-page').click(function(){
                                     pageNumber = $('#transportation-pageno').attr('value')
-                                    oTurn2.turn("page", pageNumber)
+                                    oTurn.turn("page", pageNumber)
                                 });
                                 $('.visual-page').click(function(){
                                     pageNumber = $('#visual-pageno').attr('value')
-                                    oTurn2.turn("page", pageNumber)
+                                    oTurn.turn("page", pageNumber)
                                 });
                                 $('.other-page').click(function(){
                                     pageNumber = $('#other-pageno').attr('value')
-                                    oTurn2.turn("page", pageNumber)
+                                    oTurn.turn("page", pageNumber)
                                 });
                             </script>
                             <div class="col 11" style="padding:5%; color: white">
                                 <h6 style="font-family: 'Barlow Condensed'; font-size: 2vw; margin-bottom:10px">TABLE OF CONTENTS</h6>
                                 <div style="border-top:dotted white 0.1px; padding-bottom: 1vw"></div>
-                                <div class="row">
+                                <div class="row valign-wrapper" style="max-height: 100%; overflow: scroll">
                                 <table class="col s6 table-of-contents tc-1">
                                     <tr>
                                         <td class="beauty-page" value="{{ beauty_page }}">Beauty & Personal Grooming</td>
@@ -1853,17 +1858,17 @@
                                     }
                                     .table-of-contents tr td{
                                         color: white;
-                                        font-size: 16px;
+                                        font-size: 9px;
                                     }
                                     .tc-1 tr td {
-                                        padding-left: 30px
+                                        padding-left: 15px;
                                     }
                                     .tc-1 tr .page-no {
-                                        padding-right: 30px;
+                                        padding-right: 10px;
                                         padding-left: 0px !important
                                     }
                                     .tc-2 tr td {
-                                        padding-right: 30px;
+                                        padding-right: 15px;
                                     }
                                     .table-of-contents tr td:hover{
                                         cursor: pointer
@@ -1871,7 +1876,12 @@
                                     .page-no {
                                         text-align: right
                                     }
-                                    
+                                    @media only screen and (min-width:663px){
+                                        .table-of-contents tr td{
+                                        color: white;
+                                        font-size: 14px;
+                                    }
+                                    }
                                 </style>
                                 
                             </div>
@@ -3020,8 +3030,14 @@
             state: state,
             data: data,
             url: url,
-            method: 'GET',
+            beforeSend: function(){
+                $('.preloader').show();
+                $('#flipbook-mobile-container').hide();
+                $('#flipbook-container').hide();
+            },
+            method: "GET",
             success: function(data) {
+                $('.preloader').hide();
                 $('#book').html(data);
                 $('#mobile-book').html(data);
                 $('#cover-page').attr('value', state);
@@ -3030,6 +3046,9 @@
                 $('#vbp-flipbook-mobile').attr('value', state);
                 $('#filter-form-state').attr('value', state);
                 $('#filter-form-state-mobile').attr('value', state);
+            },
+            error: function(error) {
+                Swal.fire('Coming Soon!', 'There are no Black-owned businesses that match your search combination. Try a broader search!', 'warning')
             }
         })
         $([document.documentElement, document.body]).animate({
@@ -3107,10 +3126,12 @@
             $('#go-btn').click(function(){
                 pageNumber = $('#page-jump').val()
                 oTurn2.turn("page", pageNumber)
+                oTurn.turn("page", pageNumber)
             });
             $('.contents-page').click(function(){
-                pageNumber = 4
+                pageNumber = 5
                 oTurn2.turn("page", pageNumber)
+                oTurn.turn("page", pageNumber)
             });
         $('.table-of-contents').ready(function(){
             
@@ -3129,7 +3150,6 @@
     } else if (elem.msRequestFullscreen) { /* IE11 */
         elem.msRequestFullscreen();
     }
-    $('#')
     };
 </script>
 <script>
@@ -3153,12 +3173,17 @@
 
 <script>
     $(document).ready(function(){
-    $('select').formSelect('dropdownOptions', {
-        'constrainWidth': false
+        $('select').formSelect('dropdownOptions', {
+            'constrainWidth': false
+        });
     });
-  });
 </script>
 <style>
+    input {
+        font-family: poppins !important;
+        font-weight: 200 !important;
+        letter-spacing: 1px !important;
+    }
     @media only screen and (min-width:0px) {
         .table-of-contents-item {
             font-size:6px; 
@@ -3167,6 +3192,7 @@
             margin:0; 
             text-transform: capitalize;
         }
+
     }
     @media only screen and (min-width:450px) {
         .table-of-contents-item {
@@ -4172,9 +4198,7 @@
      $(document).ready(function(){
     $('select').formSelect();
   });
-  $(window).load(function() {
-   $('.preloader-wrapper').delay(1000).fadeOut('slow');
-});
+  
 </script>
 <script>
         $(document).ready(function(){
@@ -4251,17 +4275,26 @@
                 state: state,
                 data: data,
                 url: url,
-                method: 'GET',
-                success: function(data) {
-                    $('#book').html(data);
-                    $('#mobile-book').html(data);
-                    $('#cover-page').attr('value', state);
-                    $('#cover-page-mobile').attr('value', state);
-                    $('#vbp-flipbook').attr('value', state);
-                    $('#vbp-flipbook-mobile').attr('value', state);
-                    $('#filter-form-state').attr('value', state);
-                    $('#filter-form-state-mobile').attr('value', state);
-                }
+                beforeSend: function(){
+                        $('.preloader').show();
+                        $('#flipbook-mobile-container').hide();
+                        $('#flipbook-container').hide();
+                    },
+                    method: "GET",
+                    success: function(data) {
+                        $('.preloader').hide();
+                        $('#book').html(data);
+                        $('#mobile-book').html(data);
+                        $('#cover-page').attr('value', state);
+                        $('#cover-page-mobile').attr('value', state);
+                        $('#vbp-flipbook').attr('value', state);
+                        $('#vbp-flipbook-mobile').attr('value', state);
+                        $('#filter-form-state').attr('value', state);
+                        $('#filter-form-state-mobile').attr('value', state);
+                    },
+                    error: function(error) {
+                        Swal.fire('Coming Soon!', 'There are no Black-owned businesses that match your search combination. Try a broader search!', 'warning')
+                    }
             })
             $([document.documentElement, document.body]).animate({
             scrollTop: $("#book").offset().top

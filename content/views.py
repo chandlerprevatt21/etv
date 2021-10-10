@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from content.forms import ContactForm
 from etv.forms import MailchimpForm
 from mailchimp_marketing import Client
@@ -18,6 +18,11 @@ def efbf(request):
     context = {
     }
     return render(request, "efbf.html", context)
+
+def efbf_subscribed(request):
+    context = {
+    }
+    return render(request, "efbf_subscribed.html", context)
 
 def contact(request):
     contact_form = ContactForm()
@@ -39,6 +44,7 @@ def contact(request):
 
 def mailchimp_signup(request):
   if request.method == 'POST':
+    print(request.POST)
     mailchimp_form = MailchimpForm(request.POST)
     if mailchimp_form.is_valid():
       member_info = {
@@ -51,4 +57,4 @@ def mailchimp_signup(request):
       except ApiClientError as error:
         print("An exception occurred: {}".format(error.text))
       
-    return HttpResponse('Thank you!')
+    return redirect('/make-every-friday-black-friday/')
