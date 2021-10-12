@@ -17,19 +17,34 @@
 <div style="background: url('{% static 'img/health_collage_final.png' %}'); background-size: 120%; height: 100%">
     <div class="row" style="height: 100%; background-color: rgba(255, 255, 255, 0.781); width:100%">
         <div class="col s12 l10 offset-l1  pillar-body">
-                <div class="row center-align">
-                    <h5 class="dyk"><p class="dyk" style="color: rgb(199, 24, 24); margin:0; padding:0; margin-top: -10px">State Of The Village : <a style="color:rgba(38, 38, 38, 0.947); font-family: oskar">Did You Know...?</a></p></h5>
+                <div class="row center-align" style="margin-left: 0; margin-right: 0">
+                    <h5 class="dyk"><p class="dyk" style="color: rgb(199, 24, 24); margin:0; padding:0; margin-top: -10px">State Of The Village: <a style="color:rgba(38, 38, 38, 0.947); font-family: oskar">Did You Know...?</a></p></h5>
                     <div class="divider"></div>
-                    <div class="row valign-wrapper mi-row">
+                    <div class="row valign-wrapper mi-row" style="margin-left: 0; margin-right: 0">
                         <img class="col s3 trend" src="{% static 'img/trend-chart.png'%}">
-                        <blockquote class="col s9 dyk-quote" style="font-size: 26px">
+                        <blockquote class="col s9 dyk-quote quote-1">
                             The number of reported cases of diagnosed mental illness, especially anxiety and depression, as well as the rate of suicide in the Black community, continues to climb in recent years. Physical health challenges are also on the rise.
                         </blockquote>
                     </div>
+                    <style>
+                        .quote-1 {
+                            font-size: 18px
+                        }
+                        @media only screen and (min-width: 663px){
+                            .quote-1 {
+                                font-size: 24px
+                            }
+                        }
+                        @media only screen and (min-width: 992px){
+                            .quote-1 {
+                                font-size: 28px
+                            }
+                        }
+                    </style>
                     <div class="divider" style="margin-bottom: 30px"></div>
-                    <div class="row popout-row">
+                    <div class="row popout-row" style="margin-left: 0; margin-right: 0">
                         <ul class="col s12 l6 collapsible popout pillar-collapsible goals-collapsible">
-                            <li class="goals-li">
+                            <li class="goals-li" style="margin: 0">
                                 <div class="collapsible-header valign-wrapper pillar-header goals-header">
                                     <div class="collapsible-body-image" style="background: url('{% static 'img/ep-goals.jpg' %}'); background-size: 147%">
                                     </div>
@@ -60,7 +75,7 @@
                     
                         <ul class="col s12 l6 collapsible popout pillar-collapsible" style="margin-bottom: 2%;">
                             
-                            <li class="solutions-li">
+                            <li class="solutions-li" style="margin:0">
                                 <div class="collapsible-header valign-wrapper pillar-header solutions-header">
                                     <div class="collapsible-body-image" style="background: url('{% static 'img/solutions.jpg' %}'); background-size: 140%; background-position-x: -30px">
                                     </div>
@@ -101,7 +116,7 @@
                             </li>
                         </ul> 
                     </div>
-                    <div class="row" style="margin-bottom: 0; padding-top: 3%; padding-left: 1%; padding-right: 1%">
+                    <div class="row" style="margin-left: 0; margin-right: 0; margin-bottom: 0; padding-top: 3%; padding-left: 1%; padding-right: 1%">
                         
                         <div class="col s12 m3">
                             <div class="row dyk-row">
@@ -131,10 +146,10 @@
                 </div>
                 
             <div class="divider" style="margin-bottom: 30px"></div>
-            <div class="row center-align">
+            <div class="row center-align" style="margin-left: 0; margin-right: 0">
                 <h5 class="dyk">Health & Wellness Initiatives</h5>
                     <div class="divider" style="margin-bottom: 20px"></div>
-                    <div class="row">
+                    <div class="row" style="margin-left: 0; margin-right: 0">
                         <div class="col s8 offset-s2 l4 ee-image">
                             <img class="z-depth-2" src="{% static 'img/group-fitness.jpg' %}" style="width: 100%;">
                         </div>
@@ -147,36 +162,37 @@
                         </div>
                     </div>
                     <div class="divider" style="margin-bottom: 30px"></div>
-                    <div class="row">
-                        <div class="col s6">
+                    <div class="row" style="margin-left: 0 !important; margin-right: 0 !important">
+                        <div class="col s12 m6">
                             <iframe width=100% height="315" src="https://www.youtube.com/embed/pILCWjsAksQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
-                        <div class="col s6">
+                        <div class="col s12 m6">
                             <iframe width=100% height="315" src="https://www.youtube.com/embed/yYewqf6GRVs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
                     <div class="divider" style="margin-bottom: 0px; margin-top: 30px"></div>
-                    <div class="row">
+                    <div class="row" style="width: 90%; margin-left:5% !important; margin-right: 0 !important">
                     <h5 class="center-align health-main-title" style="color: rgb(184, 34, 34); padding-bottom: 20px">Coming Soon!</h5>
-                        <ul class="col s6 collapsible popout pillar-collapsible" style="margin-bottom: 2%; width: 35%; margin-left: 2%; margin-left: 12%">
+                        
+                    <ul class="col s12 m6 center-align collapsible popout pillar-collapsible" style="text-align: center;">
                             
-                            <li class="center-align">
-                                <div class="collapsible-header center-align pillar-header" style="background-color: white;">
+                            <li class="center-align" style="margin: 5px; text-align: center;">
+                                <div class="collapsible-header center-align pillar-header" style="justify-content: center; background-color: white; text-align: center;">
                                     
-                                    <div class="pillar-title cs-title center-align" style="padding: 10px; padding-left: 30px; text-align: center">Village Assistance Program™<i class="material-icons" style="color: rgb(0, 0, 0); font-size: 36px">keyboard_arrow_down</i></div>
-                                    
+                                    <div class="pillar-title center-align cs-title vap-line1">Village Assistance<b class="cs-title center-align" style="font-weight: 400;"><div style="margin-top:0; padding-top:0; justify-content: center;" class="valign-wrapper vap-line2">Program™<i class="material-icons" style="color: rgb(7, 7, 7); font-size: 36px">keyboard_arrow_down</i></div></b>
+                                    </div>
                                 </div>
                                 <div class="collapsible-body collapsible-body-pillar" style="background-color: rgba(100, 165, 90, 0.521)">
                                     <h5 class="pillar-h5 health-main-text" style="padding-left: 5%;padding-right: 3%; padding-bottom: 15px; background-color: rgba(255, 255, 255, 0.536)">ETV is developing this platform to give the Black community free and affordable access to mental health professionals, especially Black psychiatrists, psychologists, social workers and other wellness professionals to improve emotional health and wellness in the Black adult and youth communities and to identify and support early childhood developmental challenges.</h5>
                                 </div>
                             </li>
                         </ul> 
-                        <ul class="col s6 collapsible popout center-align pillar-collapsible" style="padding-bottom: 30px; width: 35%; margin-left: 5%">
+                        <ul class="col s12 m6 collapsible popout center-align pillar-collapsible">
                             
-                            <li>
-                                <div class="collapsible-header center-align pillar-header" style="background-color: white;padding-left: 27%">
+                            <li class="center-align" style="margin: 5px">
+                                <div class="collapsible-header center-align pillar-header" style="justify-content: center; background-color: white;">
                                     
-                                    <div class="pillar-title center-align cs-title" style="padding: 10px; ">Know <br><b class="valign-wrapper" style="font-weight: 300; margin-left: 10%">Thyself!<i class="material-icons" style="color: rgb(7, 7, 7); font-size: 36px">keyboard_arrow_down</i></b></div>
+                                    <div class="pillar-title center-align cs-title" style="justify-content: center;">Know<b class="cs-title center-align" style="font-weight: 400; padding-left: 20px"><div style="margin:0; padding:0; justify-content: center;" class="valign-wrapper">Thyself!<i class="material-icons" style="color: rgb(7, 7, 7); font-size: 36px">keyboard_arrow_down</i></div></b></div>
                                 
                                 </div>
                                 <div class="collapsible-body collapsible-body-pillar" style="background-color: rgba(100, 165, 90, 0.521)" >
@@ -253,7 +269,7 @@
         }
         .cs-title {
             font-size: 28px;
-            text-align: left;
+            text-align: center;
             padding-left: 1%
         }
         .health-main-title {
@@ -378,9 +394,6 @@
             padding: 15px 5px;
             color: white
         }
-        .collapsible li {
-            margin: 0 !important;
-        }
         .degree-attainment-small {
             display: block;
             padding: 0% 5%;
@@ -426,7 +439,7 @@
         }
         .cs-title {
             font-size: 32px;
-            text-align: left;
+            text-align: center;
             padding-left: 1%
         }
         .health-main-title {
@@ -652,7 +665,7 @@
         }
         .cs-title {
             font-size: 48px;
-            text-align: left;
+            text-align: center;
             padding-left: 1%
         }
         .unemployment_ss {
