@@ -9,7 +9,7 @@ from django.urls import reverse
 from django.utils.http import is_safe_url
 from django.utils.safestring import mark_safe
 from .forms import LoginForm, RegisterForm, GuestForm, UserTeamForm
-from bfchallenge.models import nomination
+from bfchallenge.models import *
 from accounts.models import Team
 
 from etv.mixins import NextUrlMixin, RequestFormAttachMixin
@@ -23,8 +23,12 @@ User = get_user_model()
 
 def AccountHomeView(request):
     nomination_qs = nomination.objects.filter(user=request.user).count()
+    rss_qs = readysetshop_transaction.objects.filter(user=request.user).count()
+    rssteam_qs = readysetshop_transaction.objects.filter(team=request.user.team).count()
     context = {
-        'nomination_qs': nomination_qs
+        'nomination_qs': nomination_qs,
+        'rss_qs': rss_qs,
+        'rssteam_qs': rssteam_qs
     }
     return render(request, 'accounts/home.html', context)
 

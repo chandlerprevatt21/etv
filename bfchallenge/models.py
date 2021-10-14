@@ -3,6 +3,7 @@ from django.conf import settings
 import random
 import os
 
+from accounts.models import Team
 from django.db.models.fields import CharField, DateField
 from django.db.models.fields.files import ImageField
 
@@ -207,6 +208,7 @@ class user_bingo_form(models.Model):
 
 class readysetshop_transaction(models.Model):
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
     amount           = models.CharField(max_length=200)
     date             = models.CharField(max_length=50)
     business_name    = models.CharField(max_length=200)
@@ -238,7 +240,7 @@ class everyfriday_transaction(models.Model):
 class nomination(models.Model):
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     business_name    = models.CharField(max_length=200)
-
+    
     def __str__(self):
         return str(self.id)
 

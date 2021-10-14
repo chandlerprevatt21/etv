@@ -468,6 +468,7 @@ def ready_set_shop(request):
         rss_form = RSSForm(request.POST)
         obj = readysetshop_transaction()
         obj.user = request.user
+        obj.team = request.user.team
         obj.business_name = rss_form.data['business_name']
         obj.amount = rss_form.data['amount']
         obj.date = rss_form.data['date']
