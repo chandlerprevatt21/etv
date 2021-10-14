@@ -471,9 +471,9 @@ def ready_set_shop(request):
         obj.business_name = rss_form.data['business_name']
         obj.amount = rss_form.data['amount']
         obj.date = rss_form.data['date']
-        obj.industry = rss_form.data['industry']
+        obj.industry = rss_form.data['category']
         obj.receipt_aws = rss_form.data['receipt']
-        sweetify.success(request, title='Thank you!', icon='success', text='Thank you for supporting a Black-owned business!', button='Add Another Transaction', timer=4000)
+        sweetify.success(request, title='Thank you!', icon='success', text='Thank you for supporting a Black-owned business!', button='Add Another Transaction', timer=7000)
         obj.save()
         return redirect('/black-friday-challenge/ready-set-shop')
     elif request.method == 'POST':

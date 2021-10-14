@@ -207,7 +207,7 @@ class user_bingo_form(models.Model):
 
 class readysetshop_transaction(models.Model):
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
-    amount           = models.DecimalField(decimal_places=2, max_digits=7)
+    amount           = models.CharField(max_length=200)
     date             = models.CharField(max_length=50)
     business_name    = models.CharField(max_length=200)
     industry         = models.CharField(max_length=200, choices=CATEGORY_CHOICES)
