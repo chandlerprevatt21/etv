@@ -7,6 +7,7 @@ from vbp.models import *
 from vbp.forms import NominationForm
 from .forms import RSSForm, STLForm, EFForm
 from content.forms import ContactForm
+from content.models import contact_submission
 
 import sweetify
 
@@ -463,7 +464,7 @@ def nomination_challenge(request):
     return render(request, 'nomination-challenge.html', context)
 
 def ready_set_shop(request):
-    if request.method == 'POST':
+    if request.method == 'POST' and request.user.is_authenticated:
         rss_form = RSSForm(request.POST)
         obj = readysetshop_transaction()
         obj.user = request.user
@@ -475,6 +476,19 @@ def ready_set_shop(request):
         sweetify.success(request, title='Thank you!', icon='success', text='Thank you for supporting a Black-owned business!', button='Add Another Transaction', timer=4000)
         obj.save()
         return redirect('/black-friday-challenge/ready-set-shop')
+    elif request.method == 'POST':
+        if request.method == 'POST':
+            contact = ContactForm(request.POST)
+            obj = contact_submission()
+            obj.name = contact.data['name']
+            obj.email = contact.data['email']
+            obj.message = contact.data['message']
+            if request.user.is_authenticated:
+                user = request.user
+                obj.user = user
+            obj.save()
+            sweetify.success(request, title='Thank you!', icon='success', text="We'll be in touch!", button='OK', timer=4000)
+            return redirect('/black-friday-challenge/ready-set-shop')
     else:
         rss_form = RSSForm()
         contact_form = ContactForm()
