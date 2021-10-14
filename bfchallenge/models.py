@@ -170,6 +170,7 @@ class user_bingo_card(models.Model):
     spot24           = models.BooleanField(default=False)
     spot25           = models.BooleanField(default=False)
     complete         = models.BooleanField(default=False)
+    created        = models.DateTimeField(auto_now_add=True, blank=True, null=True)
 
     def __str__(self):
         return str(self.id)
@@ -198,6 +199,7 @@ class user_bingo_form(models.Model):
     field15         = models.CharField(max_length=300, blank=True, null=True)
     field16         = models.CharField(max_length=300, blank=True, null=True)
     receipt         = models.ImageField(blank=True, null=True)
+    submitted       = models.DateTimeField(auto_now_add=True, blank=True, null=True)
 
     def __str__(self):
         return str(self.id)
@@ -214,9 +216,10 @@ class readysetshop_transaction(models.Model):
     business_name    = models.CharField(max_length=200)
     industry         = models.CharField(max_length=200, choices=CATEGORY_CHOICES)
     receipt_aws      = models.ImageField(blank=True, null=True)
+    submitted          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
 
     def __str__(self):
-        return str(self.id)
+        return str(self.user)
     
     class Meta:
         verbose_name = 'Ready, Set, Shop! Transaction'
@@ -229,6 +232,7 @@ class everyfriday_transaction(models.Model):
     business_name    = models.CharField(max_length=200)
     industry         = models.CharField(max_length=200, choices=CATEGORY_CHOICES)
     receipt_aws      = models.ImageField(blank=True, null=True)
+    submitted          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     
     def __str__(self):
         return str(self.id)
@@ -240,6 +244,8 @@ class everyfriday_transaction(models.Model):
 class nomination(models.Model):
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     business_name    = models.CharField(max_length=200)
+    submitted        = models.DateTimeField(auto_now_add=True, blank=True, null=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
     
     def __str__(self):
         return str(self.id)
@@ -251,6 +257,7 @@ class nomination(models.Model):
 class spread_the_love_submission(models.Model):
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     link             = models.URLField(max_length=200)
+    submitted        = models.DateTimeField(auto_now_add=True, blank=True, null=True)
 
     def __str__(self):
         return str(self.id)
