@@ -2111,6 +2111,8 @@ def home(request):
         obj.approved = 'False'
         obj.save()
         if request.user.is_authenticated:
+            obj.user = request.user
+            obj.team = request.user.team
             obj.nominator_email = request.user.email
             obj.nominator_name = request.user.full_name
         else:

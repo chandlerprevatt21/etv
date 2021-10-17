@@ -5,10 +5,13 @@ from django.db.models import Q
 from django.db.models.signals import pre_save, post_save
 from django.db.models.fields import SlugField
 from django.conf import settings
+from accounts.models import Team
 from phone_field import PhoneField
 
 import geocoder
 import django_filters
+
+User = settings.AUTH_USER_MODEL
 
 def get_filename_ext(filepath):
     base_name = os.path.basename(filepath)
@@ -178,6 +181,8 @@ class vbp_al(models.Model):
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True)
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return str(self.business_name)
@@ -205,6 +210,8 @@ class vbp_ak(models.Model):
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True)
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return str(self.business_name)
@@ -232,6 +239,8 @@ class vbp_az(models.Model):
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True)
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return str(self.business_name)
@@ -259,6 +268,8 @@ class vbp_ar(models.Model):
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True)
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return str(self.business_name)
@@ -286,6 +297,8 @@ class vbp_ca(models.Model):
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True)
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return str(self.business_name)
@@ -313,6 +326,8 @@ class vbp_co(models.Model):
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True)
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return str(self.business_name)
@@ -340,6 +355,8 @@ class vbp_ct(models.Model):
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True, null=True, blank=True)
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return str(self.business_name)
@@ -367,6 +384,8 @@ class vbp_de(models.Model):
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True)
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return str(self.business_name)
@@ -394,6 +413,8 @@ class vbp_dc(models.Model):
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True)
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return str(self.business_name)
@@ -421,6 +442,8 @@ class vbp_fl(models.Model):
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True)
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return str(self.business_name)
@@ -448,6 +471,8 @@ class vbp_ga(models.Model):
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True)
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return str(self.business_name)
@@ -475,6 +500,8 @@ class vbp_hi(models.Model):
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True)
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return str(self.business_name)
@@ -502,6 +529,8 @@ class vbp_id(models.Model):
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True)
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return str(self.business_name)
@@ -529,6 +558,8 @@ class vbp_il(models.Model):
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True)
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return str(self.business_name)
@@ -556,6 +587,8 @@ class vbp_in(models.Model):
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True)
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return str(self.business_name)
@@ -583,6 +616,8 @@ class vbp_ia(models.Model):
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True)
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return str(self.business_name)
@@ -610,6 +645,8 @@ class vbp_ks(models.Model):
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True)
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return str(self.business_name)
@@ -637,6 +674,8 @@ class vbp_ky(models.Model):
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True)
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return str(self.business_name)
@@ -664,6 +703,8 @@ class vbp_la(models.Model):
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True)
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return str(self.business_name)
@@ -691,6 +732,8 @@ class vbp_me(models.Model):
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True)
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return str(self.business_name)
@@ -718,6 +761,8 @@ class vbp_md(models.Model):
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True)
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return str(self.business_name)
@@ -745,6 +790,8 @@ class vbp_ma(models.Model):
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True)
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return str(self.business_name)
@@ -772,6 +819,8 @@ class vbp_mi(models.Model):
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True)
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return str(self.business_name)
@@ -799,6 +848,8 @@ class vbp_mn(models.Model):
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True)
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return str(self.business_name)
@@ -826,6 +877,8 @@ class vbp_ms(models.Model):
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True)
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return str(self.business_name)
@@ -853,6 +906,8 @@ class vbp_mo(models.Model):
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True)
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return str(self.business_name)
@@ -880,6 +935,8 @@ class vbp_mt(models.Model):
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True)
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return str(self.business_name)
@@ -907,6 +964,8 @@ class vbp_ne(models.Model):
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True)
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return str(self.business_name)
@@ -934,6 +993,8 @@ class vbp_nv(models.Model):
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True)
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return str(self.business_name)
@@ -961,6 +1022,8 @@ class vbp_nh(models.Model):
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True)
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return str(self.business_name)
@@ -988,6 +1051,8 @@ class vbp_nj(models.Model):
     approved         = models.BooleanField(default=False, null=True, blank=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True, null=True, blank=True)
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return str(self.business_name)
@@ -1015,6 +1080,8 @@ class vbp_nm(models.Model):
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True)
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return str(self.business_name)
@@ -1042,6 +1109,8 @@ class vbp_ny(models.Model):
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return str(self.business_name)
@@ -1070,6 +1139,8 @@ class vbp_nc(models.Model):
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True)
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return str(self.business_name)
@@ -1097,6 +1168,8 @@ class vbp_nd(models.Model):
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True)
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return str(self.business_name)
@@ -1124,6 +1197,8 @@ class vbp_oh(models.Model):
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True)
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return str(self.business_name)
@@ -1151,6 +1226,8 @@ class vbp_ok(models.Model):
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True)
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return str(self.business_name)
@@ -1178,6 +1255,8 @@ class vbp_or(models.Model):
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True)
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return str(self.business_name)
@@ -1205,6 +1284,8 @@ class vbp_pa(models.Model):
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True)
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return str(self.business_name)
@@ -1232,6 +1313,8 @@ class vbp_ri(models.Model):
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True)
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return str(self.business_name)
@@ -1259,6 +1342,8 @@ class vbp_sc(models.Model):
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True)
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return str(self.business_name)
@@ -1286,6 +1371,8 @@ class vbp_sd(models.Model):
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True)
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return str(self.business_name)
@@ -1313,6 +1400,8 @@ class vbp_tn(models.Model):
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True)
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return str(self.business_name)
@@ -1340,6 +1429,8 @@ class vbp_tx(models.Model):
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True)
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return str(self.business_name)
@@ -1367,6 +1458,8 @@ class vbp_ut(models.Model):
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True)
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return str(self.business_name)
@@ -1394,6 +1487,8 @@ class vbp_vt(models.Model):
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True)
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return str(self.business_name)
@@ -1421,6 +1516,8 @@ class vbp_va(models.Model):
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True)
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return str(self.business_name)
@@ -1448,7 +1545,9 @@ class vbp_wa(models.Model):
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True)
-
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
+    
     def __str__(self):
         return str(self.business_name)
 
@@ -1475,6 +1574,8 @@ class vbp_wv(models.Model):
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True)
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return str(self.business_name)
@@ -1502,6 +1603,8 @@ class vbp_wi(models.Model):
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True)
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
     def __str__(self):
         return str(self.business_name)
@@ -1529,7 +1632,9 @@ class vbp_wy(models.Model):
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True)
-
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
+    
     def __str__(self):
         return str(self.business_name)
 

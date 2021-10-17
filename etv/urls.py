@@ -20,6 +20,7 @@ from django.contrib.auth.views import LogoutView
 from django.urls import path, include
 from django.views.generic import TemplateView, RedirectView
 from accounts.admin import admin_site
+from bfchallenge.models import readysetshop_transaction
 
 from .views import *
 from accounts.views import LoginView, RegisterView, GuestRegisterView
@@ -27,6 +28,7 @@ from vbp.views import home
 from content.views import efbf, efbf_subscribed, contact, mailchimp_signup
 
 from vbp.models import *
+from accounts.models import Team
 
 Alabama = vbp_al.objects.filter(approved=False).count()
 Alaska = vbp_ak.objects.filter(approved=False).count()
@@ -79,10 +81,14 @@ Washington = vbp_wa.objects.filter(approved=False).count()
 WestVirginia = vbp_wv.objects.filter(approved=False).count()
 Wisconsin = vbp_wi.objects.filter(approved=False).count()
 Wyoming = vbp_wy.objects.filter(approved=False).count()
+teams = Team.objects.all()
+rss = readysetshop_transaction.objects.all()
 
 urlpatterns = [
     path('contact/', contact, name='contact' ),
     path('myadmin/etvadmin209423/', admin_site.urls, {'extra_context': {
+        'rss': rss,
+        'teams': teams,
         'AL': Alabama,
         'AK': Alaska,
         'AZ': Arizona,

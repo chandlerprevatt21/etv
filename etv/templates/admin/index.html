@@ -2,6 +2,7 @@
 {% load static %}
 {% load i18n %}
 
+
 {% block title %}
 Empower The Village | Admin
 {% endblock %}
@@ -12,6 +13,7 @@ Empower The Village | Admin
 {% block nav-sidebar %}{% endblock %}
 
 {% block content %}
+{% regroup rss by team as team_list %}
 <div id="page">
     <div class="admin-content-container" style="margin-left:2%; margin-right: 2%;background-color: rgba(242, 242, 242, 0.934);">
     <div class="row" style="padding-top: 30px; padding-left: 5%;">
@@ -178,8 +180,11 @@ Empower The Village | Admin
                         {% if WY > 0 %}
                         <div>- <a href="vbp/vbp_wy/"><span class="new badge" style="text-transform: uppercase;">{{ WY }}</span></a> New VBP submissions are in for <a href="vbp/vbp_wy/">Wyoming!</a></div>
                         {% endif %}
+
+
                     </div>
                 </div>
+                
             {% endblock %}
         </div>
     </div>
@@ -187,7 +192,7 @@ Empower The Village | Admin
 </div>
 <style>
     #page {
-    background-image: url("https://empowerthevillage.s3.amazonaws.com/static/img/login-collage.png");
+    background-image: url("{% static 'img/login-collage.png' %}");
     background-size: 100%;
     background-repeat: repeat;
     height: 100%

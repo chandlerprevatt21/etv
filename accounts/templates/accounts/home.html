@@ -39,7 +39,7 @@
       </li>
       <br>
       <li style="text-decoration: underline;">Nomination Challenge</li>
-        <p>You've submitted {{ nomination_qs }} businesses</p>
+        <p>You've submitted <b>{{ nomination_qs }}</b> businesses</p>
         <p><a href="{{ nomination_url }}">Nominate a Black-owned business today!</a></p>
       <br>
       <li style="text-decoration: underline;">Power Bingo</li>
@@ -53,12 +53,12 @@
       <li style="text-decoration: underline;">Ready, Set, Shop!</li>
         {% if user.is_rss_sponsor %}
           {% if rss_qs == 1 %}
-          <p>You've submitted 1 transaction</p>
+          <p>You've submitted <b>1</b> transaction</p>
           {% else %}
-          <p>You've submitted {{ rss_qs }} transactions</p>
+          <p>You've submitted <b>{{ rss_qs }}</b> transactions</p>
         {% endif %}
         {% if user.team is not None %}
-        <p>{{ user.team }} has submitted {{ rssteam_qs }} transactions</p>
+        <p>Your Team: {{ user.team }} has submitted <b>{{ rssteam_qs }}</b> transactions</p>
         {% endif %}
         <a href="{{ readyss_url }}">Click here to submit a transaction!</a>
         {% else %}

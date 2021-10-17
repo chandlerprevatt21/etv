@@ -70,9 +70,9 @@ class VBPAdmin(admin.ModelAdmin):
     make_inactive.short_description = "Mark selected submissions as not approved"
 
 class VBPStateAdmin(admin.ModelAdmin):
-    list_display = ['business_name', 'approved', 'city', 'county', 'created']
-    list_filter = ['approved', 'online_only', 'category', 'subcategory']
-    search_fields = ['business_name', 'city', 'category', 'subcategory']
+    list_display = ['business_name', 'approved', 'city', 'created', 'user', 'team']
+    list_filter = ['approved', 'online_only', 'category', 'subcategory', 'team']
+    search_fields = ['business_name', 'city', 'category', 'subcategory', 'user']
     ordering = ['business_name']
     actions = ['make_active', 'make_inactive']
     fieldsets = (
@@ -86,7 +86,7 @@ class VBPStateAdmin(admin.ModelAdmin):
             'fields': ('instagram', 'facebook', 'twitter')
         }),
         ('Nominator Information', {
-            'fields': ('nominator_name', 'nominator_email', 'nominator_owner', 'nominator_recommended')
+            'fields': ('nominator_name', 'nominator_email', 'nominator_owner', 'nominator_recommended', 'user', 'team')
         }),
     )
     def download_csv(self, request, queryset):

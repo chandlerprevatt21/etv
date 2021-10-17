@@ -338,107 +338,159 @@ def getTile25(request):
 def nomination_challenge(request):
     if request.method == 'POST':
         nomination_form = NominationForm(request.POST)
+        nom_obj = nomination()
         if nomination_form.data['state'] == 'AL':
             obj = vbp_al()
+            nom_obj.state = 'AL'
         elif nomination_form.data['state'] == 'AZ':
             obj = vbp_az()
+            nom_obj.state = 'AZ'
         elif nomination_form.data['state'] == 'AR':
             obj = vbp_ar()
+            nom_obj.state = 'AR'
         elif nomination_form.data['state'] == 'CA':
             obj = vbp_ca()
+            nom_obj.state = 'CA'
         elif nomination_form.data['state'] == 'CO':
             obj = vbp_co()
+            nom_obj.state = 'CO'
         elif nomination_form.data['state'] == 'CT':
             obj = vbp_ct()
+            nom_obj.state = 'CT'
         elif nomination_form.data['state'] == 'DE':
             obj = vbp_de()
+            nom_obj.state = 'DE'
         elif nomination_form.data['state'] == 'DC':
             obj = vbp_dc()
+            nom_obj.state = 'DC'
         elif nomination_form.data['state'] == 'FL':
             obj = vbp_fl()
+            nom_obj.state = 'FL'
         elif nomination_form.data['state'] == 'GA':
             obj = vbp_ga()
+            nom_obj.state = 'GA'
         elif nomination_form.data['state'] == 'HI':
             obj = vbp_hi()
+            nom_obj.state = 'HI'
         elif nomination_form.data['state'] == 'ID':
             obj = vbp_id()
+            nom_obj.state = 'ID'
         elif nomination_form.data['state'] == 'IL':
             obj = vbp_il()
+            nom_obj.state = 'IL'
         elif nomination_form.data['state'] == 'IN':
             obj = vbp_in()
+            nom_obj.state = 'IN'
         elif nomination_form.data['state'] == 'IA':
             obj = vbp_ia()
+            nom_obj.state = 'IA'
         elif nomination_form.data['state'] == 'KS':
             obj = vbp_ks()
+            nom_obj.state = 'KS'
         elif nomination_form.data['state'] == 'KY':
             obj = vbp_ky()
+            nom_obj.state = 'KY'
         elif nomination_form.data['state'] == 'LA':
             obj = vbp_la()
+            nom_obj.state = 'LA'
         elif nomination_form.data['state'] == 'ME':
             obj = vbp_me()
+            nom_obj.state = 'ME'
         elif nomination_form.data['state'] == 'MD':
             obj = vbp_md()
+            nom_obj.state = 'MD'
         elif nomination_form.data['state'] == 'MA':
             obj = vbp_ma()
+            nom_obj.state = 'MA'
         elif nomination_form.data['state'] == 'MI':
             obj = vbp_mi()
+            nom_obj.state = 'MI'
         elif nomination_form.data['state'] == 'MN':
             obj = vbp_mn()
+            nom_obj.state = 'MN'
         elif nomination_form.data['state'] == 'MS':
             obj = vbp_ms()
+            nom_obj.state = 'MS'
         elif nomination_form.data['state'] == 'MO':
             obj = vbp_mo()
+            nom_obj.state = 'MO'
         elif nomination_form.data['state'] == 'MT':
             obj = vbp_mt()
+            nom_obj.state = 'MT'
         elif nomination_form.data['state'] == 'NE':
             obj = vbp_ne()
+            nom_obj.state = 'NE'
         elif nomination_form.data['state'] == 'NV':
             obj = vbp_nv()
+            nom_obj.state = 'NV'
         elif nomination_form.data['state'] == 'NH':
             obj = vbp_nh()
+            nom_obj.state = 'NH'
         elif nomination_form.data['state'] == 'NJ':
             obj = vbp_nj()
+            nom_obj.state = 'NJ'
         elif nomination_form.data['state'] == 'NM':
             obj = vbp_nm()
+            nom_obj.state = 'NM'
         elif nomination_form.data['state'] == 'NY':
             obj = vbp_ny()
+            nom_obj.state = 'NY'
         elif nomination_form.data['state'] == 'NC':
             obj = vbp_nc()
+            nom_obj.state = 'NC'
         elif nomination_form.data['state'] == 'ND':
             obj = vbp_nd()
+            nom_obj.state = 'ND'
         elif nomination_form.data['state'] == 'OH':
             obj = vbp_oh()
+            nom_obj.state = 'OH'
         elif nomination_form.data['state'] == 'OK':
             obj = vbp_ok()
+            nom_obj.state = 'OK'
         elif nomination_form.data['state'] == 'OR':
             obj = vbp_or()
+            nom_obj.state = 'OR'
         elif nomination_form.data['state'] == 'PA':
             obj = vbp_pa()
+            nom_obj.state = 'PA'
         elif nomination_form.data['state'] == 'RI':
             obj = vbp_ri()
+            nom_obj.state = 'RI'
         elif nomination_form.data['state'] == 'SC':
             obj = vbp_sc()
+            nom_obj.state = 'SC'
         elif nomination_form.data['state'] == 'SD':
             obj = vbp_sd()
+            nom_obj.state = 'SD'
         elif nomination_form.data['state'] == 'TN':
             obj = vbp_tn()
+            nom_obj.state = 'TN'
         elif nomination_form.data['state'] == 'TX':
             obj = vbp_tx()
+            nom_obj.state = 'TX'
         elif nomination_form.data['state'] == 'UT':
             obj = vbp_ut()
+            nom_obj.state = 'UT'
         elif nomination_form.data['state'] == 'VT':
             obj = vbp_vt()
+            nom_obj.state = 'VT'
         elif nomination_form.data['state'] == 'VA':
             obj = vbp_va()
+            nom_obj.state = 'VA'
         elif nomination_form.data['state'] == 'WA':
             obj = vbp_wa()
+            nom_obj.state = 'WA'
         elif nomination_form.data['state'] == 'WV':
             obj = vbp_wv()
+            nom_obj.state = 'WV'
         elif nomination_form.data['state'] == 'WI':
             obj = vbp_wi()
+            nom_obj.state = 'WI'
         elif nomination_form.data['state'] == 'WY':
             obj = vbp_wy()
+            nom_obj.state = 'WY'
         obj.business_name = nomination_form.data['business_name']
+        nom_obj.business_name = nomination_form.data['business_name']
         obj.website = nomination_form.data['website']
         obj.city = nomination_form.data['city']
         obj.county = nomination_form.data['county']
@@ -447,13 +499,23 @@ def nomination_challenge(request):
         obj.subcategory = nomination_form.data['subcategory']
         obj.approved = 'False'
         if request.user.is_authenticated:
+            obj.user = request.user
+            obj.team = request.user.team
             obj.nominator_email = request.user.email
             obj.nominator_name = request.user.full_name
+            nom_obj.user = request.user
+            nom_obj.team = request.user.team
+            nom_obj.email = request.user.email
+            nom_obj.name = request.user.full_name
         else:
             obj.nominator_email = nomination_form.data['nominator_email']
             obj.nominator_name = nomination_form.data['nominator_name']
+            nom_obj.email = nomination_form.data['nominator_email']
+            nom_obj.name = nomination_form.data['nominator_name']
+
         sweetify.success(request, title='Thank you!', icon='success', text='Thank you for nominating a Black-owned business!', button='Nominate Another Business', timer=4000)
         obj.save()
+        nom_obj.save()
         return redirect('/black-friday-challenge/nomination-challenge')
     else:
         nomination_form = NominationForm()
