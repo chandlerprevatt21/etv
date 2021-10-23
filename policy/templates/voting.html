@@ -260,16 +260,8 @@
                 attribute: 'fill',
                 values: {
                     'US-NJ': 'published',
-                    'US-PA': 'published',
-                    'US-WI': 'published',
-                    'US-VA': 'published',
-                    'US-GA': 'published',
-                    'US-MI': 'published',
                     'US-OH': 'published',
-                    'US-AZ': 'published',
-                    'US-NC': 'published',
-                    'US-TX': 'published',
-                    'US-IA': 'published',
+                    'US-VA': 'published',
                     'US-FL': 'published',
                 },
                 
@@ -277,13 +269,13 @@
         },
         onRegionClick: function(event, code) {
             var regionName = map.getRegionName(code);
-            var publishedStates = ["US-NJ", "US-PA", "US-WI", "US-VA", "US-GA", "US-MI", "US-OH", "US-AZ", "US-NC", "US-TX", "US-IA", "US-FL"];
+            var publishedStates = ["US-NJ", "US-VA", "US-OH", "US-FL"];
             if (publishedStates.indexOf(code) != -1) {
                 var data = {
                     'state': code,
                 }
                 var state = code
-                window.location.href = "https://empowerthevillage.s3.amazonaws.com/static/img/"+ code +"-vote-flyer.pdf";
+                window.location.href = "https://empowerthevillage.s3.amazonaws.com/static/img/"+ code +"-2021.pdf";
                 
             } 
         },
