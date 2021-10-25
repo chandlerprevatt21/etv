@@ -204,38 +204,58 @@ Empower The Village
       </ul>
     </div>
   </div>
-  <h6 class="center-align" style="margin-top: 4%">ETV Mission & Vision Video!</h6>
-  <div class="center-align" style="background: url('{% static 'img/collage1.png' %}'); background-size: 50%">
-    <div style="background-color: rgba(223, 223, 223, 0.632);">
-      <iframe class="mission-video" width="80%" src="https://www.youtube.com/embed/7ypFvkUOtwo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-    <style>
-      .mission-video {
-        height: 300
-      }
-      @media only screen and (min-width: 663px) {
-        .mission-video {
-          height: 415
-        }
-      }
-      @media only screen and (min-width: 992px) {
-        .mission-video {
-          height: 515
-        }
-      }
-    </style>
-</div> 
-  <div class="z-depth-2 center-align" style="margin-top:-10px; margin-top: 20px;padding-bottom: 5%">
+  <div>
+    <div class="row center-align">
+      <h6 class="center-align" style="margin-top: 4%">Operation: Ballot Box™</h6>
+      <h5><b>Important Upcoming Election: November 2, 2021!</b></h5>
+      <h5 style="margin-bottom: 20px;"><a href="{{ voting_url }}">Click to learn more about Early Voting, Vote-By-Mail opportunities and more</h5></a>
     
-    <div class="divider"></div>
-    <div class="row">
-        <h6>Check Out ETV’s 2020-2021 Special Report</h6>
-        <h5>Learn how we Empower The Village!</h5>
+      <div class="col s6 l3 center-align">
+        <a href="{% static 'img/US-NJ-2021.pdf' %}" target="_blank"><img class="z-depth-2" src="{% static 'img/US-NJ-2021.png' %}" width=100%></a>
+      </div>
+      <div class="col s6 l3 center-align">
+        <a href="{% static 'img/US-OH-2021.pdf' %}" target="_blank"><img class="z-depth-2" src="{% static 'img/US-OH-2021.png' %}" width=100%></a>
+      </div>
+      <div class="col s6 l3 center-align">
+        <a href="{% static 'img/US-VA-2021.pdf' %}" target="_blank"><img class="z-depth-2" src="{% static 'img/US-VA-2021.png' %}" width=100%></a>
+      </div>
+      <div class="col s6 l3 center-align">
+        <a href="{% static 'img/US-FL-2021.pdf' %}" target="_blank"><img class="z-depth-2" src="{% static 'img/US-FL-2021.png' %}" width=100%></a>
+      </div>
     </div>
+    <div class="divider" style="margin-bottom: 0; width: 90%; margin-left: 5%"></div>
+    <h6 class="center-align">ETV Mission & Vision Video!</h6>
+    <div class="center-align" style="background: url('{% static 'img/collage1.png' %}'); background-size: 50%">
+      <div style="background-color: rgba(223, 223, 223, 0.632);">
+        <iframe class="mission-video" width="80%" src="https://www.youtube.com/embed/7ypFvkUOtwo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <style>
+        .mission-video {
+          height: 300
+        }
+        @media only screen and (min-width: 663px) {
+          .mission-video {
+            height: 415
+          }
+        }
+        @media only screen and (min-width: 992px) {
+          .mission-video {
+            height: 515
+          }
+        }
+      </style>
+    </div> 
+    <div class="z-depth-2 center-align" style="margin-top:-10px; margin-top: 20px;padding-bottom: 5%">
+      
+      <div class="divider"></div>
+      <div class="row">
+          <h6>Check Out ETV’s 2020-2021 Special Report</h6>
+          <h5>Learn how we Empower The Village!</h5>
+      </div>
 
-    <a href="https://issuu.com/empowerthevillage/docs/etv_special_report_2020-2021_v2"><img class="z-depth-3" src="{% static 'img/report-1.png' %}" width="40%"></a>
-</div>
-
+      <a href="https://issuu.com/empowerthevillage/docs/etv_special_report_2020-2021_v2"><img class="z-depth-3" src="{% static 'img/report-1.png' %}" width="40%"></a>
+    </div>
+  </div>
 <script>
     $('.carousel.carousel-slider').carousel({
     fullWidth: true,
