@@ -26,6 +26,24 @@
                             
                     </div>     
             </div>
+            <div class="divider" style="margin-top: 40px"></div>
+            <div class="row center-align">
+                <h5><b>Important Upcoming Election: November 2, 2021!</b></h5>
+                <h5 style="margin-bottom: 20px;"><a href="{{ voting_url }}">Click to learn more about Early Voting, Vote-By-Mail opportunities and more</h5></a>
+              
+                <div class="col s6 l3 center-align">
+                  <a href="{% static 'img/US-NJ-2021.pdf' %}" target="_blank"><img class="z-depth-2" src="{% static 'img/US-NJ-2021.png' %}" width=100%></a>
+                </div>
+                <div class="col s6 l3 center-align">
+                  <a href="{% static 'img/US-OH-2021.pdf' %}" target="_blank"><img class="z-depth-2" src="{% static 'img/US-OH-2021.png' %}" width=100%></a>
+                </div>
+                <div class="col s6 l3 center-align">
+                  <a href="{% static 'img/US-VA-2021.pdf' %}" target="_blank"><img class="z-depth-2" src="{% static 'img/US-VA-2021.png' %}" width=100%></a>
+                </div>
+                <div class="col s6 l3 center-align">
+                  <a href="{% static 'img/US-FL-2021.pdf' %}" target="_blank"><img class="z-depth-2" src="{% static 'img/US-FL-2021.png' %}" width=100%></a>
+                </div>
+              </div>
             <div class="row">
                 <div class="divider" style="margin-top: 60px;"></div>
                 <h5 class="center-align coming-soon-title" style="font-size: 48px;color: rgb(184, 34, 34); padding-bottom: 20px; padding-top: 30px">Coming Soon!</h5>
@@ -37,6 +55,18 @@
 </div>
 
 <style>
+    h5 b {
+        font-family: poppins;
+        font-weight: 500;
+        font-size: 24px;
+        padding-right: 5%
+    }
+    h5 a {
+        font-family: poppins;
+        font-weight: 400;
+        font-size: 22px;
+        padding-right: 5%
+    }
     #map {
         background-color: transparent;
     }
@@ -120,6 +150,10 @@
         width: 80%;
         margin-left:10%;
     }
+        h5 b {
+            font-size: 32px;
+            line-height: 40px
+        }
     }
     @media only screen and (min-width:993px){
         .health-main-title {

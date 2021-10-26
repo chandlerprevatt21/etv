@@ -2120,7 +2120,7 @@ def home(request):
             obj.nominator_name = nomination_form.data['nominator_name']
         sweetify.success(request, title='Thank you!', icon='success', text='Thank you for nominating a Black-owned business!', button='Nominate Another Business', timer=4000)
         
-        return redirect('/black-friday-challenge/nomination-challenge')
+        return redirect('/black-friday-challenge')
     else:
         nomination_form = NominationForm()
     return render(
