@@ -61,6 +61,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.png' %}" />
         <title>{% block title %}{% endblock %}</title>
+        <meta name="description" content="{% block seo_description%}{% endblock %}" />
+        <link rel="canonical" href="{% block canonical %}{% endblock %}" />
     </head>
     
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GFM7WGP9KD"></script>

@@ -602,8 +602,9 @@ def spread_the_love(request):
         'stl_form': stl_form,
     }
     return render(request, 'spread_the_love.html', context)
+
 def bf_home(request):
     context = {
-        'title': 'Black Friday Challenge | ETV'
+        'title': 'ETV | Black Friday Challenge'
     }
     return render(request, 'bf_home.html', context)
