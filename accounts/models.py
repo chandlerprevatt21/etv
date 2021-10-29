@@ -80,7 +80,7 @@ class MyUser(AbstractBaseUser):
     staff = models.BooleanField(default=False)
     admin = models.BooleanField(default=False)
     team = models.ForeignKey('Team', on_delete=models.SET_NULL, blank=True, null=True)
-    donor = models.BooleanField(default=False, blank=True, null=True)
+    is_donor = models.BooleanField(default=False, blank=True, null=True)
     rss_sponsor = models.BooleanField(default=False, blank=True, null=True)
     bingo_sponsor = models.BooleanField(default=False, blank=True, null=True)
 
@@ -122,7 +122,7 @@ class MyUser(AbstractBaseUser):
 
     @property
     def is_donor(self):
-        return self.donor
+        return self.is_donor
 
     @property
     def is_rss_sponsor(self):

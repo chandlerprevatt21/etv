@@ -22,11 +22,11 @@ class UserAdmin(BaseUserAdmin):
     # The fields to be used in displaying the User model.
     # These override the definitions on the base UserAdmin
     # that reference specific fields on auth.User.
-    list_display = ('username','email', 'admin', 'donor', 'rss_sponsor', 'bingo_sponsor', 'active')
-    list_filter = ('admin', 'staff', 'team', 'donor','rss_sponsor', 'bingo_sponsor')
+    list_display = ('username','email', 'admin', 'rss_sponsor', 'bingo_sponsor', 'active')
+    list_filter = ('admin', 'staff', 'team', 'rss_sponsor', 'bingo_sponsor')
     fieldsets = (
         ('Personal Information', {'fields': ('username','full_name', 'email', 'password', )}),
-        ('Donation Information', {'fields': ('team', 'rss_sponsor', 'bingo_sponsor', 'donor')}),
+        ('Donation Information', {'fields': ('team', 'rss_sponsor', 'bingo_sponsor')}),
         ('Permissions', {'fields': ('admin','staff','active')}),
     )
     # add_fieldsets is not a standard ModelAdmin attribute. UserAdmin
@@ -34,7 +34,7 @@ class UserAdmin(BaseUserAdmin):
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields': ('username','email', 'password1', 'password2', 'team', 'donor', 'rss_sponsor', 'bingo_sponsor', 'active')}
+            'fields': ('username','email', 'password1', 'password2', 'team', 'rss_sponsor', 'bingo_sponsor', 'active')}
         ),
     )
     search_fields = ('username','email',)

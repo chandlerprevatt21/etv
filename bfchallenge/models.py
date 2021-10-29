@@ -251,7 +251,7 @@ class user_bingo_form(models.Model):
     field14         = models.CharField(max_length=300, blank=True, null=True)
     field15         = models.CharField(max_length=300, blank=True, null=True)
     field16         = models.CharField(max_length=300, blank=True, null=True)
-    receipt         = models.ImageField(blank=True, null=True)
+    receipt         = models.FileField(blank=True, null=True)
     submitted       = models.DateTimeField(auto_now_add=True, blank=True, null=True)
 
     def __str__(self):
@@ -268,7 +268,7 @@ class readysetshop_transaction(models.Model):
     date             = models.CharField(max_length=50)
     business_name    = models.CharField(max_length=200)
     industry         = models.CharField(max_length=200, choices=CATEGORY_CHOICES)
-    receipt_aws      = models.ImageField(blank=True, null=True)
+    receipt_aws      = models.FileField(blank=True, null=True)
     submitted          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
 
     def __str__(self):
@@ -284,7 +284,7 @@ class everyfriday_transaction(models.Model):
     date             = models.CharField(max_length=50)
     business_name    = models.CharField(max_length=200)
     industry         = models.CharField(max_length=200, choices=CATEGORY_CHOICES)
-    receipt_aws      = models.ImageField(blank=True, null=True)
+    receipt_aws      = models.FileField(blank=True, null=True)
     submitted          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     
     def __str__(self):
