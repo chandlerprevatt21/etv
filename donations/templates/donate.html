@@ -706,6 +706,12 @@ function handleVenmoSuccess(payload) {
       var level = $(this).val()
       $('#donation-level-input').attr('value', level)
     });
+    $('#other-donation').on('keyup', function(){
+      var level = $(this).val()
+      $('#donation-level-input').attr('value', level)
+      $('#frequency-input').attr('value', 'once')
+      $('#frequency-verbose-input').attr('value', 'One Time Donation')
+    });
     $('[name="frequency"]').on('change', function(){
       var frequency = $(this).val()
       var frequencyVerbose = $(this).attr('confirm-display')
@@ -838,6 +844,7 @@ function handleVenmoSuccess(payload) {
     });
     $('#other-donation').keyup(function(){
         var value = $(this).val();
+
     });
     $('.other').change(function(){
         $('#make-my-donation').hide();

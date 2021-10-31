@@ -61,7 +61,10 @@ def donation_create(request):
     donation_obj.first_name = first_name
     donation_obj.last_name = last_name
     donation_obj.amount = amount
-    donation_obj.frequency = frequency
+    if frequency is not None:
+        donation_obj.frequency = frequency
+    else:
+        donation_obj.frequency = 'once'
     donation_obj.save()
     donor_obj.donations.add(donation_obj)
     donor_obj.first_name = first_name
@@ -82,11 +85,8 @@ def donation_create(request):
     return HttpResponse('Incomplete Donation Created')
 
 def donation_review(request):
-    print('here')
     nonce = request.POST.get('nonce')
-    print(nonce)
     donation_id = request.session.get('donation_id')
-    print(donation_id)
     donation_obj = donation.objects.get(id=donation_id)
     donation_obj.payment_method = nonce
     donation_obj.save()
@@ -105,7 +105,6 @@ def donation_complete(request):
     
     frequency = donation_obj.frequency
     if frequency == 'once':
-        print(frequency)
         result = gateway.transaction.sale({
             "amount": amount,
             "customer_id": braintree_id,
@@ -119,7 +118,6 @@ def donation_complete(request):
         })
         if result.is_success:
             donation_obj.status = 'complete'
-            print(result)
             donation_obj.braintree_id = result.transaction.id
             donation_obj.save()
             del request.session['donation_id']
@@ -132,6 +130,9 @@ def donation_complete(request):
         token = gateway.payment_method.create({
             "customer_id": braintree_id,
             "payment_method_nonce": nonce,
+            "options": {
+                'verify_card': True
+            }
         }).payment_method.token
         print(token)
         result = gateway.subscription.create({
@@ -146,6 +147,28 @@ def donation_complete(request):
             donation_obj.subscription_id = result.subscription.id
             donation_obj.braintree_id = ''
             donation_obj.save()
+            data = 'success'
+        else:
+            data = 'error'
+        return HttpResponse(data)
+    else:
+        result = gateway.transaction.sale({
+            "amount": amount,
+            "customer_id": braintree_id,
+            "payment_method_nonce": nonce,
+            "custom_fields": {
+                "memo": 'donation'
+            },
+            "options": {
+                "submit_for_settlement": True,
+            },
+        })
+        if result.is_success:
+            donation_obj.status = 'complete'
+            donation_obj.frequency = 'once'
+            donation_obj.braintree_id = result.transaction.id
+            donation_obj.save()
+            del request.session['donation_id']
             data = 'success'
         else:
             data = 'error'

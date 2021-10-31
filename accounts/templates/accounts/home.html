@@ -73,7 +73,7 @@
               {% for x in orders %}
               <li>
                 <p><b>Order Id: </b><b style="font-weight: 300">{{ x }}</b></p>
-                <p><b>Tracking: </b><a target="_blank" href="{{ x.shipping_details.tracking_url_provider }}" style="font-weight: 300">{{ x.shipping_details.tracking_number }}</a></p>
+                <p><b>Tracking: </b><a target="_blank" href="" style="font-weight: 300"></a></p>
                 <p><b>Items:</b></p>
                 <p style="font-weight: 300">{% for item in x.items.all %}{{ item.product }}{% endfor %}</p>
                 <p><b>Total:</b> ${{ x.total }}</p>

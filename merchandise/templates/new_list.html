@@ -6,22 +6,20 @@
 <div style="background: url('{% static 'img/pillar_collage.png' %}');">
     <div class="merchandise-container" style="background-color: rgba(255, 255, 255, 0.666);">
         <div class="row title-row" style="margin-bottom: 0; background: rgba(255, 255, 255, 0.733)">
-            <div class="col s12 cart-row" style="z-index: 2">
-                <a href="{{ cart_home_url }}">
-                    <div class="row" style="margin:0">
-                        <div class="col s12 right valign-wrapper" style="justify-content: right;">
+            <div class="col s12 row cart-row">
+                <div class="col s12 right-align">
+                        <a href="{{ cart_home_url }}">
+                        <div class="col s12">
                             <img class="cart-count-image" src="{% static 'images/cart.svg' %}">
-                            <span class="cart-count">{{ cart.item_count }}</span>
+                            
                         </div>
-                    </div>
-                    <div class="row" style="margin-bottom: 0">
-                        
-                        <div class="col s12 right valign-wrapper cart-count-mycart" style="justify-content: right;">
+                        </a>
+                        <a href="{{ cart_home_url }}">
+                        <div class="col s12  cart-count-mycart">
                             My Cart
                         </div>
-                        
-                    </div>
-                </a>
+                    </a>
+                </div>
             </div>
             
             <div class="col s9 m10 title-row" style="z-index: 1">
