@@ -27,6 +27,9 @@ ALLOWED_HOSTS = ['etv.villageblackpages.org', 'www.etv.villageblackpages.org', '
 EMAIL_HOST = env('EMAIL_HOST')
 EMAIL_HOST_USER = env('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+MERCHANT_ID=env('MERCHANT_ID')
+PUBLIC_KEY=env('PUBLIC_KEY')
+PRIVATE_KEY=env('PRIVATE_KEY')
 
 # Parse database connection url strings like psql://user:pass@127.0.0.1:8458/db
 DATABASES = {
