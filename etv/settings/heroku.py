@@ -30,6 +30,7 @@ EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
 MERCHANT_ID=env('MERCHANT_ID')
 PUBLIC_KEY=env('PUBLIC_KEY')
 PRIVATE_KEY=env('PRIVATE_KEY')
+SHIPPO_KEY=env('SHIPPO_KEY')
 
 # Parse database connection url strings like psql://user:pass@127.0.0.1:8458/db
 DATABASES = {
