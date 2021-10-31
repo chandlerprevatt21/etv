@@ -8,27 +8,43 @@ from django.views.generic.edit import FormMixin
 from django.urls import reverse
 from django.utils.http import is_safe_url
 from django.utils.safestring import mark_safe
+
+from billing.models import BillingProfile
 from .forms import LoginForm, RegisterForm, GuestForm, UserTeamForm
-from bfchallenge.models import *
+from bfchallenge.models import nomination
 from accounts.models import Team
+from donors.models import Donor
+from orders.models import Order
 
 from etv.mixins import NextUrlMixin, RequestFormAttachMixin
 from .models import GuestEmail
 from .signals import user_logged_in
 
+import datetime
 from django.shortcuts import render, redirect
 import sweetify
 
 User = get_user_model()
 
 def AccountHomeView(request):
+    billing_profile, billing_profile_created = BillingProfile.objects.new_or_get(request)
     nomination_qs = nomination.objects.filter(user=request.user).count()
-    rss_qs = readysetshop_transaction.objects.filter(user=request.user).count()
-    rssteam_qs = readysetshop_transaction.objects.filter(team=request.user.team).count()
+    donor_obj = Donor.objects.filter(user=request.user).first()
+    donation_qs = donor_obj.donations.all()
+    order_qs = Order.objects.filter(billing_profile=billing_profile).filter(status='submitted_for_settlement')
+    total = 0
+    for x in donation_qs:
+        total += x.amount
+    recent = datetime.datetime.now() + datetime.timedelta(days=-7)
+    recent_qs = donation_qs.filter(updated__gte=recent, status="complete")
     context = {
         'nomination_qs': nomination_qs,
-        'rss_qs': rss_qs,
-        'rssteam_qs': rssteam_qs
+        'donations': donation_qs,
+        'recent': recent,
+        'recent_qs': recent_qs,
+        'total': total,
+        'orders': order_qs,
+        'bp': billing_profile
     }
     return render(request, 'accounts/home.html', context)
 

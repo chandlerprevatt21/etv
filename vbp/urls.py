@@ -4,6 +4,7 @@ from .views import *
 
 urlpatterns = [
     path('', home, name='home'),
+    path('get-subcategories', get_subcategories, name='get-subcategories'),
     path('get-state/', getStateListings, name='get-state'),
     path('get-filters/', bookFilters, name='get-filters'),
     path('ajax/filter/', filterList, name='filter_list'),

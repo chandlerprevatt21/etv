@@ -623,6 +623,23 @@
     $('svg').resize(function(event){
         event.preventDefault();
       })
+    
+    $('#id_category').on('change', function(){
+        var category = $(this).val()
+        data = {
+            'category': category,
+        }
+        $.ajax({
+            data: data,
+            method: 'GET',
+            url: 'get-subcategories',
+            success: function(data){
+                (subcategory, verbose) = data
+                alert(subcategory) 
+            }
+        })
+        alert(context)
+    })
 </script>
 <script src="{% static 'js/raphael.js' %}"></script>
 <script src="{% static 'js/jquery.usmap.js' %}"></script>
@@ -753,15 +770,13 @@
                     'state': code,
                 }
                 var state = code
+                $('#flipbook-mobile-container').hide();
+                $('#flipbook-container').hide();
+                $('.preloader').show();
                 $.ajax({
                     data: data,
                     state: state,
                     url: '/village-black-pages/get-state',
-                    beforeSend: function(){
-                        $('.preloader').show();
-                        $('#flipbook-mobile-container').hide();
-                        $('#flipbook-container').hide();
-                    },
                     method: "GET",
                     success: function(data) {
                         $('.preloader').hide();
@@ -788,15 +803,13 @@
                     'state': 'US-NJ',
                 }
                 var state = data
+                $('.preloader').show();
+                $('#flipbook-mobile-container').hide();
+                $('#flipbook-container').hide();
                 $.ajax({
                     data: data,
                     state: state,
                     url: '/village-black-pages/get-state',
-                    beforeSend: function(){
-                        $('.preloader').show();
-                        $('#flipbook-mobile-container').hide();
-                        $('#flipbook-container').hide();
-                    },
                     method: "GET",
                     success: function(data) {
                         $('.preloader').hide();

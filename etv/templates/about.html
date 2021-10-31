@@ -8,7 +8,7 @@ ETV | About
 
 {% block content %}
 <div style="background: url('{% static 'img/stars.png' %}'); background-size: 120%">
-<div class="z-depth-3" style="padding-top: 7%;background-color: #6d6d6d62; padding-bottom: 5%; padding-left:15%; padding-right: 15%">
+<div class="z-depth-3" style="padding-top: 5%;background-color: #6d6d6d62; padding-bottom: 5%; padding-left:7%; padding-right: 7%">
     <div style="width: 90%; margin-left: 5%; background-color: rgba(255, 255, 255, 0.783); border: solid black 3px">
         <img src="{% static 'img/footer-logo.png' %}" width=90% style="margin-left: 5%">
     </div>
@@ -42,7 +42,7 @@ ETV | About
     <div class="col s12 m10 offset-m1" style="padding-top: 5%;background-color: rgba(255, 255, 255, 0.947);">
         <ul class="collapsible popout about-popout">
             <li>
-                <div class="collapsible-header valign-wrapper"><i class="material-icons">outlined_flag</i>Mission</div>
+                <div class="collapsible-header about-collapsible valign-wrapper"><i class="material-icons">outlined_flag</i>Mission</div>
                 <div class="collapsible-body about-table" style="background-color: #151515;">
                     
                     <img src="{% static 'img/mission-possible.png' %}" width=100%>
@@ -63,15 +63,15 @@ ETV | About
                 </div>
             </li>
             <li>
-                <div class="collapsible-header valign-wrapper"><i class="material-icons">portrait</i>Our Founder</div>
+                <div class="collapsible-header about-collapsible valign-wrapper"><i class="material-icons">portrait</i>Our Founder</div>
                 <div class="collapsible-body">
                     <img src="{% static 'img/founder-card.jpeg' %}" width=100%>
                 </div>
             </li>
             <li>
-                <div class="collapsible-header valign-wrapper"><i class="material-icons">groups</i>Leadership</div>
+                <div class="collapsible-header about-collapsible valign-wrapper"><i class="material-icons">groups</i>Leadership</div>
                 <div class="collapsible-body">
-                    <img src="{% static 'img/board.png' %}" width=100%>
+                    <img src="{% static 'img/board.svg' %}" width=100%>
                     <div class="divider"></div>
                     <table>
                         <tr>
@@ -152,6 +152,10 @@ ETV | About
 </div>
 
   <style>
+      li {
+          margin-left: 0 !important;
+          margin-right: 0 !important;
+      }
       p {
           font-weight: 200;
           letter-spacing: 1px;
@@ -164,7 +168,7 @@ ETV | About
           background-color: rgb(111, 151, 138);
           color: rgb(224, 224, 224);
       }
-      .collapsible-header {
+      .about-collapsible {
           font-size: 42px;
           text-transform: uppercase;
           letter-spacing: 2px;

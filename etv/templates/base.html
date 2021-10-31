@@ -29,7 +29,10 @@
 {% url 'education:education-phase-one' as education_initiatives_url %}
 {% url 'prosperity' as ep_url %}
 {% url 'news' as news_url %}
-{% url 'shop' as shop_url %}
+{% url 'merchandise:list' as merchandise_url %}
+{% url 'carts:home' as cart_home_url %}
+{% url 'carts:checkout' as checkout_url %}
+{% url 'carts:checkout-confirm' as checkout_confirm_url %}
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <!-- JQuery Mask -->
@@ -98,7 +101,7 @@
                       <div class="navbar-slash"> | </div>
                     <a class="main-nav-link ul-effect valign-wrapper {% if request.path == contact_url %}active{% endif %}" href="{{ contact_url }}">Contact</a>
                       <div class="navbar-slash"> | </div>
-                    <a class="main-nav-link ul-effect valign-wrapper {% if request.path == shop_url %}active{% endif %}" href="{{ shop_url }}">Shop</a>
+                      <a class="main-nav-link ul-effect valign-wrapper {% if request.path == merchandise_url %}active{% endif %}" href="{{ merchandise_url }}">Programs</a>
                     
                      
                 </div>
@@ -106,6 +109,8 @@
                   <a href="{{ home_url }}" class="center brand-logo"><img src="{% static 'img/logo.jpeg' %}" height=110></a>
                 </div>
                 <div class="right valign-wrapper" style="height:100%">
+                  <a class="main-nav-link ul-effect valign-wrapper {% if request.path == merchandise_url %}active{% endif %}" href="{{ merchandise_url }}">Shop</a>
+                  <div class="navbar-slash"> | </div>
                     {% if request.user.is_authenticated %}
                     <a href="{{ account_url }}" class="main-nav-link valign-wrapper welcome-back">Welcome Back!</a>
                     <a href="{{ account_url }}" id="account-icon"><i class="material-icons" style="color: grey; font-size: 36px; padding-top:30px;padding-left:10px">account_circle</i></a>
@@ -141,6 +146,7 @@
             <li><a href="{{ home_url }}" class="waves-effect">Home</a></li>
             <li><a href="{{ about_url }}" class="waves-effect">About</a></li>
             <li><a href="{{ contact_url }}" class="waves-effect">Contact</a></li>
+            <li><a href="{{ merchandise_url }}" class="waves-effect">Shop</a></li>
             <li class="divider"></li>
             <li class="">
               
@@ -315,7 +321,7 @@
                   <li><a class="" href="{{ about_url }}">About</a></li>
                   <li><a class="" href="{{ contact_url }}">Contact</a></li>
                   
-                  <li><a class="" href="{{ shop_url }}">Shop</a></li>
+                  <li><a class="" href="{{ merchandise_url }}">Shop</a></li>
                   <li><a class="" href="{{ news_url }}">News & Events</a></li>
                 </ul>
               </div>

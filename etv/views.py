@@ -4,7 +4,7 @@ def home_page(request):
     context = {
         'title':'ETV | Home'
     }
-    return render(request, "home.html", context)
+    return render(request, "home copy.html", context)
 
 def about_page(request):
     context = {
@@ -12,6 +12,18 @@ def about_page(request):
     }
     return render(request, "about.html", context)
 
+def privacy(request):
+    context = {
+    'title':'ETV | Privacy Policy'
+    }
+    return render(request, "privacy.html", context)
+
+def terms(request):
+    context = {
+    'title':'ETV | Terms & Conditions'
+    }
+    return render(request, "terms.html", context)
+    
 def strategic_pillars(request):
     context = {
     'title':'ETV | Strategic Pillars'

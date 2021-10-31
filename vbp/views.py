@@ -14,6 +14,273 @@ import json
 import django_filters
 import geocoder
 
+BEAUTY_CHOICES = {
+    "barber", "bathandbody", "beautysalon", "beautysupply", "cosmetics", "nails", "travelingstylist", "other"
+}
+BOOK_CHOICES = (
+    ("bookstore", "Book Store"),
+    ("onlinepub", "Online Publication"),
+    ("publishing", "Publishing"),
+    ("authors", "Authors"),
+    ("other", "Other"),
+)
+CARS_CHOICES = (
+    ("autodealership", "Auto Dealership"),
+    ("autorepair", "Auto Repair/ Services"),
+    ("carwash", "Car Wash"),
+    ("gasstation", "Gas Station"),
+    ("other", "Other"),
+)
+CHILD_CHOICES = (
+    ("babyproducts", "Baby Products"),
+    ("childcare", "Childcare/Daycare/ Preschool"),
+    ("childbooks", "Children’s Books"),
+    ("childactivities", "Children’s Activities"),
+    ("other", "Other"),
+)
+CLEANING_CHOICES = (
+    ("cleaningproducts", "Cleaning Products"),
+    ("drycleaning", "Dry Cleaning"),
+    ("laundry", "Laundry"),
+    ("other", "Other"),
+)
+CLOTHING_CHOICES = (
+    ("apparel", "Apparel"),
+    ("stylist", "Stylist"),
+    ("footwear", "Footwear"),
+    ("fabric", "Fabric/Yarn"),
+    ("other", "Other"),
+)
+CONSTRUCTION_CHOICES = (
+    ("appliancerepair", "Appliance Repair"),
+    ("construction", "Construction/ Engineering"),
+    ("electrical", "Electrical"),
+    ("hvac", "HVAC"),
+    ("plumbing", "Plumbing"),
+    ("powerwashing", "Power Washing"),
+    ("roofing", "Roofing & Siding"),
+    ("paintingservices", "Painting Services"),
+    ("other", "Other"),
+)
+EDUCATION_CHOICES = (
+    ("tutor", "Tutoring/ Academic Planning"),
+    ("driving", "Driving/ Aviation"),
+    ("enrichment", "Enrichment"),
+    ("other", "Other"),
+)
+ELDERCARE_CHOICES = (
+    ("assistedliving", "Assisted Living/Nursing Home"),
+    ("homehealth", "Home Health Care/ Nursing Services"),
+    ("adultdaycare", "Adult Day Care Center"),
+    ("other", "Other"),
+)
+ELECTRONICS_CHOICES = (
+    ("cybersecurity", "Cybersecurity"),
+    ("software", "Software Development"),
+    ("techsupport", "Tech Support/ Repair"),
+    ("techproducts", "Tech Products"),
+    ("webservices", "Web Services"),
+    ("other", "Other"),
+)
+ENTERTAINMENT_CHOICES = (
+    ("bands", "Bands/DJs/Performers"),
+    ("comedian", "Comedian"),
+    ("eventplanning", "Event Planning/Services"),
+    ("media", "Media"),
+    ("paintnsip", "Paint & Sip"),
+    ("other", "Other"),
+)
+FARMING_CHOICES = (
+    ("farmersmarket", "Farmer’s Market"),
+    ("vineyard", "Vineyard"),
+    ("other", "Other"),
+)
+GROCERY_CHOICES = (
+    ("bakery", "Bakery"),
+    ("catering", "Catering/ Chef"),
+    ("coffee", "Coffee/Tea/Beverages"),
+    ("fooddelivery", "Food Delivery Service"),
+    ("icecream", "Ice Cream Parlor"),
+    ("alcohol", "Alcohol"),
+    ("specialty", "Specialty"),
+    ("other", "Other"),
+)
+HEALTH_CHOICES = (
+    ("addiction", "Addiction Treatment"),
+    ("chiropractor", "Chiropractor"),
+    ("fitness", "Fitness/ Yoga"),
+    ("spa", "Spa/ Massage Therapy"),
+    ("mentalhealth", "Mental Health Support"),
+    ("nutrition", "Nutrition"),
+    ("other", "Other"),
+)
+HOME_CHOICES = (
+    ("furniture", "Furniture"),
+    ("landscaping", "Landscaping/Gardening"),
+    ("interiordesign", "Interior Design/ Home Staging"),
+    ("pestcontrol", "Pest Control"),
+    ("homegoods", "Home Goods/Décor"),
+    ("other", "Other"),
+)
+HOTEL_CHOICES = (
+    ("travelagent", "Travel Agent"),
+    ("hospitality", "Hospitality/Hotels/Inns"),
+    ("tours", "Tours"),
+    ("other", "Other"),
+)
+JEWELRY_CHOICES = (
+    ("accessories", "Accessories/ Handbags"),
+    ("finejewelry", "Fine Jewelry"),
+    ("other", "Other"),
+)
+LEGAL_CHOICES = (
+    ("financialservices", "Financial Services"),
+    ("notary", "Notary"),
+    ("bail", "Bail Bonds Service"),
+    ("legal", "Legal Services (General)"),
+    ("realestatelaw", "Real Estate Law"),
+    ("estateplanning", "Estate Planning/Wills"),
+    ("corporatelaw", "Corporate Law"),
+    ("insurance", "Insurance"),
+    ("other", "Other"),
+)
+LIFESTYLE_CHOICES = (
+    ("adultnovelties", "Adult Novelties"),
+    ("cbd", "CBD Products"),
+    ("smoking", "Smoking & Paraphernalia"),
+    ("tarot", "Tarot"),
+    ("piercing", "Piercing/ Tattoos"),
+    ("other", "Other"),
+)
+MARKETING_CHOICES = (
+    ("advertising", "Advertising"),
+    ("branding", "Branding/ Graphic Design"),
+    ("marketing", "Marketing/ Digital Marketing"),
+    ("webservices", "Web Services/ Social Media"),
+    ("other", "Other"),
+)
+MEDICAL_CHOICES = (
+    ("dental", "Dental/ Orthodontics"),
+    ("medbilling", "Medical Billing"),
+    ("physicaltherapy", "Physical Therapy"),
+    ("speechpath", "Speech Pathologist"),
+    ("diagnostic", "Diagnostic Testing/Labs"),
+    ("vision", "Vision"),
+    ("healthproducts", "Healthcare Products"),
+    ("primarycare", "Primary Care"),
+    ("obgyn", "OB/GYNs"),
+    ("pediatrics", "Pediatrics"),
+    ("dermatology", "Dermatology"),
+    ("psychiatry", "Psychiatry/Mental Health"),
+    ("other", "Other"),
+)
+OTHER_CHOICES = (
+    ("antiques", "Antiques & Collectibles"),
+    ("guns", "Guns & Shooting Ranges"),
+    ("gifts", "Gifts & Stationery"),
+    ("mortuary", "Mortuary/ Funeral Services"),
+    ("marketplace", "Marketplace"),
+    ("translation", "Translation Services"),
+    ("officesupplies", "Office Supplies"),
+    ("other", "Other"),
+)
+PACKAGING_CHOICES = (
+    ("courier", "Courier"),
+    ("printing", "Printing"),
+    ("shipping", "Shipping"),
+    ("other", "Other"),
+)
+PETS_CHOICES = (
+    ("dogtraining", "Dog Training"),
+    ("petsitting", "Pet Sitting/ Walking"),
+    ("vet", "Veterinarian"),
+    ("petgrooming", "Pet Grooming"),
+    ("other", "Other"),
+)
+PHOTOGRAPHY_CHOICES = (
+    ("videography", "Videography"),
+    ("photography", "Photography"),
+    ("other", "Other"),
+)
+PROFESSIONAL_CHOICES = (
+    ("consulting", "Consulting"),
+    ("humanresources", "Human Resources"),
+    ("it", "IT"),
+    ("recruiting", "Recruiting/ Staffing"),
+    ("privateinvestigator", "Private Investigator"),
+    ("writingservices", "Writing Services"),
+    ("speakers", "Speakers"),
+    ("adminsupport", "Administrative Support"),
+    ("other", "Other"),
+)
+REALESTATE_CHOICES = (
+    ("developers", "Developers"),
+    ("homeinspection", "Home Inspection"),
+    ("mortgageconsulting", "Mortgage Consulting"),
+    ("propertymanagement", "Property Management"),
+    ("realestateagents", "Real Estate Agents/ Brokers"),
+    ("titleservices", "Title Services"),
+    ("other", "Other"),
+)
+RECREATION_CHOICES = (
+    ("arcade", "Arcade/Laser Tag"),
+    ("sports", "Sports"),
+    ("martialarts", "Martial Arts"),
+    ("sportsequipment", "Sports Equipment"),
+    ("pooltables", "Pool Tables"),
+    ("gaming", "Gaming"),
+    ("other", "Other"),
+)
+RESTAURANT_CHOICES = (
+    ("bar", "Bar/Night Club"),
+    ("bbq", "BBQ/ Soul Food Restaurant"),
+    ("cafe", "Café"),
+    ("caribbean", "Caribbean Restaurant"),
+    ("creole", "Creole/Cajun Restaurant"),
+    ("ethiopian", "Ethiopian/Eritrean Restaurant"),
+    ("venues", "Venues/Event Spaces"),
+    ("westafrican", "West African Restaurant"),
+    ("foodtrucks", "Food Trucks/Carts"),
+    ("other", "Other"),
+)
+TRANSPORTATION_CHOICES = (
+    ("commuter", "Commuter/Shuttle Services"),
+    ("mortuarytransport", "Mortuary Transport"),
+    ("moving", "Moving Services"),
+    ("parking", "Parking"),
+    ("taxi", "Taxi"),
+    ("limo", "Limo/ Party Bus"),
+    ("trucking", "Trucking"),
+    ("valet", "Valet"),
+    ("other", "Other"),
+)
+VISUAL_CHOICES = (
+    ("artgallery", "Art Gallery/ Museum"),
+    ("dance", "Dance Studios/Lessons"),
+    ("artists", "Artists"),
+    ("theater", "Theater/Acting Lessons"),
+    ("music", "Music Lessons/Instruments"),
+    ("other", "Other"),
+)
+
+def get_subcategories(request):
+    print(request.GET)
+    category = request.GET['category']
+    print(category)
+    qs = None
+    if category == 'beauty':
+        qs = BEAUTY_CHOICES
+    elif category == 'books':
+        qs = BOOK_CHOICES
+    elif category == "cars":
+        qs = CARS_CHOICES
+    elif category == 'child':
+        qs = CHILD_CHOICES
+    elif category == "cleaning":
+        qs = CLEANING_CHOICES
+    print(qs)
+    return HttpResponse(qs)
+
 def get_counties_de(request):
     queryset = vbp_de.objects.all()
     for i in queryset:
@@ -1999,6 +2266,37 @@ def home(request):
     f = StateFilter(request.GET, queryset=vbp_nj.objects.all())
     covers_qs = vbp_book.objects.all()
     initial_qs = vbp_ct.objects.all()
+    beautysc = BEAUTY_CHOICES
+    booksc = BOOK_CHOICES
+    carssc = CARS_CHOICES
+    childsc = CHILD_CHOICES
+    cleaningsc = CLEANING_CHOICES
+    clothingsc = CLOTHING_CHOICES
+    constructionsc = CONSTRUCTION_CHOICES
+    educationsc = EDUCATION_CHOICES
+    eldersc = ELDERCARE_CHOICES
+    electrionicssc = ELECTRONICS_CHOICES 
+    entertainmentsc = ENTERTAINMENT_CHOICES
+    farmsc = FARMING_CHOICES
+    grocerysc = GROCERY_CHOICES 
+    healthsc = HEALTH_CHOICES
+    homesc = HOME_CHOICES 
+    hotelsc = HOTEL_CHOICES
+    jewelrysc = JEWELRY_CHOICES 
+    legalsc = LEGAL_CHOICES
+    lifestylesc = LIFESTYLE_CHOICES
+    marketingsc = MARKETING_CHOICES
+    medicalsc = MEDICAL_CHOICES
+    othersc = OTHER_CHOICES
+    packagingsc = PACKAGING_CHOICES
+    petsc = PETS_CHOICES
+    photographysc = PHOTOGRAPHY_CHOICES
+    professionalsc = PROFESSIONAL_CHOICES 
+    realestatesc = REALESTATE_CHOICES
+    recreationsc = RECREATION_CHOICES
+    restaurantsc = RESTAURANT_CHOICES 
+    transportationsc = TRANSPORTATION_CHOICES 
+    visualsc = VISUAL_CHOICES 
     if request.method == 'POST':
         nomination_form = NominationForm(request.POST)
         if nomination_form.data['state'] == 'AL':
@@ -2107,7 +2405,7 @@ def home(request):
         obj.county = nomination_form.data['county']
         obj.phone = nomination_form.data['phone']
         obj.category = nomination_form.data['category']
-        obj.category = nomination_form.data['subcategory']
+        obj.subcategory = nomination_form.data['subcategory']
         obj.approved = 'False'
         obj.save()
         if request.user.is_authenticated:
@@ -2131,7 +2429,39 @@ def home(request):
         'title': 'ETV | Village Black Pages',
         'initial_qs': initial_qs,
         'nomination_form': nomination_form,
-        'filter': f}
+        'filter': f,
+        'beautysc': beautysc,
+        'booksc' : booksc,
+        'carssc' : carssc,
+        'childsc' : childsc,
+        'cleaningsc' : CLEANING_CHOICES,
+        'clothingsc' : CLOTHING_CHOICES,
+        'constructionsc' : CONSTRUCTION_CHOICES,
+        'educationsc' : EDUCATION_CHOICES,
+        'eldersc' : ELDERCARE_CHOICES,
+        'electrionicssc' : ELECTRONICS_CHOICES,
+        'entertainmentsc' : ENTERTAINMENT_CHOICES,
+        'farmsc' : FARMING_CHOICES,
+        'grocerysc' : GROCERY_CHOICES,
+        'healthsc' : HEALTH_CHOICES,
+        'homesc' : HOME_CHOICES,
+        'hotelsc' : HOTEL_CHOICES,
+        'jewelrysc' : JEWELRY_CHOICES,
+        'legalsc' : LEGAL_CHOICES,
+        'lifestylesc' : LIFESTYLE_CHOICES,
+        'marketingsc' : MARKETING_CHOICES,
+        'medicalsc' : MEDICAL_CHOICES,
+        'othersc' : OTHER_CHOICES,
+        'packagingsc' : PACKAGING_CHOICES,
+        'petsc' : PETS_CHOICES,
+        'photographysc' : PHOTOGRAPHY_CHOICES,
+        'professionalsc' : PROFESSIONAL_CHOICES, 
+        'realestatesc' : REALESTATE_CHOICES,
+        'recreationsc' : RECREATION_CHOICES,
+        'restaurantsc' : RESTAURANT_CHOICES ,
+        'transportationsc' : TRANSPORTATION_CHOICES,
+        'visualsc' : VISUAL_CHOICES
+        }
     )
 
 def getStateListings(request):

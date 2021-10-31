@@ -22,14 +22,6 @@ env = environ.Env(
     DEBUG=(bool, False)
 )
 
-gateway = braintree.BraintreeGateway(
-    braintree.Configuration(
-        braintree.Environment.Sandbox,
-        merchant_id="993qmd9ws9fhww7q",
-        public_key="5nw5w27twxsfb3cw",
-        private_key="e4aadd56b0c15194c5b79a8fa0054cac"
-    )
-)
 DATABASES = { 'default': dj_database_url.config() }
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -40,6 +32,18 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+braintree_merchant_id = env('MERCHANT_ID')
+braintree_public = env('PUBLIC_KEY')
+braintree_private = env('PRIVATE_KEY')
+GATEWAY = braintree.BraintreeGateway(
+    braintree.Configuration(
+        braintree.Environment.Production,
+        merchant_id = braintree_merchant_id,
+        public_key = braintree_public,
+        private_key = braintree_private,
+    )
+)
+
 SECRET_KEY = env('SECRET_KEY')
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = env('SOCIAL_AUTH_GOOGLE_OAUTH2_KEY')
@@ -52,16 +56,19 @@ MAILCHIMP_API_KEY = env('MAILCHIMP_API_KEY')
 AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = env('EMAIL_HOST')
-EMAIL_HOST_USER = env('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
+SHIPPO_KEY = env('SHIPPO_KEY')
 
-DEFAULT_FROM_EMAIL = 'Empower The Village <chandlerprevatt@utexas.edu>'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'localhost'
+EMAIL_HOST_USER = 'admin@empowerthevillage.org'
+EMAIL_HOST_PASSWORD = 'TheV1llageIsStrong!'
+EMAIL_PORT = 25
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = False
+
+DEFAULT_FROM_EMAIL = 'admin@empowerthevillage.org'
 ADMINS = (
-    ('Empower The Village', 'chandlerprevatt@utexas.edu'),
+    ('Empower The Village', 'admin@empowerthevillage.org'),
 )
 
 MANAGERS = ADMINS
@@ -82,14 +89,20 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
     'accounts',
+    'addresses',
     'bfchallenge',
-    'content',
+    'billing',
     'carts',
+    'content',
     'donations',
+    'donors',
     'etv',
     'education',
     'health',
+    'merchandise',
+    'orders',
     'policy',
     'prosperity',
     'phone_field',
@@ -230,7 +243,7 @@ STATICFILES_STORAGE = 'etv.utils.StaticRootS3BotoStorage'
 AWS_STORAGE_BUCKET_NAME = 'empowerthevillage'
 S3DIRECT_REGION = 'us-east-1'
 S3_URL = '//%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
-MEDIA_URL = S3_URL + 'media/'
+MEDIA_URL = 'https://d1z669787inm16.cloudfront.net/media/'
 MEDIA_ROOT = MEDIA_URL
 STATIC_URL = 'https://d1z669787inm16.cloudfront.net/static/'
 ADMIN_MEDIA_PREFIX = STATIC_URL + 'admin/'

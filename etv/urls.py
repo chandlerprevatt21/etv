@@ -20,7 +20,6 @@ from django.contrib.auth.views import LogoutView
 from django.urls import path, include
 from django.views.generic import TemplateView, RedirectView
 from accounts.admin import admin_site
-from bfchallenge.models import readysetshop_transaction
 
 from .views import *
 from accounts.views import LoginView, RegisterView, GuestRegisterView
@@ -28,7 +27,6 @@ from vbp.views import home
 from content.views import efbf, efbf_subscribed, contact, mailchimp_signup
 
 from vbp.models import *
-from accounts.models import Team
 
 Alabama = vbp_al.objects.filter(approved=False).count()
 Alaska = vbp_ak.objects.filter(approved=False).count()
@@ -81,14 +79,10 @@ Washington = vbp_wa.objects.filter(approved=False).count()
 WestVirginia = vbp_wv.objects.filter(approved=False).count()
 Wisconsin = vbp_wi.objects.filter(approved=False).count()
 Wyoming = vbp_wy.objects.filter(approved=False).count()
-teams = Team.objects.all()
-rss = readysetshop_transaction.objects.all()
 
 urlpatterns = [
     path('contact/', contact, name='contact' ),
     path('myadmin/etvadmin209423/', admin_site.urls, {'extra_context': {
-        'rss': rss,
-        'teams': teams,
         'AL': Alabama,
         'AK': Alaska,
         'AZ': Arizona,
@@ -142,11 +136,15 @@ urlpatterns = [
         'WY': Wyoming,
     }}, name='myadmin', ),
     path('', home_page, name='home'),
+    path('privacy-policy', privacy, name="privacy"),
+    path('terms-and-conditions', terms, name="terms"),
     path('about/', about_page, name='about'),
     path('accounts/', RedirectView.as_view(url='/account')),
     path('account/', include(("accounts.urls", "accounts"), namespace='account')),
     path('accounts/', include("accounts.passwords.urls")),
     path('black-friday-challenge/', include(("bfchallenge.urls", "bfchallenge"), namespace='bfchallenge')),
+    path('billing/', include(("billing.urls", "billing"), namespace='billing')),
+    path('cart/', include(("carts.urls", "carts"), namespace='carts')),
     path('donation/', include(("donations.urls", "donations"), namespace='donation')),
     path('economic-prosperity/', economic_prosperity, name='prosperity'),
     path('news-and-events/', news, name='news'),
@@ -155,6 +153,7 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(next_page=settings.LOUGOUT_REDIRECT_URL), name='logout'),
     path('make-every-friday-black-friday/', efbf, name='efbf'),
     path('mailchimp-signup/', mailchimp_signup, name='mailchimp-signup'),
+    path('merchandise/', include(("merchandise.urls", "merchandise"), namespace='merchandise')),
     path('register/', RegisterView.as_view(), name='register'),
     path('register/guest', GuestRegisterView.as_view(), name='guest_register'),
     path('settings/', RedirectView.as_view(url='/account')),

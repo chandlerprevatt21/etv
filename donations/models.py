@@ -1,11 +1,77 @@
 from django.db import models
+from billing.models import BillingProfile
 
 DONATION_LEVEL_CHOICES = (
     ('25', 'Village Member'),
     ('50', 'Village Patron'),
     ('100', 'Village Supporter'),
     ('500', 'Village Leader'),
-    ('1000', 'Village Ambassador')
+    ('1000', 'Village Ambassador'),
+    ('5000', "Founder's Circle - Bronze"),
+    ('10000', "Founder's Circle - Silver"),
+    ('15000', "Founder's Circle - Gold"),
+    ('25000', "Founder's Circle - Platinum"),
+)
+STATE_CHOICES = (
+    ('AL', 'Alabama'),
+    ('AK', 'Alaska'),
+    ('AZ', 'Arizona'),
+    ('AR', 'Arkansas'),
+    ('CA', 'California'),
+    ('CO', 'Colorado'),
+    ('CT', 'Connecticut'),
+    ('DE', 'Delaware'),
+    ('DC', 'District of Columbia'),
+    ('FL', 'Florida'),
+    ('GA', 'Georgia'),
+    ('HI', 'Hawaii'),
+    ('ID', 'Idaho'),
+    ('IL', 'Illinois'),
+    ('IN', 'Indiana'),
+    ('IA', 'Iowa'),
+    ('KS', 'Kansas'),
+    ('KY', 'Kentucky'),
+    ('LA', 'Louisiana'),
+    ('ME', 'Maine'),
+    ('MD', 'Maryland'),
+    ('MA', 'Massachusetts'),
+    ('MI', 'Michigan'),
+    ('MN', 'Minnesota'),
+    ('MS', 'Mississippi'),
+    ('MO', 'Missouri'),
+    ('MT', 'Montana'),
+    ('NE', 'Nebraska'),
+    ('NV', 'Nevada'),
+    ('NH', 'New Hampshire'),
+    ('NJ', 'New Jersey'),
+    ('NM', 'New Mexico'),
+    ('NY', 'New York'),
+    ('NC', 'North Carolina'),
+    ('ND', 'North Dakota'),
+    ('OH', 'Ohio'),
+    ('OK', 'Oklahoma'),
+    ('OR', 'Oregon'),
+    ('PA', 'Pennsylvania'),
+    ('RI', 'Rhode Island'),
+    ('SC', 'South Carolina'),
+    ('SD', 'South Dakota'),
+    ('TN', 'Tennessee'),
+    ('TX', 'Texas'),
+    ('UT', 'Utah'),
+    ('VT', 'Vermont'),
+    ('VA', 'Virginia'),
+    ('WA', 'Washington'),
+    ('WV', 'West Virginia'),
+    ('WI', 'Wisconsin'),
+    ('WY', 'Wyoming'),
+)
+DONATION_STATUS_CHOICES = (
+    ('incomplete', 'Incomplete'),
+    ('complete', 'Complete'),
+)
+DONATION_FREQUENCY_CHOICES = (
+    ('once', 'One Time Donation'),
+    ('monthly', 'Monthly Donation')
 )
 class donation_submission(models.Model):
     first_name      = models.CharField(max_length=50, unique=False)
@@ -21,33 +87,33 @@ class donation_submission(models.Model):
         verbose_name = 'Donation'
         verbose_name_plural = 'Donations'
 
-class merch_order(models.Model):
+class DonationManager(models.Manager):
+
+    def new(self, email):
+        billing_profile_qs = BillingProfile.objects.get_or_create(
+            email=email
+        )
+        (billing_profile_obj, boolean) = billing_profile_qs
+        return self.model.objects.create(billing_profile=billing_profile_obj)
+
+    def add_nonce(self, nonce):
+        if nonce:
+            return self.update(nonce=nonce)
+        return None
+
+class donation(models.Model):
+    billing_profile = models.ForeignKey(BillingProfile, null=True, blank=True, on_delete=models.SET_NULL)
     first_name      = models.CharField(max_length=50, unique=False)
     last_name       = models.CharField(max_length=50, unique=False)
-    address_1       = models.CharField(max_length=400, unique=False)
-    address_2       = models.CharField(max_length=400, unique=False)
-    city            = models.CharField(max_length=200)
-    state           = models.CharField(max_length=100)
-    zip             = models.CharField(max_length=15)
-    green_mugs            = models.IntegerField()
-    white_mugs            = models.IntegerField()
-    blackss_medium        = models.IntegerField()
-    blackss_large         = models.IntegerField()
-    blackss_xl            = models.IntegerField()
-    blackss_xxl           = models.IntegerField()
-    greyss_medium        = models.IntegerField()
-    greyss_large         = models.IntegerField()
-    greyss_xl            = models.IntegerField()
-    greyss_xxl           = models.IntegerField()
-    whitess_medium        = models.IntegerField()
-    whitess_large         = models.IntegerField()
-    whitess_xl            = models.IntegerField()
-    whitess_xxl           = models.IntegerField()
-    blackls_medium        = models.IntegerField()
-    blackls_large         = models.IntegerField()
-    blackls_xl            = models.IntegerField()
-    blackls_xxl           = models.IntegerField()
-    whitels_medium        = models.IntegerField()
-    whitels_large         = models.IntegerField()
-    whitels_xl            = models.IntegerField()
-    whitels_xxl           = models.IntegerField()
+    amount          = models.DecimalField(max_digits=12, decimal_places=2, default=0.00)
+    frequency       = models.CharField(max_length=100, default='once', choices=DONATION_FREQUENCY_CHOICES)
+    status          = models.CharField(max_length=100, choices=DONATION_STATUS_CHOICES, null=True, blank=True)
+    braintree_id    = models.CharField(max_length=270, blank=True)
+    payment_method  = models.CharField(max_length=270, blank=True)
+    subscription_id = models.CharField(max_length=270, null=True, blank=True)
+    created         = models.DateTimeField(auto_now=True, blank=True, null=True)
+    updated         = models.DateTimeField(auto_now_add=True, blank=True, null=True)
+    objects = DonationManager()
+
+    def __str__(self):
+        return str(self.id)

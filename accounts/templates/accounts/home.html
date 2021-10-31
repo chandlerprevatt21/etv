@@ -1,76 +1,117 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load humanize %}
+
 {% block content %}
+
 <div id="page">
-<div class="container" style="padding:60px; padding-top:5%px; background-color: rgba(250, 250, 250, 0.742)">
-<div class="row" style="margin:0; padding: 0">
-    <h5 class="" style="text-transform: capitalize;">Welcome back{% if user.first_name %}, {{ user.first_name }}{% endif %}!</h5>
-    
+<div class="row" style=" padding-top:60px; padding-bottom: 60px;padding-left: 5%; padding-right: 5%; background-color: rgba(250, 250, 250, 0.742)">
+<h5 class="" style="text-transform: capitalize;">Welcome back{% if user.first_name %}, {{ user.first_name }}{% endif %}!</h5>
+<div class="row">
+  <div class="col s12 m10 l8">
+    <div class="card " style="margin-bottom:10">
+      <div class="card-content">
+        <span class="card-title">My Account</span>
+        <ul class="account-list">
+          {% if user.is_staff %}
+          <li><a href="/myadmin/etvadmin209423/">Take Me To ETV Admin</a></li>
+          {% endif %}
+          <li><b>Username:</b> {{ user.username }}</li>
+          <li><b>Email Address:</b> {{ user.email }}</li>
+          <li><b>Team:</b>
+            {% if user.team %}
+            {{ user.team }}
+            {% else %}
+            <a href="{{ join_url }}">Join a Team!</a>
+            {% endif %}
+          </li>
+          <li><b><a href="{% url 'password_change' %}">Change Password</a></b></li>
+        </ul>
+      </div>
+    </div>
   </div>
-<div class="card" style="margin-bottom:10">
-  <div class="card-content">
-    
-    <a href="{{ logout_url }}" class="right">Logout</a>
-    <span class="card-title">My Account</span>
-    <ul class="account-list">
-      {% if user.is_staff %}
-      <li><a href="/myadmin/etvadmin209423/">Take Me To ETV Admin</a></li>
-      {% endif %}
-      <li><b>Username:</b> {{ user.username }}</li>
-      <li><b>Email Address:</b> {{ user.email }}</li>
-      
-      <li><b><a href="{% url 'password_change' %}">Change Password</a></b></li>
-      
-    </ul>
+</div>
+<div class="row">
+  <div class="col s12 l4">
+    <div class="card" style="margin-bottom:10">
+      <div class="card-content">
+        <span class="card-title">Black Friday Challenge™ Dashboard</span>
+        <ul class="bf-challenge-list">
+          <li>Nomination Challenge</li>
+            <p></p><a href="{{ nomination_url }}">Nominate a Black-owned business today!</a></p>
+          <br>
+          <li>Power Bingo</li>
+            {% if user.is_bingo_sponsor %}
+            <a href="{{ bingo_url }}">Click here to view your Power Bingo board</a>
+            {% else %}
+            <a href="{{ contact_url }}">Contact Empower The Village to sponsor a Power Bingo game today!</a>
+            {% endif %}
+          <br>
+          <br>
+          <li>Ready, Set, Shop!</li>
+            {% if user.team %}
+            <p><a>{{ user.team }}</a></p>
+            {% else %}
+            <a href="{{ join_url }}">Join a Team!</a>
+            {% endif %}
+          </li>
+          <br>
+          <li>Spread The Love</li>
+          <p>Spread the word about Black-owned businesses! <a href="{{ stl_url }}">Drop us a link to your Instagram post!</a></p>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 l4">
+    <div class="card" style="margin-bottom:10">
+      <div class="card-content">
+        <span class="card-title">Order Dashboard</span>
+        <ul class="bf-challenge-list">
+          <li>My Orders</li>
+            <ul >
+              <div class="divider" style="margin-top: 10px; margin-bottom: 10px"></div>
+              {% for x in orders %}
+              <li>
+                <p><b>Order Id: </b><b style="font-weight: 300">{{ x }}</b></p>
+                <p><b>Tracking: </b><a target="_blank" href="{{ x.shipping_details.tracking_url_provider }}" style="font-weight: 300">{{ x.shipping_details.tracking_number }}</a></p>
+                <p><b>Items:</b></p>
+                <p style="font-weight: 300">{% for item in x.items.all %}{{ item.product }}{% endfor %}</p>
+                <p><b>Total:</b> ${{ x.total }}</p>
+              </li>
+              <div class="divider" style="margin-top: 10px; margin-bottom: 10px"></div>
+              {% endfor %}
+            </ul>
+            <br>
+          
+          <li><a href="{{ merchandise_url }}">Shop Now!</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 l4">
+    <div class="card" style="margin-bottom:10">
+      <div class="card-content">
+        <span class="card-title">Donation Dashboard</span>
+        <ul class="bf-challenge-list">
+          <li>My Recent Donations</li>
+            <ul>
+              {% for donation in recent_qs %}
+              <p>{{ donation.updated }} - <b style="color: green">${{ donation.amount }}</b></p>
+              {% endfor %}
+            </ul>
+            <br>
+          <li>Total Donated</li>
+            <p>${{ total|intcomma }}</p>
+          <li><a href="{{ donate_url }}">Donate Now!</a></li>
+        </ul>
+      </div>
+    </div>
   </div>
 </div>
 
 
-<div class="card" style="margin-bottom:10">
-  <div class="card-content">
-    <span class="card-title">Black Friday Challenge™ Dashboard</span>
-    <ul class="bf-challenge-list">
-      <li><b>My Team:</b>
-        {% if user.team %}
-        {{ user.team }}
-        {% else %}
-        <a href="{{ join_url }}">Join a Team!</a>
-        {% endif %}
-      </li>
-      <br>
-      <li style="text-decoration: underline;">Nomination Challenge</li>
-        <p>You've submitted <b>{{ nomination_qs }}</b> businesses</p>
-        <p><a href="{{ nomination_url }}">Nominate a Black-owned business today!</a></p>
-      <br>
-      <li style="text-decoration: underline;">Power Bingo</li>
-        {% if user.is_bingo_sponsor %}
-        <a href="{{ bingo_url }}">Click here to view your Power Bingo board!</a>
-        {% else %}
-        <a href="{{ contact_url }}">Contact Empower The Village to sponsor a Power Bingo game today!</a>
-        {% endif %}
-      <br>
-      <br>
-      <li style="text-decoration: underline;">Ready, Set, Shop!</li>
-        {% if user.is_rss_sponsor %}
-          {% if rss_qs == 1 %}
-          <p>You've submitted <b>1</b> transaction</p>
-          {% else %}
-          <p>You've submitted <b>{{ rss_qs }}</b> transactions</p>
-        {% endif %}
-        {% if user.team is not None %}
-        <p>Your Team: {{ user.team }} has submitted <b>{{ rssteam_qs }}</b> transactions</p>
-        {% endif %}
-        <a href="{{ readyss_url }}">Click here to submit a transaction!</a>
-        {% else %}
-        <a href="{{ contact_url }}">Contact Empower The Village to sponsor a Ready, Set, Shop Challenge today!</a>
-        {% endif %}
-      </li>
-      <br>
-      <!--<li>Spread The Love</li>
-      <p>Spread the word about Black-owned businesses! <a href="{{ stl_url }}">Drop us a link to your Instagram post!</a></p>-->
-    </ul>
-  </div>
-</div>
+
+
 
 </div>
 </div>
@@ -87,6 +128,8 @@
 }
 .account-list {
   font-size: 18px
+}
+.card {
 }
 </style>
 {% endblock %}

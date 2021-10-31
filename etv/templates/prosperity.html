@@ -16,96 +16,90 @@
     </div>
 
 </div>
-    <div class="row" style="background-color: rgba(255, 255, 255, 0.781);">
-        <ul class="tabs tabs-fixed-width pillar-nav z-depth-2">
-            <li class="tab subnav-link"><a href="{{ efbf_url }}" class="subnav-link">Make Every Friday, Black Friday!™</a></li>
-            <li class="tab subnav-link"><a href="{{ vbp_url }}" class="subnav-link" style="margin-left: -40px">Village Black Pages™</a></li>
-            <li class="tab subnav-link"><a href="{{ bf_home_url }}" class="subnav-link">Black Friday Challenge™</a></li>
-        </ul>
-        <style>
-            @media only screen and (max-width: 662px){
-                .pillar-nav {
-                display: none !important
-            }
-            }
-            @media only screen and (min-width:663px){
-                .subnav-link {
-                    font-size: 16px !important;
-                    font-weight: 500 !important;
-                }
-                .pillar-nav {
-                    display: none;
-                }
-            }
-            @media only screen and (min-width:992px){
-                .subnav-link {
-                    font-size: 20px !important;
-                    font-weight: 500 !important;
-                }
-                .pillar-nav {
-                    display:-webkit-flex !important
-                }
-            }
+<div class="row" style="background-color: rgba(255, 255, 255, 0.781);">
+    <ul class="tabs tabs-fixed-width pillar-nav z-depth-2">
+        <li class="tab subnav-link"><a href="{{ efbf_url }}" class="subnav-link">Make Every Friday, Black Friday!™</a></li>
+        <li class="tab subnav-link"><a href="{{ vbp_url }}" class="subnav-link">Village Black Pages™</a></li>
+        <li class="tab subnav-link"><a href="{{ bf_home_url }}" class="subnav-link">Black Friday Challenge™</a></li>
+    </ul>
+    <style>
+        @media only screen and (max-width: 850px){
+            .pillar-nav {
+            display: none !important
+        }
+        }
+        @media only screen and (min-width:663px){
             .subnav-link {
-                font-size: 14px;
-                font-weight: 500 !important
+                font-size: 16px !important;
+                font-weight: 500 !important;
             }
-            
-        </style>
-        <div class="col m5 l4 xl3 success-eq-top">
-            <img class="left" src="{% static 'img/success_equation_2.gif' %}" width=100%>
-        </div>
-        <div class="pillar-body">
-            <div class="row center-align">
-                <div class="col s12 m12 l8 xl9">
-                    <p class="dyk" style="color: rgb(162, 21, 21); margin:0; padding:0; margin-top: -10px">State Of The Village : <a style="color:rgba(38, 38, 38, 0.947); font-family: oskar">Did You Know...?</a></p>
-                    <div class="divider"></div>
-                    <div class="row" style="margin-bottom: 0; padding-top: 20px;">
-                        
-                        <div class="col s12 m6">
-                            <div class="row dyk-row">
-                                <img class="col s4 m12 unemployment" src="{% static 'img/unemployment_ss.png'%} ">
-                                <p class="col s8 m12 unemployment-text">The unemployment rate for Black Americans has been ~2X the rate for White Americans</p>
-                            </div>
-                        </div>
-                        <div class="col s12 m6">
-                            <div class="row dyk-row">
-                                <img class="col s3 m12 circulate" src="{% static 'img/6hours.png'%}">
-                                <p class="col s9 m12 circulate-text">A dollar earned by members of the Black community circulates within the Black community for only 6 hours</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="divider"></div>
+            .pillar-nav {
+                display: none;
+            }
+        }
+        @media only screen and (min-width:992px){
+            .subnav-link {
+                font-size: 20px !important;
+                font-weight: 500 !important;
+            }
+            .pillar-nav {
+                display:-webkit-flex !important
+            }
+        }
+        .subnav-link {
+            font-size: 14px;
+            font-weight: 500 !important
+        }
+        
+    </style>
+    
+    <div class="pillar-body">
+        <div class="row center-align">
+            <div class="col s12">
+                <p class="dyk" style="color: rgb(162, 21, 21); margin:0; padding:0; padding-top: 10px; padding-bottom: 20px; margin-top: -10px">State Of The Village: <a style="color:rgba(38, 38, 38, 0.947); font-family: oskar">Did You Know...?</a></p>
+                <div class="divider" style="margin-bottom: 20px"></div>
+                <div class="row" style="margin-bottom: 0; padding-left: 5%; padding-right: 5%;">
                     
-                    <div class="row" style="margin-bottom: 0">
-                        <div class="col s12">
-                            <div class="row dyk-row valign-wrapper">
-                                <img class="tenx-house" src="{% static 'img/10x_house_only.png'%}">
-                                <blockquote class="tenx-text" style="border-left: 2px dotted #3e852c;">
-                                    <p>The net worth of White Americans is ~10X greater than that of Black Americans.</p>
-                                    <p>Black home ownership is at its lowest level since the 1960s.</p>
-                                    <p>Ownership of real estate, particularly owning your primary residence, is a key factor in determining net worth.</p>
-                                </blockquote>
-                            </div>
+                    <div class="col s12 m3">
+                        <div class="row dyk-row">
+                            <img class="col s3 m12 one2trillion" src="{% static 'img/12trillion.png'%}">
+                            <p class="col s9 m12 one2trillion-text">The U.S. Black community's buying power is ~$1.2 trillion!</p>
                         </div>
                     </div>
+                    <div class="col s12 m3">
+                        <div class="row dyk-row">
+                            <img class="col s3 m12 two6million" src="{% static 'img/26million.png'%} ">
+                            <p class="col s9 m12 two6million-text">There are 2.6+ million Black businesses in the U.S!</p>
+                        </div>
+                    </div>
                     
-                    
+                    <div class="col s12 m3">
+                        <div class="row dyk-row">
+                            <img class="col s3 m12 million-jobs" src="{% static 'img/million-jobs.png'%}">
+                            <p class="col s9 m12 million-jobs-text">Existing Black-owned businesses have created over 1 million jobs!</p>
+                        </div>
+                    </div>
+                    <div class="col s12 m3">
+                        <div class="row dyk-row">
+                            <img class="col s3 m12 women-ofb" src="{% static 'img/women_ofb.png'%}">
+                            <p class="col s9 m12 women-ofb-text">Black women are starting businesses at a faster rate than any other group!</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="divider" style="margin-bottom: 20px"></div>
-            <div class="row" style="width: 90%; margin-left:5%">
-                <ul class="col s12 m6 collapsible popout pillar-collapsible goals-collapsible">
+        </div>
+        <div class="divider" style="margin-bottom: 20px"></div>
+        <div class="row" style="width: 100%; margin-left:0%">
+            <div class="col s12 l7 xl8 row">
+                <ul class="col s12 pillar-collapsible goals-collapsible">
                     <li class="goals-li">
-                        <div class="collapsible-header valign-wrapper pillar-header goals-header">
+                        <div class="valign-wrapper pillar-header goals-header">
                             <div class="collapsible-body-image" style="background: url('{% static 'img/ep-goals.jpg' %}'); background-size: 147%">
                             </div>
                             <div class="pillar-title">ETV Goals</div>
-                            <div>
-                                <i class="material-icons" style="color: rgb(255, 255, 255); font-size: 36px">keyboard_arrow_down</i>
-                            </div>
+                            
                         </div>
-                        <div class="collapsible-body collapsible-body-pillar">
+                        <div class="collapsible-body-pillar z-depth-3" style="padding: 3% !important">
                             <ul>
                                 <li class="pillar-h5">
                                     <table>
@@ -133,15 +127,6 @@
                                                 Create Jobs to reduce unemployment & under-employment for Black Americans
                                             </td>
                                         </tr>
-                                        <tr class="pillar-tr">
-                                            <td class="pillar-target-td">
-                                                <i class="material-icons pillar-target">track_changes</i> 
-                                            </td>
-                                            <td class="pillar-h5">
-                                                Up-skilling our workers for the future of work
-                                            </td>
-                                            
-                                        </tr>
                                     </table>
                                     
                                 </li>
@@ -150,18 +135,15 @@
                         </div>
                     </li>
                 </ul> 
-                <ul class="col s12 m6 collapsible popout pillar-collapsible" style="margin-bottom: 2%;">
+                <ul class="col s12 pillar-collapsible" style="margin-top: 20px;margin-bottom: 1%;">
                     
-                    <li class="solutions-li">
+                    <li class="solutions-li z-depth-3">
                         <div class="collapsible-header valign-wrapper pillar-header solutions-header">
                             <div class="collapsible-body-image" style="background: url('{% static 'img/solutions.jpg' %}'); background-size: 140%; background-position-x: -30px">
                             </div>
                             <div class="pillar-title">ETV Solutions</div>
-                            <div>
-                                <i class="material-icons" style="color: white; font-size: 36px">keyboard_arrow_down</i>
-                            </div>
                         </div>
-                        <div class="collapsible-body collapsible-body-pillar">
+                        <div class="collapsible-body-pillar" style="padding: 3% !important">
                             <table>
                                 <tr class="pillar-tr">
                                     <td class="pillar-target-td">
@@ -187,20 +169,13 @@
                                         <b><a href="{{ voting_url }}">Black Friday Challenge™ - </a></b>Fun, Interactive Challenges
                                     </td>
                                 </tr>
+                                
                                 <tr class="pillar-tr">
                                     <td class="pillar-target-td">
                                         <i class="material-icons pillar-target">check</i> 
                                     </td>
                                     <td class="pillar-h5">
-                                        <b><a href="{{ efbf_url }}">Village@Work™ - </a></b>Workforce Development, Apprenticeship & Internship Program
-                                    </td>
-                                </tr>
-                                <tr class="pillar-tr">
-                                    <td class="pillar-target-td">
-                                        <i class="material-icons pillar-target">check</i> 
-                                    </td>
-                                    <td class="pillar-h5">
-                                        <b><a href="{{ efbf_url }}">Village Empowerment Network™ - </a></b>Online, On-Demand Training Platform for Entrepreneurs & One-On-One Strategy, Planning & Technical Counseling
+                                        <b><a href="{{ efbf_url }}">Village Empowerment Network™ - </a></b>Online, On-Demand Training Platform for Entrepreneurs & One-On-One Counseling
                                     </td>
                                 </tr>
                             </table>
@@ -208,37 +183,40 @@
                     </li>
                 </ul> 
             </div>
-            <div class="divider" style="margin: 0; padding:0"></div>
-            <div class="row" style="margin-bottom: 0; padding-left: 5%; padding-right: 5%;">
-                        
-                <div class="col s12 m3">
-                    <div class="row dyk-row">
-                        <img class="col s3 m12 one2trillion" src="{% static 'img/12trillion.png'%}">
-                        <p class="col s9 m12 one2trillion-text">The U.S. Black community's buying power is ~$1.2 trillion!</p>
-                    </div>
+            <div class="col s12 l5 xl4 success-eq-top">
+                <img class="col s12 left" src="{% static 'img/success_equation_2.gif' %}" width=100%>
+            </div>
+        </div>
+        <div class="divider" style="margin: 0; padding:0"></div>
+        
+        <div class="row" style="margin-bottom: 0; padding-top: 20px;">
+                    
+            <div class="col s12 m4">
+                <div class="row dyk-row">
+                    <img class="col s8 offset-s2 m12 unemployment" src="{% static 'img/unemployment_ss.png'%} ">
+                    <p class="col s12 m12 unemployment-text">The unemployment rate for Black Americans has been ~2X the rate for White Americans</p>
                 </div>
-                <div class="col s12 m3">
-                    <div class="row dyk-row">
-                        <img class="col s3 m12 two6million" src="{% static 'img/26million.png'%} ">
-                        <p class="col s9 m12 two6million-text">There are 2.6+ million Black businesses in the U.S!</p>
-                    </div>
+            </div>
+            <div class="col s12 m4">
+                <div class="row dyk-row">
+                    <img class="col s8 offset-s2 m12 circulate" src="{% static 'img/6hours.png'%}">
+                    <p class="col s12 circulate-text">A dollar earned by members of the Black community circulates within the Black community for only 6 hours</p>
                 </div>
-                
-                <div class="col s12 m3">
-                    <div class="row dyk-row">
-                        <img class="col s3 m12 million-jobs" src="{% static 'img/million-jobs.png'%}">
-                        <p class="col s9 m12 million-jobs-text">Existing Black-owned businesses have created over 1 million jobs!</p>
-                    </div>
-                </div>
-                <div class="col s12 m3">
-                    <div class="row dyk-row">
-                        <img class="col s3 m12 women-ofb" src="{% static 'img/women_ofb.png'%}">
-                        <p class="col s9 m12 women-ofb-text">Black women are starting businesses at a faster rate than any other group!</p>
+            </div>
+            <div class="col s12 m4">
+                <div class="row dyk-row">
+                    <img class="col s6 offset-s3 m8 offset-m2 l6 offset-l3 tenx-house" src="{% static 'img/10x_house_only.png'%}">
+                    
+                    <div>
+                        <p class="col s12 circulate-text">
+                        The net worth of White Americans is ~10X greater than that of Black Americans.
+                        Owning real estate is a key factor in determining net worth.</p>
                     </div>
                 </div>
             </div>
-            
-</div>
+        </div>
+        
+    </div>
 </div>
 <style>
     
@@ -267,6 +245,7 @@
         font-family: oskar-inline;
         color:rgba(60, 60, 60, 0.947);
         text-transform: uppercase;
+        line-height: 40px;
     }
     
     .goals-header {
@@ -314,7 +293,8 @@
         }
         .dyk {
             font-size: 38px;
-            letter-spacing: 2px;
+            line-height: 48px;
+            letter-spacing: 1px;
             margin-top: 10px !important
         }
         .power-collapse {
@@ -345,7 +325,7 @@
     }
     .tenx-house {
         width: 25%;
-        padding-left: 3%;
+        margin-left: 25%;
         padding-right: 0;
         padding-top: 2%
     }
@@ -412,7 +392,7 @@
         padding: 0;
         padding-top: 5px;
         padding-bottom: 5px;
-        padding-right: 3%;
+        padding-right: 2%;
         font-size: 14px;
         text-align: left;
     }
@@ -489,12 +469,12 @@
         margin-top: 0 !important
     }
     .unemployment {
-        width: 80% !important;
-        margin-left: 10% !important;
+        width: 100% !important;
+        margin-left: 0% !important;
     }
     .circulate {
-        width: 68% !important;
-        margin-left: 16% !important;
+        width: 80% !important;
+        margin-left: 10% !important;
     }
     .unemployment-text {
         font-size: 16px;
@@ -518,9 +498,7 @@
     }
     .tenx-house {
         width: 25%;
-        padding-left: 1%;
-        padding-right: 0;
-        padding-top: 5%
+        margin-left: 25%
     }
     .tenx-text p {
         margin: 0;
@@ -621,12 +599,12 @@
     }
     @media only screen and (min-width: 1201px) {
         .unemployment {
-        width: 45% !important;
-        margin-left: 27.5% !important;
+        width: 70% !important;
+        margin-left: 15% !important;
     }
     .circulate {
-        width: 38% !important;
-        margin-left: 31% !important;
+        width: 60% !important;
+        margin-left: 20% !important;
     }
     .unemployment-text {
         font-size: 18px;
@@ -647,12 +625,7 @@
     .dyk {
         padding-bottom: 20px
     }
-    .tenx-house {
-        width: 20%;
-        padding-left: 3%;
-        padding-right: 0;
-        padding-top: 2%
-    }
+    
     .tenx-text p {
         margin: 0;
         padding: 0;
@@ -672,10 +645,7 @@
         padding-bottom: 20px
     }
     .tenx-house {
-        width: 20%;
-        padding-left: 3%;
-        padding-right: 0;
-        padding-top: 2%
+        width: 25%;
     }
     .tenx-text p {
         margin: 0;
