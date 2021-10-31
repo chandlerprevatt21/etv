@@ -14,6 +14,7 @@ import environ
 import psycopg2
 from pathlib import Path
 import dj_database_url
+import braintree
 db_from_env = dj_database_url.config(conn_max_age=500)
 
 env = environ.Env(
@@ -29,6 +30,18 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+braintree_merchant_id = env('MERCHANT_ID')
+braintree_public = env('PUBLIC_KEY')
+braintree_private = env('PRIVATE_KEY')
+GATEWAY = braintree.BraintreeGateway(
+    braintree.Configuration(
+        braintree.Environment.Production,
+        merchant_id = braintree_merchant_id,
+        public_key = braintree_public,
+        private_key = braintree_private,
+    )
+)
+
 SECRET_KEY = env('SECRET_KEY')
 
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = env('SOCIAL_AUTH_GOOGLE_OAUTH2_KEY')
@@ -38,16 +51,19 @@ SOCIAL_AUTH_FACEBOOK_SECRET = env('SOCIAL_AUTH_FACEBOOK_SECRET')
 SOCIAL_AUTH_FACEBOOK_SCOPE = ['email']
 MAILCHIMP_API_KEY = env('MAILCHIMP_API_KEY')
 
+SHIPPO_KEY = env('SHIPPO_KEY')
+
 AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
 
-EMAIL_HOST = env('EMAIL_HOST')
-EMAIL_HOST_USER = env('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-
-DEFAULT_FROM_EMAIL = 'Empower The Village <admin@empowerthevillage.org>'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'localhost'
+EMAIL_HOST_USER = 'admin@empowerthevillage.org'
+EMAIL_HOST_PASSWORD = 'TheV1llageIsStrong!'
+EMAIL_PORT = 25
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = False
+DEFAULT_FROM_EMAIL = 'admin@empowerthevillage.org'
 ADMINS = (
     ('Empower The Village', 'admin@empowerthevillage.org'),
 )
@@ -70,13 +86,20 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
     'accounts',
+    'addresses',
     'bfchallenge',
+    'billing',
+    'carts',
     'content',
     'donations',
+    'donors',
     'etv',
     'education',
     'health',
+    'merchandise',
+    'orders',
     'policy',
     'prosperity',
     'phone_field',
