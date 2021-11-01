@@ -18,12 +18,27 @@
 </div>
 <div style="background: url('{% static 'img/ed_collage_big.png' %}'); background-size: 180%; height: 100%">
     <div class="row" style="height: 100%; background-color: rgba(255, 255, 255, 0.781); width:100%">
+        <ul class="tabs subnav-tabs tabs-fixed-width pillar-nav z-depth-2">
+            <li class="tab"  class="subnav-link"><a href="phase-one" class="subnav-link">Village@Work™</a></li>
+            <li class="tab"  class="subnav-link"><a href="phase-one" class="subnav-link">Village Strivers™</a></li>
+        </ul>
+        <style>
+            @media only screen and (min-width:663px){
+                .subnav-link {
+                font-size: 20px !important
+            }
+            }
+            .subnav-link {
+                font-size: 14px
+            }
+        </style>
         <div class="col s12 l10 offset-l1  pillar-body">
             <div class="row" style="width: 90%; margin-left: 5%">
                 <div class="row center-align">
                     <h5 class="dyk"><p class="dyk" style="color: rgb(199, 24, 24); margin:0; padding:0; margin-top: -10px">State Of The Village : <a style="color:rgba(38, 38, 38, 0.947); font-family: oskar">Did You Know...?</a></p></h5>
                     <div class="divider"></div>
                     <div class="row" style="margin-bottom: 0; padding-top: 3%; padding-left: 1%; padding-right: 1%">
+                        
                         <div class="col s12 m3">
                             <style></style>
                             <div class="row dyk-row">
@@ -41,24 +56,18 @@
                         <div class="col s12 m3">
                             <div class="row dyk-row">
                                 <img class="col s3 m12 black-businesses" src="{% static 'img/95percent.png'%} " style="width: 90%; margin-left: 5%">
-                                <p class="col s9 m12 heart-text">95% of Black-owned businesses are nonemployer businesses</p>
+                                <p class="col s9 m12 heart-text">95% of Black-owned businesses are nonemployer businesses. 101% average increase in annual revenue after hiring the 1st employee</p>
                             </div>
                         </div>
                         <div class="col s12 m3">
                             <div class="row dyk-row">
-                                <img class="col s3 m12 employee-growth" src="{% static 'img/101percent.png'%}" style="width: 90%; margin-left: 5%">
-                                <p class="col s9 m12 cancer-text">101% average increase in annual revenue growth for businesses transitioning from 0 to 1 or more employees</p>
+                                <img class="col s3 m12 million-jobs" src="{% static 'img/million-jobs.png'%}">
+                                <p class="col s9 m12 million-jobs-text">~5% of Existing Black-owned businesses have created over 1 million jobs!</p>
                             </div>
                         </div>
                     </div>
                     <div class="divider"></div>
-                    <div class="row valign-wrapper" style="width: 95%; margin-left: 5%; padding-top: 20px">
-                        <img src="{% static 'img/grad-cap.png' %}" width=20%>
-                        <blockquote class="dyk-quote">
-                            A <a href="https://edtrust.org/wp-content/uploads/2014/09/Black-Degree-Attainment_FINAL.pdf">college degree,</a> whether an Associate or Bachelor’s degree, is more and more vital. The number of “good-paying jobs” that did not require some level of college education or technical training have continued to rapidly decrease.
-                        </blockquote>
-                    </div>
-                    <div class="divider"></div>
+                    
                     
                 </div>
                 <div class="row popout-row">
@@ -110,7 +119,7 @@
                                             <i class="material-icons pillar-target">check</i> 
                                         </td>
                                         <td class="pillar-h5">
-                                            <b>Village@Work™ - </b>Workforce Development Program
+                                            <a href="phase-one/"><b>Village@Work™ - </b></a>Workforce Development Program
                                         </td>
                                     </tr>
                                     <tr class="pillar-tr">
@@ -118,7 +127,7 @@
                                             <i class="material-icons pillar-target">check</i> 
                                         </td>
                                         <td class="pillar-h5">
-                                            <b>Village Strivers™ - </b>Academic Enrichment, Mentorship and Job Creation
+                                            <a href="phase-one/"><b>Village Strivers™ - </b></a>Academic Enrichment, Mentorship and Job Creation
                                         </td>
                                     </tr>
                                 </table>
@@ -127,40 +136,57 @@
                         </li>
                     </ul> 
                 </div>
-            </div>
-            <div class="row center-align">
-                <h5 class="dyk">Education & Employment Initiatives</h5>
-                    <div class="divider" style="margin-bottom: 20px"></div>
-                    <h5 class="center-align health-main-title" style="color: rgb(184, 34, 34); padding-bottom: 20px; font-size: 52px">Coming Soon!</h5>
-                    <div class="row">
-                        <div class="col l4 ee-image">
-                            <img class="z-depth-2" src="{% static 'img/villageatwork.png' %}">
-                        </div>
-                        <div class="col s12 l8">
-                            <img src="{% static 'img/villageatwork_logo_new.png' %}" style="width: 50%; padding-top: 10px;">
-                            <h6 class="pillar-h5 program-text"><b>Village@Work™:</b> This workforce development program is focused on creating and funding jobs, internships, and apprenticeships within Black-owned businesses that need additional personnel to enhance their success. It creates a win-win for our business owners and job/career seekers.</h6>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col l4 ee-image">
-                            <img class="z-depth-2" src="{% static 'img/schoolgirl.png' %}" style="margin-top: 60px">
-                        </div>
-                        <div class="col s12 l8" style="margin-top: -20px">
-                            <img src="{% static 'img/village-strivers_logo.png' %}" style="width: 60%; padding-top: 0px;">
-                            <h6 class="pillar-h5 program-text" style="margin-top: 0; padding-top: 0"><b>Village Strivers™:</b> This ETV program will provide academic enrichment, homework help, coaching and tutoring, college and test prep resources for youth and job training for adults and youth (virtually or in-person).</h6>
-                            
-                            <h6 class="pillar-h5 program-text" style="margin-top:0; padding-top:0">The program will be implemented in partnership with Village volunteers and paid teachers of color who serve as role models and mentors. ETV will fund individual and group sessions with enrichment providers and independent tutors, emphasizing math, science and writing skills.</h6>
-        
-                        </div>
-                    </div>
+                <div class="divider"></div>
+                <div class="row valign-wrapper" style="width: 95%; margin-left: 5%; padding-top: 20px">
+                    <img src="{% static 'img/grad-cap.png' %}" width=20%>
+                    <blockquote class="dyk-quote">
+                        A <a href="https://edtrust.org/wp-content/uploads/2014/09/Black-Degree-Attainment_FINAL.pdf">college degree,</a> whether an Associate or Bachelor’s degree, is more and more vital. The number of “good-paying jobs” that did not require some level of college education or technical training have continued to rapidly decrease.
+                    </blockquote>
+                </div>
+                <div class="divider"></div>
             </div>
                 
             
         </div>
     </div>
 </div>
-
 <style>
+    @media only screen and (max-width: 850px){
+        .pillar-nav {
+        display: none !important
+    }
+    }
+    @media only screen and (min-width:663px){
+        .subnav-link {
+            font-size: 16px !important;
+            font-weight: 500 !important;
+        }
+        .pillar-nav {
+            display: none;
+        }
+    }
+    @media only screen and (min-width:992px){
+        .subnav-link {
+            font-size: 20px !important;
+            font-weight: 500 !important;
+        }
+        .pillar-nav {
+            display:-webkit-flex !important
+        }
+    }
+    .subnav-link {
+        font-size: 14px;
+        font-weight: 500 !important
+    }
+    
+</style>
+<style>
+    .pillar-nav {
+        background-color: rgb(0, 0, 0);
+    }
+    .pillar-nav li a {
+        color: rgb(255, 255, 255) !important;
+    }
     .dyk-quote {
         text-align: left;
         border-left: dotted rgb(184, 34, 34) 2px;

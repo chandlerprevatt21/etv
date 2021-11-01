@@ -88,13 +88,7 @@
               <i class="left sidenav-trigger material-icons" data-target="side-nav" id="sidenav-menu-trigger" style="z-index: 2;">menu</i>
         
                 <div class="left nav-row-left valign-wrapper" id="nav-top-left"> 
-                  <div class="icon-wrap valign-wrapper" id="icon-wrap">
-                    <a href="https://www.facebook.com/Empower-The-Village-Nonprofit-Organization-105185814766521/" class="facebook nav-socialmedia" target="_blank"><i class="fab fa-facebook nav-socialmedia-icon"></i></a>
-                    <a href="https://www.instagram.com/empower_etv/" class="instagram nav-socialmedia" target="_blank"><i class="fab fa-instagram nav-socialmedia-icon"></i></a>
-                    <a href="http://linkedin.com/company/empower-the-village" class="linkedin nav-socialmedia" target="_blank"><i class="fab fa-linkedin nav-socialmedia-icon"></i></a>
-                    <a href="https://www.youtube.com/channel/UCKMNMY8pqCId-PY4dCcKtaQ" class="youtube nav-socialmedia" target="_blank"><i class="fab fa-youtube nav-socialmedia-icon"></i></a>
-                  </div>
-                  <div class="navbar-slash"> | </div>
+                  
                     <a class="main-nav-link ul-effect valign-wrapper {% if request.path == home_url %}active{% endif %}" href="{{ home_url }}">Home</a>
                       <div class="navbar-slash"> | </div>
                     <a class="main-nav-link ul-effect valign-wrapper {% if request.path == about_url %}active{% endif %}" href="{{ about_url }}">About</a>
@@ -134,8 +128,8 @@
                 <li class="tab"><a class="nav-tab dropdown-trigger {% if request.path == pillars_url %}active{% endif %}" data-target="nav-dropdown-sp">SIGNATURE PROGRAMS</a></li>
                 <li class="tab"><a class="nav-tab dropdown-trigger {% if request.path == ep_url %}active{% endif %}" href="{{ ep_url }}" data-target="nav-dropdown-ep">Economic Prosperity</a></li>
                 <li class="tab"><a style="margin-left: 6px" class="nav-tab dropdown-trigger {% if request.path == policy_url %}active{% endif %}" href="{{ policy_url }}" data-target="nav-dropdown-pp">Policy & Power</a></li>
-                <li class="tab"><a class="nav-tab {% if request.path == health_url %}active{% endif %}" href="{{ health_url }}">Health & Wellness</a></li>
-                <li class="tab"><a class="nav-tab {% if request.path == education_url %}active{% endif %}" href="{{ education_url }}">Education & Employment</a></li>
+                <li class="tab"><a style="margin-left: 6px" class="nav-tab dropdown-trigger {% if request.path == health_url %}active{% endif %}" href="{{ health_url }}" data-target="nav-dropdown-hw">Health & Wellness</a></li>
+                <li class="tab"><a class="nav-tab dropdown-trigger {% if request.path == education_url %}active{% endif %}" href="{{ education_url }}" data-target="nav-dropdown-ee">Education & Employment</a></li>
                 
               </ul>
             </div>
@@ -224,7 +218,12 @@
             {% endif %}
             <li class="divider"></li>
             <a class="btn btn-large waves-effect waves-light donate-btn-sidenav" style="line-height: 50px; width: 93%" href="{{ donate_url }}" id="donate-btn-navbar">DONATE</a>
-            
+            <div class="icon-wrap valign-wrapper" id="icon-wrap" style="display: flex; justify-content: center; margin">
+              <a href="https://www.facebook.com/Empower-The-Village-Nonprofit-Organization-105185814766521/" class="facebook nav-socialmedia" target="_blank"><i class="fab fa-facebook nav-socialmedia-icon"></i></a>
+              <a href="https://www.instagram.com/empower_etv/" class="instagram nav-socialmedia" target="_blank"><i class="fab fa-instagram nav-socialmedia-icon"></i></a>
+              <a href="http://linkedin.com/company/empower-the-village" class="linkedin nav-socialmedia" target="_blank"><i class="fab fa-linkedin nav-socialmedia-icon"></i></a>
+              <a href="https://www.youtube.com/channel/UCKMNMY8pqCId-PY4dCcKtaQ" class="youtube nav-socialmedia" target="_blank"><i class="fab fa-youtube nav-socialmedia-icon"></i></a>
+            </div>
           </ul>
           <div class="dropdown-container">
             <ul id="nav-dropdown-sp" class="dropdown-content dd-base">
@@ -247,6 +246,7 @@
           
           <div class="dropdown-container">
             <ul id="nav-dropdown-ep" class="dropdown-content dd-base">
+              <li><a href="{{ efbf_url }}" class="center-align valign-wrapper {% if request.path == efbf_url %}active{% endif %}" style="color: rgb(39, 160, 97);text-transform: uppercase;">Overview</a></li>
               <li><a href="{{ efbf_url }}" class="center-align valign-wrapper {% if request.path == efbf_url %}active{% endif %}" style="color: rgb(39, 160, 97);text-transform: uppercase;">Make Every Friday, Black Friday!™</a></li>
               <li><a href="{{ vbp_url }}" class="center-align valign-wrapper {% if request.path == vbp_url %}active{% endif %}" style="color: rgb(39, 160, 97);text-transform: uppercase;">Village Black Pages™</a></li>
               <li ><a href="{{ bf_home_url }}" class="center-align valign-wrapper {% if request.path == bf_home_url %}active{% endif %}" style="color: rgb(39, 160, 97);text-transform: uppercase;">Black Friday Challenge™</a></li>
@@ -258,23 +258,24 @@
           </div>
           <div class="dropdown-container">
             <ul id="nav-dropdown-ee" class="dropdown-content dd-base">
-              <li><a href="{{ education_initiatives_url }}" class="center-align valign-wrapper {% if request.path == education_initiatives_url %}active{% endif %}" style="color: rgb(39, 160, 97);text-transform: uppercase;">Phase One Initiatives</a></li>
+              <li><a href="{{ education_url }}" class="center-align valign-wrapper {% if request.path == education_url %}active{% endif %}">Overview</a></li>
+              <li><a href="{{ education_initiatives_url }}" class="center-align valign-wrapper {% if request.path == education_initiatives_url %}active{% endif %}">Initiatives</a></li>
               
-              <li><a href="{{ vbp_url }}" class="center-align valign-wrapper {% if request.path == bf_home_url %}active{% endif %}" style="color: rgb(39, 160, 97);text-transform: uppercase;">Community Resources</a></li>
             </ul>
           </div>
-          
-          <div class="dropdown-container" >
+          <div class="dropdown-container">
+            <ul id="nav-dropdown-hw" class="dropdown-content dd-base">
+              <li><a href="{{ health_url }}" class="center-align valign-wrapper {% if request.path == health_url %}active{% endif %}">Overview</a></li>
+              
+              
+            </ul>
+          </div>
+          <div class="dropdown-container">
             <ul id="nav-dropdown-pp" class="dropdown-content dd-base">
-              <li><a style="margin-left: 6px" href="{{ policy_url }}" class="center-align valign-wrapper {% if request.path == policy_url %}active{% endif %}" >Overview</a></li>
+              <li><a style="margin-left: 6px" href="{{ policy_url }}" class="center-align valign-wrapper {% if request.path == policy_url %}active{% endif %}">Overview</a></li>
               <li><a style="margin-left: 6px" href="{{ voting_url }}" class="center-align valign-wrapper {% if request.path == voting_url %}active{% endif %}">Operation: Ballot Box™</a></li>
             </ul>
           </div>
-          <style>
-            #nav-dropdown-pp {
-              width: 17% !important
-            }
-          </style>
         <div style="z-index: -1">
         {% block content %}
         

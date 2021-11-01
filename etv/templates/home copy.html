@@ -30,7 +30,7 @@
 {% url 'prosperity' as ep_url %}
 {% url 'news' as news_url %}
 {% url 'shop' as shop_url %}
-
+{% url 'merchandise:list' as merchandise_url %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <!-- JQuery Mask -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -85,13 +85,7 @@
               <i class="left sidenav-trigger material-icons" data-target="side-nav" id="sidenav-menu-trigger" style="z-index: 2;">menu</i>
         
                 <div class="left nav-row-left valign-wrapper" id="nav-top-left"> 
-                  <div class="icon-wrap valign-wrapper" id="icon-wrap">
-                    <a href="https://www.facebook.com/Empower-The-Village-Nonprofit-Organization-105185814766521/" class="facebook nav-socialmedia" target="_blank"><i class="fab fa-facebook nav-socialmedia-icon"></i></a>
-                    <a href="https://www.instagram.com/empower_etv/" class="instagram nav-socialmedia" target="_blank"><i class="fab fa-instagram nav-socialmedia-icon"></i></a>
-                    <a href="http://linkedin.com/company/empower-the-village" class="linkedin nav-socialmedia" target="_blank"><i class="fab fa-linkedin nav-socialmedia-icon"></i></a>
-                    <a href="https://www.youtube.com/channel/UCKMNMY8pqCId-PY4dCcKtaQ" class="youtube nav-socialmedia" target="_blank"><i class="fab fa-youtube nav-socialmedia-icon"></i></a>
-                  </div>
-                  <div class="navbar-slash"> | </div>
+                  
                     <a class="main-nav-link ul-effect valign-wrapper {% if request.path == home_url %}active{% endif %}" href="{{ home_url }}">Home</a>
                       <div class="navbar-slash"> | </div>
                     <a class="main-nav-link ul-effect valign-wrapper {% if request.path == about_url %}active{% endif %}" href="{{ about_url }}">About</a>
@@ -106,7 +100,7 @@
                   <a href="{{ home_url }}" class="center brand-logo"><img src="{% static 'img/logo.jpeg' %}" height=110></a>
                 </div>
                 <div class="right valign-wrapper" style="height:100%">
-                  <a class="main-nav-link ul-effect valign-wrapper {% if request.path == shop_url %}active{% endif %}" href="{{ shop_url }}">Shop</a>
+                  <a class="main-nav-link ul-effect valign-wrapper {% if request.path == merchandise_url %}active{% endif %}" href="{{ merchandise_url }}">Shop</a>
                   <div class="navbar-slash"> | </div>
                     {% if request.user.is_authenticated %}
                     <a href="{{ account_url }}" class="main-nav-link valign-wrapper welcome-back">Welcome Back!</a>
@@ -134,7 +128,8 @@
                   <li><a class="center-align valign-wrapper {% if request.path == voting_url %}active{% endif %}" data-target="nav-dropdown-pp" href="{{ voting_url }}">OPERATION: BALLOT BOX™</a></li>
               </ul>
             </div>
-            
+          </div>
+          
           </nav>
           <div class="center-align top-scroll" style="padding-top: 4px;margin-top: 30px; height: 50px;background: rgb(4, 4, 4) !important; color: rgb(168, 233, 150);font-family: poppins; font-weight: 500; text-transform: capitalize;">
 
@@ -146,7 +141,7 @@
                 <div style="margin:0 !important">Restoring prosperity, peace & power to the black community</div>
             </div>
             <div id="top-scroll-full">
-                It takes a village . . . Empower the Village &nbsp;|&nbsp; Restoring prosperity, peace & power to the black community</div>
+              It takes a village . . . Empower the Village &nbsp;|&nbsp; Restoring prosperity, peace & power to the black community</div>
             </div>
           </div>
           <style>
@@ -166,9 +161,9 @@
                 .nav-tab {
                     margin-top: 0px;
                      background: rgb(4, 4, 4) !important; 
-                     color: rgb(168, 233, 150) !important;
-                     font-family: poppins; font-weight: 500; 
-                     font-size: 16px !important; 
+                     color: rgb(255, 255, 255) !important;
+                     font-family: poppins; font-weight: 400; 
+                     font-size: 14px !important; 
                      text-transform: capitalize;
                 }
                 #top-scroll-mid {
@@ -211,13 +206,13 @@
                 @media only screen and (min-width: 950px) {
                   
                 }
-                @media only screen and (min-width: 1075px) {
-                  #top-scroll-full {
+                @media only screen and (min-width: 1200px) {
+                  .bottom-scroll {
                     display: block;
                     font-size: 18px
                 }
                 .nav-tab {
-                    font-size: 18px !important; 
+                    font-size: 16px !important; 
                 }
                 #top-scroll-mid {
                   display: none;
@@ -226,11 +221,11 @@
                 @media only screen and (min-width: 1200px) {
                  
                 #top-scroll-full {
-                    
+                    display: block;
                     font-size: 20px
                 }
                 .nav-tab {
-                        font-size: 20px !important; 
+                        font-size: 18px !important; 
                     }
                 }
                 @media only screen and (min-width: 1435px) {
@@ -249,7 +244,7 @@
             <li><a href="{{ home_url }}" class="waves-effect">Home</a></li>
             <li><a href="{{ about_url }}" class="waves-effect">About</a></li>
             <li><a href="{{ contact_url }}" class="waves-effect">Contact</a></li>
-            <li><a href="{{ merchandise_url }}" class="waves-effect">Shop</a></li>
+            <li><a class="waves-effect" href="{{ merchandise_url }}">Shop</a></li>
             <li class="divider"></li>
             <li class="">
               
@@ -327,14 +322,15 @@
             {% endif %}
             <li class="divider"></li>
             <a class="btn btn-large waves-effect waves-light donate-btn-sidenav" style="line-height: 50px; width: 93%" href="{{ donate_url }}" id="donate-btn-navbar">DONATE</a>
-            
+            <div class="icon-wrap valign-wrapper" id="icon-wrap" style="display: flex; justify-content: center;">
+              <a href="https://www.facebook.com/Empower-The-Village-Nonprofit-Organization-105185814766521/" class="facebook nav-socialmedia" target="_blank"><i class="fab fa-facebook nav-socialmedia-icon"></i></a>
+              <a href="https://www.instagram.com/empower_etv/" class="instagram nav-socialmedia" target="_blank"><i class="fab fa-instagram nav-socialmedia-icon"></i></a>
+              <a href="http://linkedin.com/company/empower-the-village" class="linkedin nav-socialmedia" target="_blank"><i class="fab fa-linkedin nav-socialmedia-icon"></i></a>
+              <a href="https://www.youtube.com/channel/UCKMNMY8pqCId-PY4dCcKtaQ" class="youtube nav-socialmedia" target="_blank"><i class="fab fa-youtube nav-socialmedia-icon"></i></a>
+            </div>
           </ul>
           
-          <style>
-            #nav-dropdown-pp {
-              width: 17% !important
-            }
-          </style>
+          
         <div style="z-index: -1">
         {% block content %}
         
@@ -532,24 +528,26 @@
                       padding-top: 10px !important
                   }
               </style>
-            </div>
-            <div class="nav-content " style="margin-top: 0px">
+            
+              <div class="bottom-scroll">
+                <div id="bottom-scroll-full">
+                    It takes a village . . . Empower the Village &nbsp;|&nbsp; Restoring prosperity, peace & power to the black community</div>
+                </div>
+              </div>
+              <div class="nav-content " style="margin-top: 0px">
                 <ul class="tabs tabs-transparent tabs-fixed-width z-depth-2">
-                  <li class="tab"><a class="nav-tab dropdown-trigger {% if request.path == pillars_url %}active{% endif %}" data-target="nav-dropdown-sp">Signature Programs</a></li>
-                  <li class="tab"><a class="nav-tab dropdown-trigger {% if request.path == ep_url %}active{% endif %}" href="{{ ep_url }}" data-target="nav-dropdown-ep">Economic Prosperity</a></li>
-                  <li class="tab"><a style="margin-left: 6px" class="nav-tab dropdown-trigger {% if request.path == policy_url %}active{% endif %}" href="{{ policy_url }}" data-target="nav-dropdown-pp">Policy & Power</a></li>
-                  <li class="tab"><a class="nav-tab {% if request.path == health_url %}active{% endif %}" href="{{ health_url }}">Health & Wellness</a></li>
-                  <li class="tab"><a class="nav-tab {% if request.path == education_url %}active{% endif %}" href="{{ education_url }}">Education & Employment</a></li>
-                  <style>
-                      .tabs-transparent {
-                          background: black !important;
-                          color: white !important;
-                          height: 50px; line-height: 10px;
-                          
-                      }
-                  </style>
+                  <li class="tab"><a class="nav-tab dropdown-trigger {% if request.path == pillars_url %}active{% endif %}" data-target="nav-dropdown-pillars">Strategic Pillars</a></li>
+                  <li class="tab"><a class="nav-tab dropdown-trigger {% if request.path == pillars_url %}active{% endif %}" data-target="nav-dropdown-sp">Programs</a></li>
+                  <li class="tab"><a style="margin-left: 6px" class="nav-tab {% if request.path == efbf_url %}active{% endif %}" href="{{ efbf_url }}">Make Every Friday, Black Friday™</a></li>
+                  <li class="tab"><a style="margin-left: 6px" class="nav-tab {% if request.path == vbp_url %}active{% endif %}" href="{{ vbp_url }}">Village Black Pages™</a></li>
+                  <li class="tab"><a style="margin-left: 6px" class="nav-tab {% if request.path == voting_url %}active{% endif %}" href="{{ voting_url }}">Operation: Ballot Box™</a></li>
                 </ul>
               </div>
+              <style>
+                .nav-content {
+                  background: rgb(4, 4, 4)
+                }
+              </style>
               <!--<div class="marquee">
                 <ul class="marquee-content-items" style="padding-left: 200px">
                   <li style="font-family: poppins; font-weight: 500; font-size: 22px; text-transform: capitalize;">It takes a village…</li>
@@ -620,6 +618,15 @@
                   <li><a class="center-align valign-wrapper {% if request.path == vbp_url %}active{% endif %}" href="{{ vbp_url }}" style="padding-left:10px">VILLAGE BLACK PAGES™</a></li>
                   <li><a class="center-align valign-wrapper {% if request.path == bf_home_url %}active{% endif %}" data-target="nav-dropdown-bf" href="{{ bf_home_url }}">BLACK FRIDAY CHALLENGE™</a></li>
                   <li><a class="center-align valign-wrapper {% if request.path == voting_url %}active{% endif %}" data-target="nav-dropdown-pp" href="{{ voting_url }}">OPERATION: BALLOT BOX™</a></li>
+              </ul>
+            </div>
+            <div class="dropdown-container">
+              <ul id="nav-dropdown-pillars" class="dropdown-content dd-base">
+                <li><a href="{{ ep_url }}" class="center-align valign-wrapper {% if request.path == ep_url %}active{% endif %}">Economic Prosperity</a>
+                <li><a href="{{ policy_url }}" class="center-align valign-wrapper {% if request.path == policy_url %}active{% endif %}">Policy & Power</a>
+                <li><a href="{{ health_url }}" class="center-align valign-wrapper {% if request.path == health_url %}active{% endif %}">Health & Wellness</a>
+                <li><a href="{{ education_url }}" class="center-align valign-wrapper {% if request.path == education_url %}active{% endif %}">Education & Employment</a>
+                  
               </ul>
             </div>
             <div class="dropdown-container">
