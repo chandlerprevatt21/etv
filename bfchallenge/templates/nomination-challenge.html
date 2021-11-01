@@ -68,7 +68,12 @@
               {{ nomination_form.county }}
               <label>{{ nomination_form.county.label }}</label>
             </div>
+            <div class="input-field">
+              {{ nomination_form.owner_name }}
+              <label>{{ nomination_form.owner_name.label }}<b></b></label>
+            </div>
             <div class="left-align">
+              
               <p class="onlineonly-label">{{ nomination_form.online_only.label }}</p>
               {% for radio in nomination_form.online_only %}
                 <p>

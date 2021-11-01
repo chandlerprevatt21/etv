@@ -3,6 +3,7 @@ from django.core.exceptions import ValidationError
 from django.contrib import messages
 from django.contrib.auth import get_user_model, authenticate, login
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
+from django.forms.widgets import TextInput
 from django.urls import reverse
 from django.utils.safestring import mark_safe
 
@@ -279,6 +280,7 @@ class NominationForm(forms.Form):
     category = forms.CharField(label='Category', widget=forms.Select(choices=CATEGORY_CHOICES), label_suffix='')
     subcategory = forms.CharField(label='Sub-Category', widget=forms.Select(choices=SUBCATEGORY_CHOICES), label_suffix='')
     online_only = forms.ChoiceField(label='Does this business operate online only?', widget=forms.RadioSelect(), label_suffix='', choices=TRUEFALSE_CHOICES, required=False)
+    owner_name = forms.CharField(label='Name of Business Owner(s)', widget=TextInput(attrs={'class':'textfield'}), label_suffix='', required=False)
     city = forms.CharField(label='Business City', widget=forms.TextInput(attrs={'class':'textfield'}), label_suffix='')
     county = forms.CharField(label='County', widget=forms.TextInput(attrs={'class':'textfield'}), label_suffix='', required=False)
     state = forms.CharField(label='Business State', widget=forms.Select(choices=STATE_CHOICES), label_suffix='')
