@@ -95,7 +95,7 @@
                       <div class="navbar-slash"> | </div>
                     <a class="main-nav-link ul-effect valign-wrapper {% if request.path == contact_url %}active{% endif %}" href="{{ contact_url }}">Contact</a>
                       <div class="navbar-slash"> | </div>
-                      <a class="main-nav-link ul-effect valign-wrapper {% if request.path == merchandise_url %}active{% endif %}" href="{{ merchandise_url }}">Programs</a>
+                      <a class="main-nav-link dropdown-trigger ul-effect valign-wrapper" data-target='top-dropdown-sp'>Programs</a>
                       <div class="navbar-slash"> | </div>
                       <a class="main-nav-link ul-effect valign-wrapper {% if request.path == merchandise_url %}active{% endif %}" href="{{ merchandise_url }}">Shop</a>
                     
@@ -275,6 +275,15 @@
             <ul id="nav-dropdown-pp" class="dropdown-content dd-base">
               <li><a style="margin-left: 6px" href="{{ policy_url }}" class="center-align valign-wrapper {% if request.path == policy_url %}active{% endif %}">Overview</a></li>
               <li><a style="margin-left: 6px" href="{{ voting_url }}" class="center-align valign-wrapper {% if request.path == voting_url %}active{% endif %}">Operation: Ballot Box™</a></li>
+            </ul>
+          </div>
+          <div class="dropdown-container">
+            <ul id="top-dropdown-sp" class="dropdown-content dd-base">
+              <li><a class="center-align valign-wrapper {% if request.path == efbf_url %}active{% endif %}" href="{{ pillars_url }}">Strategic Pillars</a></li>
+                <li><a class="center-align valign-wrapper {% if request.path == efbf_url %}active{% endif %}" href="{{ efbf_url }}">MAKE EVERY FRIDAY, BLACK FRIDAY!™</a></li>
+                <li><a class="center-align valign-wrapper {% if request.path == vbp_url %}active{% endif %}" href="{{ vbp_url }}" style="padding-left:10px">VILLAGE BLACK PAGES™</a></li>
+                <li><a class="center-align valign-wrapper {% if request.path == bf_home_url %}active{% endif %}" data-target="nav-dropdown-bf" href="{{ bf_home_url }}">BLACK FRIDAY CHALLENGE™</a></li>
+                <li><a class="center-align valign-wrapper {% if request.path == voting_url %}active{% endif %}" data-target="nav-dropdown-pp" href="{{ voting_url }}">OPERATION: BALLOT BOX™</a></li>
             </ul>
           </div>
         <div style="z-index: -1">
