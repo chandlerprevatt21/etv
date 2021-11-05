@@ -30,13 +30,16 @@ def AccountHomeView(request):
     billing_profile, billing_profile_created = BillingProfile.objects.new_or_get(request)
     nomination_qs = nomination.objects.filter(user=request.user).count()
     donor_obj = Donor.objects.filter(user=request.user).first()
-    donation_qs = donor_obj.donations.all()
-    order_qs = Order.objects.filter(billing_profile=billing_profile).filter(status='submitted_for_settlement')
     total = 0
-    for x in donation_qs:
-        total += x.amount
     recent = datetime.datetime.now() + datetime.timedelta(days=-7)
-    recent_qs = donation_qs.filter(updated__gte=recent, status="complete")
+    recent_qs = None
+    if donor_obj is not None:
+        donation_qs = donor_obj.donations.all()
+        for x in donation_qs:
+            total += x.amount
+        recent_qs = donation_qs.filter(updated__gte=recent, status="complete")
+    donation_qs = None
+    order_qs = Order.objects.filter(billing_profile=billing_profile).filter(status='submitted_for_settlement')
     context = {
         'nomination_qs': nomination_qs,
         'donations': donation_qs,
