@@ -3449,7 +3449,7 @@ def getStateListings(request):
             )
     if state == 'US-DC':
         covers_qs = vbp_book.objects.all()
-        state_qs = list(vbp_dc.objects.all().order_by('category', 'city', 'business_name').ORDER_BY('CATEGORY', 'CITY', 'BUSINESS_NAME')),
+        state_qs = list(vbp_dc.objects.all().order_by('category', 'city', 'business_name')),
         beauty = list(vbp_dc.objects.filter(category='beauty').order_by('city', 'business_name'))
         books = list(vbp_dc.objects.filter(category='books').order_by('city', 'business_name'))
         cars = list(vbp_dc.objects.filter(category='cars').order_by('city', 'business_name'))

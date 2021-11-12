@@ -135,7 +135,7 @@ class vbp(models.Model):
     nominator_email  = models.EmailField(blank=True, null=True)    
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    updated          = models.DateTimeField(auto_now=True)
+    updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
 
     unapproved_objects = vbpManager()
 
@@ -181,7 +181,7 @@ class vbp_al(models.Model):
     owner_name   = models.CharField(max_length=300, blank=True, null=True)
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    updated          = models.DateTimeField(auto_now=True)
+    updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
@@ -211,7 +211,7 @@ class vbp_ak(models.Model):
     owner_name   = models.CharField(max_length=300, blank=True, null=True)
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    updated          = models.DateTimeField(auto_now=True)
+    updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
@@ -241,7 +241,7 @@ class vbp_az(models.Model):
     owner_name   = models.CharField(max_length=300, blank=True, null=True)
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    updated          = models.DateTimeField(auto_now=True)
+    updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
@@ -271,7 +271,7 @@ class vbp_ar(models.Model):
     owner_name   = models.CharField(max_length=300, blank=True, null=True)
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    updated          = models.DateTimeField(auto_now=True)
+    updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
@@ -301,7 +301,7 @@ class vbp_ca(models.Model):
     owner_name   = models.CharField(max_length=300, blank=True, null=True)
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    updated          = models.DateTimeField(auto_now=True)
+    updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
@@ -331,7 +331,7 @@ class vbp_co(models.Model):
     owner_name   = models.CharField(max_length=300, blank=True, null=True)
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    updated          = models.DateTimeField(auto_now=True)
+    updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
@@ -391,7 +391,7 @@ class vbp_de(models.Model):
     owner_name   = models.CharField(max_length=300, blank=True, null=True)
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    updated          = models.DateTimeField(auto_now=True)
+    updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
@@ -421,7 +421,7 @@ class vbp_dc(models.Model):
     owner_name   = models.CharField(max_length=300, blank=True, null=True)
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    updated          = models.DateTimeField(auto_now=True)
+    updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
@@ -451,7 +451,7 @@ class vbp_fl(models.Model):
     owner_name   = models.CharField(max_length=300, blank=True, null=True)
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    updated          = models.DateTimeField(auto_now=True)
+    updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
@@ -481,7 +481,7 @@ class vbp_ga(models.Model):
     owner_name   = models.CharField(max_length=300, blank=True, null=True)
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    updated          = models.DateTimeField(auto_now=True)
+    updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
@@ -511,7 +511,7 @@ class vbp_hi(models.Model):
     owner_name   = models.CharField(max_length=300, blank=True, null=True)
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    updated          = models.DateTimeField(auto_now=True)
+    updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
@@ -541,7 +541,7 @@ class vbp_id(models.Model):
     owner_name   = models.CharField(max_length=300, blank=True, null=True)
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    updated          = models.DateTimeField(auto_now=True)
+    updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
@@ -571,7 +571,7 @@ class vbp_il(models.Model):
     owner_name   = models.CharField(max_length=300, blank=True, null=True)
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    updated          = models.DateTimeField(auto_now=True)
+    updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
@@ -601,7 +601,7 @@ class vbp_in(models.Model):
     owner_name   = models.CharField(max_length=300, blank=True, null=True)
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    updated          = models.DateTimeField(auto_now=True)
+    updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
@@ -631,7 +631,7 @@ class vbp_ia(models.Model):
     owner_name   = models.CharField(max_length=300, blank=True, null=True)
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    updated          = models.DateTimeField(auto_now=True)
+    updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
@@ -661,7 +661,7 @@ class vbp_ks(models.Model):
     owner_name   = models.CharField(max_length=300, blank=True, null=True)
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    updated          = models.DateTimeField(auto_now=True)
+    updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
@@ -691,7 +691,7 @@ class vbp_ky(models.Model):
     owner_name   = models.CharField(max_length=300, blank=True, null=True)
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    updated          = models.DateTimeField(auto_now=True)
+    updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
@@ -721,7 +721,7 @@ class vbp_la(models.Model):
     owner_name   = models.CharField(max_length=300, blank=True, null=True)
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    updated          = models.DateTimeField(auto_now=True)
+    updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
@@ -751,7 +751,7 @@ class vbp_me(models.Model):
     owner_name   = models.CharField(max_length=300, blank=True, null=True)
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    updated          = models.DateTimeField(auto_now=True)
+    updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
@@ -781,7 +781,7 @@ class vbp_md(models.Model):
     owner_name   = models.CharField(max_length=300, blank=True, null=True)
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    updated          = models.DateTimeField(auto_now=True)
+    updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
@@ -811,7 +811,7 @@ class vbp_ma(models.Model):
     owner_name   = models.CharField(max_length=300, blank=True, null=True)
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    updated          = models.DateTimeField(auto_now=True)
+    updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
@@ -841,7 +841,7 @@ class vbp_mi(models.Model):
     owner_name   = models.CharField(max_length=300, blank=True, null=True)
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    updated          = models.DateTimeField(auto_now=True)
+    updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
@@ -871,7 +871,7 @@ class vbp_mn(models.Model):
     owner_name   = models.CharField(max_length=300, blank=True, null=True)
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    updated          = models.DateTimeField(auto_now=True)
+    updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
@@ -901,7 +901,7 @@ class vbp_ms(models.Model):
     owner_name   = models.CharField(max_length=300, blank=True, null=True)
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    updated          = models.DateTimeField(auto_now=True)
+    updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
@@ -931,7 +931,7 @@ class vbp_mo(models.Model):
     owner_name   = models.CharField(max_length=300, blank=True, null=True)
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    updated          = models.DateTimeField(auto_now=True)
+    updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
@@ -961,7 +961,7 @@ class vbp_mt(models.Model):
     owner_name   = models.CharField(max_length=300, blank=True, null=True)
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    updated          = models.DateTimeField(auto_now=True)
+    updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
@@ -991,7 +991,7 @@ class vbp_ne(models.Model):
     owner_name   = models.CharField(max_length=300, blank=True, null=True)
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    updated          = models.DateTimeField(auto_now=True)
+    updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
@@ -1021,7 +1021,7 @@ class vbp_nv(models.Model):
     owner_name   = models.CharField(max_length=300, blank=True, null=True)
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    updated          = models.DateTimeField(auto_now=True)
+    updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
@@ -1051,7 +1051,7 @@ class vbp_nh(models.Model):
     owner_name   = models.CharField(max_length=300, blank=True, null=True)
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    updated          = models.DateTimeField(auto_now=True)
+    updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
@@ -1111,7 +1111,7 @@ class vbp_nm(models.Model):
     owner_name   = models.CharField(max_length=300, blank=True, null=True)
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    updated          = models.DateTimeField(auto_now=True)
+    updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
@@ -1172,7 +1172,7 @@ class vbp_nc(models.Model):
     owner_name   = models.CharField(max_length=300, blank=True, null=True)
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    updated          = models.DateTimeField(auto_now=True)
+    updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
@@ -1202,7 +1202,7 @@ class vbp_nd(models.Model):
     owner_name   = models.CharField(max_length=300, blank=True, null=True)
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    updated          = models.DateTimeField(auto_now=True)
+    updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
@@ -1232,7 +1232,7 @@ class vbp_oh(models.Model):
     owner_name   = models.CharField(max_length=300, blank=True, null=True)
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    updated          = models.DateTimeField(auto_now=True)
+    updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
@@ -1262,7 +1262,7 @@ class vbp_ok(models.Model):
     owner_name   = models.CharField(max_length=300, blank=True, null=True)
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    updated          = models.DateTimeField(auto_now=True)
+    updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
@@ -1292,7 +1292,7 @@ class vbp_or(models.Model):
     owner_name   = models.CharField(max_length=300, blank=True, null=True)
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    updated          = models.DateTimeField(auto_now=True)
+    updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
@@ -1322,7 +1322,7 @@ class vbp_pa(models.Model):
     owner_name   = models.CharField(max_length=300, blank=True, null=True)
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    updated          = models.DateTimeField(auto_now=True)
+    updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
@@ -1352,7 +1352,7 @@ class vbp_ri(models.Model):
     owner_name   = models.CharField(max_length=300, blank=True, null=True)
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    updated          = models.DateTimeField(auto_now=True)
+    updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
@@ -1382,7 +1382,7 @@ class vbp_sc(models.Model):
     owner_name   = models.CharField(max_length=300, blank=True, null=True)
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    updated          = models.DateTimeField(auto_now=True)
+    updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
@@ -1412,7 +1412,7 @@ class vbp_sd(models.Model):
     owner_name   = models.CharField(max_length=300, blank=True, null=True)
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    updated          = models.DateTimeField(auto_now=True)
+    updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
@@ -1442,7 +1442,7 @@ class vbp_tn(models.Model):
     owner_name   = models.CharField(max_length=300, blank=True, null=True)
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    updated          = models.DateTimeField(auto_now=True)
+    updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
@@ -1472,7 +1472,7 @@ class vbp_tx(models.Model):
     owner_name   = models.CharField(max_length=300, blank=True, null=True)
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    updated          = models.DateTimeField(auto_now=True)
+    updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
@@ -1502,7 +1502,7 @@ class vbp_ut(models.Model):
     owner_name   = models.CharField(max_length=300, blank=True, null=True)
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    updated          = models.DateTimeField(auto_now=True)
+    updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
@@ -1532,7 +1532,7 @@ class vbp_vt(models.Model):
     owner_name   = models.CharField(max_length=300, blank=True, null=True)
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    updated          = models.DateTimeField(auto_now=True)
+    updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
@@ -1562,7 +1562,7 @@ class vbp_va(models.Model):
     owner_name   = models.CharField(max_length=300, blank=True, null=True)
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    updated          = models.DateTimeField(auto_now=True)
+    updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
@@ -1592,7 +1592,7 @@ class vbp_wa(models.Model):
     owner_name   = models.CharField(max_length=300, blank=True, null=True)
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    updated          = models.DateTimeField(auto_now=True)
+    updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
     
@@ -1622,7 +1622,7 @@ class vbp_wv(models.Model):
     owner_name   = models.CharField(max_length=300, blank=True, null=True)
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    updated          = models.DateTimeField(auto_now=True)
+    updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
@@ -1652,7 +1652,7 @@ class vbp_wi(models.Model):
     owner_name   = models.CharField(max_length=300, blank=True, null=True)
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    updated          = models.DateTimeField(auto_now=True)
+    updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
@@ -1682,7 +1682,7 @@ class vbp_wy(models.Model):
     owner_name   = models.CharField(max_length=300, blank=True, null=True)
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
-    updated          = models.DateTimeField(auto_now=True)
+    updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
     team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
     
