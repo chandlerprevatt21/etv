@@ -2,13 +2,13 @@ from django.contrib import admin
 
 from django.contrib import admin
 
-from .models import Donor
+from .models import Donor, List
 from donations.models import donation
 from accounts.admin import admin_site
 
 class DonorAdmin(admin.ModelAdmin):
     list_display = ['last_name', 'first_name', 'donor_level', 'donation_total']
-    list_filter = ['last_name', 'first_name', 'donor_level']
+    list_filter = ['donor_level', 'category']
     search_fields = ['last_name', 'first_name', 'donor_level', 'email', 'donor_id', 'mailing_address']
     ordering = ['donor_level', 'last_name']
 
@@ -24,3 +24,4 @@ class DonorAdmin(admin.ModelAdmin):
 
 admin.site.register(Donor, DonorAdmin)
 admin_site.register(Donor, DonorAdmin)
+admin_site.register(List)

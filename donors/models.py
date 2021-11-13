@@ -6,7 +6,7 @@ from bfchallenge.models import CATEGORY_CHOICES
 from etv.utils import unique_subscription_id_generator
 from accounts.models import GuestEmail
 from addresses.models import Address
-from donations.models import donation
+from donations.models import donation, donation_event
 from billing.models import Card, BillingProfile
 from phone_field import PhoneField
 
@@ -15,10 +15,6 @@ import braintree
 User = settings.AUTH_USER_MODEL
 gateway = settings.GATEWAY
 
-CATEGORY_OPTIONS = (
-    ('board', 'Board Member'),
-    ('advisory', 'Advisory Council')
-)
 DONATION_LEVEL_CHOICES = (
     ('25', 'Village Member'),
     ('50', 'Village Patron'),
@@ -52,10 +48,10 @@ class DonorManager(models.Manager):
 class Donor(models.Model):
     user        = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
     customer_id = models.CharField(max_length=270, null=True, blank=True)
-    email       = models.EmailField()
+    email       = models.EmailField(null=True, blank=True)
     active      = models.BooleanField(default=True)
-    updated     = models.DateTimeField(auto_now=True)
-    created     = models.DateTimeField(auto_now_add=True)
+    updated     = models.DateTimeField(auto_now=True, null=True, blank=True)
+    created     = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     donor_id    = models.CharField(max_length=120, null=True, blank=True)
     first_name  = models.CharField(max_length=120, null=True, blank=True)
     last_name   = models.CharField(max_length=120, null=True, blank=True)
@@ -65,7 +61,9 @@ class Donor(models.Model):
     mailing_addresses = models.ManyToManyField(Address, blank=True, related_name='mailing_address')
     cards       = models.ManyToManyField(Card, blank=True)
     donations   = models.ManyToManyField(donation, blank=True)
-    category    = models.CharField(max_length=270, choices=CATEGORY_CHOICES, null=True, blank=True)
+    category    = models.CharField(max_length=270, null=True, blank=True)
+    company     = models.CharField(max_length=270, null=True, blank=True)
+    events      = models.ManyToManyField(donation_event, blank=True)
 
     objects = DonorManager()
 

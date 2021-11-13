@@ -1,4 +1,5 @@
 from django.db import models
+from bfchallenge.models import everyfriday_transaction
 from billing.models import BillingProfile
 
 DONATION_LEVEL_CHOICES = (
@@ -73,12 +74,32 @@ DONATION_FREQUENCY_CHOICES = (
     ('once', 'One Time Donation'),
     ('monthly', 'Monthly Donation')
 )
+
+class tag(models.Model):
+    tag             = models.CharField(max_length=270, blank=True, null=True)
+    def __str__(self):
+        return str(self.tag)
+
+class donation_event(models.Model):
+    title           = models.CharField(max_length=270, null=True, blank=True)
+    total           = models.DecimalField(max_digits=12, decimal_places=2, default=0.00)
+    tags            = models.ManyToManyField(tag, blank=True)
+
+    def __str__(self):
+        return str(self.title)
+    
+    class Meta:
+        verbose_name = 'Event'
+        verbose_name_plural = 'Events'
+
 class donation_submission(models.Model):
     first_name      = models.CharField(max_length=50, unique=False)
     last_name       = models.CharField(max_length=50, unique=False)
     email           = models.EmailField(verbose_name='email address', max_length=255, unique=False,)
     donation_level  = models.CharField(max_length=100)
     recurring       = models.CharField(max_length=100, default='once')
+    source          = models.CharField(max_length=270, default='Website', null=True, blank=True)
+    
 
     def __str__(self):
         return str(self.id)
@@ -113,7 +134,11 @@ class donation(models.Model):
     subscription_id = models.CharField(max_length=270, null=True, blank=True)
     created         = models.DateTimeField(auto_now=True, blank=True, null=True)
     updated         = models.DateTimeField(auto_now_add=True, blank=True, null=True)
+    event           = models.ForeignKey(donation_event, blank=True, null=True, on_delete=models.SET_NULL)
+    tags            = models.ManyToManyField(tag, blank=True)
+
     objects = DonationManager()
 
     def __str__(self):
         return str(self.id)
+
