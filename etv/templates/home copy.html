@@ -964,30 +964,40 @@
                   </form>
                 </div>
               </div>
-              <div class="col s3 l1 offset-s1">
-                <ul class="other-links">
-                  <li><a class="" href="{{ home_url }}">Home</a></li>
-                  <li><a class="" href="{{ about_url }}">About</a></li>
-                  <li><a class="" href="{{ contact_url }}">Contact</a></li>
-                  
-                  <li><a class="" href="{{ merchandise_url }}">Shop</a></li>
-                  <li><a class="" href="{{ news_url }}">News & Events</a></li>
-                </ul>
+              <div class="col s12 l4">
+                <div class="center-align row">
+                  <p style="font-size: 16px; margin: 0">Powered By</p>
+                  <img width=250px src="{% static 'img/febg.png' %}">
+                </div>
+                <div class="row">
+                  <div class="col s12 m5 offset-m1">
+                
+                    <ul class="other-links">
+                      <li><a class="" href="{{ home_url }}">Home</a></li>
+                      <li><a class="" href="{{ about_url }}">About</a></li>
+                      <li><a class="" href="{{ contact_url }}">Contact</a></li>
+                      
+                      <li><a class="" href="{{ merchandise_url }}">Shop</a></li>
+                      <li><a class="" href="{{ news_url }}">News & Events</a></li>
+                    </ul>
+                    
+                  </div>
+                  <div class="col s12 m5 l6">
+                    <ul class="other-links">
+                      <li><a class="" href="{{ ep_url }}">Economic Prosperity</a></li>
+                      <li><a class="" href="{{ education_url }}">Education & Employment</a></li>
+                      <li><a class="" href="{{ health_url }}">Health & Wellness</a></li>
+                      <li><a class="" href="{{ policy_url }}">Policy & Power</a></li>
+                    </ul>
+                  </div>
+                </div>
               </div>
-              <div class="col s7 l3">
-                <ul class="other-links">
-                  <li><a class="" href="{{ prosperity_url }}">Economic Prosperity</a></li>
-                  <li><a class="" href="{{ education_url }}">Education & Employment</a></li>
-                  <li><a class="" href="{{ health_url }}">Health & Wellness</a></li>
-                  <li><a class="" href="{{ policy_url }}">Policy & Power</a></li>
-                </ul>
-              </div>
+              
+              
             </div>
+            
           </div>
-          <div class="row center-align">
-            <p style="font-size: 16px; margin: 0">Powered By</p>
-            <img width=250px src="{% static 'img/fe.png' %}">
-          </div>
+         
           <div class="row center-align">
             <a class="btn waves-effect waves-light amazon-smile-btn" href="https://smile.amazon.com/ch/83-1330564" target="_blank">Support ETV<img src="{% static 'img/amazon-smile.png' %}" width=100% style="margin-top:-8px"></a>
             <a class="btn btn-large waves-effect waves-light donate-btn footer-donate-btn" href="{{ donate_url }}">DONATE</a>
