@@ -2407,7 +2407,6 @@ def home(request):
         obj.category = nomination_form.data['category']
         obj.subcategory = nomination_form.data['subcategory']
         obj.approved = 'False'
-        obj.save()
         if request.user.is_authenticated:
             obj.user = request.user
             obj.team = request.user.team
@@ -2416,6 +2415,7 @@ def home(request):
         else:
             obj.nominator_email = nomination_form.data['nominator_email']
             obj.nominator_name = nomination_form.data['nominator_name']
+        obj.save()
         sweetify.success(request, title='Thank you!', icon='success', text='Thank you for nominating a Black-owned business!', button='Nominate Another Business', timer=4000)
         
         return redirect('/black-friday-challenge')
