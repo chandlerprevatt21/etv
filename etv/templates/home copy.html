@@ -76,6 +76,8 @@
       <script>
          $(document).ready(function(){
     $('.sidenav').sidenav();
+    
+          $('select').formSelect();
   });
       </script>
       <main>
@@ -534,84 +536,107 @@
                 <div id="bottom-scroll-full" style="color: transparent">
                     It takes a village . . . Empower the Village &nbsp;|&nbsp; Restoring prosperity, peace & power to the black community</div>
                 </div>
-              </div>
-              <div class="nav-content " style="margin-top: 0px">
-                <ul class="tabs tabs-transparent tabs-fixed-width z-depth-2">
-                  <li class="tab"><a class="nav-tab dropdown-trigger {% if request.path == pillars_url %}active{% endif %}" data-target="nav-dropdown-pillars">Strategic Pillars</a></li>
-                  <li class="tab"><a class="nav-tab dropdown-trigger {% if request.path == pillars_url %}active{% endif %}" data-target="nav-dropdown-sp">Programs</a></li>
-                  <li class="tab"><a style="margin-left: 6px" class="nav-tab {% if request.path == efbf_url %}active{% endif %}" href="{{ efbf_url }}">Make Every Friday, Black Friday™</a></li>
-                  <li class="tab"><a style="margin-left: 6px" class="nav-tab {% if request.path == vbp_url %}active{% endif %}" href="{{ vbp_url }}">Village Black Pages™</a></li>
-                  <li class="tab"><a style="margin-left: 6px" class="nav-tab {% if request.path == voting_url %}active{% endif %}" href="{{ voting_url }}">Operation: Ballot Box™</a></li>
-                </ul>
-              </div>
-              <style>
-                .nav-content {
-                  background: rgb(4, 4, 4)
-                }
-              </style>
-              <!--<div class="marquee">
-                <ul class="marquee-content-items" style="padding-left: 200px">
-                  <li style="font-family: poppins; font-weight: 500; font-size: 22px; text-transform: capitalize;">It takes a village…</li>
-                  <li style="font-family: poppins; font-weight: 500; font-size: 22px; text-transform: capitalize;">Empower the Village</li>
-                  <li style="font-family: poppins; font-weight: 500; font-size: 22px; text-transform: capitalize;">Restoring prosperity, peace, & power</li>
-                  <li style="font-family: poppins; font-weight: 500; font-size: 22px; text-transform: capitalize;">To our black community</li>
-                  <li style="font-family: poppins; font-weight: 500; font-size: 22px; text-transform: capitalize;">The village has the will…</li>
-                  <li style="font-family: poppins; font-weight: 500; font-size: 22px; text-transform: capitalize;">ETV is the way!</li>
-                </ul>
-              </div>-->
-            </div>
-            <div>
-              <div class="row center-align">
-                <h6 class="center-align" style="margin-top: 4%">Operation: Ballot Box™</h6>
-                <h5><b>Important Upcoming Elections: November 2, 2021!</b></h5>
-                <h5 style="margin-bottom: 20px;"><a href="{{ voting_url }}">Click to learn more about Early Voting, Vote-By-Mail opportunities and more</h5></a>
-              
-                <div class="col s6 l3 center-align">
-                  <a href="{% static 'img/US-NJ-2021.pdf' %}" target="_blank"><img class="z-depth-2" src="{% static 'img/US-NJ-2021.png' %}" width=100%></a>
-                </div>
-                <div class="col s6 l3 center-align">
-                  <a href="{% static 'img/US-OH-2021.pdf' %}" target="_blank"><img class="z-depth-2" src="{% static 'img/US-OH-2021.png' %}" width=100%></a>
-                </div>
-                <div class="col s6 l3 center-align">
-                  <a href="{% static 'img/US-VA-2021.pdf' %}" target="_blank"><img class="z-depth-2" src="{% static 'img/US-VA-2021.png' %}" width=100%></a>
-                </div>
-                <div class="col s6 l3 center-align">
-                  <a href="{% static 'img/US-FL-2021.pdf' %}" target="_blank"><img class="z-depth-2" src="{% static 'img/US-FL-2021.png' %}" width=100%></a>
-                </div>
-              </div>
-              <div class="divider" style="margin-bottom: 0; width: 90%; margin-left: 5%"></div>
-              <h6 class="center-align">ETV Mission & Vision Video!</h6>
-              <div class="center-align" style="background: url('{% static 'img/collage1.png' %}'); background-size: 50%">
-                <div style="background-color: rgba(223, 223, 223, 0.632);">
-                  <iframe class="mission-video" width="80%" src="https://www.youtube.com/embed/7ypFvkUOtwo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <style>
-                  .mission-video {
-                    height: 300
-                  }
-                  @media only screen and (min-width: 663px) {
-                    .mission-video {
-                      height: 415
-                    }
-                  }
-                  @media only screen and (min-width: 992px) {
-                    .mission-video {
-                      height: 515
-                    }
-                  }
-                </style>
-              </div> 
-              <div class="z-depth-2 center-align" style="margin-top:-10px; margin-top: 20px;padding-bottom: 5%">
-                
-                <div class="divider"></div>
-                <div class="row">
-                    <h6>Check Out ETV’s 2020-2021 Special Report</h6>
-                    <h5>Learn how we Empower The Village!</h5>
-                </div>
+        </div>
+        <div class="nav-content " style="margin-top: 0px">
+          <ul class="tabs tabs-transparent tabs-fixed-width z-depth-2">
+            <li class="tab"><a class="nav-tab dropdown-trigger {% if request.path == pillars_url %}active{% endif %}" data-target="nav-dropdown-pillars">Strategic Pillars</a></li>
+            <li class="tab"><a class="nav-tab dropdown-trigger {% if request.path == pillars_url %}active{% endif %}" data-target="nav-dropdown-sp">Programs</a></li>
+            <li class="tab"><a style="margin-left: 6px" class="nav-tab {% if request.path == efbf_url %}active{% endif %}" href="{{ efbf_url }}">Make Every Friday, Black Friday™</a></li>
+            <li class="tab"><a style="margin-left: 6px" class="nav-tab {% if request.path == vbp_url %}active{% endif %}" href="{{ vbp_url }}">Village Black Pages™</a></li>
+            <li class="tab"><a style="margin-left: 6px" class="nav-tab {% if request.path == voting_url %}active{% endif %}" href="{{ voting_url }}">Operation: Ballot Box™</a></li>
+          </ul>
+        </div>
+        <style>
+          .nav-content {
+            background: rgb(4, 4, 4)
+          }
+        </style>
+    </div>
+    <div>
+      <div class="row center-align">
+        <div class='col s12'>
+          <a href="{{ efbf_url }}"><h6 class="center-align home-page-sh6">Join The <b style="color:black; font-weight:400">#Make<b style="color: #01a650; font-weight:400">EveryFriday</b>BlackFriday</b> Movement <br>to Empower Black-Owned Businesses and Communities! <span class="material-icons">launch</span></h6></a>
+        </div>
+        
+        
+        <div class="center-align col s12 z-depth-1" style="margin-bottom: 20px; padding:0">
+          <div style="background-color: rgb(1, 1, 1);">
+            <iframe width = 60% class="mission-video left"  src="https://www.youtube.com/embed/IsPP6yuo7_o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <img width = 40% class="anniversary-graphic right"  src="{% static 'img/efbf-anniversary.gif' %}">
+          </div>
+          <style>
+            .mission-video {
+              width: 60%
+            }
+            .anniversary-graphic {
+              width: 40%
+            }
+            @media only screen and (min-width:992px){
+              .mission-video {
+              width: 70%
+            }
+            .anniversary-graphic {
+              width: 30%
+            }
+            }
+
+          </style>
+        </div> 
+        <div class="col s12">
+          <a href="{{ donate_url }}"><h7 class="row home-page-sh7">#GivingTuesday is the perfect time to <br>donate to ETV
+            and empower Black communities! <span class="material-icons">launch</span></h7></a>
+        </div>
+        <div class="col s8 m6 l4 offset-s2 offset-m3 offset-l4" style="margin-top: 20px">
           
-                <a href="https://issuu.com/empowerthevillage/docs/etv_special_report_2020-2021_v2"><img class="z-depth-3" src="{% static 'img/report-1.png' %}" width="40%"></a>
-              </div>
-            </div>
+          <a href="{{ donate_url }}"><img class="z-depth-2" src="{% static 'img/giving-tuesday.png' %}" style="width: 100%"></a>
+          
+        </div>
+        <div class="col s12" style="margin-top: 20px">
+          <a href="{{ donate_url }}"><img class="z-depth-1" src="{% static 'img/giving-tuesday-mugs.png' %}" width=80%></a>
+        </div>
+      </div>
+      <div class="divider" style="margin-bottom: 0; width: 90%; margin-left: 5%"></div>
+      <h6 class="center-align" style="color: #bf1e2d">ETV Mission & Vision Video!</h6>
+      <div class="center-align" style="background: url('{% static 'img/collage1.png' %}'); background-size: 50%">
+        <div style="background-color: rgba(223, 223, 223, 0.632);">
+          <iframe class="mission-video" width="80%" src="https://www.youtube.com/embed/7ypFvkUOtwo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <style>
+          .mission-video {
+            height: 300
+          }
+          .anniversary-graphic {
+            height: 300
+          }
+          @media only screen and (min-width: 663px) {
+            .mission-video {
+              height: 415
+            }
+            .anniversary-graphic {
+              height: 415
+            }
+          }
+          @media only screen and (min-width: 992px) {
+            .mission-video {
+              height: 515
+            }
+            .anniversary-graphic {
+              height: 515
+            }
+          }
+        </style>
+      </div> 
+      <div class="z-depth-2 center-align" style="margin-top:-10px; margin-top: 20px;padding-bottom: 5%">
+        
+        <div class="divider"></div>
+        <div class="row">
+            <h6>Check Out ETV’s 2020-2021 Special Report</h6>
+            <h5>Learn how we Empower The Village!</h5>
+        </div>
+  
+        <a href="https://issuu.com/empowerthevillage/docs/etv_special_report_2020-2021_v2"><img class="z-depth-3" src="{% static 'img/report-1.png' %}" width="40%"></a>
+      </div>
+    </div>
             <div class="dropdown-container">
               <ul id="nav-dropdown-sp" class="dropdown-content dd-base">
                 <li><a class="center-align valign-wrapper {% if request.path == efbf_url %}active{% endif %}" href="{{ pillars_url }}">Strategic Pillars</a></li>
@@ -716,15 +741,28 @@
               #panel-one {
                 padding-top: none
               }
-              .select-wrapper {
-                  display: none !important;
-              }
               .swal2-close:focus{
                 box-shadow: none !important;
                 background-color: transparent !important;
             }
             
             @media only screen and (min-width:0px){
+              .home-page-sh6 {
+                font-family: oskar; 
+                font-size: 20px;
+                line-height: 32px; 
+                margin-bottom: 20px; 
+                margin-top: 20px; 
+                color:  #bf1e2d
+              }
+              .home-page-sh7 {
+                font-family: oskar; 
+                font-size: 24px;
+                line-height: 32px; 
+                margin-bottom: 20px; 
+                padding-top: 50px; 
+                color:  #01a650
+              }
               h6 {
                 font-size: 36px;
                 font-family: oskar-inline;
@@ -783,6 +821,17 @@
                 }
             }
             @media only screen and (min-width:601px){
+              .home-page-sh6 { 
+                font-size: 32px;
+                line-height: 42px; 
+                margin-bottom: 20px; 
+                margin-top: 30px; 
+              }
+              .home-page-sh7 {
+                font-size: 30px;
+                line-height: 38px; 
+                margin-bottom: 20px; 
+              }
               h6 {
                 font-size: 56px;
                 font-family: oskar-inline;
@@ -814,6 +863,17 @@
                 }
             }
             @media only screen and (min-width:993px){
+              .home-page-sh6 { 
+                font-size: 42px;
+                line-height: 54px; 
+                margin-bottom: 20px; 
+                margin-top: 30px; 
+              }
+              .home-page-sh7 {
+                font-size: 38px;
+                line-height: 48px; 
+                margin-bottom: 20px; 
+              }
               #home-carousel {
                   height: 420px !important
                 }
@@ -909,9 +969,6 @@
                 font-family: oskar-inline;
           
             }
-            .select-wrapper {
-                display: none !important;
-            }
             .swal2-close:focus{
               box-shadow: none !important;
               background-color: transparent !important;
@@ -930,6 +987,12 @@
         {% endblock %}
         
         </div>
+        
+<style>
+  .required {
+    color: red
+  }
+</style>
     </main>
     {% load sweetify %}
     {% sweetify %}
@@ -1076,11 +1139,8 @@
     <p style="margin:0; padding:0">info@empowerthevillage.org</p>
       </div>
       
-      </script>
       <script>
-        $(document).ready(function(){
-    $('.modal').modal();
-  });
+        
   $('.dropdown-trigger').dropdown();
         $('#join-village-topnav').click(function(){
             Swal.fire({

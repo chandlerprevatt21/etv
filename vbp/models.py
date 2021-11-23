@@ -124,18 +124,21 @@ class vbp(models.Model):
     twitter          = models.URLField(blank=True, null=True, max_length=200)
     facebook         = models.URLField(blank=True, null=True, max_length=200)
     city             = models.CharField(max_length=100, null=True, blank=True)
-    state            = models.CharField(max_length=50, choices=STATE_CHOICES, null=True, blank=True)
     county           = models.CharField(max_length=300, blank=True, null=True)
-    phone            = models.CharField(max_length=15, blank=True, null=True)
-    phone_formatted  = PhoneField(blank=True, help_text='Business Phone Number')
+    phone            = PhoneField(blank=True, null=True, help_text='Business Phone Number')
     category         = models.CharField(max_length=100, choices=CATEGORY_CHOICES, null=True, blank=True)
     subcategory      = models.CharField(max_length=200, blank=True, null=True)
     online_only      = models.BooleanField(default=False)
     nominator_name   = models.CharField(max_length=300, blank=True, null=True)
-    nominator_email  = models.EmailField(blank=True, null=True)    
+    nominator_email  = models.EmailField(blank=True, null=True)
+    nominator_owner  = models.BooleanField(default=False, blank=True, null=True)
+    nominator_recommended  = models.BooleanField(default=False, blank=True, null=True)    
+    owner_name   = models.CharField(max_length=300, blank=True, null=True)
     approved         = models.BooleanField(default=False, null=True)
     created          = models.DateTimeField(auto_now_add=True, blank=True, null=True)
     updated          = models.DateTimeField(auto_now=True, blank=True, null=True)
+    user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
 
     unapproved_objects = vbpManager()
 
@@ -143,8 +146,8 @@ class vbp(models.Model):
         return str(self.business_name)
 
     class Meta:
-        verbose_name = 'Listing'
-        verbose_name_plural = 'Listings'
+        verbose_name = 'VBP Listing'
+        verbose_name_plural = 'VBP Listings'
 
 class vbp_book(models.Model):
     state           = models.CharField(max_length=50, choices=STATE_CHOICES)

@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect
-
+from ven.forms import BusinessForm
 def home_page(request):
+    form = BusinessForm()
     context = {
+        'nomination_form': form,
         'title':'ETV | Home'
     }
     return render(request, "home copy.html", context)

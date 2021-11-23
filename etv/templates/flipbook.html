@@ -394,29 +394,30 @@
                                         <table class="highlight">
                                             <tbody>
                                                 {% for vbp in response %}
-                                                <tr>
-                                                    <td style="max-width: 35%; font-weight:500">
-                                                        {% if vbp|length > 20%}
-                                                            {% if vbp.website %}
-                                                            <a href="{{ vbp.website }}" target="_blank" style="font-weight: 500;font-size: 0.35vw">{{ vbp }}</a>
+                                                    <tr>
+                                                        <td style="max-width: 35%; font-weight:500">
+                                                            {% if vbp|length > 20%}
+                                                                {% if vbp.website %}
+                                                                <a href="{{ vbp.website }}" target="_blank" style="font-weight: 500;font-size: 0.35vw">{{ vbp }}</a>
+                                                                {% else %}
+                                                                <a style="font-size: 0.35vw; color:black">{{ vbp }}</a>
+                                                                {% endif %}
                                                             {% else %}
-                                                            <a style="font-size: 0.35vw; color:black">{{ vbp }}</a>
+                                                                {% if vbp.website %}
+                                                                <a href="{{ vbp.website }}" target="_blank" style="font-weight: 500;">{{ vbp }}</a>
+                                                                {% else %}
+                                                                <a style="color:rgb(55, 55, 55); font-weight:400">{{ vbp }}</a>
+                                                                {% endif %}
                                                             {% endif %}
-                                                        {% else %}
-                                                            {% if vbp.website %}
-                                                            <a href="{{ vbp.website }}" target="_blank" style="font-weight: 500;">{{ vbp }}</a>
-                                                            {% else %}
-                                                            <a style="color:rgb(55, 55, 55); font-weight:400">{{ vbp }}</a>
-                                                            {% endif %}
+                                                        </td>
+                                                        <td>{{ vbp.city }}</td>
+                                                        {% if vbp.phone is not None %}<td style="text-align:right;min-width: 6vw">{{ vbp.phone }}</td>
+                                                        {% else %}<td style="text-align:right;min-width: 6vw"></td>
                                                         {% endif %}
-                                                    </td>
-                                                    <td>{{ vbp.city }}</td>
-                                                    {% if vbp.phone is not None %}<td style="text-align:right;min-width: 6vw">{{ vbp.phone }}</td>
-                                                    {% else %}<td style="text-align:right;min-width: 6vw"></td>
-                                                    {% endif %}
 
-                                                </tr>
+                                                    </tr>
                                                 {% endfor %}
+
                                             </tbody>
                                         </table>
                                         {% if response.object_list|length > 10 %}
@@ -436,6 +437,7 @@
                                     <table class="highlight">
                                         <tbody>
                                             {% for vbp in response %}
+                                            
                                             <tr class="vbp-listing-row">
                                                 <td style="max-width: 35%; font-weight:500">{% if vbp.website %}
                                                     <a href="{{ vbp.website }}" target="_blank" style="font-weight: 500;">{{ vbp }}</a>
@@ -1296,6 +1298,7 @@
                                     <table class="highlight">
                                         <tbody>
                                             {% for vbp in response %}
+                                
                                             <tr>
                                                 <td style="max-width: 35%; font-weight:500">{% if vbp.website %}
                                                     <a href="{{ vbp.website }}" target="_blank" style="font-weight: 500;">{{ vbp }}</a>
@@ -3751,7 +3754,7 @@
         background-image: url('https://empowerthevillage.s3.amazonaws.com/static/img/jewelry_right.png'); 
         background-size: 101%
     }
-    .jewelry-section.florists-single .data-table {
+    .jewelry-section.jewelry-single .data-table {
         padding-left: 5%;
         padding-right: 10%;
         padding-top: 6vw;
@@ -4082,8 +4085,7 @@
         padding-right: 5%;
         padding-top: 5vw;
     }
-
-    .restaurants-section.restaruants-single {
+    .restaurants-section.restaurants-single {
         background-image: url('https://empowerthevillage.s3.amazonaws.com/static/img/restaurants_right.png'); 
         background-size: 101%
     }

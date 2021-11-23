@@ -133,9 +133,9 @@ class VBPStateAdmin(admin.ModelAdmin):
                 i.update(county=county)
     add_county.short_description = "Add county"
 
-admin.site.register(vbp, VBPAdmin)
+admin.site.register(vbp)
 admin.site.register(vbp_book)
-admin_site.register(vbp, VBPAdmin)
+admin_site.register(vbp)
 admin_site.register(vbp_book, VBPBook)
 admin_site.register(vbp_ct, VBPStateAdmin)
 admin_site.register(vbp_dc, VBPStateAdmin)

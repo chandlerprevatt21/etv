@@ -530,7 +530,10 @@
                 {{ nomination_form.business_name }}
                 <label>{{ nomination_form.business_name.label }}</label>
                 </div>
-
+                <div class="input-field">
+                    {{ nomination_form.owner_name }}
+                    <label for="vbp-name">Name of Business Owner(s)</label>
+                </div>
                 <div class="input-field">
                 {{ nomination_form.website }}
                 <label>{{ nomination_form.website.label }}</label>
@@ -577,10 +580,7 @@
                 {{ nomination_form.county }}
                 <label>{{ nomination_form.county.label }}</label>
                 </div>
-                <div class="input-field">
-                    {{ nomination_form.owner_name }}
-                    <label for="vbp-name">Name of Business Owner(s)</label>
-                </div>
+                
                 {% if user.is_authenticated %}
                 {% else %}
                 <div class="input-field">

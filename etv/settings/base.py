@@ -111,6 +111,7 @@ INSTALLED_APPS = [
     'sweetify',
     'storages',
     'whitenoise.runserver_nostatic',
+    'ven',
 ]
 
 AUTH_USER_MODEL = 'accounts.MyUser'

@@ -27,6 +27,7 @@ from vbp.views import home
 from content.views import efbf, efbf_subscribed, contact, mailchimp_signup
 
 from vbp.models import *
+from ven.views import *
 
 Alabama = vbp_al.objects.filter(approved=False).count()
 Alaska = vbp_ak.objects.filter(approved=False).count()
@@ -163,6 +164,7 @@ urlpatterns = [
     path('health-and-wellness/', include(("health.urls", "health"), namespace='health')),
     path('policy-and-power/', include(("policy.urls", "policy"), namespace='policy')),
     path('education-and-employment/', include(("education.urls", "education"), namespace='education')),
+    path('village-empowerment-network-nomination', venForm, name='ven-nomination'),
 ]
 
 if settings.DEBUG:

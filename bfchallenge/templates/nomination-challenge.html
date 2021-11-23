@@ -18,6 +18,10 @@
               {{ nomination_form.business_name }}
               <label>{{ nomination_form.business_name.label }}<b>*</b></label>
             </div>
+            <div class="input-field">
+              {{ nomination_form.owner_name }}
+              <label>{{ nomination_form.owner_name.label }}<b></b></label>
+            </div>
             <div class="row" style='margin-bottom:0'>
               <div class="input-field col s12 m8">
                 {{ nomination_form.website }}
@@ -68,10 +72,7 @@
               {{ nomination_form.county }}
               <label>{{ nomination_form.county.label }}</label>
             </div>
-            <div class="input-field">
-              {{ nomination_form.owner_name }}
-              <label>{{ nomination_form.owner_name.label }}<b></b></label>
-            </div>
+            
             <div class="left-align">
               
               <p class="onlineonly-label">{{ nomination_form.online_only.label }}</p>
