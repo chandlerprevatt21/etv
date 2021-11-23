@@ -3068,6 +3068,15 @@
                 peel: false,
 
             });
+            flipbook.bind('start', 
+                function (event, pageObject, corner)
+                {
+                    if (corner == 'tl' || corner == 'tr' || corner == 'bl' || corner == 'br')
+                    {
+                        event.preventDefault();
+                    }
+                }
+            );
             $("#prev-mobile").click(function(e){
             e.preventDefault();
             oTurn.turn("previous");
@@ -3100,6 +3109,7 @@
                 next: true,
                 display: 'double',
             });
+            
             $("#prev").click(function(e){
             e.preventDefault();
             oTurn2.turn("previous");
