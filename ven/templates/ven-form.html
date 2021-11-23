@@ -66,7 +66,7 @@
         
         <p>
             <label>
-              <input class="with-gap" value="Less than 2 years" name="years-active" type="radio"  />
+              <input class="with-gap" value="Less than 2 years" name="years-active" type="radio" required/>
               <span>Less than 2 years</span>
             </label>
           </p>
@@ -100,7 +100,7 @@
         </p>
         <p>
           <label>
-            <input class="with-gap" value="0-4" name="employees" type="radio"  />
+            <input class="with-gap" value="0-4" name="employees" type="radio" required/>
             <span>0-4 people</span>
           </label>
         </p>
@@ -137,7 +137,7 @@
         <p>Estimated 2021 Revenue<b class="required">*</b>
           <p>
             <label>
-              <input class="with-gap" value="Less than $50,000" name="revenue" type="radio"  />
+              <input class="with-gap" value="Less than $50,000" name="revenue" type="radio" required/>
               <span>Less than $50,000</span>
               
             </label>
@@ -175,6 +175,7 @@
       </div>
       <div class="col s12 m6">
         <p>Current Business Structure:</p>
+        <input class="hidden" type="radio" value='' name="structure" checked>
         <p>
           <label>
             <input class="with-gap" value="Sole Proprietorship" name="structure" type="radio"  />
@@ -216,7 +217,7 @@
         <p>Revenue/Sales, Business Loans/Acquire Financing, Staffing/Employees, Marketing/Advertising, <br>E-Commerce, Exiting, Estate Planning, Other</p>
         <div class="col s12 m8">
           <div class="input-field">
-            <select name="priority1" id="priority1">
+            <select name="priority1" id="priority1" required>
               <option value="" disabled selected>Select Your #1 Priority</option>
               <option value="Revenue/Sales">Revenue/Sales</option>
               <option value="Business Loans/Acquire Financing">Business Loans/Acquire Financing</option>
@@ -236,7 +237,7 @@
         <div class="col s12 m8">
           <div class="input-field">
             <select name="priority2" id="priority2">
-              <option value="" disabled selected>Select Your #2 Priority</option>
+              <option value="" selected>Select Your #2 Priority</option>
               <option value="Revenue/Sales">Revenue/Sales</option>
               <option value="Business Loans/Acquire Financing">Business Loans/Acquire Financing</option>
               <option value="Staffing/Employees">Staffing/Employees</option>
@@ -255,7 +256,7 @@
         <div class="col s12 m8">
           <div class="input-field">
             <select name="priority3" id="priority">
-              <option value="" disabled selected>Select Your #3 Priority</option>
+              <option value="" selected>Select Your #3 Priority</option>
               <option value="Revenue/Sales">Revenue/Sales</option>
               <option value="Business Loans/Acquire Financing">Business Loans/Acquire Financing</option>
               <option value="Staffing/Employees">Staffing/Employees</option>
@@ -313,6 +314,7 @@
       
       <div class="left-align col s12">
         <p class="recommended-label">{{ nomination_form.recommended.label }}</p>
+        <input class="hidden" type="radio" value='' name="recommended" checked>
           <p class="col s3">
             <label>
               <input type="radio" value="True" name="recommended" class="with-gap">
