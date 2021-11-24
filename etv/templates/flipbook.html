@@ -45,7 +45,7 @@
             <div class="col s1" style="margin-left: 2%">
             <i class="material-icons flipbook-arrows" id="prev">arrow_back_ios</i>
             </div>
-            <div class="col s10 flipbook-wrapper valign-wrapper" id="flipbook-content-wrapper">
+            <div class="col s10 flipbook-wrapper valign-wrapper" id="flipbook-content-wrapper" style="padding:0">
                 <div class="aspect" id="aspect">
                     <div class="aspect-inner" id="aspect-inner">
                         <div id="flipbook" class="flipbook">
@@ -216,7 +216,7 @@
                                     });
                                 </script>
                                 <div class="col 11" style="padding:5%; color: white">
-                                    <h6 style="font-family: 'Barlow Condensed'; font-size: 2vw; margin-bottom:10px">TABLE OF CONTENTS</h6>
+                                    <h6 class="tc-title" style="font-family: 'Barlow Condensed'; margin-bottom:10px">TABLE OF CONTENTS</h6>
                                     <div style="border-top:dotted white 0.1px; padding-bottom: 1vw"></div>
                                     <div class="row">
                                     <table class="col s6 table-of-contents tc-1">
@@ -357,6 +357,7 @@
                                         </tr>
                                     </table>
                                 </div>
+                                    
                                     <style>
                                         
                                         .table-of-contents {
@@ -364,7 +365,6 @@
                                         }
                                         .table-of-contents tr td{
                                             color: white;
-                                            font-size: 16px;
                                         }
                                         .tc-1 tr td {
                                             padding-left: 30px
@@ -392,6 +392,11 @@
                                 <div class="beauty-section beauty">
                                     <div class="data-table">
                                         <table class="highlight">
+                                            <colgroup>
+                                                <col span="1" style="width: 45%;">
+                                                <col span="1" style="width: 25%;">
+                                                <col span="1" style="width: 35%;">
+                                             </colgroup>
                                             <tbody>
                                                 {% for vbp in response %}
                                                     <tr>
@@ -422,7 +427,7 @@
                                         </table>
                                         {% if response.object_list|length > 10 %}
                                         {% else %}
-                                        <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                        <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                             <p style="color:white; ">There's always room for more!</p>
                                             <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                         </div>
@@ -435,6 +440,11 @@
                                 <div class="books-section books">
                                     <div class="data-table">
                                     <table class="highlight">
+                                        <colgroup>
+                                            <col span="1" style="width: 45%;">
+                                            <col span="1" style="width: 25%;">
+                                            <col span="1" style="width: 35%;">
+                                         </colgroup>
                                         <tbody>
                                             {% for vbp in response %}
                                             
@@ -457,7 +467,7 @@
                                     {% if response.object_list|length > 10 %}
                                 
                                         {% else %}
-                                        <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                        <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                             <p style="color:white; ">There's always room for more!</p>
                                             <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                         </div>
@@ -470,6 +480,11 @@
                                 <div class="cars-section cars">
                                     <div class="data-table">
                                     <table class="highlight">
+                                        <colgroup>
+                                            <col span="1" style="width: 45%;">
+                                            <col span="1" style="width: 25%;">
+                                            <col span="1" style="width: 35%;">
+                                         </colgroup>
                                         <tbody>
                                             {% for vbp in response %}
                                             <tr>
@@ -490,7 +505,7 @@
                                     </table>
                                     {% if response.object_list|length > 10 %}
                                         {% else %}
-                                        <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                        <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                             <p style="color:white; ">There's always room for more!</p>
                                             <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                         </div>
@@ -503,6 +518,11 @@
                                 <div class="child-section child">
                                     <div class="data-table">
                                     <table class="highlight">
+                                        <colgroup>
+                                            <col span="1" style="width: 45%;">
+                                            <col span="1" style="width: 25%;">
+                                            <col span="1" style="width: 35%;">
+                                         </colgroup>
                                         <tbody>
                                             {% for vbp in response %}
                                             <tr>
@@ -523,7 +543,7 @@
                                     </table>
                                     {% if response.object_list|length > 10 %}
                                         {% else %}
-                                        <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                        <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                             <p style="color:white; ">There's always room for more!</p>
                                             <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                         </div>
@@ -536,6 +556,11 @@
                                 <div class="cleaning-section cleaning">
                                     <div class="data-table">
                                     <table class="highlight">
+                                        <colgroup>
+                                            <col span="1" style="width: 45%;">
+                                            <col span="1" style="width: 25%;">
+                                            <col span="1" style="width: 35%;">
+                                         </colgroup>
                                         <tbody>
                                             {% for vbp in response %}
                                             <tr>
@@ -556,7 +581,7 @@
                                     </table>
                                     {% if response.object_list|length > 10 %}
                                         {% else %}
-                                        <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                        <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                             <p style="color:white; ">There's always room for more!</p>
                                             <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                         </div>
@@ -569,6 +594,11 @@
                                 <div class="clothing-section clothing">
                                     <div class="data-table">
                                     <table class="highlight">
+                                        <colgroup>
+                                            <col span="1" style="width: 45%;">
+                                            <col span="1" style="width: 25%;">
+                                            <col span="1" style="width: 35%;">
+                                         </colgroup>
                                         <tbody>
                                             {% for vbp in response %}
                                             <tr>
@@ -589,7 +619,7 @@
                                     </table>
                                     {% if response.object_list|length > 10 %}
                                         {% else %}
-                                        <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                        <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                             <p style="color:white; ">There's always room for more!</p>
                                             <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                         </div>
@@ -602,6 +632,11 @@
                                 <div class="construction-section construction">
                                     <div class="data-table">
                                     <table class="highlight">
+                                        <colgroup>
+                                            <col span="1" style="width: 45%;">
+                                            <col span="1" style="width: 25%;">
+                                            <col span="1" style="width: 35%;">
+                                         </colgroup>
                                         <tbody>
                                             {% for vbp in response %}
                                             <tr>
@@ -622,7 +657,7 @@
                                     </table>
                                     {% if response.object_list|length > 10 %}
                                         {% else %}
-                                        <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                        <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                             <p style="color:white; ">There's always room for more!</p>
                                             <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                         </div>
@@ -635,6 +670,11 @@
                                 <div class="education-section education">
                                     <div class="data-table">
                                     <table class="highlight">
+                                        <colgroup>
+                                            <col span="1" style="width: 45%;">
+                                            <col span="1" style="width: 25%;">
+                                            <col span="1" style="width: 35%;">
+                                         </colgroup>
                                         <tbody>
                                             {% for vbp in response %}
                                             <tr>
@@ -655,7 +695,7 @@
                                     </table>
                                     {% if response.object_list|length > 10 %}
                                         {% else %}
-                                        <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                        <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                             <p style="color:white; ">There's always room for more!</p>
                                             <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                         </div>
@@ -668,6 +708,11 @@
                                 <div class="eldercare-section eldercare">
                                     <div class="data-table">
                                     <table class="highlight">
+                                        <colgroup>
+                                            <col span="1" style="width: 45%;">
+                                            <col span="1" style="width: 25%;">
+                                            <col span="1" style="width: 35%;">
+                                         </colgroup>
                                         <tbody>
                                             {% for vbp in response %}
                                             <tr>
@@ -688,7 +733,7 @@
                                     </table>
                                     {% if response.object_list|length > 10 %}
                                         {% else %}
-                                        <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                        <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                             <p style="color:white; ">There's always room for more!</p>
                                             <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                         </div>
@@ -701,6 +746,11 @@
                                 <div class="electronics-section electronics">
                                     <div class="data-table">
                                     <table class="highlight">
+                                        <colgroup>
+                                            <col span="1" style="width: 45%;">
+                                            <col span="1" style="width: 25%;">
+                                            <col span="1" style="width: 35%;">
+                                         </colgroup>
                                         <tbody>
                                             {% for vbp in response %}
                                             <tr>
@@ -721,7 +771,7 @@
                                     </table>
                                     {% if response.object_list|length > 10 %}
                                         {% else %}
-                                        <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                        <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                             <p style="color:white; ">There's always room for more!</p>
                                             <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                         </div>
@@ -734,6 +784,11 @@
                                 <div class="electronics-section entertainment">
                                     <div class="data-table">
                                     <table class="highlight">
+                                        <colgroup>
+                                            <col span="1" style="width: 45%;">
+                                            <col span="1" style="width: 25%;">
+                                            <col span="1" style="width: 35%;">
+                                         </colgroup>
                                         <tbody>
                                             {% for vbp in response %}
                                             <tr>
@@ -754,7 +809,7 @@
                                     </table>
                                     {% if response.object_list|length > 10 %}
                                         {% else %}
-                                        <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                        <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                             <p style="color:white; ">There's always room for more!</p>
                                             <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                         </div>
@@ -767,6 +822,11 @@
                                 <div class="farming-section farming">
                                     <div class="data-table">
                                     <table class="highlight">
+                                        <colgroup>
+                                            <col span="1" style="width: 45%;">
+                                            <col span="1" style="width: 25%;">
+                                            <col span="1" style="width: 35%;">
+                                         </colgroup>
                                         <tbody>
                                             {% for vbp in response %}
                                             <tr>
@@ -787,7 +847,7 @@
                                     </table>
                                     {% if response.object_list|length > 10 %}
                                         {% else %}
-                                        <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                        <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                             <p style="color:white; ">There's always room for more!</p>
                                             <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                         </div>
@@ -800,6 +860,11 @@
                                 <div class="florists-section florists">
                                     <div class="data-table">
                                     <table class="highlight">
+                                        <colgroup>
+                                            <col span="1" style="width: 45%;">
+                                            <col span="1" style="width: 25%;">
+                                            <col span="1" style="width: 35%;">
+                                         </colgroup>
                                         <tbody>
                                             {% for vbp in response %}
                                             <tr>
@@ -820,7 +885,7 @@
                                     </table>
                                     {% if response.object_list|length > 10 %}
                                         {% else %}
-                                        <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                        <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                             <p style="color:white; ">There's always room for more!</p>
                                             <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                         </div>
@@ -833,6 +898,11 @@
                                 <div class="grocery-section grocery">
                                     <div class="data-table">
                                     <table class="highlight">
+                                        <colgroup>
+                                            <col span="1" style="width: 45%;">
+                                            <col span="1" style="width: 25%;">
+                                            <col span="1" style="width: 35%;">
+                                         </colgroup>
                                         <tbody>
                                             {% for vbp in response %}
                                             <tr>
@@ -853,7 +923,7 @@
                                     </table>
                                     {% if response.object_list|length > 10 %}
                                         {% else %}
-                                        <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                        <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                             <p style="color:white; ">There's always room for more!</p>
                                             <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                         </div>
@@ -866,6 +936,11 @@
                                 <div class="health-section health">
                                     <div class="data-table">
                                     <table class="highlight">
+                                        <colgroup>
+                                            <col span="1" style="width: 45%;">
+                                            <col span="1" style="width: 25%;">
+                                            <col span="1" style="width: 35%;">
+                                         </colgroup>
                                         <tbody>
                                             {% for vbp in response %}
                                             <tr>
@@ -886,7 +961,7 @@
                                     </table>
                                     {% if response.object_list|length > 10 %}
                                         {% else %}
-                                        <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                        <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                             <p style="color:white; ">There's always room for more!</p>
                                             <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                         </div>
@@ -899,6 +974,11 @@
                                 <div class="home-section home">
                                     <div class="data-table">
                                     <table class="highlight">
+                                        <colgroup>
+                                            <col span="1" style="width: 45%;">
+                                            <col span="1" style="width: 25%;">
+                                            <col span="1" style="width: 35%;">
+                                         </colgroup>
                                         <tbody>
                                             {% for vbp in response %}
                                             <tr>
@@ -919,7 +999,7 @@
                                     </table>
                                     {% if response.object_list|length > 10 %}
                                         {% else %}
-                                        <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                        <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                             <p style="color:white; ">There's always room for more!</p>
                                             <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                         </div>
@@ -932,6 +1012,11 @@
                                 <div class="hotels-section hotels">
                                     <div class="data-table">
                                     <table class="highlight">
+                                        <colgroup>
+                                            <col span="1" style="width: 45%;">
+                                            <col span="1" style="width: 25%;">
+                                            <col span="1" style="width: 35%;">
+                                         </colgroup>
                                         <tbody>
                                             {% for vbp in response %}
                                             <tr>
@@ -952,7 +1037,7 @@
                                     </table>
                                     {% if response.object_list|length > 10 %}
                                         {% else %}
-                                        <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                        <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                             <p style="color:white; ">There's always room for more!</p>
                                             <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                         </div>
@@ -965,6 +1050,11 @@
                                 <div class="jewelry-section jewelry">
                                     <div class="data-table">
                                     <table class="highlight">
+                                        <colgroup>
+                                            <col span="1" style="width: 45%;">
+                                            <col span="1" style="width: 25%;">
+                                            <col span="1" style="width: 35%;">
+                                         </colgroup>
                                         <tbody>
                                             {% for vbp in response %}
                                             <tr>
@@ -985,7 +1075,7 @@
                                     </table>
                                     {% if response.object_list|length > 10 %}
                                         {% else %}
-                                        <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                        <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                             <p style="color:white; ">There's always room for more!</p>
                                             <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                         </div>
@@ -998,6 +1088,11 @@
                                 <div class="legal-section legal">
                                     <div class="data-table">
                                     <table class="highlight">
+                                        <colgroup>
+                                            <col span="1" style="width: 45%;">
+                                            <col span="1" style="width: 25%;">
+                                            <col span="1" style="width: 35%;">
+                                         </colgroup>
                                         <tbody>
                                             {% for vbp in response %}
                                             <tr>
@@ -1018,7 +1113,7 @@
                                     </table>
                                     {% if response.object_list|length > 10 %}
                                         {% else %}
-                                        <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                        <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                             <p style="color:white; ">There's always room for more!</p>
                                             <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                         </div>
@@ -1031,6 +1126,11 @@
                                 <div class="lifestyle-section lifestyle">
                                     <div class="data-table">
                                     <table class="highlight">
+                                        <colgroup>
+                                            <col span="1" style="width: 45%;">
+                                            <col span="1" style="width: 25%;">
+                                            <col span="1" style="width: 35%;">
+                                         </colgroup>
                                         <tbody>
                                             {% for vbp in response %}
                                             <tr>
@@ -1051,7 +1151,7 @@
                                     </table>
                                     {% if response.object_list|length > 10 %}
                                         {% else %}
-                                        <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                        <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                             <p style="color:white; ">There's always room for more!</p>
                                             <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                         </div>
@@ -1064,6 +1164,11 @@
                                 <div class="marketing-section marketing">
                                     <div class="data-table">
                                     <table class="highlight">
+                                        <colgroup>
+                                            <col span="1" style="width: 45%;">
+                                            <col span="1" style="width: 25%;">
+                                            <col span="1" style="width: 35%;">
+                                         </colgroup>
                                         <tbody>
                                             {% for vbp in response %}
                                             <tr>
@@ -1084,7 +1189,7 @@
                                     </table>
                                     {% if response.object_list|length > 10 %}
                                         {% else %}
-                                        <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                        <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                             <p style="color:white; ">There's always room for more!</p>
                                             <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                         </div>
@@ -1097,6 +1202,11 @@
                                 <div class="medical-section medical">
                                     <div class="data-table">
                                     <table class="highlight">
+                                        <colgroup>
+                                            <col span="1" style="width: 45%;">
+                                            <col span="1" style="width: 25%;">
+                                            <col span="1" style="width: 35%;">
+                                         </colgroup>
                                         <tbody>
                                             {% for vbp in response %}
                                             <tr>
@@ -1117,7 +1227,7 @@
                                     </table>
                                     {% if response.object_list|length > 10 %}
                                         {% else %}
-                                        <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                        <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                             <p style="color:white; ">There's always room for more!</p>
                                             <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                         </div>
@@ -1131,6 +1241,11 @@
                                 <div class="packaging-section packaging">
                                     <div class="data-table">
                                     <table class="highlight">
+                                        <colgroup>
+                                            <col span="1" style="width: 45%;">
+                                            <col span="1" style="width: 25%;">
+                                            <col span="1" style="width: 35%;">
+                                         </colgroup>
                                         <tbody>
                                             {% for vbp in response %}
                                             <tr>
@@ -1151,7 +1266,7 @@
                                     </table>
                                     {% if response.object_list|length > 10 %}
                                         {% else %}
-                                        <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                        <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                             <p style="color:white; ">There's always room for more!</p>
                                             <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                         </div>
@@ -1164,6 +1279,11 @@
                                 <div class="pets-section pets">
                                     <div class="data-table">
                                     <table class="highlight">
+                                        <colgroup>
+                                            <col span="1" style="width: 45%;">
+                                            <col span="1" style="width: 25%;">
+                                            <col span="1" style="width: 35%;">
+                                         </colgroup>
                                         <tbody>
                                             {% for vbp in response %}
                                             <tr>
@@ -1184,7 +1304,7 @@
                                     </table>
                                     {% if response.object_list|length > 10 %}
                                         {% else %}
-                                        <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                        <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                             <p style="color:white; ">There's always room for more!</p>
                                             <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                         </div>
@@ -1197,6 +1317,11 @@
                                 <div class="photography-section photography">
                                     <div class="data-table">
                                     <table class="highlight">
+                                        <colgroup>
+                                            <col span="1" style="width: 45%;">
+                                            <col span="1" style="width: 25%;">
+                                            <col span="1" style="width: 35%;">
+                                         </colgroup>
                                         <tbody>
                                             {% for vbp in response %}
                                             <tr>
@@ -1217,7 +1342,7 @@
                                     </table>
                                     {% if response.object_list|length > 10 %}
                                         {% else %}
-                                        <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                        <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                             <p style="color:white; ">There's always room for more!</p>
                                             <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                         </div>
@@ -1230,6 +1355,11 @@
                                 <div class="professional-section professional">
                                     <div class="data-table">
                                     <table class="highlight">
+                                        <colgroup>
+                                            <col span="1" style="width: 45%;">
+                                            <col span="1" style="width: 25%;">
+                                            <col span="1" style="width: 35%;">
+                                         </colgroup>
                                         <tbody>
                                             {% for vbp in response %}
                                             <tr>
@@ -1250,7 +1380,7 @@
                                     </table>
                                     {% if response.object_list|length > 10 %}
                                         {% else %}
-                                        <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                        <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                             <p style="color:white; ">There's always room for more!</p>
                                             <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                         </div>
@@ -1263,6 +1393,11 @@
                                 <div class="realestate-section realestate">
                                     <div class="data-table">
                                     <table class="highlight">
+                                        <colgroup>
+                                            <col span="1" style="width: 45%;">
+                                            <col span="1" style="width: 25%;">
+                                            <col span="1" style="width: 35%;">
+                                         </colgroup>
                                         <tbody>
                                             {% for vbp in response %}
                                             <tr>
@@ -1283,7 +1418,7 @@
                                     </table>
                                     {% if response.object_list|length > 10 %}
                                         {% else %}
-                                        <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                        <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                             <p style="color:white; ">There's always room for more!</p>
                                             <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                         </div>
@@ -1296,6 +1431,11 @@
                                 <div class="recreation-section recreation">
                                     <div class="data-table">
                                     <table class="highlight">
+                                        <colgroup>
+                                            <col span="1" style="width: 45%;">
+                                            <col span="1" style="width: 25%;">
+                                            <col span="1" style="width: 35%;">
+                                         </colgroup>
                                         <tbody>
                                             {% for vbp in response %}
                                 
@@ -1317,7 +1457,7 @@
                                     </table>
                                     {% if response.object_list|length > 10 %}
                                         {% else %}
-                                        <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                        <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                             <p style="color:white; ">There's always room for more!</p>
                                             <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                         </div>
@@ -1330,6 +1470,11 @@
                                 <div class="restaurants-section restaurants">
                                     <div class="data-table">
                                     <table class="highlight">
+                                        <colgroup>
+                                            <col span="1" style="width: 45%;">
+                                            <col span="1" style="width: 25%;">
+                                            <col span="1" style="width: 35%;">
+                                         </colgroup>
                                         <tbody>
                                             {% for vbp in response %}
                                             <tr>
@@ -1350,7 +1495,7 @@
                                     </table>
                                     {% if response.object_list|length > 10 %}
                                         {% else %}
-                                        <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                        <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                             <p style="color:white; ">There's always room for more!</p>
                                             <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                         </div>
@@ -1363,6 +1508,11 @@
                                 <div class="security-section security">
                                     <div class="data-table">
                                     <table class="highlight">
+                                        <colgroup>
+                                            <col span="1" style="width: 45%;">
+                                            <col span="1" style="width: 25%;">
+                                            <col span="1" style="width: 35%;">
+                                         </colgroup>
                                         <tbody>
                                             {% for vbp in response %}
                                             <tr>
@@ -1383,7 +1533,7 @@
                                     </table>
                                     {% if response.object_list|length > 10 %}
                                         {% else %}
-                                        <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                        <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                             <p style="color:white; ">There's always room for more!</p>
                                             <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                         </div>
@@ -1396,6 +1546,11 @@
                                 <div class="transportation-section transportation">
                                     <div class="data-table">
                                     <table class="highlight">
+                                        <colgroup>
+                                            <col span="1" style="width: 45%;">
+                                            <col span="1" style="width: 25%;">
+                                            <col span="1" style="width: 35%;">
+                                         </colgroup>
                                         <tbody>
                                             {% for vbp in response %}
                                             <tr>
@@ -1416,7 +1571,7 @@
                                     </table>
                                     {% if response.object_list|length > 10 %}
                                         {% else %}
-                                        <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                        <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                             <p style="color:white; ">There's always room for more!</p>
                                             <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                         </div>
@@ -1428,6 +1583,11 @@
                             {% for response in paginator_visual %}
                                 <div class="visual-section visual">
                                     <div class="data-table">
+                                        <colgroup>
+                                            <col span="1" style="width: 45%;">
+                                            <col span="1" style="width: 25%;">
+                                            <col span="1" style="width: 35%;">
+                                         </colgroup>
                                     <table class="highlight">
                                         <tbody>
                                             {% for vbp in response %}
@@ -1449,7 +1609,7 @@
                                     </table>
                                     {% if response.object_list|length > 10 %}
                                         {% else %}
-                                        <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                        <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                             <p style="color:white; ">There's always room for more!</p>
                                             <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                         </div>
@@ -1462,6 +1622,11 @@
                                 <div class="other-section other">
                                     <div class="data-table">
                                     <table class="highlight">
+                                        <colgroup>
+                                            <col span="1" style="width: 45%;">
+                                            <col span="1" style="width: 25%;">
+                                            <col span="1" style="width: 35%;">
+                                         </colgroup>
                                         <tbody>
                                             {% for vbp in response %}
                                             <tr>
@@ -1482,7 +1647,7 @@
                                     </table>
                                     {% if response.object_list|length > 10 %}
                                         {% else %}
-                                        <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                        <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                             <p style="color:white; ">There's always room for more!</p>
                                             <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                         </div>
@@ -1514,35 +1679,35 @@
         <form id="filter-form-mobile">
             <input type="hidden" id="filter-form-state-mobile">
             <div class="row" style="margin-bottom: 0">
-                <div class="col s3 input-field">
+                <div class="col s6 m3 input-field" style="margin-bottom:0; margin-top:0">
                     {{ filter.form.category }}
                     <label>Category</label>
                 </div>
-                <div class="col s3 input-field autocomplete" id="filter-city-mobile">
+                <div class="col s6 m3 input-field autocomplete" id="filter-city-mobile" style="margin-bottom:0; margin-top: 0">
                     {{ filter.form.city}}
                     <label>City</label>
                 </div>
-                <div class="col s3 input-field autocomplete" id="filter-county-mobile">
+                <div class="col s6 m3 input-field autocomplete" id="filter-county-mobile" style="margin-top: 0; margin-bottom:0">
                     {{ filter.form.county}}
                     <label>County</label>
                 </div>
-                <button class="col s3 light-green darken-2 btn" id="filter-submit-mobile" style="margin-top: 20px">FILTER</button>
+                <button class="col s6 m3 light-green darken-2 btn" id="filter-submit-mobile" style="margin-top: 10px">FILTER</button>
             </div>
         </form>
     
     </div>
-    <div class="row center-align" style="margin-top:0; padding-top:0">
+    <div class="row center-align" style="margin-top:5px; padding-top:0">
               
-        <a class="contents-page" style="cursor: pointer">VIEW TABLE OF CONTENTS</a> | Jump To Page: <input type="text" id="page-jump" style="width: 100px; margin-right: 10px">
-        <div class="btn btn-large" id="go-btn" style="background-color: rgb(55, 55, 55)">GO</div>
+        <a class="contents-page" style="cursor: pointer">VIEW TABLE OF CONTENTS</a> | Jump To Page: <input type="text" id="page-jump-m" style="width: 100px; margin-right: 10px">
+        <div class="btn" id="go-btn-m" style="background-color: rgb(55, 55, 55)">GO</div>
 
     </div>
-    
-    <div class="row valign-wrapper">
-        <div class="col s2 right-align" style="margin-top: 40vw">
+    <div class="row center-align">
         <i class="material-icons flipbook-arrows right-align" id="prev-mobile">arrow_back_ios</i>
-        </div>
-        <div class="col s18 flipbook-wrapper valign-wrapper" id="flipbook-content-wrapper-mobile">
+        <i class="material-icons flipbook-arrows" id="next-mobile">arrow_forward_ios</i>
+    </div>
+    <div class="row valign-wrapper">
+        <div class="col s12 flipbook-wrapper valign-wrapper" id="flipbook-content-wrapper-mobile">
             <div class="aspect" id="aspect">
                 <div class="aspect-inner" id="aspect-inner">
                     <div id="flipbook-mobile" class="flipbook z-depth-2">
@@ -1713,9 +1878,9 @@
                                 });
                             </script>
                             <div class="col 11" style="padding:5%; color: white">
-                                <h6 style="font-family: 'Barlow Condensed'; font-size: 2vw; margin-bottom:10px">TABLE OF CONTENTS</h6>
+                                <h6 class="tc-title" style="font-family: 'Barlow Condensed'; margin-bottom:10px">TABLE OF CONTENTS</h6>
                                 <div style="border-top:dotted white 0.1px; padding-bottom: 1vw"></div>
-                                <div class="row valign-wrapper" style="max-height: 100%; overflow: scroll">
+                                <div class="row" style="max-height: 100%; overflow: scroll">
                                 <table class="col s6 table-of-contents tc-1">
                                     <tr>
                                         <td class="beauty-page" value="{{ beauty_page }}">Beauty & Personal Grooming</td>
@@ -1861,7 +2026,6 @@
                                     }
                                     .table-of-contents tr td{
                                         color: white;
-                                        font-size: 9px;
                                     }
                                     .tc-1 tr td {
                                         padding-left: 15px;
@@ -1876,24 +2040,32 @@
                                     .table-of-contents tr td:hover{
                                         cursor: pointer
                                     }
+                                    .table-of-contents.td {
+                                        padding-top:5%;
+                                        padding-bottom: 5%
+                                    }
                                     .page-no {
                                         text-align: right
                                     }
                                     @media only screen and (min-width:663px){
                                         .table-of-contents tr td{
                                         color: white;
-                                        font-size: 14px;
                                     }
                                     }
                                 </style>
                                 
                             </div>
                         </div>
-                        <div class="beauty beauty-cover" style="background: url({% static 'img/beauty.png' %});background-size: 105%"></div>
+                        <div class=" beauty beauty-cover" style="background: url({% static 'img/beauty.png' %});background-size: 105%"></div>
                         {% for response in paginator_beauty %}
                             <div class="beauty-section beauty beauty-single">
                                 <div class="data-table">
                                     <table class="highlight">
+                                    <colgroup>
+                                        <col span="1" style="width: 45%;">
+                                        <col span="1" style="width: 20%;">
+                                        <col span="1" style="width: 35%;">
+                                     </colgroup>
                                         <tbody>
                                             {% for vbp in response %}
                                             <tr>
@@ -1913,8 +2085,8 @@
                                                     {% endif %}
                                                 </td>
                                                 <td>{{ vbp.city }}</td>
-                                                {% if vbp.phone is not None %}<td style="text-align:right;min-width: 6vw">{{ vbp.phone }}</td>
-                                                {% else %}<td style="text-align:right;min-width: 6vw"></td>
+                                                {% if vbp.phone is not None %}<td style="text-align:right;">{{ vbp.phone }}</td>
+                                                {% else %}<td style="text-align:right;"></td>
                                                 {% endif %}
 
                                             </tr>
@@ -1923,7 +2095,7 @@
                                     </table>
                                     {% if response.object_list|length > 10 %}
                                     {% else %}
-                                    <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                    <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                         <p style="color:white; ">There's always room for more!</p>
                                         <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                     </div>
@@ -1936,6 +2108,11 @@
                             <div class="books-section books books-single">
                                 <div class="data-table">
                                 <table class="highlight">
+                                    <colgroup>
+                                        <col span="1" style="width: 45%;">
+                                        <col span="1" style="width: 20%;">
+                                        <col span="1" style="width: 35%;">
+                                     </colgroup>
                                     <tbody>
                                         {% for vbp in response %}
                                         <tr class="vbp-listing-row">
@@ -1947,7 +2124,7 @@
                                             </td>
                                             <td>{{ vbp.city }}</td>
                                             {% if vbp.phone is not None %}<td style="text-align:right;min-width: 6vw">{{ vbp.phone }}</td>
-                                            {% else %}<td style="text-align:right;min-width: 6vw;"></td>
+                                            {% else %}<td style="text-align:right;;"></td>
                                             {% endif %}
                                             
                                         </tr>
@@ -1957,7 +2134,7 @@
                                 {% if response.object_list|length > 10 %}
                             
                                     {% else %}
-                                    <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                    <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                         <p style="color:white; ">There's always room for more!</p>
                                         <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                     </div>
@@ -1970,6 +2147,11 @@
                             <div class="cars-section cars cars-single">
                                 <div class="data-table">
                                 <table class="highlight">
+                                    <colgroup>
+                                        <col span="1" style="width: 45%;">
+                                        <col span="1" style="width: 20%;">
+                                        <col span="1" style="width: 35%;">
+                                     </colgroup>
                                     <tbody>
                                         {% for vbp in response %}
                                         <tr>
@@ -1980,8 +2162,8 @@
                                                         {% endif %}
                                             </td>
                                             <td>{{ vbp.city }}</td>
-                                            {% if vbp.phone is not None %}<td style="text-align:right;min-width: 6vw">{{ vbp.phone }}</td>
-                                            {% else %}<td style="text-align:right;min-width: 6vw"></td>
+                                            {% if vbp.phone is not None %}<td style="text-align:right;">{{ vbp.phone }}</td>
+                                            {% else %}<td style="text-align:right;"></td>
                                             {% endif %}
                                             
                                         </tr>
@@ -1990,7 +2172,7 @@
                                 </table>
                                 {% if response.object_list|length > 10 %}
                                     {% else %}
-                                    <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                    <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                         <p style="color:white; ">There's always room for more!</p>
                                         <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                     </div>
@@ -2003,6 +2185,11 @@
                             <div class="child-section child child-single">
                                 <div class="data-table">
                                 <table class="highlight">
+                                    <colgroup>
+                                        <col span="1" style="width: 45%;">
+                                        <col span="1" style="width: 20%;">
+                                        <col span="1" style="width: 35%;">
+                                     </colgroup>
                                     <tbody>
                                         {% for vbp in response %}
                                         <tr>
@@ -2013,8 +2200,8 @@
                                                         {% endif %}
                                             </td>
                                             <td>{{ vbp.city }}</td>
-                                            {% if vbp.phone is not None %}<td style="text-align:right;min-width: 6vw">{{ vbp.phone }}</td>
-                                            {% else %}<td style="text-align:right;min-width: 6vw"></td>
+                                            {% if vbp.phone is not None %}<td style="text-align:right;">{{ vbp.phone }}</td>
+                                            {% else %}<td style="text-align:right;"></td>
                                             {% endif %}
                                             
                                         </tr>
@@ -2023,7 +2210,7 @@
                                 </table>
                                 {% if response.object_list|length > 10 %}
                                     {% else %}
-                                    <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                    <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                         <p style="color:white; ">There's always room for more!</p>
                                         <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                     </div>
@@ -2036,6 +2223,11 @@
                             <div class="cleaning-section cleaning cleaning-single">
                                 <div class="data-table">
                                 <table class="highlight">
+                                    <colgroup>
+                                        <col span="1" style="width: 45%;">
+                                        <col span="1" style="width: 20%;">
+                                        <col span="1" style="width: 35%;">
+                                     </colgroup>
                                     <tbody>
                                         {% for vbp in response %}
                                         <tr>
@@ -2046,8 +2238,8 @@
                                                         {% endif %}
                                             </td>
                                             <td>{{ vbp.city }}</td>
-                                            {% if vbp.phone is not None %}<td style="text-align:right;min-width: 6vw">{{ vbp.phone }}</td>
-                                            {% else %}<td style="text-align:right;min-width: 6vw"></td>
+                                            {% if vbp.phone is not None %}<td style="text-align:right;">{{ vbp.phone }}</td>
+                                            {% else %}<td style="text-align:right;"></td>
                                             {% endif %}
                                             
                                         </tr>
@@ -2056,7 +2248,7 @@
                                 </table>
                                 {% if response.object_list|length > 10 %}
                                     {% else %}
-                                    <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                    <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                         <p style="color:white; ">There's always room for more!</p>
                                         <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                     </div>
@@ -2069,6 +2261,11 @@
                             <div class="clothing-section clothing clothing-single">
                                 <div class="data-table">
                                 <table class="highlight">
+                                    <colgroup>
+                                        <col span="1" style="width: 45%;">
+                                        <col span="1" style="width: 20%;">
+                                        <col span="1" style="width: 35%;">
+                                     </colgroup>
                                     <tbody>
                                         {% for vbp in response %}
                                         <tr>
@@ -2079,8 +2276,8 @@
                                                         {% endif %}
                                             </td>
                                             <td>{{ vbp.city }}</td>
-                                            {% if vbp.phone is not None %}<td style="text-align:right;min-width: 6vw">{{ vbp.phone }}</td>
-                                            {% else %}<td style="text-align:right;min-width: 6vw"></td>
+                                            {% if vbp.phone is not None %}<td style="text-align:right;">{{ vbp.phone }}</td>
+                                            {% else %}<td style="text-align:right;"></td>
                                             {% endif %}
                                             
                                         </tr>
@@ -2089,7 +2286,7 @@
                                 </table>
                                 {% if response.object_list|length > 10 %}
                                     {% else %}
-                                    <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                    <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                         <p style="color:white; ">There's always room for more!</p>
                                         <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                     </div>
@@ -2102,6 +2299,11 @@
                             <div class="construction-section construction construction-single">
                                 <div class="data-table">
                                 <table class="highlight">
+                                    <colgroup>
+                                        <col span="1" style="width: 45%;">
+                                        <col span="1" style="width: 20%;">
+                                        <col span="1" style="width: 35%;">
+                                     </colgroup>
                                     <tbody>
                                         {% for vbp in response %}
                                         <tr>
@@ -2112,8 +2314,8 @@
                                                         {% endif %}
                                             </td>
                                             <td>{{ vbp.city }}</td>
-                                            {% if vbp.phone is not None %}<td style="text-align:right;min-width: 6vw">{{ vbp.phone }}</td>
-                                            {% else %}<td style="text-align:right;min-width: 6vw"></td>
+                                            {% if vbp.phone is not None %}<td style="text-align:right;">{{ vbp.phone }}</td>
+                                            {% else %}<td style="text-align:right;"></td>
                                             {% endif %}
                                             
                                         </tr>
@@ -2122,7 +2324,7 @@
                                 </table>
                                 {% if response.object_list|length > 10 %}
                                     {% else %}
-                                    <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                    <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                         <p style="color:white; ">There's always room for more!</p>
                                         <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                     </div>
@@ -2135,6 +2337,11 @@
                             <div class="education-section education education-single">
                                 <div class="data-table">
                                 <table class="highlight">
+                                    <colgroup>
+                                        <col span="1" style="width: 45%;">
+                                        <col span="1" style="width: 20%;">
+                                        <col span="1" style="width: 35%;">
+                                     </colgroup>
                                     <tbody>
                                         {% for vbp in response %}
                                         <tr>
@@ -2145,8 +2352,8 @@
                                                         {% endif %}
                                             </td>
                                             <td>{{ vbp.city }}</td>
-                                            {% if vbp.phone is not None %}<td style="text-align:right;min-width: 6vw">{{ vbp.phone }}</td>
-                                            {% else %}<td style="text-align:right;min-width: 6vw"></td>
+                                            {% if vbp.phone is not None %}<td style="text-align:right;">{{ vbp.phone }}</td>
+                                            {% else %}<td style="text-align:right;"></td>
                                             {% endif %}
                                             
                                         </tr>
@@ -2155,7 +2362,7 @@
                                 </table>
                                 {% if response.object_list|length > 10 %}
                                     {% else %}
-                                    <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                    <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                         <p style="color:white; ">There's always room for more!</p>
                                         <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                     </div>
@@ -2168,6 +2375,11 @@
                             <div class="eldercare-section eldercare eldercare-single">
                                 <div class="data-table">
                                 <table class="highlight">
+                                    <colgroup>
+                                        <col span="1" style="width: 45%;">
+                                        <col span="1" style="width: 20%;">
+                                        <col span="1" style="width: 35%;">
+                                     </colgroup>
                                     <tbody>
                                         {% for vbp in response %}
                                         <tr>
@@ -2178,8 +2390,8 @@
                                                         {% endif %}
                                             </td>
                                             <td>{{ vbp.city }}</td>
-                                            {% if vbp.phone is not None %}<td style="text-align:right;min-width: 6vw">{{ vbp.phone }}</td>
-                                            {% else %}<td style="text-align:right;min-width: 6vw"></td>
+                                            {% if vbp.phone is not None %}<td style="text-align:right;">{{ vbp.phone }}</td>
+                                            {% else %}<td style="text-align:right;"></td>
                                             {% endif %}
                                             
                                         </tr>
@@ -2188,7 +2400,7 @@
                                 </table>
                                 {% if response.object_list|length > 10 %}
                                     {% else %}
-                                    <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                    <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                         <p style="color:white; ">There's always room for more!</p>
                                         <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                     </div>
@@ -2201,6 +2413,11 @@
                             <div class="electronics-section electronics electronics-single">
                                 <div class="data-table">
                                 <table class="highlight">
+                                    <colgroup>
+                                        <col span="1" style="width: 45%;">
+                                        <col span="1" style="width: 20%;">
+                                        <col span="1" style="width: 35%;">
+                                     </colgroup>
                                     <tbody>
                                         {% for vbp in response %}
                                         <tr>
@@ -2211,8 +2428,8 @@
                                                         {% endif %}
                                             </td>
                                             <td>{{ vbp.city }}</td>
-                                            {% if vbp.phone is not None %}<td style="text-align:right;min-width: 6vw">{{ vbp.phone }}</td>
-                                            {% else %}<td style="text-align:right;min-width: 6vw"></td>
+                                            {% if vbp.phone is not None %}<td style="text-align:right;">{{ vbp.phone }}</td>
+                                            {% else %}<td style="text-align:right;"></td>
                                             {% endif %}
                                             
                                         </tr>
@@ -2221,7 +2438,7 @@
                                 </table>
                                 {% if response.object_list|length > 10 %}
                                     {% else %}
-                                    <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                    <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                         <p style="color:white; ">There's always room for more!</p>
                                         <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                     </div>
@@ -2234,6 +2451,11 @@
                             <div class="entertainment-section entertainment entertainment-single">
                                 <div class="data-table">
                                 <table class="highlight">
+                                    <colgroup>
+                                        <col span="1" style="width: 45%;">
+                                        <col span="1" style="width: 20%;">
+                                        <col span="1" style="width: 35%;">
+                                     </colgroup>
                                     <tbody>
                                         {% for vbp in response %}
                                         <tr>
@@ -2244,8 +2466,8 @@
                                                         {% endif %}
                                             </td>
                                             <td>{{ vbp.city }}</td>
-                                            {% if vbp.phone is not None %}<td style="text-align:right;min-width: 6vw">{{ vbp.phone }}</td>
-                                            {% else %}<td style="text-align:right;min-width: 6vw"></td>
+                                            {% if vbp.phone is not None %}<td style="text-align:right;">{{ vbp.phone }}</td>
+                                            {% else %}<td style="text-align:right;"></td>
                                             {% endif %}
                                             
                                         </tr>
@@ -2254,7 +2476,7 @@
                                 </table>
                                 {% if response.object_list|length > 10 %}
                                     {% else %}
-                                    <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                    <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                         <p style="color:white; ">There's always room for more!</p>
                                         <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                     </div>
@@ -2267,6 +2489,11 @@
                             <div class="farming-section farming farming-single">
                                 <div class="data-table">
                                 <table class="highlight">
+                                    <colgroup>
+                                        <col span="1" style="width: 45%;">
+                                        <col span="1" style="width: 20%;">
+                                        <col span="1" style="width: 35%;">
+                                     </colgroup>
                                     <tbody>
                                         {% for vbp in response %}
                                         <tr>
@@ -2277,8 +2504,8 @@
                                                         {% endif %}
                                             </td>
                                             <td>{{ vbp.city }}</td>
-                                            {% if vbp.phone is not None %}<td style="text-align:right;min-width: 6vw">{{ vbp.phone }}</td>
-                                            {% else %}<td style="text-align:right;min-width: 6vw"></td>
+                                            {% if vbp.phone is not None %}<td style="text-align:right;">{{ vbp.phone }}</td>
+                                            {% else %}<td style="text-align:right;"></td>
                                             {% endif %}
                                             
                                         </tr>
@@ -2287,7 +2514,7 @@
                                 </table>
                                 {% if response.object_list|length > 10 %}
                                     {% else %}
-                                    <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                    <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                         <p style="color:white; ">There's always room for more!</p>
                                         <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                     </div>
@@ -2300,6 +2527,11 @@
                             <div class="florists-section florists florists-single">
                                 <div class="data-table">
                                 <table class="highlight">
+                                    <colgroup>
+                                        <col span="1" style="width: 45%;">
+                                        <col span="1" style="width: 20%;">
+                                        <col span="1" style="width: 35%;">
+                                     </colgroup>
                                     <tbody>
                                         {% for vbp in response %}
                                         <tr>
@@ -2310,8 +2542,8 @@
                                                         {% endif %}
                                             </td>
                                             <td>{{ vbp.city }}</td>
-                                            {% if vbp.phone is not None %}<td style="text-align:right;min-width: 6vw">{{ vbp.phone }}</td>
-                                            {% else %}<td style="text-align:right;min-width: 6vw"></td>
+                                            {% if vbp.phone is not None %}<td style="text-align:right;">{{ vbp.phone }}</td>
+                                            {% else %}<td style="text-align:right;"></td>
                                             {% endif %}
                                             
                                         </tr>
@@ -2320,7 +2552,7 @@
                                 </table>
                                 {% if response.object_list|length > 10 %}
                                     {% else %}
-                                    <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                    <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                         <p style="color:white; ">There's always room for more!</p>
                                         <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                     </div>
@@ -2333,6 +2565,11 @@
                             <div class="grocery-section grocery grocery-single">
                                 <div class="data-table">
                                 <table class="highlight">
+                                    <colgroup>
+                                        <col span="1" style="width: 45%;">
+                                        <col span="1" style="width: 20%;">
+                                        <col span="1" style="width: 35%;">
+                                     </colgroup>
                                     <tbody>
                                         {% for vbp in response %}
                                         <tr>
@@ -2343,8 +2580,8 @@
                                                         {% endif %}
                                             </td>
                                             <td>{{ vbp.city }}</td>
-                                            {% if vbp.phone is not None %}<td style="text-align:right;min-width: 6vw">{{ vbp.phone }}</td>
-                                            {% else %}<td style="text-align:right;min-width: 6vw"></td>
+                                            {% if vbp.phone is not None %}<td style="text-align:right;">{{ vbp.phone }}</td>
+                                            {% else %}<td style="text-align:right;"></td>
                                             {% endif %}
                                             
                                         </tr>
@@ -2353,7 +2590,7 @@
                                 </table>
                                 {% if response.object_list|length > 10 %}
                                     {% else %}
-                                    <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                    <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                         <p style="color:white; ">There's always room for more!</p>
                                         <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                     </div>
@@ -2366,6 +2603,11 @@
                             <div class="health-section health health-single">
                                 <div class="data-table">
                                 <table class="highlight">
+                                    <colgroup>
+                                        <col span="1" style="width: 45%;">
+                                        <col span="1" style="width: 20%;">
+                                        <col span="1" style="width: 35%;">
+                                     </colgroup>
                                     <tbody>
                                         {% for vbp in response %}
                                         <tr>
@@ -2376,8 +2618,8 @@
                                                         {% endif %}
                                             </td>
                                             <td>{{ vbp.city }}</td>
-                                            {% if vbp.phone is not None %}<td style="text-align:right;min-width: 6vw">{{ vbp.phone }}</td>
-                                            {% else %}<td style="text-align:right;min-width: 6vw"></td>
+                                            {% if vbp.phone is not None %}<td style="text-align:right;">{{ vbp.phone }}</td>
+                                            {% else %}<td style="text-align:right;"></td>
                                             {% endif %}
                                             
                                         </tr>
@@ -2386,7 +2628,7 @@
                                 </table>
                                 {% if response.object_list|length > 10 %}
                                     {% else %}
-                                    <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                    <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                         <p style="color:white; ">There's always room for more!</p>
                                         <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                     </div>
@@ -2399,6 +2641,11 @@
                             <div class="home-section home home-single">
                                 <div class="data-table">
                                 <table class="highlight">
+                                    <colgroup>
+                                        <col span="1" style="width: 45%;">
+                                        <col span="1" style="width: 20%;">
+                                        <col span="1" style="width: 35%;">
+                                     </colgroup>
                                     <tbody>
                                         {% for vbp in response %}
                                         <tr>
@@ -2409,8 +2656,8 @@
                                                         {% endif %}
                                             </td>
                                             <td>{{ vbp.city }}</td>
-                                            {% if vbp.phone is not None %}<td style="text-align:right;min-width: 6vw">{{ vbp.phone }}</td>
-                                            {% else %}<td style="text-align:right;min-width: 6vw"></td>
+                                            {% if vbp.phone is not None %}<td style="text-align:right;">{{ vbp.phone }}</td>
+                                            {% else %}<td style="text-align:right;"></td>
                                             {% endif %}
                                             
                                         </tr>
@@ -2419,7 +2666,7 @@
                                 </table>
                                 {% if response.object_list|length > 10 %}
                                     {% else %}
-                                    <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                    <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                         <p style="color:white; ">There's always room for more!</p>
                                         <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                     </div>
@@ -2432,6 +2679,11 @@
                             <div class="hotels-section hotels hotels-single">
                                 <div class="data-table">
                                 <table class="highlight">
+                                    <colgroup>
+                                        <col span="1" style="width: 45%;">
+                                        <col span="1" style="width: 20%;">
+                                        <col span="1" style="width: 35%;">
+                                     </colgroup>
                                     <tbody>
                                         {% for vbp in response %}
                                         <tr>
@@ -2442,8 +2694,8 @@
                                                         {% endif %}
                                             </td>
                                             <td>{{ vbp.city }}</td>
-                                            {% if vbp.phone is not None %}<td style="text-align:right;min-width: 6vw">{{ vbp.phone }}</td>
-                                            {% else %}<td style="text-align:right;min-width: 6vw"></td>
+                                            {% if vbp.phone is not None %}<td style="text-align:right;">{{ vbp.phone }}</td>
+                                            {% else %}<td style="text-align:right;"></td>
                                             {% endif %}
                                             
                                         </tr>
@@ -2452,7 +2704,7 @@
                                 </table>
                                 {% if response.object_list|length > 10 %}
                                     {% else %}
-                                    <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                    <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                         <p style="color:white; ">There's always room for more!</p>
                                         <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                     </div>
@@ -2465,6 +2717,11 @@
                             <div class="jewelry-section jewelry jewelry-single">
                                 <div class="data-table">
                                 <table class="highlight">
+                                    <colgroup>
+                                        <col span="1" style="width: 45%;">
+                                        <col span="1" style="width: 20%;">
+                                        <col span="1" style="width: 35%;">
+                                     </colgroup>
                                     <tbody>
                                         {% for vbp in response %}
                                         <tr>
@@ -2475,8 +2732,8 @@
                                                         {% endif %}
                                             </td>
                                             <td>{{ vbp.city }}</td>
-                                            {% if vbp.phone is not None %}<td style="text-align:right;min-width: 6vw">{{ vbp.phone }}</td>
-                                            {% else %}<td style="text-align:right;min-width: 6vw"></td>
+                                            {% if vbp.phone is not None %}<td style="text-align:right;">{{ vbp.phone }}</td>
+                                            {% else %}<td style="text-align:right;"></td>
                                             {% endif %}
                                             
                                         </tr>
@@ -2485,7 +2742,7 @@
                                 </table>
                                 {% if response.object_list|length > 10 %}
                                     {% else %}
-                                    <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                    <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                         <p style="color:white; ">There's always room for more!</p>
                                         <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                     </div>
@@ -2498,6 +2755,11 @@
                             <div class="legal-section legal legal-single">
                                 <div class="data-table">
                                 <table class="highlight">
+                                    <colgroup>
+                                        <col span="1" style="width: 45%;">
+                                        <col span="1" style="width: 20%;">
+                                        <col span="1" style="width: 35%;">
+                                     </colgroup>
                                     <tbody>
                                         {% for vbp in response %}
                                         <tr>
@@ -2508,8 +2770,8 @@
                                                         {% endif %}
                                             </td>
                                             <td>{{ vbp.city }}</td>
-                                            {% if vbp.phone is not None %}<td style="text-align:right;min-width: 6vw">{{ vbp.phone }}</td>
-                                            {% else %}<td style="text-align:right;min-width: 6vw"></td>
+                                            {% if vbp.phone is not None %}<td style="text-align:right;">{{ vbp.phone }}</td>
+                                            {% else %}<td style="text-align:right;"></td>
                                             {% endif %}
                                             
                                         </tr>
@@ -2518,7 +2780,7 @@
                                 </table>
                                 {% if response.object_list|length > 10 %}
                                     {% else %}
-                                    <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                    <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                         <p style="color:white; ">There's always room for more!</p>
                                         <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                     </div>
@@ -2531,6 +2793,11 @@
                             <div class="lifestyle-section lifestyle lifestyle-single">
                                 <div class="data-table">
                                 <table class="highlight">
+                                    <colgroup>
+                                        <col span="1" style="width: 45%;">
+                                        <col span="1" style="width: 20%;">
+                                        <col span="1" style="width: 35%;">
+                                     </colgroup>
                                     <tbody>
                                         {% for vbp in response %}
                                         <tr>
@@ -2541,8 +2808,8 @@
                                                         {% endif %}
                                             </td>
                                             <td>{{ vbp.city }}</td>
-                                            {% if vbp.phone is not None %}<td style="text-align:right;min-width: 6vw">{{ vbp.phone }}</td>
-                                            {% else %}<td style="text-align:right;min-width: 6vw"></td>
+                                            {% if vbp.phone is not None %}<td style="text-align:right;">{{ vbp.phone }}</td>
+                                            {% else %}<td style="text-align:right;"></td>
                                             {% endif %}
                                             
                                         </tr>
@@ -2551,7 +2818,7 @@
                                 </table>
                                 {% if response.object_list|length > 10 %}
                                     {% else %}
-                                    <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                    <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                         <p style="color:white; ">There's always room for more!</p>
                                         <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                     </div>
@@ -2564,6 +2831,11 @@
                             <div class="marketing-section marketing marketing-single">
                                 <div class="data-table">
                                 <table class="highlight">
+                                    <colgroup>
+                                        <col span="1" style="width: 45%;">
+                                        <col span="1" style="width: 20%;">
+                                        <col span="1" style="width: 35%;">
+                                     </colgroup>
                                     <tbody>
                                         {% for vbp in response %}
                                         <tr>
@@ -2574,8 +2846,8 @@
                                                         {% endif %}
                                             </td>
                                             <td>{{ vbp.city }}</td>
-                                            {% if vbp.phone is not None %}<td style="text-align:right;min-width: 6vw">{{ vbp.phone }}</td>
-                                            {% else %}<td style="text-align:right;min-width: 6vw"></td>
+                                            {% if vbp.phone is not None %}<td style="text-align:right;">{{ vbp.phone }}</td>
+                                            {% else %}<td style="text-align:right;"></td>
                                             {% endif %}
                                             
                                         </tr>
@@ -2584,7 +2856,7 @@
                                 </table>
                                 {% if response.object_list|length > 10 %}
                                     {% else %}
-                                    <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                    <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                         <p style="color:white; ">There's always room for more!</p>
                                         <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                     </div>
@@ -2597,6 +2869,11 @@
                             <div class="medical-section medical medical-single">
                                 <div class="data-table">
                                 <table class="highlight">
+                                    <colgroup>
+                                        <col span="1" style="width: 45%;">
+                                        <col span="1" style="width: 20%;">
+                                        <col span="1" style="width: 35%;">
+                                     </colgroup>
                                     <tbody>
                                         {% for vbp in response %}
                                         <tr>
@@ -2607,8 +2884,8 @@
                                                         {% endif %}
                                             </td>
                                             <td>{{ vbp.city }}</td>
-                                            {% if vbp.phone is not None %}<td style="text-align:right;min-width: 6vw">{{ vbp.phone }}</td>
-                                            {% else %}<td style="text-align:right;min-width: 6vw"></td>
+                                            {% if vbp.phone is not None %}<td style="text-align:right;">{{ vbp.phone }}</td>
+                                            {% else %}<td style="text-align:right;"></td>
                                             {% endif %}
                                             
                                         </tr>
@@ -2617,40 +2894,7 @@
                                 </table>
                                 {% if response.object_list|length > 10 %}
                                     {% else %}
-                                    <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
-                                        <p style="color:white; ">There's always room for more!</p>
-                                        <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
-                                    </div>
-                                    {% endif %}
-                                </div>
-                            </div>
-                        {% endfor %}
-                        <div class="other" style="background: url('https://empowerthevillage.s3.amazonaws.com/static/img/other.png');background-size: 105%"></div>
-                        {% for response in paginator_other %}
-                            <div class="other-section other other-single">
-                                <div class="data-table">
-                                <table class="highlight">
-                                    <tbody>
-                                        {% for vbp in response %}
-                                        <tr>
-                                            <td style="max-width: 35%; font-weight:500">{% if vbp.website %}
-                                                <a href="{{ vbp.website }}" target="_blank" style="font-weight: 500;">{{ vbp }}</a>
-                                                {% else %}
-                                                        <a style="color:rgb(55, 55, 55); font-weight:400">{{ vbp }}</a>
-                                                        {% endif %}
-                                            </td>
-                                            <td>{{ vbp.city }}</td>
-                                            {% if vbp.phone is not None %}<td style="text-align:right;min-width: 6vw">{{ vbp.phone }}</td>
-                                            {% else %}<td style="text-align:right;min-width: 6vw"></td>
-                                            {% endif %}
-                                            
-                                        </tr>
-                                        {% endfor %}
-                                    </tbody>
-                                </table>
-                                {% if response.object_list|length > 10 %}
-                                    {% else %}
-                                    <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                    <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                         <p style="color:white; ">There's always room for more!</p>
                                         <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                     </div>
@@ -2663,6 +2907,11 @@
                             <div class="packaging-section packaging packaging-single">
                                 <div class="data-table">
                                 <table class="highlight">
+                                    <colgroup>
+                                        <col span="1" style="width: 45%;">
+                                        <col span="1" style="width: 20%;">
+                                        <col span="1" style="width: 35%;">
+                                     </colgroup>
                                     <tbody>
                                         {% for vbp in response %}
                                         <tr>
@@ -2673,8 +2922,8 @@
                                                         {% endif %}
                                             </td>
                                             <td>{{ vbp.city }}</td>
-                                            {% if vbp.phone is not None %}<td style="text-align:right;min-width: 6vw">{{ vbp.phone }}</td>
-                                            {% else %}<td style="text-align:right;min-width: 6vw"></td>
+                                            {% if vbp.phone is not None %}<td style="text-align:right;">{{ vbp.phone }}</td>
+                                            {% else %}<td style="text-align:right;"></td>
                                             {% endif %}
                                             
                                         </tr>
@@ -2683,7 +2932,7 @@
                                 </table>
                                 {% if response.object_list|length > 10 %}
                                     {% else %}
-                                    <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                    <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                         <p style="color:white; ">There's always room for more!</p>
                                         <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                     </div>
@@ -2696,6 +2945,11 @@
                             <div class="pets-section pets pets-single">
                                 <div class="data-table">
                                 <table class="highlight">
+                                    <colgroup>
+                                        <col span="1" style="width: 45%;">
+                                        <col span="1" style="width: 20%;">
+                                        <col span="1" style="width: 35%;">
+                                     </colgroup>
                                     <tbody>
                                         {% for vbp in response %}
                                         <tr>
@@ -2706,8 +2960,8 @@
                                                         {% endif %}
                                             </td>
                                             <td>{{ vbp.city }}</td>
-                                            {% if vbp.phone is not None %}<td style="text-align:right;min-width: 6vw">{{ vbp.phone }}</td>
-                                            {% else %}<td style="text-align:right;min-width: 6vw"></td>
+                                            {% if vbp.phone is not None %}<td style="text-align:right;">{{ vbp.phone }}</td>
+                                            {% else %}<td style="text-align:right;"></td>
                                             {% endif %}
                                             
                                         </tr>
@@ -2716,7 +2970,7 @@
                                 </table>
                                 {% if response.object_list|length > 10 %}
                                     {% else %}
-                                    <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                    <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                         <p style="color:white; ">There's always room for more!</p>
                                         <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                     </div>
@@ -2729,6 +2983,11 @@
                             <div class="photography-section photography photography-single">
                                 <div class="data-table">
                                 <table class="highlight">
+                                    <colgroup>
+                                        <col span="1" style="width: 45%;">
+                                        <col span="1" style="width: 20%;">
+                                        <col span="1" style="width: 35%;">
+                                     </colgroup>
                                     <tbody>
                                         {% for vbp in response %}
                                         <tr>
@@ -2739,8 +2998,8 @@
                                                         {% endif %}
                                             </td>
                                             <td>{{ vbp.city }}</td>
-                                            {% if vbp.phone is not None %}<td style="text-align:right;min-width: 6vw">{{ vbp.phone }}</td>
-                                            {% else %}<td style="text-align:right;min-width: 6vw"></td>
+                                            {% if vbp.phone is not None %}<td style="text-align:right;">{{ vbp.phone }}</td>
+                                            {% else %}<td style="text-align:right;"></td>
                                             {% endif %}
                                             
                                         </tr>
@@ -2749,7 +3008,7 @@
                                 </table>
                                 {% if response.object_list|length > 10 %}
                                     {% else %}
-                                    <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                    <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                         <p style="color:white; ">There's always room for more!</p>
                                         <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                     </div>
@@ -2762,6 +3021,11 @@
                             <div class="professional-section professional professional-single">
                                 <div class="data-table">
                                 <table class="highlight">
+                                    <colgroup>
+                                        <col span="1" style="width: 45%;">
+                                        <col span="1" style="width: 20%;">
+                                        <col span="1" style="width: 35%;">
+                                     </colgroup>
                                     <tbody>
                                         {% for vbp in response %}
                                         <tr>
@@ -2772,8 +3036,8 @@
                                                         {% endif %}
                                             </td>
                                             <td>{{ vbp.city }}</td>
-                                            {% if vbp.phone is not None %}<td style="text-align:right;min-width: 6vw">{{ vbp.phone }}</td>
-                                            {% else %}<td style="text-align:right;min-width: 6vw"></td>
+                                            {% if vbp.phone is not None %}<td style="text-align:right;">{{ vbp.phone }}</td>
+                                            {% else %}<td style="text-align:right;"></td>
                                             {% endif %}
                                             
                                         </tr>
@@ -2782,7 +3046,7 @@
                                 </table>
                                 {% if response.object_list|length > 10 %}
                                     {% else %}
-                                    <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                    <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                         <p style="color:white; ">There's always room for more!</p>
                                         <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                     </div>
@@ -2795,6 +3059,11 @@
                             <div class="realestate-section realestate realestate-single">
                                 <div class="data-table">
                                 <table class="highlight">
+                                    <colgroup>
+                                        <col span="1" style="width: 45%;">
+                                        <col span="1" style="width: 20%;">
+                                        <col span="1" style="width: 35%;">
+                                     </colgroup>
                                     <tbody>
                                         {% for vbp in response %}
                                         <tr>
@@ -2805,8 +3074,8 @@
                                                         {% endif %}
                                             </td>
                                             <td>{{ vbp.city }}</td>
-                                            {% if vbp.phone is not None %}<td style="text-align:right;min-width: 6vw">{{ vbp.phone }}</td>
-                                            {% else %}<td style="text-align:right;min-width: 6vw"></td>
+                                            {% if vbp.phone is not None %}<td style="text-align:right;">{{ vbp.phone }}</td>
+                                            {% else %}<td style="text-align:right;"></td>
                                             {% endif %}
                                             
                                         </tr>
@@ -2815,7 +3084,7 @@
                                 </table>
                                 {% if response.object_list|length > 10 %}
                                     {% else %}
-                                    <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                    <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                         <p style="color:white; ">There's always room for more!</p>
                                         <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                     </div>
@@ -2828,6 +3097,11 @@
                             <div class="recreation-section recreation recreation-single">
                                 <div class="data-table">
                                 <table class="highlight">
+                                    <colgroup>
+                                        <col span="1" style="width: 45%;">
+                                        <col span="1" style="width: 20%;">
+                                        <col span="1" style="width: 35%;">
+                                     </colgroup>
                                     <tbody>
                                         {% for vbp in response %}
                                         <tr>
@@ -2838,8 +3112,8 @@
                                                         {% endif %}
                                             </td>
                                             <td>{{ vbp.city }}</td>
-                                            {% if vbp.phone is not None %}<td style="text-align:right;min-width: 6vw">{{ vbp.phone }}</td>
-                                            {% else %}<td style="text-align:right;min-width: 6vw"></td>
+                                            {% if vbp.phone is not None %}<td style="text-align:right;">{{ vbp.phone }}</td>
+                                            {% else %}<td style="text-align:right;"></td>
                                             {% endif %}
                                             
                                         </tr>
@@ -2848,7 +3122,7 @@
                                 </table>
                                 {% if response.object_list|length > 10 %}
                                     {% else %}
-                                    <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                    <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                         <p style="color:white; ">There's always room for more!</p>
                                         <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                     </div>
@@ -2861,6 +3135,11 @@
                             <div class="restaurants-section restaurants restaurants-single">
                                 <div class="data-table">
                                 <table class="highlight">
+                                    <colgroup>
+                                        <col span="1" style="width: 45%;">
+                                        <col span="1" style="width: 20%;">
+                                        <col span="1" style="width: 35%;">
+                                     </colgroup>
                                     <tbody>
                                         {% for vbp in response %}
                                         <tr>
@@ -2871,8 +3150,8 @@
                                                         {% endif %}
                                             </td>
                                             <td>{{ vbp.city }}</td>
-                                            {% if vbp.phone is not None %}<td style="text-align:right;min-width: 6vw">{{ vbp.phone }}</td>
-                                            {% else %}<td style="text-align:right;min-width: 6vw"></td>
+                                            {% if vbp.phone is not None %}<td style="text-align:right;">{{ vbp.phone }}</td>
+                                            {% else %}<td style="text-align:right;"></td>
                                             {% endif %}
                                             
                                         </tr>
@@ -2881,7 +3160,7 @@
                                 </table>
                                 {% if response.object_list|length > 10 %}
                                     {% else %}
-                                    <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                    <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                         <p style="color:white; ">There's always room for more!</p>
                                         <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                     </div>
@@ -2894,6 +3173,11 @@
                             <div class="security-section security security-single">
                                 <div class="data-table">
                                 <table class="highlight">
+                                    <colgroup>
+                                        <col span="1" style="width: 45%;">
+                                        <col span="1" style="width: 20%;">
+                                        <col span="1" style="width: 35%;">
+                                     </colgroup>
                                     <tbody>
                                         {% for vbp in response %}
                                         <tr>
@@ -2904,8 +3188,8 @@
                                                         {% endif %}
                                             </td>
                                             <td>{{ vbp.city }}</td>
-                                            {% if vbp.phone is not None %}<td style="text-align:right;min-width: 6vw">{{ vbp.phone }}</td>
-                                            {% else %}<td style="text-align:right;min-width: 6vw"></td>
+                                            {% if vbp.phone is not None %}<td style="text-align:right;">{{ vbp.phone }}</td>
+                                            {% else %}<td style="text-align:right;"></td>
                                             {% endif %}
                                             
                                         </tr>
@@ -2914,7 +3198,7 @@
                                 </table>
                                 {% if response.object_list|length > 10 %}
                                     {% else %}
-                                    <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                    <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                         <p style="color:white; ">There's always room for more!</p>
                                         <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                     </div>
@@ -2927,6 +3211,11 @@
                             <div class="transportation-section transportation transportation-single">
                                 <div class="data-table">
                                 <table class="highlight">
+                                    <colgroup>
+                                        <col span="1" style="width: 45%;">
+                                        <col span="1" style="width: 20%;">
+                                        <col span="1" style="width: 35%;">
+                                     </colgroup>
                                     <tbody>
                                         {% for vbp in response %}
                                         <tr>
@@ -2937,8 +3226,8 @@
                                                         {% endif %}
                                             </td>
                                             <td>{{ vbp.city }}</td>
-                                            {% if vbp.phone is not None %}<td style="text-align:right;min-width: 6vw">{{ vbp.phone }}</td>
-                                            {% else %}<td style="text-align:right;min-width: 6vw"></td>
+                                            {% if vbp.phone is not None %}<td style="text-align:right;">{{ vbp.phone }}</td>
+                                            {% else %}<td style="text-align:right;"></td>
                                             {% endif %}
                                             
                                         </tr>
@@ -2947,7 +3236,7 @@
                                 </table>
                                 {% if response.object_list|length > 10 %}
                                     {% else %}
-                                    <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                    <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                         <p style="color:white; ">There's always room for more!</p>
                                         <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                     </div>
@@ -2960,6 +3249,11 @@
                             <div class="visual-section visual visual-single">
                                 <div class="data-table">
                                 <table class="highlight">
+                                    <colgroup>
+                                        <col span="1" style="width: 45%;">
+                                        <col span="1" style="width: 20%;">
+                                        <col span="1" style="width: 35%;">
+                                     </colgroup>
                                     <tbody>
                                         {% for vbp in response %}
                                         <tr>
@@ -2970,8 +3264,8 @@
                                                         {% endif %}
                                             </td>
                                             <td>{{ vbp.city }}</td>
-                                            {% if vbp.phone is not None %}<td style="text-align:right;min-width: 6vw">{{ vbp.phone }}</td>
-                                            {% else %}<td style="text-align:right;min-width: 6vw"></td>
+                                            {% if vbp.phone is not None %}<td style="text-align:right;">{{ vbp.phone }}</td>
+                                            {% else %}<td style="text-align:right;"></td>
                                             {% endif %}
                                             
                                         </tr>
@@ -2980,7 +3274,45 @@
                                 </table>
                                 {% if response.object_list|length > 10 %}
                                     {% else %}
-                                    <div class="center-align roomformore" style="margin-top: 30%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                    <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
+                                        <p style="color:white; ">There's always room for more!</p>
+                                        <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
+                                    </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {% endfor %}
+                        <div class="other" style="background: url('https://empowerthevillage.s3.amazonaws.com/static/img/other.png');background-size: 105%"></div>
+                        {% for response in paginator_other %}
+                            <div class="other-section other other-single">
+                                <div class="data-table">
+                                <table class="highlight">
+                                    <colgroup>
+                                        <col span="1" style="width: 45%;">
+                                        <col span="1" style="width: 20%;">
+                                        <col span="1" style="width: 35%;">
+                                     </colgroup>
+                                    <tbody>
+                                        {% for vbp in response %}
+                                        <tr>
+                                            <td style="max-width: 35%; font-weight:500">{% if vbp.website %}
+                                                <a href="{{ vbp.website }}" target="_blank" style="font-weight: 500;">{{ vbp }}</a>
+                                                {% else %}
+                                                        <a style="color:rgb(55, 55, 55); font-weight:400">{{ vbp }}</a>
+                                                        {% endif %}
+                                            </td>
+                                            <td>{{ vbp.city }}</td>
+                                            {% if vbp.phone is not None %}<td style="text-align:right;">{{ vbp.phone }}</td>
+                                            {% else %}<td style="text-align:right;"></td>
+                                            {% endif %}
+                                            
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                                {% if response.object_list|length > 10 %}
+                                    {% else %}
+                                    <div class="center-align roomformore" style="margin-top: 5%; background:rgb(29, 29, 29); padding: 1vw 2vw">
                                         <p style="color:white; ">There's always room for more!</p>
                                         <p style="color:white; text-align: justify">If you know of a great business we should include, or if you own a business and would like to be listed, please fill out the <a href="{{ nomination_url }}">Business Nomination Form</a> on our website. VBP is ever-evolving and we update our directories quarterly!</p>
                                     </div>
@@ -2994,11 +3326,11 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col s2" style="margin-top: 40vw">
-        <i class="material-icons flipbook-arrows" id="next-mobile">arrow_forward_ios</i>
-        </div>
-    </div> 
+
+        
+    
+        </div> 
+    </div>
     
 </div>
 </div>
@@ -3060,23 +3392,13 @@
     })
 </script>
 <script>
+    
     var oTurn = $("#flipbook-mobile").turn(
-            {
-                autoCenter: true,
-                next: true,
-                display: 'single',
-                peel: false,
-
-            });
-            flipbook.bind('start', 
-                function (event, pageObject, corner)
-                {
-                    if (corner == 'tl' || corner == 'tr' || corner == 'bl' || corner == 'br')
-                    {
-                        event.preventDefault();
-                    }
-                }
-            );
+    {
+        autoCenter: true,
+        next: true,
+        display: 'single',
+    });
             $("#prev-mobile").click(function(e){
             e.preventDefault();
             oTurn.turn("previous");
@@ -3102,6 +3424,10 @@
                 else {
                     $('#prev-mobile').hide();
                 }
+            });
+            $('#go-btn-m').click(function(){
+                pageNumber = $('#page-jump-m').val()
+                oTurn.turn("page", pageNumber)
             });
     var oTurn2 = $("#flipbook").turn(
             {
@@ -3166,6 +3492,8 @@
     };
 </script>
 <script>
+    var flipbookEL2 = document.getElementById('flipbook-mobile');
+    $(flipbookEL2).turn('peel', false)
     var flipbookEL = document.getElementById('flipbook');
 
     window.addEventListener('resize', function (e) {
@@ -3199,9 +3527,9 @@
     }
     @media only screen and (min-width:0px) {
         .table-of-contents-item {
-            font-size:6px; 
-            padding-top:0.2vw;
-            padding-bottom: 0.2vw; 
+            font-size:12px; 
+            padding-top:2%;
+            padding-bottom: 2%; 
             margin:0; 
             text-transform: capitalize;
         }
@@ -3290,23 +3618,23 @@
         background-size: 101%
     }
     .beauty-section.odd .data-table {
-        padding-right: 15%;
+        padding-right: 10%;
         padding-left: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
     .beauty-section.even .data-table {
-        padding-left: 15%;
+        padding-left: 10%;
         padding-right: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
     .beauty-section.beauty-single {
         background-image: url('https://empowerthevillage.s3.amazonaws.com/static/img/beauty_right.png'); 
         background-size: 101%
     }
     .beauty-section.beauty-single .data-table {
-        padding-left: 5%;
+        padding-left: 7%;
         padding-right: 10%;
-        padding-top: 6vw;
+        padding-top: 12%;
     }
     
     .books-section.books-single {
@@ -3314,9 +3642,9 @@
         background-size: 101%
     }
     .books-section.books-single .data-table {
-        padding-left: 5%;
+        padding-left: 7%;
         padding-right: 10%;
-        padding-top: 6vw;
+        padding-top: 12%;
     }
     .books-section.odd {
         background-image: url('https://empowerthevillage.s3.amazonaws.com/static/img/books_right.png');
@@ -3330,14 +3658,14 @@
         height: 100%
     }
     .books-section.odd .data-table {
-        padding-right: 15%;
+        padding-right: 10%;
         padding-left: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
     .books-section.even .data-table {
-        padding-left: 15%;
+        padding-left: 10%;
         padding-right: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
 
     .cars-section.cars-single {
@@ -3345,9 +3673,9 @@
         background-size: 101%
     }
     .cars-section.cars-single .data-table {
-        padding-left: 5%;
+        padding-left: 7%;
         padding-right: 10%;
-        padding-top: 6vw;
+        padding-top: 12%;
     }
     .cars-section.odd {
         background-image: url("https://empowerthevillage.s3.amazonaws.com/static/img/cars_right.png");
@@ -3358,14 +3686,14 @@
         background-size: 101%
     }
     .cars-section.odd .data-table {
-        padding-right: 15%;
+        padding-right: 10%;
         padding-left: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
     .cars-section.even .data-table {
-        padding-left: 15%;
+        padding-left: 10%;
         padding-right: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
 
     .child-section.child-single {
@@ -3373,9 +3701,9 @@
         background-size: 101%
     }
     .child-section.child-single .data-table {
-        padding-left: 5%;
+        padding-left: 7%;
         padding-right: 10%;
-        padding-top: 6vw;
+        padding-top: 12%;
     }
     .child-section.odd {
         background-image: url('https://empowerthevillage.s3.amazonaws.com/static/img/child_right.png');
@@ -3386,14 +3714,14 @@
         background-size: 101%
     }
     .child-section.odd .data-table {
-        padding-right: 15%;
+        padding-right: 10%;
         padding-left: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
     .child-section.even .data-table {
-        padding-left: 15%;
+        padding-left: 10%;
         padding-right: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
 
     .cleaning-section.cleaning-single {
@@ -3401,9 +3729,9 @@
         background-size: 101%
     }
     .cleaning-section.cleaning-single .data-table {
-        padding-left: 5%;
+        padding-left: 7%;
         padding-right: 10%;
-        padding-top: 6vw;
+        padding-top: 12%;
     }
     .cleaning-section.odd {
         background-image: url('https://empowerthevillage.s3.amazonaws.com/static/img/cleaning_right.png');
@@ -3414,14 +3742,14 @@
         background-size: 101%
     }
     .cleaning-section.odd .data-table {
-        padding-right: 15%;
+        padding-right: 10%;
         padding-left: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
     .cleaning-section.even .data-table {
-        padding-left: 15%;
+        padding-left: 10%;
         padding-right: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
 
     .clothing-section.clothing-single {
@@ -3429,9 +3757,9 @@
         background-size: 101%
     }
     .clothing-section.clothing-single .data-table {
-        padding-left: 5%;
+        padding-left: 7%;
         padding-right: 10%;
-        padding-top: 6vw;
+        padding-top: 12%;
     }
     .clothing-section.odd {
         background-image: url("https://empowerthevillage.s3.amazonaws.com/static/img/clothing_right.png");
@@ -3442,14 +3770,14 @@
         background-size: 101%
     }
     .clothing-section.odd .data-table {
-        padding-right: 15%;
+        padding-right: 10%;
         padding-left: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
     .clothing-section.even .data-table {
-        padding-left: 15%;
+        padding-left: 10%;
         padding-right: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
 
     .construction-section.construction-single {
@@ -3457,9 +3785,9 @@
         background-size: 101%
     }
     .construction-section.construction-single .data-table {
-        padding-left: 5%;
+        padding-left: 7%;
         padding-right: 10%;
-        padding-top: 6vw;
+        padding-top: 12%;
     }
     .construction-section.odd {
         background-image: url("https://empowerthevillage.s3.amazonaws.com/static/img/construction_right.png");
@@ -3470,14 +3798,14 @@
         background-size: 101%
     }
     .construction-section.odd .data-table {
-        padding-right: 15%;
+        padding-right: 10%;
         padding-left: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
     .construction-section.even .data-table {
-        padding-left: 15%;
+        padding-left: 10%;
         padding-right: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
 
     .education-section.education-single {
@@ -3485,9 +3813,9 @@
         background-size: 101%
     }
     .education-section.education-single .data-table {
-        padding-left: 5%;
+        padding-left: 7%;
         padding-right: 10%;
-        padding-top: 6vw;
+        padding-top: 12%;
     }
     .education-section.odd {
         background-image: url("https://empowerthevillage.s3.amazonaws.com/static/img/education_right.png");
@@ -3498,14 +3826,14 @@
         background-size: 101%
     }
     .education-section.odd .data-table {
-        padding-right: 15%;
+        padding-right: 10%;
         padding-left: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
     .education-section.even .data-table {
-        padding-left: 15%;
+        padding-left: 10%;
         padding-right: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
 
     .eldercare-section.eldercare-single {
@@ -3513,9 +3841,9 @@
         background-size: 101%
     }
     .eldercare-section.eldercare-single .data-table {
-        padding-left: 5%;
+        padding-left: 7%;
         padding-right: 10%;
-        padding-top: 6vw;
+        padding-top: 12%;
     }
     .eldercare-section.odd {
         background-image: url('https://empowerthevillage.s3.amazonaws.com/static/img/eldercare_right.png');
@@ -3526,14 +3854,14 @@
         background-size: 101%
     }
     .eldercare-section.odd .data-table {
-        padding-right: 15%;
+        padding-right: 10%;
         padding-left: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
     .eldercare-section.even .data-table {
-        padding-left: 15%;
+        padding-left: 10%;
         padding-right: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
 
     .electronics-section.electronics-single {
@@ -3541,9 +3869,9 @@
         background-size: 101%
     }
     .electronics-section.electronics-single .data-table {
-        padding-left: 5%;
+        padding-left: 7%;
         padding-right: 10%;
-        padding-top: 6vw;
+        padding-top: 12%;
     }
     .electronics-section.odd {
         background-image: url("https://empowerthevillage.s3.amazonaws.com/static/img/electronics_right.png");
@@ -3554,14 +3882,14 @@
         background-size: 101%
     }
     .electronics-section.odd .data-table {
-        padding-right: 15%;
+        padding-right: 10%;
         padding-left: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
     .electronics-section.even .data-table {
-        padding-left: 15%;
+        padding-left: 10%;
         padding-right: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
 
     .entertainment-section.entertainment-single {
@@ -3569,9 +3897,9 @@
         background-size: 101%
     }
     .entertainment-section.entertainment-single .data-table {
-        padding-left: 5%;
+        padding-left: 7%;
         padding-right: 10%;
-        padding-top: 6vw;
+        padding-top: 12%;
     }
     .entertainment-section.odd {
         background-image: url('https://empowerthevillage.s3.amazonaws.com/static/img/entertainment_right.png');
@@ -3582,14 +3910,14 @@
         background-size: 101%
     }
     .entertainment-section.odd .data-table {
-        padding-right: 15%;
+        padding-right: 10%;
         padding-left: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
     .entertainment-section.even .data-table {
-        padding-left: 15%;
+        padding-left: 10%;
         padding-right: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
 
     .farming-section.farming-single {
@@ -3597,9 +3925,9 @@
         background-size: 101%
     }
     .farming-section.farming-single .data-table {
-        padding-left: 5%;
+        padding-left: 7%;
         padding-right: 10%;
-        padding-top: 6vw;
+        padding-top: 12%;
     }
     .farming-section.odd {
         background-image: url('https://empowerthevillage.s3.amazonaws.com/static/img/farming_right.png');
@@ -3610,14 +3938,14 @@
         background-size: 101%
     }
     .farming-section.odd .data-table {
-        padding-right: 15%;
+        padding-right: 10%;
         padding-left: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
     .farming-section.even .data-table {
-        padding-left: 15%;
+        padding-left: 10%;
         padding-right: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
 
     .florists-section.florists-single {
@@ -3625,9 +3953,9 @@
         background-size: 101%
     }
     .florists-section.florists-single .data-table {
-        padding-left: 5%;
+        padding-left: 7%;
         padding-right: 10%;
-        padding-top: 6vw;
+        padding-top: 12%;
     }
     .florists-section.odd {
         background-image: url('https://empowerthevillage.s3.amazonaws.com/static/img/florists_right.png');
@@ -3638,14 +3966,14 @@
         background-size: 101%
     }
     .florists-section.odd .data-table {
-        padding-right: 15%;
+        padding-right: 10%;
         padding-left: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
     .florists-section.even .data-table {
-        padding-left: 15%;
+        padding-left: 10%;
         padding-right: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
 
     .grocery-section.grocery-single {
@@ -3653,9 +3981,9 @@
         background-size: 101%
     }
     .grocery-section.grocery-single .data-table {
-        padding-left: 5%;
+        padding-left: 7%;
         padding-right: 10%;
-        padding-top: 6vw;
+        padding-top: 12%;
     }
     .grocery-section.odd {
         background-image: url('https://empowerthevillage.s3.amazonaws.com/static/img/grocery_right.png');
@@ -3666,14 +3994,14 @@
         background-size: 101%
     }
     .grocery-section.odd .data-table {
-        padding-right: 15%;
+        padding-right: 10%;
         padding-left: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
     .grocery-section.even .data-table {
-        padding-left: 15%;
+        padding-left: 10%;
         padding-right: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
 
     .health-section.health-single {
@@ -3681,9 +4009,9 @@
         background-size: 101%
     }
     .health-section.health-single .data-table {
-        padding-left: 5%;
+        padding-left: 7%;
         padding-right: 10%;
-        padding-top: 6vw;
+        padding-top: 12%;
     }
     .health-section.odd {
         background-image: url('https://empowerthevillage.s3.amazonaws.com/static/img/health_right.png');
@@ -3694,14 +4022,14 @@
         background-size: 101%
     }
     .health-section.odd .data-table {
-        padding-right: 15%;
+        padding-right: 10%;
         padding-left: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
     .health-section.even .data-table {
-        padding-left: 15%;
+        padding-left: 10%;
         padding-right: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
 
     .home-section.home-single {
@@ -3709,9 +4037,9 @@
         background-size: 101%
     }
     .home-section.home-single .data-table {
-        padding-left: 5%;
+        padding-left: 7%;
         padding-right: 10%;
-        padding-top: 6vw;
+        padding-top: 12%;
     }
     .home-section.odd {
         background-image: url('https://empowerthevillage.s3.amazonaws.com/static/img/home_right.png');
@@ -3722,14 +4050,14 @@
         background-size: 101%
     }
     .home-section.odd .data-table {
-        padding-right: 15%;
+        padding-right: 10%;
         padding-left: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
     .home-section.even .data-table {
-        padding-left: 15%;
+        padding-left: 10%;
         padding-right: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
 
     .hotels-section.hotels-single {
@@ -3737,9 +4065,9 @@
         background-size: 101%
     }
     .hotels-section.hotels-single .data-table {
-        padding-left: 5%;
+        padding-left: 7%;
         padding-right: 10%;
-        padding-top: 6vw;
+        padding-top: 12%;
     }
     .hotels-section.odd {
         background-image: url('https://empowerthevillage.s3.amazonaws.com/static/img/hotels_right.png');
@@ -3750,14 +4078,14 @@
         background-size: 101%
     }
     .hotels-section.odd .data-table {
-        padding-right: 15%;
+        padding-right: 10%;
         padding-left: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
     .hotels-section.even .data-table {
-        padding-left: 15%;
+        padding-left: 10%;
         padding-right: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
 
     .jewelry-section.jewelry-single {
@@ -3765,9 +4093,9 @@
         background-size: 101%
     }
     .jewelry-section.jewelry-single .data-table {
-        padding-left: 5%;
+        padding-left: 7%;
         padding-right: 10%;
-        padding-top: 6vw;
+        padding-top: 12%;
     }
     .jewelry-section.odd {
         background-image: url('https://empowerthevillage.s3.amazonaws.com/static/img/jewelry_right.png');
@@ -3775,17 +4103,17 @@
     }
     .jewelry-section.even {
         background-image: url('https://empowerthevillage.s3.amazonaws.com/static/img/jewelry_left.png'); 
-        background-size: 101%
+        background-size: 102%
     }
     .jewelry-section.odd .data-table {
-        padding-right: 15%;
+        padding-right: 10%;
         padding-left: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
     .jewelry-section.even .data-table {
-        padding-left: 15%;
+        padding-left: 10%;
         padding-right: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
 
     .legal-section.legal-single {
@@ -3793,9 +4121,9 @@
         background-size: 101%
     }
     .legal-section.legal-single .data-table {
-        padding-left: 5%;
+        padding-left: 7%;
         padding-right: 10%;
-        padding-top: 6vw;
+        padding-top: 12%;
     }
     .legal-section.odd {
         background-image: url('https://empowerthevillage.s3.amazonaws.com/static/img/legal_right.png');
@@ -3806,14 +4134,14 @@
         background-size: 101%
     }
     .legal-section.odd .data-table {
-        padding-right: 15%;
+        padding-right: 10%;
         padding-left: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
     .legal-section.even .data-table {
-        padding-left: 15%;
+        padding-left: 10%;
         padding-right: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
 
     .lifestyle-section.lifestyle-single {
@@ -3821,9 +4149,9 @@
         background-size: 101%
     }
     .lifestyle-section.lifestyle-single .data-table {
-        padding-left: 5%;
+        padding-left: 7%;
         padding-right: 10%;
-        padding-top: 6vw;
+        padding-top: 12%;
     }
     .lifestyle-section.odd {
         background-image: url('https://empowerthevillage.s3.amazonaws.com/static/img/lifestyle_right.png');
@@ -3834,14 +4162,14 @@
         background-size: 101%
     }
     .lifestyle-section.odd .data-table {
-        padding-right: 15%;
+        padding-right: 10%;
         padding-left: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
     .lifestyle-section.even .data-table {
-        padding-left: 15%;
+        padding-left: 10%;
         padding-right: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
 
     .marketing-section.marketing-single {
@@ -3849,9 +4177,9 @@
         background-size: 101%
     }
     .marketing-section.marketing-single .data-table {
-        padding-left: 5%;
+        padding-left: 7%;
         padding-right: 10%;
-        padding-top: 6vw;
+        padding-top: 12%;
     }
     .marketing-section.odd {
         background-image: url('https://empowerthevillage.s3.amazonaws.com/static/img/marketing_right.png');
@@ -3862,14 +4190,14 @@
         background-size: 101%
     }
     .marketing-section.odd .data-table {
-        padding-right: 15%;
+        padding-right: 10%;
         padding-left: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
     .marketing-section.even .data-table {
-        padding-left: 15%;
+        padding-left: 10%;
         padding-right: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
 
     .medical-section.medical-single {
@@ -3877,9 +4205,9 @@
         background-size: 101%
     }
     .medical-section.medical-single .data-table {
-        padding-left: 5%;
+        padding-left: 7%;
         padding-right: 10%;
-        padding-top: 6vw;
+        padding-top: 12%;
     }
     .medical-section.odd {
         background-image: url('https://empowerthevillage.s3.amazonaws.com/static/img/medical_right.png');
@@ -3890,14 +4218,14 @@
         background-size: 101%
     }
     .medical-section.odd .data-table {
-        padding-right: 15%;
+        padding-right: 10%;
         padding-left: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
     .medical-section.even .data-table {
-        padding-left: 15%;
+        padding-left: 10%;
         padding-right: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
 
     .other-section.other-single {
@@ -3905,9 +4233,9 @@
         background-size: 101%
     }
     .other-section.other-single .data-table {
-        padding-left: 5%;
+        padding-left: 7%;
         padding-right: 10%;
-        padding-top: 6vw;
+        padding-top: 12%;
     }
     .other-section.odd {
         background-image: url('https://empowerthevillage.s3.amazonaws.com/static/img/other_right.png');
@@ -3918,14 +4246,14 @@
         background-size: 101%
     }
     .other-section.odd .data-table {
-        padding-right: 15%;
+        padding-right: 10%;
         padding-left: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
     .other-section.even .data-table {
-        padding-left: 15%;
+        padding-left: 10%;
         padding-right: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
 
     .packaging-section.packaging-single {
@@ -3933,9 +4261,9 @@
         background-size: 101%
     }
     .packaging-section.packaging-single .data-table {
-        padding-left: 5%;
+        padding-left: 7%;
         padding-right: 10%;
-        padding-top: 6vw;
+        padding-top: 12%;
     }
     .packaging-section.odd {
         background-image: url('https://empowerthevillage.s3.amazonaws.com/static/img/packaging_right.png');
@@ -3946,14 +4274,14 @@
         background-size: 101%
     }
     .packaging-section.odd .data-table {
-        padding-right: 15%;
+        padding-right: 10%;
         padding-left: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
     .packaging-section.even .data-table {
-        padding-left: 15%;
+        padding-left: 10%;
         padding-right: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
 
     .pets-section.pets-single {
@@ -3961,9 +4289,9 @@
         background-size: 101%
     }
     .pets-section.pets-single .data-table {
-        padding-left: 5%;
+        padding-left: 7%;
         padding-right: 10%;
-        padding-top: 6vw;
+        padding-top: 12%;
     }
     .pets-section.odd {
         background-image: url('https://empowerthevillage.s3.amazonaws.com/static/img/pets_right.png');
@@ -3974,14 +4302,14 @@
         background-size: 101%
     }
     .pets-section.odd .data-table {
-        padding-right: 15%;
+        padding-right: 10%;
         padding-left: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
     .pets-section.even .data-table {
-        padding-left: 15%;
+        padding-left: 10%;
         padding-right: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
 
     .photography-section.photography-single {
@@ -3989,9 +4317,9 @@
         background-size: 101%
     }
     .photography-section.photography-single .data-table {
-        padding-left: 5%;
+        padding-left: 7%;
         padding-right: 10%;
-        padding-top: 6vw;
+        padding-top: 12%;
     }
     .photography-section.odd {
         background-image: url('https://empowerthevillage.s3.amazonaws.com/static/img/photography_right.png');
@@ -4002,14 +4330,14 @@
         background-size: 101%
     }
     .photography-section.odd .data-table {
-        padding-right: 15%;
+        padding-right: 10%;
         padding-left: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
     .photography-section.even .data-table {
-        padding-left: 15%;
+        padding-left: 10%;
         padding-right: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
 
     .professional-section.professional-single {
@@ -4017,9 +4345,9 @@
         background-size: 101%
     }
     .professional-section.professional-single .data-table {
-        padding-left: 5%;
+        padding-left: 7%;
         padding-right: 10%;
-        padding-top: 6vw;
+        padding-top: 12%;
     }
     .professional-section.odd {
         background-image: url('https://empowerthevillage.s3.amazonaws.com/static/img/professional_right.png');
@@ -4030,14 +4358,14 @@
         background-size: 101%
     }
     .professional-section.odd .data-table {
-        padding-right: 15%;
+        padding-right: 10%;
         padding-left: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
     .professional-section.even .data-table {
-        padding-left: 15%;
+        padding-left: 10%;
         padding-right: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
 
     .realestate-section.realestate-single {
@@ -4045,9 +4373,9 @@
         background-size: 101%
     }
     .realestate-section.realestate-single .data-table {
-        padding-left: 5%;
+        padding-left: 7%;
         padding-right: 10%;
-        padding-top: 6vw;
+        padding-top: 12%;
     }
     .realestate-section.odd {
         background-image: url('https://empowerthevillage.s3.amazonaws.com/static/img/realestate_right.png');
@@ -4058,14 +4386,14 @@
         background-size: 101%
     }
     .realestate-section.odd .data-table {
-        padding-right: 15%;
+        padding-right: 10%;
         padding-left: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
     .realestate-section.even .data-table {
-        padding-left: 15%;
+        padding-left: 10%;
         padding-right: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
 
     .recreation-section.recreation-single {
@@ -4073,9 +4401,9 @@
         background-size: 101%
     }
     .recreation-section.recreation-single .data-table {
-        padding-left: 5%;
+        padding-left: 7%;
         padding-right: 10%;
-        padding-top: 6vw;
+        padding-top: 12%;
     }
     .recreation-section.odd {
         background-image: url('https://empowerthevillage.s3.amazonaws.com/static/img/recreation_right.png');
@@ -4086,23 +4414,23 @@
         background-size: 101%
     }
     .recreation-section.odd .data-table {
-        padding-right: 15%;
+        padding-right: 10%;
         padding-left: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
     .recreation-section.even .data-table {
-        padding-left: 15%;
+        padding-left: 10%;
         padding-right: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
     .restaurants-section.restaurants-single {
         background-image: url('https://empowerthevillage.s3.amazonaws.com/static/img/restaurants_right.png'); 
         background-size: 101%
     }
     .restaurants-section.restaurants-single .data-table {
-        padding-left: 5%;
+        padding-left: 7%;
         padding-right: 10%;
-        padding-top: 6vw;
+        padding-top: 12%;
     }
     .restaurants-section.odd {
         background-image: url('https://empowerthevillage.s3.amazonaws.com/static/img/restaurants_right.png');
@@ -4113,14 +4441,14 @@
         background-size: 101%
     }
     .restaurants-section.odd .data-table {
-        padding-right: 15%;
+        padding-right: 10%;
         padding-left: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
     .restaurants-section.even .data-table {
-        padding-left: 15%;
+        padding-left: 10%;
         padding-right: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
 
     .security-section.security-single {
@@ -4128,9 +4456,9 @@
         background-size: 101%
     }
     .security-section.security-single .data-table {
-        padding-left: 5%;
+        padding-left: 7%;
         padding-right: 10%;
-        padding-top: 6vw;
+        padding-top: 12%;
     }
     .security-section.odd {
         background-image: url('https://empowerthevillage.s3.amazonaws.com/static/img/security_right.png');
@@ -4141,14 +4469,14 @@
         background-size: 105%
     }
     .security-section.odd .data-table {
-        padding-right: 15%;
+        padding-right: 10%;
         padding-left: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
     .security-section.even .data-table {
-        padding-left: 15%;
+        padding-left: 10%;
         padding-right: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
 
     .transportation-section.transportation-single {
@@ -4156,9 +4484,9 @@
         background-size: 101%
     }
     .transportation-section.transportation-single .data-table {
-        padding-left: 5%;
+        padding-left: 7%;
         padding-right: 10%;
-        padding-top: 6vw;
+        padding-top: 12%;
     }
     .transportation-section.odd {
         background-image: url('https://empowerthevillage.s3.amazonaws.com/static/img/transportation_right.png');
@@ -4169,23 +4497,23 @@
         background-size: 101%
     }
     .transportation-section.odd .data-table {
-        padding-right: 15%;
+        padding-right: 10%;
         padding-left: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
     .transportation-section.even .data-table {
-        padding-left: 15%;
+        padding-left: 10%;
         padding-right: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
     .visual-section.visual-single {
         background-image: url('https://empowerthevillage.s3.amazonaws.com/static/img/visual_right.png'); 
         background-size: 101%
     }
     .visual-section.visual-single .data-table {
-        padding-left: 5%;
+        padding-left: 7%;
         padding-right: 10%;
-        padding-top: 6vw;
+        padding-top: 12%;
     }
     .visual-section.odd {
         background-image: url('https://empowerthevillage.s3.amazonaws.com/static/img/visual_right.png');
@@ -4196,14 +4524,14 @@
         background-size: 101%
     }
     .visual-section.odd .data-table {
-        padding-right: 15%;
+        padding-right: 10%;
         padding-left: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
     .visual-section.even .data-table {
-        padding-left: 15%;
+        padding-left: 10%;
         padding-right: 5%;
-        padding-top: 5vw;
+        padding-top: 10%;
     }
 </style>
 <script>
