@@ -9,6 +9,7 @@ from billing.models import BillingProfile
 from addresses.models import Address
 from addresses.forms import BillingAddressForm
 from .models import donation
+from django.core.mail import send_mail
 
 import sweetify
 
@@ -120,6 +121,20 @@ def donation_complete(request):
             donation_obj.status = 'complete'
             donation_obj.braintree_id = result.transaction.id
             donation_obj.save()
+            send_mail(
+                'New Donation!',
+                'A new donation has been received through www.empowerthevillage.org!',
+                'admin@empowerthevillage.org',
+                ['admin@empowerthevillage.org'],
+                fail_silently=True
+            )
+            send_mail(
+                'New Donation!',
+                'A new donation has been received through www.empowerthevillage.org!',
+                'admin@empowerthevillage.org',
+                ['chandler@eliftcreations.com'],
+                fail_silently=True
+            )
             del request.session['donation_id']
             data = 'success'
         else:
@@ -134,19 +149,30 @@ def donation_complete(request):
                 'verify_card': True
             }
         }).payment_method.token
-        print(token)
         result = gateway.subscription.create({
             "payment_method_token": token,
             "plan_id": plan_id
         })
-        print(result)
         if result.is_success:
             donation_obj.status = 'complete'
-            print(result)
             donation_obj.payment_method = token
             donation_obj.subscription_id = result.subscription.id
             donation_obj.braintree_id = ''
             donation_obj.save()
+            send_mail(
+                'New Donation!',
+                'A new donation has been received through www.empowerthevillage.org!',
+                'admin@empowerthevillage.org',
+                ['admin@empowerthevillage.org'],
+                fail_silently=True
+            )
+            send_mail(
+                'New Donation!',
+                'A new donation has been received through www.empowerthevillage.org!',
+                'admin@empowerthevillage.org',
+                ['chandler@eliftcreations.com'],
+                fail_silently=True
+            )
             data = 'success'
         else:
             data = 'error'
@@ -168,6 +194,20 @@ def donation_complete(request):
             donation_obj.frequency = 'once'
             donation_obj.braintree_id = result.transaction.id
             donation_obj.save()
+            send_mail(
+                'New Donation!',
+                'A new donation has been received through www.empowerthevillage.org!',
+                'admin@empowerthevillage.org',
+                ['admin@empowerthevillage.org'],
+                fail_silently=True
+            )
+            send_mail(
+                'New Donation!',
+                'A new donation has been received through www.empowerthevillage.org!',
+                'admin@empowerthevillage.org',
+                ['chandler@eliftcreations.com'],
+                fail_silently=True
+            )
             del request.session['donation_id']
             data = 'success'
         else:

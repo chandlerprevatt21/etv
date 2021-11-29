@@ -263,6 +263,9 @@ class user_bingo_form(models.Model):
 
 class readysetshop_transaction(models.Model):
     user             = models.ForeignKey(User, models.SET_NULL, null=True, blank=True)
+    first_name       = models.CharField(max_length=200, null=True, blank=True)
+    last_name        = models.CharField(max_length=200, null=True, blank=True)
+    email            = models.EmailField(null=True, blank=True)
     team             = models.ForeignKey(Team, models.SET_NULL, null=True, blank=True)
     amount           = models.CharField(max_length=200)
     date             = models.CharField(max_length=50)

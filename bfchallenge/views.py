@@ -8,6 +8,7 @@ from vbp.forms import NominationForm
 from .forms import RSSForm, STLForm, EFForm
 from content.forms import ContactForm
 from content.models import contact_submission
+from django.core.mail import send_mail
 
 import sweetify
 
@@ -526,10 +527,14 @@ def nomination_challenge(request):
     return render(request, 'nomination-challenge.html', context)
 
 def ready_set_shop(request):
+    teams = Team.objects.all()
     if request.method == 'POST' and request.user.is_authenticated:
         rss_form = RSSForm(request.POST)
         obj = readysetshop_transaction()
-        obj.user = request.user
+        obj.user = request.user.team
+        obj.first_name = rss_form.data['first_name']
+        obj.last_name = rss_form.data['first_name']
+        obj.email = request.user.email
         obj.team = request.user.team
         obj.business_name = rss_form.data['business_name']
         obj.amount = rss_form.data['amount']
@@ -538,20 +543,36 @@ def ready_set_shop(request):
         obj.receipt_aws = rss_form.data['receipt']
         sweetify.success(request, title='Thank you!', icon='success', text='Thank you for supporting a Black-owned business!', button='Add Another Transaction', timer=7000)
         obj.save()
+        send_mail(
+            'New Ready, Set, Shop Submission',
+            'A new submission has been made for the Ready, Set, Shop Challenge!',
+            'admin@empowerthevillage.org',
+            ['admin@empowerthevillage.org'],
+            fail_silently=True
+        )
         return redirect('/black-friday-challenge/ready-set-shop')
     elif request.method == 'POST':
-        if request.method == 'POST':
-            contact = ContactForm(request.POST)
-            obj = contact_submission()
-            obj.name = contact.data['name']
-            obj.email = contact.data['email']
-            obj.message = contact.data['message']
-            if request.user.is_authenticated:
-                user = request.user
-                obj.user = user
-            obj.save()
-            sweetify.success(request, title='Thank you!', icon='success', text="We'll be in touch!", button='OK', timer=4000)
-            return redirect('/black-friday-challenge/ready-set-shop')
+        rss_form = RSSForm(request.POST)
+        obj = readysetshop_transaction()
+        obj.first_name = rss_form.data['first_name']
+        obj.last_name = rss_form.data['first_name']
+        obj.email = rss_form.data['email']
+        obj.team = rss_form.data['team']
+        obj.business_name = rss_form.data['business_name']
+        obj.amount = rss_form.data['amount']
+        obj.date = rss_form.data['date']
+        obj.industry = rss_form.data['category']
+        obj.receipt_aws = rss_form.data['receipt']
+        sweetify.success(request, title='Thank you!', icon='success', text='Thank you for supporting a Black-owned business!', button='Add Another Transaction', timer=7000)
+        obj.save()
+        send_mail(
+            'New Ready, Set, Shop Submission',
+            'A new submission has been made for the Ready, Set, Shop Challenge!',
+            'admin@empowerthevillage.org',
+            ['admin@empowerthevillage.org'],
+            fail_silently=True
+        )
+        return redirect('/black-friday-challenge/ready-set-shop')
     else:
         rss_form = RSSForm()
         contact_form = ContactForm()
@@ -559,6 +580,7 @@ def ready_set_shop(request):
         'title': 'Ready, Set, Shop | ETV',
         'rss_form': rss_form,
         'contact_form': contact_form,
+        'teams': teams
     }
     return render(request, 'ready-set-shop.html', context)
 

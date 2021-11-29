@@ -3,7 +3,6 @@
 
 {% block content %}
 
-{% if request.user.is_rss_sponsor %}
 <div id="page">
   <div class="backpage">
     <div class="row center-align" style="margin-top:0px">
@@ -27,11 +26,36 @@
        
           <form enctype="multipart/form-data" method="POST" style="padding-left:10%; padding-right:10%;" id="nomination-form">
             {% csrf_token %}
-      
-            <div class="input-field" style="margin-bottom:0">
-              {{ rss_form.business_name }}
-              <label>{{ rss_form.business_name.label }}<b>*</b></label>
+            
+            <div class="row">
+              <div class="col s6 input-field" style="margin-bottom:0">
+                <input name="first_name" id="first_name" type="text">
+                <label>First Name<b>*</b></label>
+              </div>
+              <div class="col s6 input-field" style="margin-bottom:0">
+                <input name="last_name" id="last_name" type="text">
+                <label>Last Name<b>*</b></label>
+              </div>
+              <div class="col s12 m6 input-field" style="margin-bottom:0">
+                <input name="email" id="email" type="text">
+                <label>Email<b>*</b></label>
+              </div>
+              <div class="input-field col s12 m6">
+                <select>
+                  <option name="team" value="" disable selected>Select Your Team</option>
+                  {% for team in teams %}
+                  <option name="team" value="{{ team }}">{{ team }}</option>
+                  {% endfor %}
+                </select>
+                <label>Team</label>
+              </div>
+              <div class="input-field col s12" style="margin-bottom:0">
+                {{ rss_form.business_name }}
+                <label>{{ rss_form.business_name.label }}<b>*</b></label>
+              </div>
             </div>
+            
+            
             <div class="row" style='margin-bottom:0; margin-top: 0; padding-top: 0'>
                 <div class="input-field col s12 m6">
                   {{ rss_form.date }}
@@ -64,27 +88,7 @@
     </div>
     </div>
   </div>
-{% else %}
-<div id='page'>
-  <div class="backpage">
-    <div class="row center-align" style="margin-top:0px">
-        <div class="col s10 offset-s1 login-card" >
-          <h6 id="vbp-nomination-form-title">Contact Us to Sponsor a Ready, Set, Shop Challenge!</h6>
-             <form method="POST" style="padding-left:10%; padding-right:10%;" id="nomination-form">
-              {% csrf_token %}
-        
-              {{ contact_form }}
-          
-              <button class="btn btn-large submit-btn nomination-submit" type="submit">
-                  SUBMIT
-              </button>
-            </form>
-        </div>
-      </div>
-      </div>
-</div>
 
-{% endif %}
   <style>
     @media only screen and (min-width: 663px){
       .login-card {

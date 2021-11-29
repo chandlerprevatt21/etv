@@ -57,19 +57,19 @@ AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'localhost'
-EMAIL_HOST_USER = 'admin@empowerthevillage.org'
-EMAIL_HOST_PASSWORD = 'TheV1llageIsStrong!'
-EMAIL_PORT = 25
+EMAIL_HOST = env('EMAIL_HOST')
+EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+EMAIL_PORT = env('EMAIL_PORT')
 EMAIL_USE_TLS = False
 EMAIL_USE_SSL = False
+
 DEFAULT_FROM_EMAIL = 'admin@empowerthevillage.org'
 ADMINS = (
     ('Empower The Village', 'admin@empowerthevillage.org'),
 )
 
 MANAGERS = ADMINS
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
