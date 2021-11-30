@@ -101,6 +101,7 @@ def donation_complete(request):
     donation_id = request.session.get('donation_id')
     donation_obj = donation.objects.get(id=donation_id)
     braintree_id = request.session.get('braintree_id')
+    print(braintree_id)
     nonce = donation_obj.payment_method
     amount = donation_obj.amount
     
@@ -142,17 +143,17 @@ def donation_complete(request):
         return HttpResponse(data)
     elif frequency == 'monthly':
         plan_id = request.POST.get('plan_id')
-        token = gateway.payment_method.create({
+        vault_result = gateway.payment_method.create({
             "customer_id": braintree_id,
             "payment_method_nonce": nonce,
-            "options": {
-                'verify_card': True
-            }
-        }).payment_method.token
-        result = gateway.subscription.create({
+        })
+        print(vault_result)
+        if vault_result.is_success:
+            token = vault_result.token
+            result = gateway.subscription.create({
             "payment_method_token": token,
             "plan_id": plan_id
-        })
+            })
         if result.is_success:
             donation_obj.status = 'complete'
             donation_obj.payment_method = token
