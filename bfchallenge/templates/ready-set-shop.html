@@ -41,7 +41,7 @@
                 <label>Email<b>*</b></label>
               </div>
               <div class="input-field col s12 m6">
-                <select>
+                <select name="team_name">
                   <option name="team" value="" disable selected>Select Your Team</option>
                   {% for team in teams %}
                   <option name="team" value="{{ team }}">{{ team }}</option>
@@ -73,7 +73,7 @@
             <div class="file-field input-field">
                 <div class="btn">
                     <span class="material-icons" style="margin-top:8px">attach_file</span>
-                    <input type="file">
+                    <input type="file" name="receipt">
                 </div>
                 <div class="file-path-wrapper">
                     {{ rss_form.receipt }}

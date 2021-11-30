@@ -52,7 +52,7 @@ class RSSForm(forms.Form):
     date = forms.DateField(label='Date You Shopped', widget=forms.DateInput(attrs={'class':'datepicker'}), label_suffix='')
     amount = forms.CharField(label='Amount Spent', widget=forms.TextInput(attrs={'class':'textfield money'}), label_suffix='')
     category = forms.CharField(label='Category', widget=forms.Select(choices=CATEGORY_CHOICES), label_suffix='')
-    receipt = forms.FileField(label='Receipt', widget=forms.ClearableFileInput(attrs={'class':'file-path validate','placeholder':'Upload a Photo/Screenshot of Your Receipt', 'type':'text'}), label_suffix='', required=False)
+    receipt = forms.FileField(label='Receipt', widget=forms.ClearableFileInput(attrs={'class':'file-path validate','placeholder':'Upload a Photo/Screenshot of Your Receipt', 'type':'text', 'name':'receipt'}), label_suffix='', required=False)
     
     def save(self):
             rss_transaction = super(RSSForm, self).save()

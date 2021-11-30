@@ -540,7 +540,7 @@ def ready_set_shop(request):
         obj.amount = rss_form.data['amount']
         obj.date = rss_form.data['date']
         obj.industry = rss_form.data['category']
-        obj.receipt_aws = rss_form.data['receipt']
+        obj.receipt_aws = request.FILES['receipt']
         sweetify.success(request, title='Thank you!', icon='success', text='Thank you for supporting a Black-owned business!', button='Add Another Transaction', timer=7000)
         obj.save()
         send_mail(
@@ -557,12 +557,13 @@ def ready_set_shop(request):
         obj.first_name = rss_form.data['first_name']
         obj.last_name = rss_form.data['first_name']
         obj.email = rss_form.data['email']
-        obj.team = rss_form.data['team']
+        team = rss_form.data['team_name']
+        obj.team = Team.objects.filter(team_name=team).first()
         obj.business_name = rss_form.data['business_name']
         obj.amount = rss_form.data['amount']
         obj.date = rss_form.data['date']
         obj.industry = rss_form.data['category']
-        obj.receipt_aws = rss_form.data['receipt']
+        obj.receipt_aws = request.FILES['receipt']
         sweetify.success(request, title='Thank you!', icon='success', text='Thank you for supporting a Black-owned business!', button='Add Another Transaction', timer=7000)
         obj.save()
         send_mail(
