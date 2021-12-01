@@ -586,6 +586,9 @@
           <a href="{{ donate_url }}"><h7 class="row home-page-sh7">#GivingTuesday is the perfect time to <br>donate to ETV
             and empower Black communities! <span class="material-icons">launch</span></h7></a>
         </div>
+        {% for team in teams %}
+        {{ team.pk }}
+        {% endfor %}
         <div class="col s8 m6 l4 offset-s2 offset-m3 offset-l4" style="margin-top: 20px">
           
           <a href="{{ donate_url }}"><img class="z-depth-2" src="{% static 'img/giving-tuesday.png' %}" style="width: 100%"></a>

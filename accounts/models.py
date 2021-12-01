@@ -145,3 +145,11 @@ class Team(models.Model):
 
     def __str__(self):
         return self.team_name
+
+class Participant(models.Model):
+    email = models.EmailField(max_length=255)
+    first_name = models.CharField(max_length=100, blank=True, null=True)
+    last_name = models.CharField(max_length=100, blank=True, null=True)
+    team = models.ForeignKey(Team, blank=True, null=True, on_delete=models.CASCADE)
+    def __str__(self):
+        return self.email

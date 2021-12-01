@@ -1,10 +1,14 @@
 from django.shortcuts import render, redirect
 from ven.forms import BusinessForm
+from accounts.models import Team
+
 def home_page(request):
     form = BusinessForm()
+    teams = Team.objects.all()
     context = {
         'nomination_form': form,
-        'title':'ETV | Home'
+        'title':'ETV | Home',
+        'teams': teams
     }
     return render(request, "home copy.html", context)
 

@@ -78,6 +78,10 @@ class Address(models.Model):
             return str(self.nickname)
         return str(self.address_line_1)
 
+    class Meta:
+        verbose_name = 'Address'
+        verbose_name_plural = 'Addresses'
+        
     def get_absolute_url(self):
         return reverse("address-update", kwargs={"pk": self.pk})
 

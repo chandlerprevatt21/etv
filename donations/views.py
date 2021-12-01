@@ -12,7 +12,14 @@ from .models import donation
 from django.core.mail import send_mail
 
 import sweetify
+from mailchimp_marketing import Client
+from mailchimp_marketing.api_client import ApiClientError
 
+mailchimp = Client()
+mailchimp.set_config({
+    "api_key": settings.MAILCHIMP_API_KEY,
+    "server": "us7"
+})
 User = settings.AUTH_USER_MODEL
 gateway = settings.GATEWAY
 
@@ -83,14 +90,17 @@ def donation_create(request):
     donor_obj.save()
     request.session['braintree_id'] = billing_profile.customer_id
     request.session['donation_id'] = donation_obj.id
+    
     return HttpResponse('Incomplete Donation Created')
 
 def donation_review(request):
+    
     nonce = request.POST.get('nonce')
     donation_id = request.session.get('donation_id')
     donation_obj = donation.objects.get(id=donation_id)
     donation_obj.payment_method = nonce
     donation_obj.save()
+    
     nonce_obj = gateway.payment_method_nonce.find(nonce)
     data = {
         'details': nonce_obj.details,
@@ -101,10 +111,10 @@ def donation_complete(request):
     donation_id = request.session.get('donation_id')
     donation_obj = donation.objects.get(id=donation_id)
     braintree_id = request.session.get('braintree_id')
-    print(braintree_id)
     nonce = donation_obj.payment_method
     amount = donation_obj.amount
-    
+    first_name = str(donation_obj.first_name)
+    email = str(donation_obj.billing_profile)
     frequency = donation_obj.frequency
     if frequency == 'once':
         result = gateway.transaction.sale({
@@ -122,6 +132,14 @@ def donation_complete(request):
             donation_obj.status = 'complete'
             donation_obj.braintree_id = result.transaction.id
             donation_obj.save()
+            first_name = donation_obj.first_name
+            amount = donation_obj.amount
+            merge_fields = {
+                "FNAME": str(first_name),
+                "ETVAMOUNT": str(amount)
+            }
+            mailchimp_obj = mailchimp.lists.set_list_member("bfb104d810", email, {"email_address": email, "status_if_new": "subscribed", "merge_fields": merge_fields})
+            journey = mailchimp.customerJourneys.trigger(2794, 15013, {"email_address": str(email)})
             send_mail(
                 'New Donation!',
                 'A new donation has been received through www.empowerthevillage.org!',
@@ -160,6 +178,14 @@ def donation_complete(request):
             donation_obj.subscription_id = result.subscription.id
             donation_obj.braintree_id = ''
             donation_obj.save()
+            first_name = donation_obj.first_name
+            amount = donation_obj.amount
+            merge_fields = {
+                "FNAME": str(first_name),
+                "ETVAMOUNT": str(amount)
+            }
+            mailchimp_obj = mailchimp.lists.set_list_member("bfb104d810", email, {"email_address": email, "status_if_new": "subscribed", "merge_fields": merge_fields})
+            journey = mailchimp.customerJourneys.trigger(2794, 15013, {"email_address": str(email)})
             send_mail(
                 'New Donation!',
                 'A new donation has been received through www.empowerthevillage.org!',

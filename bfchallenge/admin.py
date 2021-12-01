@@ -1,4 +1,6 @@
 from django.contrib import admin
+
+from accounts.models import Participant
 from .models import *
 from accounts.admin import admin_site
 

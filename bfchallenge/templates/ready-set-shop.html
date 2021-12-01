@@ -40,16 +40,7 @@
                 <input name="email" id="email" type="text">
                 <label>Email<b>*</b></label>
               </div>
-              <div class="input-field col s12 m6">
-                <select name="team_name">
-                  <option name="team" value="" disable selected>Select Your Team</option>
-                  {% for team in teams %}
-                  <option name="team" value="{{ team }}">{{ team }}</option>
-                  {% endfor %}
-                </select>
-                <label>Team</label>
-              </div>
-              <div class="input-field col s12" style="margin-bottom:0">
+              <div class="input-field col s12 m6" style="margin-bottom:0">
                 {{ rss_form.business_name }}
                 <label>{{ rss_form.business_name.label }}<b>*</b></label>
               </div>

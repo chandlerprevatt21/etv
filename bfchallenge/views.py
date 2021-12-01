@@ -2,6 +2,8 @@ from typing import Text
 from django.contrib import messages
 from django.http.response import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, redirect
+
+from accounts.models import Participant
 from .models import *
 from vbp.models import *
 from vbp.forms import NominationForm
@@ -529,9 +531,10 @@ def nomination_challenge(request):
 def ready_set_shop(request):
     teams = Team.objects.all()
     if request.method == 'POST' and request.user.is_authenticated:
+        sweetify.success(request, title='Thank you!', icon='success', text='Thank you for supporting a Black-owned business!', button='Add Another Transaction', timer=7000)
         rss_form = RSSForm(request.POST)
         obj = readysetshop_transaction()
-        obj.user = request.user.team
+        obj.user = request.user
         obj.first_name = rss_form.data['first_name']
         obj.last_name = rss_form.data['first_name']
         obj.email = request.user.email
@@ -540,9 +543,12 @@ def ready_set_shop(request):
         obj.amount = rss_form.data['amount']
         obj.date = rss_form.data['date']
         obj.industry = rss_form.data['category']
-        obj.receipt_aws = request.FILES['receipt']
-        sweetify.success(request, title='Thank you!', icon='success', text='Thank you for supporting a Black-owned business!', button='Add Another Transaction', timer=7000)
+        if rss_form.data['receipt'] != '':
+            obj.receipt_aws = request.FILES['receipt']
+        else:
+            obj.receipt_aws = None
         obj.save()
+        
         send_mail(
             'New Ready, Set, Shop Submission',
             'A new submission has been made for the Ready, Set, Shop Challenge!',
@@ -552,19 +558,25 @@ def ready_set_shop(request):
         )
         return redirect('/black-friday-challenge/ready-set-shop')
     elif request.method == 'POST':
+        sweetify.success(request, title='Thank you!', icon='success', text='Thank you for supporting a Black-owned business!', button='Add Another Transaction', timer=7000)
         rss_form = RSSForm(request.POST)
         obj = readysetshop_transaction()
         obj.first_name = rss_form.data['first_name']
         obj.last_name = rss_form.data['first_name']
         obj.email = rss_form.data['email']
-        team = rss_form.data['team_name']
-        obj.team = Team.objects.filter(team_name=team).first()
+        participant = Participant.objects.filter(email=obj.email).first()
+        if participant is not None:
+            obj.team = participant.team
+        else:
+            obj.team = None
         obj.business_name = rss_form.data['business_name']
         obj.amount = rss_form.data['amount']
         obj.date = rss_form.data['date']
         obj.industry = rss_form.data['category']
-        obj.receipt_aws = request.FILES['receipt']
-        sweetify.success(request, title='Thank you!', icon='success', text='Thank you for supporting a Black-owned business!', button='Add Another Transaction', timer=7000)
+        if rss_form.data['receipt'] != '':
+            obj.receipt_aws = request.FILES['receipt']
+        else:
+            obj.receipt_aws = None
         obj.save()
         send_mail(
             'New Ready, Set, Shop Submission',

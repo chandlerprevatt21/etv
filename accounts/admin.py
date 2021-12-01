@@ -4,7 +4,7 @@ from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.admin import AdminSite
 
 from .forms import UserAdminCreationForm, UserAdminChangeForm
-from .models import MyUser, Team
+from .models import MyUser, Team, Participant
 
 class MyAdminSite(AdminSite):
     site_header = 'Empower The Village Administration'
@@ -47,5 +47,6 @@ admin.site.register(Team)
 admin_site = MyAdminSite(name='myadmin')
 admin_site.register(MyUser, UserAdmin)
 admin_site.register(Team)
+admin_site.register(Participant)
 # Remove Group Model from admin. We're not using it.
 admin.site.unregister(Group)
