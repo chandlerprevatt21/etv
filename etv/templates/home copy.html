@@ -31,6 +31,7 @@
 {% url 'news' as news_url %}
 {% url 'shop' as shop_url %}
 {% url 'merchandise:list' as merchandise_url %}
+{% url 'events:golf' as golf_url %}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <!-- JQuery Mask -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -247,7 +248,9 @@
             <li><a href="{{ home_url }}" class="waves-effect">Home</a></li>
             <li><a href="{{ about_url }}" class="waves-effect">About</a></li>
             <li><a href="{{ contact_url }}" class="waves-effect">Contact</a></li>
+         
             <li><a class="waves-effect" href="{{ merchandise_url }}">Shop</a></li>
+            
             <li class="divider"></li>
             <li class="">
               
@@ -583,19 +586,18 @@
           </style>
         </div> 
         <div class="col s12">
-          <a href="{{ donate_url }}"><h7 class="row home-page-sh7">#GivingTuesday is the perfect time to <br>donate to ETV
-            and empower Black communities! <span class="material-icons">launch</span></h7></a>
+          <a href="{{ donate_url }}"><h7 class="row home-page-sh7">#GivingTuesday - It's not too late to donate! <span class="material-icons">launch</span></h7></a>
         </div>
-        {% for team in teams %}
-        {{ team.pk }}
-        {% endfor %}
-        <div class="col s8 m6 l4 offset-s2 offset-m3 offset-l4" style="margin-top: 20px">
+        <div class="col s8 m6 l4 offset-s2 offset-m3 offset-l4" style="margin-top: 20px; margin-bottom: 30px">
           
           <a href="{{ donate_url }}"><img class="z-depth-2" src="{% static 'img/giving-tuesday.png' %}" style="width: 100%"></a>
           
         </div>
-        <div class="col s12" style="margin-top: 20px">
-          <a href="{{ donate_url }}"><img class="z-depth-1" src="{% static 'img/giving-tuesday-mugs.png' %}" width=80%></a>
+        <div class="divider" style="margin-bottom: 30px; margin-top: 30px; width: 90%; margin-left: 5%"></div>
+        <div class="row">
+          <div class="col s12 l8 offset-l2">
+            <a href="{{ golf_url }}"><img class="z-depth-2" src="{% static 'img/golf-savethedate.png' %}" style="width: 100%"></a>
+          </div>
         </div>
       </div>
       <div class="divider" style="margin-bottom: 0; width: 90%; margin-left: 5%"></div>

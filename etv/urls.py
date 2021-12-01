@@ -148,6 +148,7 @@ urlpatterns = [
     path('cart/', include(("carts.urls", "carts"), namespace='carts')),
     path('donation/', include(("donations.urls", "donations"), namespace='donation')),
     path('economic-prosperity/', economic_prosperity, name='prosperity'),
+    path('events/', include(("events.urls", "events"), namespace='events')),
     path('news-and-events/', news, name='news'),
     path('shop/', shop, name='shop'),
     path('login/', LoginView.as_view(), name='login'),

@@ -35,7 +35,7 @@ def donate(request):
             billing_addresses = address_qs.filter(address_type='billing')
     
     context = {
-        'title': 'Donate | ETV',
+        'title': 'ETV | Donate',
         'mailing_form': donor_form,
         'billing_form': billing_address_form,
         'billing_addresses': billing_addresses

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ title }}{% endblock %}
+{% block canonical %}https://www.empowerthevillage.org/events/{% endblock %}
+{% block seo_description %}Check out ETV's upcoming events!{% endblock %}
+
+{% block content %}
+<div class="row" style="padding-top: 80px">
+    <div class="col s12 l10 xl6 offset-l1 offset-xl3">
+        <img class="z-depth-2" src="{% static 'img/golf-header.png' %}" width=100%>
+    </div>
+    <div class="col s12 l10 xl6 offset-l1 offset-xl3 center-align">
+        <div class="card" style="padding:6%; margin: 5% 0%; width: 100%">
+            <p class="text">Event Registration & Lunch Service Begins at <b style="color: #01a650">11:00am</b></p>
+            <p class="text">Shotgun Starts at <b style="color: #bf1e2d">12:30pm</b></p>
+            <p class="text">Premium Open Bar & Dinner from <b style="color: #01a650">5:30PM-8:30PM</b></p>
+        </div>
+    </div>
+    
+    <div class="col s12 l10 offset-l1">
+        <img class="z-depth-2" src="{% static 'img/golf-sponsorship.png' %}" width=100%>
+    </div>
+</div>
+<style>
+    .text {
+        font-family: oskar;
+        font-size: 20px
+    }
+    @media only screen and (min-width: 663px){
+        .text {
+            font-size: 28px
+        }
+    }
+</style>
+{% endblock %}

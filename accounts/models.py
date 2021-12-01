@@ -142,7 +142,8 @@ class Team(models.Model):
     team_name = models.CharField(max_length=200, unique=True)
     paid = models.BooleanField(default=False)
     challenge_access = models.CharField(choices=CHALLENGE_CHOICES, blank=True, max_length=100)
-
+    active = models.BooleanField(default=True)
+    
     def __str__(self):
         return self.team_name
 
