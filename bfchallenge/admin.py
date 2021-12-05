@@ -5,7 +5,7 @@ from .models import *
 from accounts.admin import admin_site
 
 class RSSAdmin(admin.ModelAdmin):
-    list_display = ['business_name', 'team', 'user', 'amount', 'date', 'submitted']
+    list_display = ['business_name', 'team', 'first_name', 'last_name', 'user', 'amount', 'date', 'industry', 'submitted']
     list_filter = ['team', 'industry']
     search_fields = ['user', 'team', 'amount', 'date', 'business_name', 'industry']
     ordering = ['team', 'submitted']
